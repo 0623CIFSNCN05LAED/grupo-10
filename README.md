@@ -27,14 +27,12 @@ Nuestra audiencia objetivo serán los entusiastas de la tecnología, los gamers 
 * **Jose Luis Gomez**: Soy de Florencio Varela, Buenos Aires, Argentina, hace 10 años que estoy en una carrera de programacion en la UNLP (Univercidad Nacional de La Plata) el cual estoy trabado y considere meterme a hacer este curso para poder tener una salida laboral mas rapida y despues seguir abansando en mi carrera, aunque lo que mas me interesa es la cyberseguridad y es a lo que me quiero dedicar. Por otra parte ahora estoy trabajando de traslado de pacientes de ART (Aseguradoras de Riesgos del Trabajo) para poder mantener mis gastos aunque es momentaneo, tambien se de armado y reparacion de pc el cual hago algun trabajo que otro, fan de los perros (pd por mi tendria 15 pero me rajan de casa asi que solo tengo uno ), los videojuegos y el anime (aunque ultimamente no este viendo nada ) 
 * **Lautaro Levene**: Soy de La Plata, Buenos Aires, tengo 18 años y termine la secundaria hace unos 6 meses. Arranque a estudiar en la unlp la carrera de economia, carrera que no me convencia desde el principio. Luego gracias a unos amigos conoci el curso y me convencio por completo. juego al basquet y tengo una banda con la que hacemos temas propios. Estoy buscando trabajo para poder ayudar en la casa. me gusta mucho el Blues y el Rockandroll y algun que otro techno.
 
-Wireframe de las siguientes:
-- Home 
-- Detalle de producto 
-- Carrito de compras 
-- Formulario de registro 
-- Formulario de login
 
+## Wireframe de las siguientes páginas: 
+    - Home 
+    - Detalle de producto 
+    - Carrito de compras 
+    - Formulario de registro 
+    - Formulario de login
 
-- 
-En el siguiente enlace de pueden visualizar los wireframes.
-
+En el siguiente link de pueden visualizar los wireframes mencionados.
