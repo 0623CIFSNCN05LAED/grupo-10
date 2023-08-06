@@ -33,5 +33,8 @@ Wireframe de las siguientes:
 - Carrito de compras 
 - Formulario de registro 
 - Formulario de login
+
+
+- 
 En el siguiente enlace de pueden visualizar los wireframes.
 
