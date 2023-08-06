@@ -15,7 +15,7 @@ Nuestra audiencia objetivo serán los entusiastas de la tecnología, los gamers 
 2. **CompraGamer** (http://compragamer.com/): Es otra tienda en línea argentina que ofrece una amplia gama de productos de tecnología y gaming, desde componentes de PC hasta electrodomésticos. Su sitio web es más sencillo, pero ofrece una gran cantidad de productos y opciones de personalización. También tienen una opción de "Arma tu PC" que permite a los usuarios seleccionar componentes para su PC personalizada.
 3. **otra web** (https://www.mi.com/co) : Es una empresa de electrónica de consumo y fabricación inteligente cuyo núcleo son los teléfonos inteligentes y el hardware inteligent. Esta se ha tomado como referente por el estilo elegante que presenta en su deiseño.
 4. **pple** (https://www.apple.com/): esta web no necesita mucha presentacion, es la pagina de apple, la cual elijo por su diseño minimalista, sencillo y elegante, la elijo porque me gustaria que nuestra pagina tenga su diseño formal y a la ves sencillo que transmite esta web
-5. **otra web** 
+5. **hardgamers** (https://www.hardgamers.com.ar/) 
 6. **otra web** 
 
 ## Descripcion de los integrantes del grupo:
