@@ -14,7 +14,7 @@ Nuestra audiencia objetivo serán los entusiastas de la tecnología, los gamers 
 1. **HyperGaming** (http://hypergaming.com.ar/): Es una tienda en línea argentina que se especializa en productos de gaming, incluyendo componentes de PC, periféricos, sillas de gaming y más. Su sitio web es limpio y fácil de navegar, con categorías de productos claramente definidas y descripciones detalladas de los productos. También tienen un blog donde comparten noticias y reseñas relacionadas con el gaming.
 2. **CompraGamer** (http://compragamer.com/): Es otra tienda en línea argentina que ofrece una amplia gama de productos de tecnología y gaming, desde componentes de PC hasta electrodomésticos. Su sitio web es más sencillo, pero ofrece una gran cantidad de productos y opciones de personalización. También tienen una opción de "Arma tu PC" que permite a los usuarios seleccionar componentes para su PC personalizada.
 3. **otra web** (https://www.mi.com/co) : Es una empresa de electrónica de consumo y fabricación inteligente cuyo núcleo son los teléfonos inteligentes y el hardware inteligent. Esta se ha tomado como referente por el estilo elegante que presenta en su deiseño.
-4. **otra web** 
+4. **pple** (https://www.apple.com/): esta web no necesita mucha presentacion, es la pagina de apple, la cual elijo por su diseño minimalista, sencillo y elegante, la elijo porque me gustaria que nuestra pagina tenga su diseño formal y a la ves sencillo que transmite esta web
 5. **otra web** 
 6. **otra web** 
 
