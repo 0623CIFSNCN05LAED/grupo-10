@@ -29,7 +29,7 @@ HardGamers puede ser útil para nuestro proyecto en términos de cómo presentar
 * **Lautaro Levene**: Soy de La Plata, Buenos Aires, tengo 18 años y termine la secundaria hace unos 6 meses. Arranque a estudiar en la unlp la carrera de economia, carrera que no me convencia desde el principio. Luego gracias a unos amigos conoci el curso y me convencio por completo. juego al basquet y tengo una banda con la que hacemos temas propios. Estoy buscando trabajo para poder ayudar en la casa. me gusta mucho el Blues y el Rockandroll y algun que otro techno.
 
 
-## Wireframe de las siguientes páginas: 
+## Wireframe de las siguientes secciones del sitio: 
     - Home 
     - Detalle de producto 
     - Carrito de compras 
