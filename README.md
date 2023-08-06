@@ -36,4 +36,4 @@ HardGamers puede ser útil para nuestro proyecto en términos de cómo presentar
     - Formulario de registro 
     - Formulario de login
 
-En el siguiente link de pueden visualizar los wireframes mencionados.
+En el siguiente link de pueden visualizar los wireframes mencionados: (https://www.figma.com/file/u6Hz7VyQVvdIiOdcqceAxY/Proyecto-Integrador?type=design&node-id=136%3A2&mode=design&t=P5xznL8juav5jaag-1)
