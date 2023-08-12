@@ -3,6 +3,10 @@
 ## URL del repositorio
 [RepositorioGrupo10](https://github.com/0623CIFSNCN05LAED/grupo-10)
 
+## URL Tablero Trello
+[TableroGrupo10](https://trello.com/b/StaSBT8I/proyectointegradorg10)
+
+
 ## Temática del sitio
 Tienda en línea de componentes de PC, dispositivos móviles y accesorios.  
 Nuestro sitio web ofrecerá una amplia gama de componentes de PC, los últimos dispositivos móviles y accesorios relacionados. Además, ofreceremos una función interactiva de "Arma tu PC" que permite a los usuarios seleccionar y visualizar componentes para construir su propia PC personalizada.
