@@ -6,7 +6,7 @@
 
 -**Reunirnos los sabados:** 1 pm colombia / 3 pm Argentina
 
-## continuar Haciendo
+## Continuar Haciendo
 -**Motivarnos:** apoyarnos unos a otros
 
 ## Hacer menos
