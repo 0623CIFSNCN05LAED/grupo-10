@@ -90,4 +90,34 @@ aside{
     /* Vamos a añadir esto 👇 */
     scroll-snap-align: center;
   }
-  
+  /*--------- FOOTER -------------*/
+.h-foot { 
+    text-align: center;
+    list-style: none;
+    background-color: #0A74DA;
+    color: #222222;;
+  }
+  .h-foot-icon{
+    display: flex;
+    justify-content:center; 
+    
+  }
+  .h-foot-icon li{
+    margin: 0 20px;
+    list-style: none; 
+  }
+  .h-foot .informacion a{
+    text-decoration: none;
+    color: #222222;
+  }
+  .fa-square-twitter{
+    color: black;
+  }
+  .fa-square-instagram{
+    color: black;
+  }
+  .fa-facebook{
+    color: black;
+  }
+
+/* ------------------------------ */
