@@ -6,9 +6,64 @@
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <title>Registrate</title>
 </head>
 <body>
+    <header class="reg-header">
+        <a href="/">
+            <img src="/images/logo.png" alt="logo HorizonX"  class="reg-header-logo">
+        </a>
+    </header>
+    <hr class="reg-linea">
+    <main class="reg-form-main">
+        <form action="/registro" method="post">
+            <div class="reg-mb-15">
+                <span class="reg-span">Registrate</span>
+            </div>
+            
+            <div class="reg-mb-15">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Nombre y apellido" required class="reg-form-input">
+            </div>
+            <div class="reg-mb-15">
+                <label for="user_name"></label>
+                <input type="text" name="user_name" id="user_name" placeholder="Nombre de usuario" required class="reg-form-input">
+            </div>
+            <div class="reg-mb-15">
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required class="reg-form-input">
+            </div>
+            <div class="reg-mb-15">
+                <label for="email_repeat"></label>
+                <input type="email" name="email_repeat" id="email_repeat" placeholder="Repetir correo electrónico" required class="reg-form-input">
+            </div>
+            <div class="reg-mb-15">
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="Ingresá tu contraseña" required class="reg-form-input">
+            </div>
+            <div class="reg-mb-15">
+                <label for="password_repeat"></label>
+                <input type="password_repeat" name="password_repeat" id="password_repeat" placeholder="Repetir contraseña" required class="reg-form-input">
+            </div>
+            <div class="reg-mb-15 reg-flex">
+                <!-- Agregar enlace a archivo con política de provacidad y agregar validación checkbox que habilite boton enviar -->
+                <input type="checkbox" name="privacy_policy" id="privacy_policy">
+                <label for="privacy_policy" class="reg-policy">Hé leído y acepto la <a href="#">política de privacidad.</a></label>
+            </div>
+            <div class="reg-mb-15 reg-flex">
+                <button type="submit" class="reg-button">Crear Cuenta</button>
+            </div>           
+            <div class="reg-mb-15">
+                <span class="reg-span">¿ya tenés una cuenta?</span>
+            </div>
+            <div class="reg-mb-15 reg-flex">
+                <!-- Agregar enlace al menu de login -->
+                <button type="button" class="reg-button-login">Iniciar Sesion</button>
+            </div> 
+
+        </form>
+        
+    </main>
     
 </body>
 </html>
