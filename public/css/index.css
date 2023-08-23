@@ -95,7 +95,7 @@ aside{
     text-align: center;
     list-style: none;
     background-color: #0A74DA;
-    color: #222222;;
+    color: #4A4A4A;;
   }
   .h-foot-icon{
     display: flex;
@@ -118,6 +118,11 @@ aside{
   }
   .fa-facebook{
     color: black;
+  }
+  .copi{
+    /* display: flex; */
+    text-align: center;
+    border-top: solid 1px #4A4A4A; 
   }
 
 /* ------------------------------ */
