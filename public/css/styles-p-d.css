@@ -25,11 +25,13 @@ header {
 
 .logo {
     margin-right: 10px;
+
 }
 
 .logo img {
     max-width: 60px;
     height: auto;
+    border-radius: 5%;
 }
 
 .mobile-menu {
