@@ -18,12 +18,16 @@
 }*/
 
 
-nav span i{
+div .icon-nav i{
     color: white;
-    font-size: 2.7rem;
-    cursor: pointer;
+    font-size: 2rem;
+}
+div .nav-bar-pc-m i{
+  color: white;
+  font-size: 2rem;
 }
 aside{
+  display: none;
     background-color: #B0B0B0;
     top: 0;
     left: 0;
@@ -59,8 +63,11 @@ aside{
     justify-content: end;
     align-content: end;
     justify-items: flex-end;
-
-}
+  
+  }
+  .nav-bar-pc{
+    display: none;
+  }
 /*Logo/*/
 .hlogo{
     margin-top: 15px;
@@ -79,50 +86,108 @@ aside{
     width: 100%;
     height: 45vh;
     overflow-x: scroll;
-  
+
     /* Vamos a añadir esto 👇 */
     scroll-snap-type: x mandatory;
   }
-  
+
   .slider-container img {
     flex: 0 0 100%;
-  
+
     /* Vamos a añadir esto 👇 */
     scroll-snap-align: center;
   }
+
+  /*------IMG BANNER  ACCESORIOS----- */
+.accesorios{
+  width: 100vw;
+  height: 30vh;
+  position: relative;
+}
+
+
+  /* ------------------------------- */
+  /* -------NAVIGATION BAR CEL-TABLE-------- */
+.nav-bar{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0px;
+  background-color: #FFFFFF;
+}
+.nav-bar i{
+  color: black;
+}
+
+
   /*--------- FOOTER -------------*/
-.h-foot { 
+  footer{
+    background-color: #0A74DA ;
+  }
+.h-foot {
+    margin-bottom: 20px;
     text-align: center;
     list-style: none;
-    background-color: #0A74DA;
-    color: #4A4A4A;;
+    background-color: #0A74DA ;
+    color: white;;
   }
   .h-foot-icon{
     display: flex;
-    justify-content:center; 
-    
+    justify-content:center;
+
   }
   .h-foot-icon li{
     margin: 0 20px;
-    list-style: none; 
+    list-style: none;
   }
   .h-foot .informacion a{
     text-decoration: none;
-    color: #222222;
+    color: white;
   }
   .fa-square-twitter{
-    color: black;
+    color: white;
   }
   .fa-square-instagram{
-    color: black;
+    color: white;
   }
   .fa-facebook{
-    color: black;
+    color: white;
   }
+  
   .copi{
-    /* display: flex; */
+    margin-bottom: 45px;
     text-align: center;
-    border-top: solid 1px #4A4A4A; 
+    border-top: solid 1px #4A4A4A;
+    color: white;
   }
-
 /* ------------------------------ */
+
+@media(min-width:1220px){
+  .nav-bar{
+    display: none;
+  }
+ .h-foot{
+  display: flex;
+  justify-content: space-around;
+ }
+ ul{
+  list-style: none;
+}
+  .copi{
+   text-align: center;
+   margin-bottom: 0;
+  } 
+  .nav-bar-pc{
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar-pc a{
+    color: white;
+  }  
+ /* .h-open-close{
+      display: none;
+  } */
+}
