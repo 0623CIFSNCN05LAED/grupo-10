@@ -22,7 +22,7 @@ div .icon-nav i{
     color: white;
     font-size: 2rem;
 }
-div .nav-bar-pc-m i{
+div .nav-bar-pc i{
   color: white;
   font-size: 2rem;
 }
@@ -156,64 +156,38 @@ aside{
   .fa-facebook{
     color: white;
   }
-  .tarjeta{
-    align-items: center;
-
-    flex-direction: column;
-    background-color: white;
-    width: 290px;
-    height: 230px;
-    border: #B0B0B0 solid;
-    border-radius: 10px;
-    margin: 10px;
-  }
-  .tarjeta:hover{
-    -webkit-box-shadow: -2px -4px 20px 0px rgba(122,120,122,1);
-    -moz-box-shadow: -2px -4px 20px 0px rgba(122,120,122,1);
-    box-shadow: -2px -4px 20px 0px rgba(122,120,122,1);
-  }
-  .tarjetas{
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-   }
-  .img-tarjeta img{
-    width: 100%;
-    height: 170px;
-    border-bottom: #4A4A4A solid;
-    border-radius:8px 8px 0px 0px;
-  }
   
-  .titular-2{
-    margin-top: 15px;
-    margin-left: 15px;
+  .copi{
+    margin-bottom: 45px;
+    text-align: center;
+    border-top: solid 1px #4A4A4A;
+    color: white;
   }
-  .tarjetas a{
+/* ------------------------------ */
 
-    text-decoration: none;
-    color:#4A4A4A;
-    font-weight: bold;
+@media(min-width:1220px){
+  .nav-bar{
+    display: none;
   }
-/* -------------tarjetas de producto, los mas buscado----------------- */
-.tarjeta-producto{
-  align-items: center;
-
-  flex-direction: column;
-  background-color: white;
-  width: 290px;
-  height: 320px;
-  border: #B0B0B0 solid;
-  border-radius: 10px;
-  margin: 10px;
+ .h-foot{
+  display: flex;
+  justify-content: space-around;
+ }
+ ul{
+  list-style: none;
 }
-.descripcion-tarjeta{
-  text-align: center;
-  margin: 10px;
-  font-size: 20px;
-  font-weight: 500;
-}
-.tarjeta-producto:hover{
-  -webkit-box-shadow: -2px -4px 20px 0px rgba(122,120,122,1);
-  -moz-box-shadow: -2px -4px 20px 0px rgba(122,120,122,1);
-  box-shadow: -2px -4px 20px 0px rgba(122,120,122,1);
+  .copi{
+   text-align: center;
+   margin-bottom: 0;
+  } 
+  .nav-bar-pc{
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar-pc a{
+    color: white;
+  }  
+ /* .h-open-close{
+      display: none;
+  } */
 }
