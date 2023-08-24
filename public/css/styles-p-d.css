@@ -1,0 +1,188 @@
+/* Estilos generales product-detail */
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #4a4a4a;
+}
+
+/* Estilos del header product-detail */
+header {
+    background-color: #0a74da;
+    color: white;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    margin-right: 10px;
+
+}
+
+.logo img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 5%;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+    /* Amarillo */
+}
+
+/* Estilos específicos product-detail */
+.product {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.product-image {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Espacio entre imagen y detalles */
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product h1 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #0a74da;
+    /* Azul oscuro */
+}
+
+.product p.price {
+    font-size: 1.1em;
+    color: #ffd700;
+    /* Amarillo */
+    margin-bottom: 15px;
+}
+
+.product p.description {
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-to-cart,
+.buy-now {
+    background-color: #0a74da;
+    /* Azul oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    /* Espacio entre botones */
+}
+
+.buy-now {
+    background-color: #32cd32;
+    /* Verde lima */
+}
+
+.add-to-cart:hover,
+.buy-now:hover {
+    background-color: #0965a1;
+    /* Azul oscuro más oscuro */
+}
+
+footer {
+    background-color: #0a74da;
+    /* Azul oscuro */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Estilos de la sección de redes sociales product-detail*/
+.social-ad {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-ad h2 {
+    margin-bottom: 10px;
+    color: #4a4a4a;
+    /* Gris oscuro */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: auto;
+}
