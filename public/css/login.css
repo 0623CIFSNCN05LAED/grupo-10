@@ -1,0 +1,232 @@
+body {
+    font-family: "Helvetica", sans-serif;
+    }
+    
+    /* estilos de formulario login */
+    
+    .log-header {
+        background-color: #ffffff;
+    }
+    
+    .log-header-logo {
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        margin: 5px auto;
+        border-radius: 5%;
+    }
+    
+    .log-form-main {
+        padding:20px 15px;
+    }
+    
+    .log-mb-15 {
+        margin-bottom: 15px;
+    }
+    
+    .log-mt-15 {
+        margin-top: 15px;
+    }
+    
+    .log-flex {
+        display: flex;
+    }
+
+    .log-wrap {
+        flex-wrap: wrap;
+    }
+
+      
+    .log-form-input {
+        width: 100%;
+        border-radius: 5px;
+        border: #B0B0B0 solid 1px;
+        color:#B0B0B0;
+        font-size: 12px;
+        font-style: italic;
+        padding: 10px;
+    }
+    
+    .log-linea {
+        margin:5px auto;
+        width:100%;    
+        border-top:2px solid #B0B0B0;
+    }
+    
+    .log-span {
+        font-size: 0.95rem;
+        display: block;
+        text-align: center;
+    }
+
+    .log-span2 {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+    }
+  
+    .log-button {
+        background-color: #0A74DA;
+        color:#ffffff;
+        border:none;
+        border-radius: 4px;
+        font-size: 20px;
+        padding: 10px;
+        flex-grow: 0.6;
+    }
+    
+    .log-button-login {
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: #B0B0B0 solid 1px;
+        color:#4A4A4A;
+        font-size: 15px;
+        padding: 10px;
+        flex-grow: 1;
+    }
+    
+  input:invalid:hover {
+    border:#ffd700 solid 2px;
+  }
+
+  .log-hidden {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  
+  .log-w-40{
+    width: 40%;
+  }
+
+  .log-w-60{
+    width: 60%;
+  }
+
+  .log-w-100px{
+    width: 100px;
+  }
+
+  .log-w-100 {
+    width: 100%;
+  }
+
+  .log-sp-around {
+    justify-content: space-around;
+  }
+
+  .log-jc-center {
+    justify-content: center;
+  }
+
+  .log-ai-fstart {
+    align-items: flex-start;
+  }
+
+  .log-f-2rem {
+    font-size: 2rem;
+  }
+
+  .log-f-12 {
+    font-size: 12px;
+  }
+
+  .log-mg-20 {
+    margin: 20px;
+  }
+
+  .log-mg-10-0 {
+    margin: 10px 0;
+  }
+
+  .log-mg-0-10 {
+    margin: 0 10px;
+  }
+
+  .log-mgt-10 {
+    margin-top: 10px;
+  }
+
+  .log-mgt-30 {
+    margin-top: 30px;
+  }
+
+  .log-w-600 {
+    font-weight: 600;
+  }
+
+  .log-linea {
+    margin:5px auto;
+    width:100%;    
+    border-top:2px solid #B0B0B0;
+   }
+
+   .log-cbox {
+    width: 100%;
+    border: none;
+    color:#4A4A4A;
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.log-grow-70{
+    flex-grow: 0.6;
+}
+   
+  @media (min-width: 520px) {
+
+  }
+
+  @media (min-width:1280px) {
+    /*body {
+        width:50vw;
+        margin:auto;
+    }*/
+
+    /*.log-header-logo {
+        width: 15%;
+    }*/
+
+    .log-span {
+        font-size: 1.25rem;
+    }
+
+    .log-span2 {
+        font-size: 1rem;
+    }
+
+    .log-lg-f-1rem {
+        font-size: 1rem;
+    }
+
+    .log-form-input {
+        font-size: 16px;
+    }
+
+    .log-mt-40 {
+        margin-top: 40px;
+    }
+
+    .log-lg-flex {
+        display: flex;
+    }
+
+    .log-lg-alig-center {
+        align-self: center;
+    }
+
+    .log-lg-w-300 {
+        width: 300px;
+    }
+
+    .log-lg-w-100 {
+        width: 100%;
+    }
+
+}
+
+    /* fin de estilos formulario login*/
+    
