@@ -4,11 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <title>Ingresá</title>
 </head>
 <body>
+    <header class="hcolor-header h-header">
+        <div class="final">
+            <nav class="menu flex hend">
+                <div class="hlogo">
+                    <img src="/images/Frame.png" alt="" />
+                </div>
+                <div class="nav-bar-pc"><a href="">Lo ultimo</a></div>
+                <div class="nav-bar-pc"><a href="">Celulares</a></div>
+                <div class="nav-bar-pc"><a href="">PCs</a></div>
+                <div class="nav-bar-pc"><a href="">Accesorios</a></div>
+                <!-- <div class="icon-nav-pc nav-bar-pc"> -->
+                    <div class="nav-bar-pc icon-nav-pc"><a href="/login"><i class="fa-solid fa-user"></i></a></div>
+                    <div class="nav-bar-pc icon-nav-pc"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
+                    <div class="nav-bar-pc icon-nav-pc"><a href="/productDetail"><i class="fa-solid fa-cart-shopping"></i></a></div> 
+                <!-- </div> -->
+                <!-- <div class="m-1">
+                 -->
+                <div class="h-open-close nav-bar-pc ham">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            </nav>
+            <!-- <aside id="aside" class="flex fin">
+                <div class="container-svg h-enlaces">
+                    <a href="">Lo ultimo</a>
+                    <a href="">Celulares</a>
+                    <a href="">PCs</a>
+                    <a href="">Accesorios</a>
+                    <a href="">Arma Tu PC</a>
+                </div>
+            </aside> -->
+        </div>
+    </header>
+    <main class="log-form-main log-lg-flex log-sp-around log-mt-40">
+        <div class="log-flex log-jc-center log-mg-10-0">
+            <img src="/images/login.png" alt="imagen login" class="log-w-100px log-lg-alig-center log-lg-w-300">
+        </div>
+        <form action="/index" method="post" class="log-grow-70">
+            <div class="log-mb-15">
+                <span class="log-span log-w-600">Bienvenido a HorizonX</span>
+            </div>
+            
+            <div class="log-mb-15">
+                <label for="user_name"></label>
+                <input type="text" name="user_name" id="user_name" placeholder="E-mail o Nombre de usuario" required class="log-form-input">
+            </div>
+            
+            <div class="log-mb-15">
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="Contraseña" required class="log-form-input">
+            </div>
+
+            <span class="log-span2 log-f-12 "><a href="#">¿Olvidaste tu contraseña?</a></span> 
+             
+            <div class="log-flex log-jc-center log-ai-fstart log-mgt-30 log-wrap">
+                <div class="log-mb-15 log-w-60">
+                    <button type="submit" class="log-button log-w-100">Login</button>
+                    <div class="log-mb-15 log-flex log-mgt-10">
+                        <input type="checkbox" name="remember-me" id="remember-me">
+                        <label for="remember-me" class="log-cbox log-f-12 log-lg-f-1rem">Recordarme</a></label>
+                    </div>
+                </div>
+
+                <div class="log-mb-15 log-flex log-wrap log-jc-center log-w-40">
+                    <!-- Agregar enlace al menu de registro -->
+                    <button type="button" class="log-button-login log-mg-0-10 log-lg-w-100"><a href="/register">Registrate</a></button>
+                    <span class="log-f-12 log-mgt-10 log-lg-f-1rem">¿No tenés una cuenta?</span>
+                </div>
+                
+            </div>
+
+
+            <hr class="log-linea">
+            <span class="log-span log-mgt-30 log-w-600">O ingresá con tus redes</span>
+            <div class="log-flex log-sp-around log-f-2rem log-mg-20">
+                
+                <!-- Agregar API para loguearse credenciales de redes sociales -->
+                <a href="#"><i class="fa-brands fa-square-instagram" style="color: #0a74da;"></i></i></a>
+                <a href="#"><i class="fa-brands fa-google" style="color: #0a74da;"></i></a>
+                <a href="#"><i class="fa-brands fa-square-facebook" style="color: #0a74da;"></i></a>
+                
+            </div>
+                    
+        </form>
+        
+    </main>
     
+    <footer>
+
+    </footer>
 </body>
 </html>
