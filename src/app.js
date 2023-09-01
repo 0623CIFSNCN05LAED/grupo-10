@@ -1,30 +1,19 @@
-const express = require(`express`);
-const path = require(`path`);
-const app = express();
+const express = require("express");
+const path = require("path");
 
-app.use(express.static(path.join(__dirname,`../public`)));
+
+const mainRoute = require("./routes/main-router")
+
+
+const app = express();
 
 const PORT = 4001;
 app.listen(PORT, function(){
     console.log(`servidor corriendo en el puerto ${PORT}`)
 });
 
-app.get(`/`, function(req,res){
-    res.sendFile(path.join(__dirname,`views/index.html`))
-});
+app.set("view engine", "ejs");
+app.set("views", "./src/views");
 
-app.get(`/productDetail`, function(req,res){
-    res.sendFile(path.join(__dirname,`views/productDetail.html`))
-});
-
-app.get(`/productCart`, function(req,res){
-    res.sendFile(path.join(__dirname,`views/productCart.html`))
-});
-
-app.get(`/register`, function(req,res){
-    res.sendFile(path.join(__dirname,`views/register.html`))
-});
-
-app.get(`/login`, function(req,res){
-    res.sendFile(path.join(__dirname,`views/login.html`))
-});
+app.use(express.static(path.join(__dirname,"../public")));
+app.use(mainRoute);
