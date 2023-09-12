@@ -25,39 +25,8 @@
     <title>Ingresá</title>
 </head>
 <body>
-    <header class="hcolor-header h-header">
-        <div class="final">
-            <nav class="menu flex hend">
-                <div class="hlogo">
-                    <img src="/images/Frame.png" alt="" />
-                </div>
-                <div class="nav-bar-pc"><a href="">Lo ultimo</a></div>
-                <div class="nav-bar-pc"><a href="">Celulares</a></div>
-                <div class="nav-bar-pc"><a href="">PCs</a></div>
-                <div class="nav-bar-pc"><a href="">Accesorios</a></div>
-                <!-- <div class="icon-nav-pc nav-bar-pc"> -->
-                    <div class="nav-bar-pc icon-nav-pc"><a href="/login"><i class="fa-solid fa-user"></i></a></div>
-                    <div class="nav-bar-pc icon-nav-pc"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-                    <div class="nav-bar-pc icon-nav-pc"><a href="/productDetail"><i class="fa-solid fa-cart-shopping"></i></a></div> 
-                <!-- </div> -->
-                <!-- <div class="m-1">
-                 -->
-                <div class="h-open-close nav-bar-pc ham">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-            </nav>
-            <!-- <aside id="aside" class="flex fin">
-                <div class="container-svg h-enlaces">
-                    <a href="">Lo ultimo</a>
-                    <a href="">Celulares</a>
-                    <a href="">PCs</a>
-                    <a href="">Accesorios</a>
-                    <a href="">Arma Tu PC</a>
-                </div>
-            </aside> -->
-        </div>
-    </header>
+    <%- include("../partials/header") %>
+    
     <main class="log-form-main log-lg-flex log-sp-around log-mt-40">
         <div class="log-flex log-jc-center log-mg-10-0">
             <img src="/images/login.png" alt="imagen login" class="log-w-100px log-lg-alig-center log-lg-w-300">
@@ -112,8 +81,8 @@
         
     </main>
     
-    <footer>
-
+    <footer class="foot">
+        <%- include("../partials/footer") %>
     </footer>
 </body>
 </html>
