@@ -79,8 +79,10 @@ body {
     .reg-button-login {
         border-radius: 4px;
         background-color: #ffffff;
-        border: #B0B0B0 solid 1px;
-        color:#4A4A4A;
+       /* border: #B0B0B0 solid 1px;*/
+       border:#0A74DA solid 1px;
+       /* color:#4A4A4A;*/
+       color:#0A74DA;
         font-size: 20px;
         padding: 10px;
         flex-grow: 0.15;
@@ -113,7 +115,17 @@ body {
   }
   
   @media (min-width: 520px) {
-
+    .reg-md-flex {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .reg-md-prod {
+        margin-bottom: 15px;
+        width: 45%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
   }
 
   @media (min-width:1280px) {
