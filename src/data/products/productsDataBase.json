@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "nombre": "iPhone 13",
+    "precio": 999.99,
+    "marca": "Apple",
+    "categoria": "celulares",
+    "descripcion": "Smartphone de Última generación con pantalla OLED.",
+    "masBuscado": true,
+    "imagen": "Iphone13.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Galaxy S22",
+    "precio": 899.99,
+    "marca": "Samsung",
+    "categoria": "celulares",
+    "descripcion": "Potente smartphone con cámara de alta resolución.",
+    "masBuscado": false,
+    "imagen": "galaxyS22.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Pixel 6",
+    "precio": 799.99,
+    "marca": "Google",
+    "categoria": "celulares",
+    "descripcion": "Experiencia Android pura con excelente cámara.",
+    "masBuscado": true,
+    "imagen": "pixel6.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "OnePlus 9",
+    "precio": 749.99,
+    "marca": "OnePlus",
+    "categoria": "celulares",
+    "descripcion": "Diseño elegante con carga rápida.",
+    "masBuscado": false,
+    "imagen": "onePlus9.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Xiaomi Mi 11",
+    "precio": 699.99,
+    "marca": "Xiaomi",
+    "categoria": "celulares",
+    "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
+    "masBuscado": true,
+    "imagen": "xiaomiMi11.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "MacBook Pro",
+    "precio": 1299.99,
+    "marca": "Apple",
+    "categoria": "pcs",
+    "descripcion": "Portátil potente con chip M1.",
+    "masBuscado": false,
+    "imagen": "mcBookPro.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Dell XPS 13",
+    "precio": 1199.99,
+    "marca": "Dell",
+    "categoria": "pcs",
+    "descripcion": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
+    "masBuscado": true,
+    "imagen": "dellXPS13.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Lenovo ThinkPad X1",
+    "precio": 1249.99,
+    "marca": "Lenovo",
+    "categoria": "pcs",
+    "descripcion": "Ideal para negocios con teclado de alta calidad.",
+    "masBuscado": false,
+    "imagen": "lenovoTPadX1.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "HP Spectre x360",
+    "precio": 1149.99,
+    "marca": "HP",
+    "categoria": "pcs",
+    "descripcion": "Convertible con diseño premium y pantalla táctil.",
+    "masBuscado": true,
+    "imagen": "hpSpectre.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "ASUS ZenBook Duo",
+    "precio": 1349.99,
+    "marca": "ASUS",
+    "categoria": "pcs",
+    "descripcion": "Doble pantalla para multitasking avanzado.",
+    "masBuscado": false,
+    "imagen": "azusZenBook.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Cargador rápido USB-C",
+    "precio": 29.99,
+    "marca": "Anker",
+    "categoria": "accesorios",
+    "descripcion": "Cargador de 30W con tecnología Power Delivery.",
+    "masBuscado": true,
+    "imagen": "cargadorRapidoC.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Teclado Mecánico RGB",
+    "precio": 59.99,
+    "marca": "Corsair",
+    "categoria": "accesorios",
+    "descripcion": "Teclado con retroiluminación y teclas Cherry MX.",
+    "masBuscado": false,
+    "imagen": "tecladoMecanicoRGB.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Auriculares Bluetooth",
+    "precio": 79.99,
+    "marca": "Sony",
+    "categoria": "accesorios",
+    "descripcion": "Sonido de alta calidad con cancelación de ruido.",
+    "masBuscado": true,
+    "imagen": "auricBluetooth.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Mouse Gamer",
+    "precio": 49.99,
+    "marca": "Logitech",
+    "categoria": "accesorios",
+    "descripcion": "Precisión para juegos con múltiples botones programables.",
+    "masBuscado": false,
+    "imagen": "mouseGamerLog.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Funda para Laptop",
+    "precio": 24.99,
+    "marca": "Case Logic",
+    "categoria": "accesorios",
+    "descripcion": "Protección y estilo para tu portátil.",
+    "masBuscado": true,
+    "imagen": "fundaLaptopCase.jpg"
+  }
+]
