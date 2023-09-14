@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main>
+      <div>
+        <h4 class="reg-form-main reg-span">
+          Formulario de creación de productos:
+        </h4>
+      </div>
+      <div class="reg-form-main reg-flex reg-flex-center">
+        <form action="/unaRuta" method="post" class="reg-grow-70 reg-md-flex">
+          <div class="reg-mb-15 reg-md-prod">
+            <label>Nombre:</label>
+            <input
+              type="text"
+              name="nombre"
+              placeholder="nombre del producto"
+              class="reg-form-input"
+            />
+          </div>
+
+          <div class="reg-mb-15 reg-md-prod">
+            <label>Precio:</label>
+            <input
+              type="number"
+              name="precio"
+              placeholder="123.45"
+              class="reg-form-input"
+            />
+          </div>
+
+          <div class="reg-mb-15 reg-md-prod">
+            <label>Marca:</label>
+            <select name="marca" class="reg-form-input">
+              <option value="marca1">Marca1</option>
+              <option value="marca2">Marca2</option>
+              <option value="marca3">Marca3</option>
+              <option value="marca4">Marca4</option>
+            </select>
+          </div>
+
+          <div class="reg-mb-15 reg-md-prod">
+            <label>Categoría:</label>
+            <select name="categoria" class="reg-form-input">
+              <option value="celulares">Celulares</option>
+              <option value="pc">PCs</option>
+              <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+
+          <div class="reg-mb-15 reg-md-prod">
+            <label>Descripción:</label>
+            <textarea
+              name="descripcion"
+              maxlength="500"
+              placeholder="describi el producto"
+              class="reg-form-input"
+            ></textarea>
+          </div>
+
+          <div class="reg-mb-15 reg-md-prod">
+            <label for="imagen">Imagen del producto:</label>
+            <input
+              type="file"
+              name="imagen"
+              id="imagen"
+              class="reg-form-input"
+            />
+          </div>
+
+          <div class="reg-mb-15 reg-md-prod">
+            <label>Producto más buscado? :</label>
+            <input type="radio" name="masBuscado" />
+          </div>
+
+          <div class="reg-mb-15">
+            <button type="submit" class="reg-button">Crear Producto</button>
+
+            <button type="reset" class="reg-button-login">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="h-foot"><%- include('../partials/footer') %></footer>
+  </body>
+</html>

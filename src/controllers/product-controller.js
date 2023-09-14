@@ -7,4 +7,7 @@ module.exports = {
     productDetail: (req, res) => {
         res.render("products/productDetail")
     },
+    productCreate: (req,res) => {
+        res.render("products/productCreate")
+    },
 };
