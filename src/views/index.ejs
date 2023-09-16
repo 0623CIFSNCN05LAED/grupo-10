@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("partials/head") %>
+    <%- include("partials/head", {title: 'Inicio'}) %>
   </head>
 
   <body>
@@ -44,10 +44,12 @@
         </div>
       </div>
     </section>
-    <section >
-        <div class="accesorios">
-            <a href="#"><img class="accesorios" src="\images\banner.png" alt=""></a>
-        </div>
+    <section>
+      <div class="accesorios">
+        <a href="#"
+          ><img class="accesorios" src="\images\banner.png" alt=""
+        /></a>
+      </div>
     </section>
     <section>
       <h3 class="titular-2">Lo mas buscado</h3>
@@ -65,7 +67,6 @@
             de RAM) - Gris espacial
           </p>
           <h3>$203.000</h3>
-        
         </div>
         <div class="tarjeta-producto flex">
           <div class="img-tarjeta">
@@ -90,20 +91,26 @@
           <div class="img-tarjeta">
             <img src="/images/audifonos.png" alt="" width="" />
           </div>
-          <p class="descripcion-tarjeta">Características de Harman JBL Tune 510BT JBLT510BT</p>
+          <p class="descripcion-tarjeta">
+            Características de Harman JBL Tune 510BT JBLT510BT
+          </p>
           <h3>$80.000</h3>
         </div>
       </div>
     </section>
     <script src="/src/barra.js"></script>
     <div class="nav-bar">
-        <div><a href="/login"><i class="fa-solid fa-user"></i></a></div>
-        <div><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-        <div><a href="/productDetail"><i class="fa-solid fa-cart-shopping"></i></a></div>       
+      <div>
+        <a href="/login"><i class="fa-solid fa-user"></i></a>
+      </div>
+      <div>
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+      <div>
+        <a href="/productDetail"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
     </div>
-    
-    <footer class="foot">
-      <%- include("partials/footer") %>
-    </footer>
+
+    <footer class="foot"><%- include("partials/footer") %></footer>
   </body>
 </html>
