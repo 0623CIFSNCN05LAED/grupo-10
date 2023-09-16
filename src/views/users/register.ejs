@@ -1,89 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    >
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    >
-    <link rel="stylesheet" href="/css/register.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    />
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>Registrate</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("../partials/header") %>
-    
-    <main class="reg-form-main reg-flex reg-flex-center">
-        <div class="reg-hidden" >
-            <img src="/images/reg-crear-cuenta.png" alt="imagen registro">
-        </div>
-        <form action="/registro" method="post" class="reg-grow-70">
-            <div class="reg-mb-15">
-                <span class="reg-span reg-font-w-600">Registrate</span>
-            </div>
-            
-            <div class="reg-mb-15">
-                <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Nombre y apellido" required class="reg-form-input">
-            </div>
-            <div class="reg-mb-15">
-                <label for="user_name"></label>
-                <input type="text" name="user_name" id="user_name" placeholder="Nombre de usuario" required class="reg-form-input">
-            </div>
-            <div class="reg-mb-15">
-                <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" required class="reg-form-input">
-            </div>
-            <div class="reg-mb-15">
-                <label for="email_repeat"></label>
-                <input type="email" name="email_repeat" id="email_repeat" placeholder="Repetir correo electrónico" required class="reg-form-input">
-            </div>
-            <div class="reg-mb-15">
-                <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Ingresá tu contraseña" required class="reg-form-input">
-            </div>
-            <div class="reg-mb-15">
-                <label for="password_repeat"></label>
-                <input type="password_repeat" name="password_repeat" id="password_repeat" placeholder="Repetir contraseña" required class="reg-form-input">
-            </div>
-            <div class="reg-mb-15 reg-flex">
-                <!-- Agregar enlace a archivo con política de privacidad y agregar validación checkbox que habilite boton enviar -->
-                <input type="checkbox" name="privacy_policy" id="privacy_policy">
-                <label for="privacy_policy" class="reg-policy">Hé leído y acepto la <a href="#">política de privacidad.</a></label>
-            </div>
-            <div class="reg-mb-15 reg-flex">
-                <button type="submit" class="reg-button">Crear Cuenta</button>
-            </div>
-            <div>
-                <hr class="reg-linea">
-            </div>           
-            <div class="reg-mb-15">
-                <span class="reg-span">¿ya tenés una cuenta?</span>
-            </div>
-            <div class="reg-mb-15 reg-flex">
-                <!-- Agregar enlace al menu de login -->
-                <button type="button" class="reg-button-login"><a href="/login">Iniciar Sesion</a></button>
-            </div> 
 
-        </form>
-        
+    <main class="reg-form-main reg-flex reg-flex-center">
+      <div class="reg-hidden">
+        <img src="/images/reg-crear-cuenta.png" alt="imagen registro" />
+      </div>
+      <form action="/registro" method="post" class="reg-grow-70">
+        <div class="reg-mb-15">
+          <span class="reg-span reg-font-w-600">Registrate</span>
+        </div>
+
+        <div class="reg-mb-15">
+          <label for="name"></label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nombre y apellido"
+            required
+            class="reg-form-input"
+          />
+        </div>
+        <div class="reg-mb-15">
+          <label for="user_name"></label>
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            placeholder="Nombre de usuario"
+            required
+            class="reg-form-input"
+          />
+        </div>
+        <div class="reg-mb-15">
+          <label for="email"></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+            class="reg-form-input"
+          />
+        </div>
+        <div class="reg-mb-15">
+          <label for="email_repeat"></label>
+          <input
+            type="email"
+            name="email_repeat"
+            id="email_repeat"
+            placeholder="Repetir correo electrónico"
+            required
+            class="reg-form-input"
+          />
+        </div>
+        <div class="reg-mb-15">
+          <label for="password"></label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Ingresá tu contraseña"
+            required
+            class="reg-form-input"
+          />
+        </div>
+        <div class="reg-mb-15">
+          <label for="password_repeat"></label>
+          <input
+            type="password_repeat"
+            name="password_repeat"
+            id="password_repeat"
+            placeholder="Repetir contraseña"
+            required
+            class="reg-form-input"
+          />
+        </div>
+        <div class="reg-mb-15 reg-flex">
+          <!-- Agregar enlace a archivo con política de privacidad y agregar validación checkbox que habilite boton enviar -->
+          <input type="checkbox" name="privacy_policy" id="privacy_policy" />
+          <label for="privacy_policy" class="reg-policy"
+            >Hé leído y acepto la <a href="#">política de privacidad.</a></label
+          >
+        </div>
+        <div class="reg-mb-15 reg-flex">
+          <button type="submit" class="reg-button">Crear Cuenta</button>
+        </div>
+        <div>
+          <hr class="reg-linea" />
+        </div>
+        <div class="reg-mb-15">
+          <span class="reg-span">¿ya tenés una cuenta?</span>
+        </div>
+        <div class="reg-mb-15 reg-flex">
+          <!-- Agregar enlace al menu de login -->
+          <button type="button" class="reg-button-login">
+            <a href="/users/login">Iniciar Sesion</a>
+          </button>
+        </div>
+      </form>
     </main>
-    <footer class="foot">
-        <%- include("../partials/footer") %>
-      </footer>
-</body>
+    <footer class="foot"><%- include("../partials/footer") %></footer>
+  </body>
 </html>

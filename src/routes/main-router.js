@@ -5,9 +5,9 @@ const router = Router();
 router.get("/", mainController.home);
 
 const productRouter = require("../routes/product-router");
-router.use(productRouter);
+router.use("/products", productRouter);
 
 const userRouter = require("./user-router");
-router.use(userRouter);
+router.use("/users", userRouter);
 
 module.exports = router;
