@@ -20,6 +20,7 @@ a{
 }*/
 
 
+
 div .icon-nav i{
     color: white;
     font-size: 2rem;
@@ -108,6 +109,9 @@ aside{
   position: relative;
 }
 
+a{
+  text-align: center;
+}
 
   /* ------------------------------- */
   /* -------NAVIGATION BAR CEL-TABLE-------- */
