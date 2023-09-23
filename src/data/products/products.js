@@ -20,7 +20,7 @@ module.exports={
       const lastProduct = [products.length - 1];
       const bigIdProduct = lastProduct.id;
       const newProduct = {
-        // id : bigIdProduct + 1,
+     
         id:
         uuidv4(),
          ...product

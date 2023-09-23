@@ -148,14 +148,6 @@
     "descripcion": "Protección y estilo para tu portátil.",
     "masBuscado": true,
     "imagen": "fundaLaptopCase.jpg"
-  },
-  {
-    "id": "56a0c4db-820c-44ba-aaa9-b5944dc54cdf",
-    "nombre": "PRODUCTO PRUEBA",
-    "precio": 1234,
-    "marca": "Lenovo",
-    "categoria": "pc",
-    "descripcion": "ESTO ES UNA PRUEBA",
-    "imagen": "lenovoTPadX1.jpg"
   }
+ 
 ]

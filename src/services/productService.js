@@ -1,6 +1,7 @@
 const db = require("../data/db");
 
 const productService = {
+<<<<<<<<< Temporary merge branch 1
   getProductsLenovo: () => {
     const products = db.products
       .getProducts()
