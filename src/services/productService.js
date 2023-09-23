@@ -23,6 +23,9 @@ const productService = {
     const product = db.products.findById(id);
     return product;
   },
+  produtcCreating:(product)=>{
+    db.products.create(product)
+}
 };
 
 module.exports = productService;
