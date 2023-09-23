@@ -21,14 +21,21 @@ module.exports = {
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
-  productCreate: (req, res) => {
+  productCreateForm: (req, res) => {
     res.render("products/productCreate");
   },
   //METODO DE CREACION DE PRODUCTOS
   createProduct:(req, res) => {
-    const product = req.body;
-    console.log(product);
-    res.redirect("products/products");
+    const product ={
+      nombre: req.body.nombre ,
+      precio: Number(req.body.precio),
+      marca: req.body.marca ,
+      categoria:req.body.categoria ,
+      descripcion:req.body.descripcion ,
+      imagen: req.body.imagen ,
+    };
+    productService.produtcCreating(product);
+        res.redirect("products/products");
   },
   productEdit: (req, res) => {
     res.render("products/productEdit");

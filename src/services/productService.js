@@ -13,7 +13,9 @@ const productService = {
         const products = db.products.getProducts().filter((product )=> product.marca == "ASUS");
         return (products);
     },
-};
+    produtcCreating:(product)=>{
+     db.products.create(product)
+}};
 
 
 module.exports=productService;
