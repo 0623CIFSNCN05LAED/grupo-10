@@ -10,18 +10,15 @@
     <main>
       <div class="product">
         <div class="product-image">
-          <img src="/images/amd-ryzen-5-7600.png" alt="Procesador HorizonX" />
+          <img
+            src="/images/products/<%= product.imagen %>"
+            alt="imagen <%= product.nombre %>"
+          />
         </div>
         <div class="product-details">
-          <h1>Procesador AMD Ryzen 5 7600</h1>
-          <p class="price">$249.000</p>
-          <p class="description">
-            El procesador AMD Ryzen 5 7600 con Gráficos Radeon 100-100001015BOX
-            es un componente de hardware para computadoras de escritorio
-            fabricado por AMD. Este procesador admite tipos de memoria
-            DDR5-SDRAM y tiene una velocidad de reloj que va desde los 3600
-            hasta los 5200 MHz.
-          </p>
+          <h1><%= product.nombre %></h1>
+          <p class="price">$<%= product.precio %></p>
+          <p class="description"><%= product.descripcion %>.</p>
           <div class="product-actions">
             <button class="add-to-cart">Agregar al Carrito</button>
             <button class="buy-now">Comprar Ahora</button>
@@ -29,13 +26,14 @@
         </div>
       </div>
     </main>
-    <section class="social-ad">
+    <!-- DEFINIR SI QUITAMOS ESTA SECCION
+      <section class="social-ad">
       <h2>Síguenos en nuestras redes sociales</h2>
       <div class="social-icons">
         <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
         <a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
       </div>
-    </section>
+    </section> -->
 
     <footer>
       <p>&copy; 2023 HorizonX. Todos los derechos reservados.</p>

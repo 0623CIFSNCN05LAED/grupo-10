@@ -2,17 +2,20 @@ const { Router } = require("express");
 const productController = require("../controllers/product-controller");
 const router = Router();
 //PRODUCTOS EN GENERAL
-router.get("/products/", productController.products)
+router.get("/", productController.products);
 
 //CARRITO DE PRODUCTO
 router.get("/cart/", productController.productCart);
 
 //CREACION
-router.get("/create/", productController.productCreate);
+router.get("/create/", productController.productCreateForm);
 router.post("/", productController.createProduct);
 
-//EDICION DE PRODUCTO
+//OBTENER UN PRODUCTO
 router.get("/:id/", productController.productDetail);
+
+//EDICION DE PRODUCTO
 router.get("/edit/:id/", productController.productEdit);
+//router.put("/:id/", productController.productDetail);
 
 module.exports = router;
