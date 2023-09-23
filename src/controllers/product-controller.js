@@ -37,7 +37,7 @@ module.exports = {
       imagen: "lenovoTPadX1.jpg",
     };
     productService.produtcCreating(product);
-        res.redirect("products/products");
+        res.redirect("products");
   },
   productEdit: (req, res) => {
     res.render("products/productEdit");
