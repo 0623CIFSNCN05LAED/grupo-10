@@ -23,7 +23,7 @@ module.exports = {
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
-  productCreate: (req, res) => {
+  productCreateForm: (req, res) => {
     res.render("products/productCreate");
   },
   //METODO DE CREACION DE PRODUCTOS

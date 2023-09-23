@@ -8,7 +8,7 @@ router.get("/", productController.products);
 router.get("/cart/", productController.productCart);
 
 //CREACION
-router.get("/create/", productController.productCreate);
+router.get("/create/", productController.productCreateForm);
 router.post("/", productController.createProduct);
 
 //OBTENER UN PRODUCTO
