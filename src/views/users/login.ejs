@@ -1,68 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <%- include('../partials/head', {title: 'Ingresá'}) %>
-    <link rel="stylesheet" href="/css/login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
     <%- include("../partials/header") %>
-    
+
     <main class="log-form-main log-lg-flex log-sp-around log-mt-40">
-        <div class="log-flex log-jc-center log-mg-10-0">
-            <img src="/images/login.png" alt="imagen login" class="log-w-100px log-lg-alig-center log-lg-w-300">
+      <div class="log-flex log-jc-center log-mg-10-0">
+        <img
+          src="/images/login.png"
+          alt="imagen login"
+          class="log-w-100px log-lg-alig-center log-lg-w-300"
+        />
+      </div>
+      <form action="/index" method="post" class="log-grow-70">
+        <div class="log-mb-15">
+          <span class="log-span log-w-600">Bienvenido a HorizonX</span>
         </div>
-        <form action="/index" method="post" class="log-grow-70">
-            <div class="log-mb-15">
-                <span class="log-span log-w-600">Bienvenido a HorizonX</span>
-            </div>
-            
-            <div class="log-mb-15">
-                <label for="user_name"></label>
-                <input type="text" name="user_name" id="user_name" placeholder="E-mail o Nombre de usuario" required class="log-form-input">
-            </div>
-            
-            <div class="log-mb-15">
-                <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Contraseña" required class="log-form-input">
-            </div>
 
-            <span class="log-span2 log-f-12 "><a href="#">¿Olvidaste tu contraseña?</a></span> 
-             
-            <div class="log-flex log-jc-center log-ai-fstart log-mgt-30 log-wrap">
-                <div class="log-mb-15 log-w-60">
-                    <button type="submit" class="log-button log-w-100">Login</button>
-                    <div class="log-mb-15 log-flex log-mgt-10">
-                        <input type="checkbox" name="remember-me" id="remember-me">
-                        <label for="remember-me" class="log-cbox log-f-12 log-lg-f-1rem">Recordarme</a></label>
-                    </div>
-                </div>
+        <div class="log-mb-15">
+          <label for="user_name"></label>
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            placeholder="Correo electrónico"
+            required
+            class="log-form-input"
+          />
+        </div>
 
-                <div class="log-mb-15 log-flex log-wrap log-jc-center log-w-40">
-                    <!-- Agregar enlace al menu de registro -->
-                    <button type="button" class="log-button-login log-mg-0-10 log-lg-w-100"><a href="/users/register">Registrate</a></button>
-                    <span class="log-f-12 log-mgt-10 log-lg-f-1rem">¿No tenés una cuenta?</span>
-                </div>
-                
+        <div class="log-mb-15">
+          <label for="password"></label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+            class="log-form-input"
+          />
+        </div>
+
+        <span class="log-span2 log-f-12"
+          ><a href="#">¿Olvidaste tu contraseña?</a></span
+        >
+
+        <div class="log-flex log-jc-center log-ai-fstart log-mgt-30 log-wrap">
+          <div class="log-mb-15 log-w-60">
+            <button type="submit" class="log-button log-w-100">Login</button>
+            <div class="log-mb-15 log-flex log-mgt-10">
+              <input type="checkbox" name="remember-me" id="remember-me" />
+              <label for="remember-me" class="log-cbox log-f-12 log-lg-f-1rem"
+                >Recordarme</label
+              >
             </div>
+          </div>
 
+          <div class="log-mb-15 log-flex log-wrap log-jc-center log-w-40">
+            <!-- Agregar enlace al menu de registro -->
+            <button
+              type="button"
+              class="log-button-login log-mg-0-10 log-lg-w-100"
+            >
+              <a href="/users/register">Registrate</a>
+            </button>
+            <span class="log-f-12 log-mgt-10 log-lg-f-1rem"
+              >¿No tenés una cuenta?</span
+            >
+          </div>
+        </div>
 
-            <hr class="log-linea">
-            <span class="log-span log-mgt-30 log-w-600">O ingresá con tus redes</span>
-            <div class="log-flex log-sp-around log-f-2rem log-mg-20">
-                
-                <!-- Agregar API para loguearse credenciales de redes sociales -->
-                <a href="#"><i class="fa-brands fa-square-instagram" style="color: #0a74da;"></i></i></a>
-                <a href="#"><i class="fa-brands fa-google" style="color: #0a74da;"></i></a>
-                <a href="#"><i class="fa-brands fa-square-facebook" style="color: #0a74da;"></i></a>
-                
-            </div>
-                    
-        </form>
-        
+        <hr class="log-linea" />
+        <span class="log-span log-mgt-30 log-w-600"
+          >O ingresá con tus redes</span
+        >
+        <div class="log-flex log-sp-around log-f-2rem log-mg-20">
+          <!-- Agregar API para loguearse credenciales de redes sociales -->
+          <a href="#"
+            ><i class="fa-brands fa-square-instagram" style="color: #0a74da"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-google" style="color: #0a74da"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-square-facebook" style="color: #0a74da"></i
+          ></a>
+        </div>
+      </form>
     </main>
-    
-    <footer class="foot">
-        <%- include("../partials/footer") %>
-    </footer>
-</body>
+
+    <footer class="foot"><%- include("../partials/footer") %></footer>
+  </body>
 </html>
