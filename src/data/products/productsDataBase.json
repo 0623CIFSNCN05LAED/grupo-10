@@ -150,12 +150,12 @@
     "imagen": "fundaLaptopCase.jpg"
   },
   {
-    "id": "d3b2be7b-6aa8-4683-9dcf-a87ab3c4882b",
+    "id": "56a0c4db-820c-44ba-aaa9-b5944dc54cdf",
     "nombre": "PRODUCTO PRUEBA",
     "precio": 1234,
     "marca": "Lenovo",
     "categoria": "pc",
     "descripcion": "ESTO ES UNA PRUEBA",
-    "imagen": ""
+    "imagen": "lenovoTPadX1.jpg"
   }
 ]

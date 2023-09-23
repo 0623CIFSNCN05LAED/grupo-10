@@ -32,7 +32,7 @@ module.exports = {
       marca: req.body.marca ,
       categoria:req.body.categoria ,
       descripcion:req.body.descripcion ,
-      imagen: req.body.imagen ,
+      imagen: "lenovoTPadX1.jpg",
     };
     productService.produtcCreating(product);
         res.redirect("products/products");
