@@ -28,4 +28,17 @@ module.exports = {
     const product = this.getProducts().find((producto) => producto.id == id);
     return product;
   },
+  update: function (id, product) {
+    console.log(`Actualizando producto ${product.nombre}`);
+    // cargar todos los productos
+    const products = this.getProducts();
+    // buscar un producto por id
+    const productToEdit = products.find((product) => product.id == id);
+    // pisar las propiedades
+    Object.assign(productToEdit, product);
+    // guardar el producto editado
+    this.saveProducts(products);
+
+    return product;
+  },
 };

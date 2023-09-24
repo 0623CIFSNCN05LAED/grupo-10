@@ -45,4 +45,15 @@ module.exports = {
     const product = productService.getProduct(id);
     res.render("products/productEdit", { product });
   },
+  // Update - Method to update
+  productUpdate: (req, res) => {
+    const product = req.body;
+    const id = req.params.id;
+    /*const image = req.file
+      ? req.file.filename
+      : productService.getProduct(id).imagen;
+    product.imagen = imagen;*/
+    productService.updateProduct(id, product);
+    res.redirect("/products");
+  },
 };

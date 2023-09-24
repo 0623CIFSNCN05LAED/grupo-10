@@ -26,6 +26,9 @@ const productService = {
   produtcCreating: (product) => {
     db.products.create(product);
   },
+  updateProduct: (id, product) => {
+    db.products.update(id, product);
+  },
 };
 
 module.exports = productService;

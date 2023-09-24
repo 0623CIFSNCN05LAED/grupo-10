@@ -16,6 +16,9 @@ router.get("/:id/", productController.productDetail);
 
 //EDICION DE PRODUCTO
 router.get("/edit/:id/", productController.productEdit);
-//router.put("/:id/", productController.productDetail);
+router.put(
+  "/:id/",
+  /*upload.single("imagen"),*/ productController.productUpdate
+);
 
 module.exports = router;
