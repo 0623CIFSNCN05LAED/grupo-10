@@ -28,7 +28,7 @@ router.get("/cart/", productController.productCart);
 
 //CREACION
 router.get("/create/", productController.productCreateForm);
-router.post("/", productController.createProduct);
+router.post("/", upload.single("imagen"), productController.createProduct);
 
 //OBTENER UN PRODUCTO
 router.get("/:id/", productController.productDetail);
