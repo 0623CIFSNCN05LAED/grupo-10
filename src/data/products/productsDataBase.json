@@ -150,12 +150,12 @@
     "imagen": "fundaLaptopCase.jpg"
   },
   {
-    "id": "8e09fcd4-c470-4c2e-a429-a668217e662d",
-    "nombre": "prueba",
-    "precio": 1256,
-    "marca": "Lenovo",
+    "id": "1d7ccbd7-0ce3-41a9-ae9b-523b43373519",
+    "nombre": "prueba2",
+    "precio": 123456,
+    "marca": "Apple",
     "categoria": "pc",
-    "descripcion": "bfh,bchbc",
+    "descripcion": "hhhhhh",
     "imagen": "lenovoTPadX1.jpg"
   }
 ]
