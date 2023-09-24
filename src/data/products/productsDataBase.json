@@ -151,11 +151,11 @@
   },
   {
     "id": "1d7ccbd7-0ce3-41a9-ae9b-523b43373519",
-    "nombre": "prueba2-modif",
-    "precio": "12121212",
-    "marca": "ASUS",
-    "categoria": "accesorios",
-    "descripcion": "otra descrip",
-    "imagen": ""
+    "nombre": "prueba3-modif",
+    "precio": 10000.5,
+    "marca": "Lenovo",
+    "categoria": "celulares",
+    "descripcion": "otra descripfff",
+    "imagen": "default.png"
   }
 ]

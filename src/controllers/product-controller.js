@@ -47,7 +47,14 @@ module.exports = {
   },
   // Update - Method to update
   productUpdate: (req, res) => {
-    const product = req.body;
+    const product = {
+      nombre: req.body.nombre,
+      precio: Number(req.body.precio),
+      marca: req.body.marca,
+      categoria: req.body.categoria,
+      descripcion: req.body.descripcion,
+      imagen: "default.png",
+    };
     const id = req.params.id;
     /*const image = req.file
       ? req.file.filename
