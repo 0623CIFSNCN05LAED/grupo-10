@@ -1,1 +1,102 @@
-[{}]
+[
+  {
+    "id": 1,
+    "name": "Juan",
+    "last_name": "Pérez",
+    "email": "juan.perez@email.com",
+    "password": "Jp123456",
+    "password_repeat": "Jp123456",
+    "avatar": "",
+    "category": "admin"
+  },
+  {
+    "id": 2,
+    "name": "María",
+    "last_name": "González",
+    "email": "maria.gonzalez@email.com",
+    "password": "Mg123456",
+    "password_repeat": "Mg123456",
+    "avatar": "",
+    "category": "admin"
+  },
+  {
+    "id": 3,
+    "name": "Carlos",
+    "last_name": "Hernández",
+    "email": "carlos.hernandez@email.com",
+    "password": "Ch123456",
+    "password_repeat": "Ch123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 4,
+    "name": "Lucía",
+    "last_name": "Rodríguez",
+    "email": "lucia.rodriguez@email.com",
+    "password": "Lr123456",
+    "password_repeat": "Lr123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 5,
+    "name": "Pedro",
+    "last_name": "García",
+    "email": "pedro.garcia@email.com",
+    "password": "Pg123456",
+    "password_repeat": "Pg123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 6,
+    "name": "Isabel",
+    "last_name": "Fernández",
+    "email": "isabel.fernandez@email.com",
+    "password": "If123456",
+    "password_repeat": "If123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 7,
+    "name": "Alejandro",
+    "last_name": "Torres",
+    "email": "alejandro.torres@email.com",
+    "password": "At123456",
+    "password_repeat": "At123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 8,
+    "name": "Carmen",
+    "last_name": "Ortiz",
+    "email": "carmen.ortiz@email.com",
+    "password": "Co123456",
+    "password_repeat": "Co123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 9,
+    "name": "Fernando",
+    "last_name": "Ramos",
+    "email": "fernando.ramos@email.com",
+    "password": "Fr123456",
+    "password_repeat": "Fr123456",
+    "avatar": "",
+    "category": "user"
+  },
+  {
+    "id": 10,
+    "name": "Ana",
+    "last_name": "Ruiz",
+    "email": "ana.ruiz@email.com",
+    "password": "Ar123456",
+    "password_repeat": "Ar123456",
+    "avatar": "",
+    "category": "user"
+  }
+]
