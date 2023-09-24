@@ -16,7 +16,7 @@
       <div class="reg-form-main reg-flex reg-flex-center">
         <form
           action="/products/<%= product.id %>?_method=put"
-          method="post"
+          method="post" enctype="multipart/form-data"
           class="reg-grow-70 reg-md-flex"
         >
           <div class="reg-mb-15 reg-md-prod">
@@ -34,7 +34,7 @@
           <div class="reg-mb-15 reg-md-prod">
             <label for="precio">Precio:</label>
             <input
-              type="number"
+              type="number" step="0.01"
               name="precio"
               id="precio"
               placeholder="123.45"

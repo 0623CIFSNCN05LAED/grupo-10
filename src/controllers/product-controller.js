@@ -53,13 +53,12 @@ module.exports = {
       marca: req.body.marca,
       categoria: req.body.categoria,
       descripcion: req.body.descripcion,
-      imagen: "default.png",
     };
     const id = req.params.id;
-    /*const image = req.file
+    const imagen = req.file
       ? req.file.filename
       : productService.getProduct(id).imagen;
-    product.imagen = imagen;*/
+    product.imagen = imagen;
     productService.updateProduct(id, product);
     res.redirect("/products");
   },
