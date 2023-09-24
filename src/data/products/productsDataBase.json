@@ -157,5 +157,14 @@
     "categoria": "pcs",
     "descripcion": "INTENTANDO SUBIR UNA IMAGEN 4",
     "imagen": "imagen-1695577747378.png"
+  },
+  {
+    "id": "036981ae-05b1-4770-b91f-c72940ec616a",
+    "nombre": "prueba 2 prod con img",
+    "precio": 9999.3,
+    "marca": "Apple",
+    "categoria": "accesorios",
+    "descripcion": "subo una imagen",
+    "imagen": "imagen-1695582816654.png"
   }
 ]

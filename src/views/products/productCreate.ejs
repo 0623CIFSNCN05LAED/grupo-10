@@ -9,35 +9,44 @@
 
     <main>
       <div>
-        <h4 class="reg-form-main reg-span">
+        <h2 class="reg-form-main reg-span">
           Formulario de creación de productos:
-        </h4>
+        </h2>
       </div>
       <div class="reg-form-main reg-flex reg-flex-center">
-        <form action="/products" method="post" class="reg-grow-70 reg-md-flex">
+        <form
+          action="/products"
+          method="post"
+          enctype="multipart/form-data"
+          class="reg-grow-70 reg-md-flex"
+        >
           <div class="reg-mb-15 reg-md-prod">
-            <label>Nombre:</label>
+            <label for="nombre">Nombre:</label>
             <input
               type="text"
               name="nombre"
+              id="nombre"
               placeholder="nombre del producto"
               class="reg-form-input"
             />
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label>Precio:</label>
+            <label for="precio">Precio:</label>
             <input
               type="number"
               name="precio"
+              step="0.01"
+              id="precio"
               placeholder="123.45"
               class="reg-form-input"
             />
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label>Marca:</label>
-            <select name="marca" class="reg-form-input">
+            <label for="marca">Marca:</label>
+            <select name="marca" id="marca" class="reg-form-input">
+              <option value="">Elegí una marca</option>
               <option value="ASUS">ASUS</option>
               <option value="Lenovo">Lenovo</option>
               <option value="Apple">Apple</option>
@@ -46,10 +55,11 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label>Categoría:</label>
-            <select name="categoria" class="reg-form-input">
+            <label for="categoria">Categoría:</label>
+            <select name="categoria" id="categoria" class="reg-form-input">
+              <option value="">Elegí una categoría</option>
               <option value="celulares">Celulares</option>
-              <option value="pc">PCs</option>
+              <option value="pcs">PCs</option>
               <option value="accesorios">Accesorios</option>
             </select>
           </div>
@@ -76,7 +86,7 @@
 
           <div class="reg-mb-15 reg-md-prod">
             <label>Producto más buscado? :</label>
-            <input type="radio" name="masBuscado" />
+            <input type="radio" name="masBuscado" value="true" />
           </div>
 
           <div class="reg-mb-15">

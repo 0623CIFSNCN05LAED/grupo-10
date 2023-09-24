@@ -15,8 +15,8 @@ module.exports = {
   create: function (product) {
     console.log(`Creating product ${product.nombre}`);
     const products = this.getProducts();
-    const lastProduct = [products.length - 1];
-    const bigIdProduct = lastProduct.id;
+    /*const lastProduct = [products.length - 1];
+    const bigIdProduct = lastProduct.id;*/
     const newProduct = {
       id: uuidv4(),
       ...product,
