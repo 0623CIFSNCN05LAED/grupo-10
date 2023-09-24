@@ -62,4 +62,11 @@ module.exports = {
     productService.updateProduct(id, product);
     res.redirect("/products");
   },
+
+  // Delete - Delete one product from DB
+  destroy: (req, res) => {
+    const id = req.params.id;
+    productService.deleteProduct(id);
+    res.redirect("/products");
+  },
 };

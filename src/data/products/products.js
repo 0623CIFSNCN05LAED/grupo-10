@@ -38,7 +38,12 @@ module.exports = {
     Object.assign(productToEdit, product);
     // guardar el producto editado
     this.saveProducts(products);
-
     return product;
+  },
+  delete: function (id) {
+    console.log(`Deleting product with id ${id}`);
+    const products = this.getProducts();
+    const nonDeleteProducts = products.filter((product) => product.id != id);
+    this.saveProducts(nonDeleteProducts);
   },
 };

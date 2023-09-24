@@ -37,4 +37,7 @@ router.get("/:id/", productController.productDetail);
 router.get("/edit/:id/", productController.productEdit);
 router.put("/:id/", upload.single("imagen"), productController.productUpdate);
 
+//ELIMINAR UN PRODUCTO
+router.delete("/:id", productController.destroy);
+
 module.exports = router;

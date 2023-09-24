@@ -29,6 +29,9 @@ const productService = {
   updateProduct: (id, product) => {
     db.products.update(id, product);
   },
+  deleteProduct: (id) => {
+    db.products.delete(id);
+  },
 };
 
 module.exports = productService;

@@ -157,14 +157,5 @@
     "categoria": "pcs",
     "descripcion": "INTENTANDO SUBIR UNA IMAGEN 4",
     "imagen": "imagen-1695577747378.png"
-  },
-  {
-    "id": "13db3983-1c78-40a5-9e90-ee47a5ffde91",
-    "nombre": "otro producto",
-    "precio": 1580,
-    "marca": "ASUS",
-    "categoria": "accesorios",
-    "descripcion": "otro accesorio",
-    "imagen": "imagen-1695578302045.png"
   }
 ]
