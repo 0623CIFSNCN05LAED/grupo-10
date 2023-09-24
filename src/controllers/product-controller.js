@@ -39,7 +39,10 @@ module.exports = {
     productService.produtcCreating(product);
     res.redirect("products");
   },
+  // Update - Form to edit one product
   productEdit: (req, res) => {
-    res.render("products/productEdit");
+    const id = req.params.id;
+    const product = productService.getProduct(id);
+    res.render("products/productEdit", { product });
   },
 };
