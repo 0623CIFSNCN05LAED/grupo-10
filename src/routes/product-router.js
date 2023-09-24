@@ -1,6 +1,25 @@
+// ************ Require's ************
 const { Router } = require("express");
-const productController = require("../controllers/product-controller");
 const router = Router();
+const path = require("path");
+
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "../../public/images/products"),
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+
+const upload = multer({ storage: storage });
+
+// ************ Controller Require ************
+const productController = require("../controllers/product-controller");
+
 //PRODUCTOS EN GENERAL
 router.get("/", productController.products);
 
@@ -16,6 +35,6 @@ router.get("/:id/", productController.productDetail);
 
 //EDICION DE PRODUCTO
 router.get("/edit/:id/", productController.productEdit);
-//router.put("/:id/", productController.productDetail);
+router.put("/:id/", upload.single("imagen"), productController.productUpdate);
 
 module.exports = router;

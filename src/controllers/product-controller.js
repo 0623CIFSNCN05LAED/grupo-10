@@ -39,7 +39,27 @@ module.exports = {
     productService.produtcCreating(product);
     res.redirect("products");
   },
+  // Update - Form to edit one product
   productEdit: (req, res) => {
-    res.render("products/productEdit");
+    const id = req.params.id;
+    const product = productService.getProduct(id);
+    res.render("products/productEdit", { product });
+  },
+  // Update - Method to update
+  productUpdate: (req, res) => {
+    const product = {
+      nombre: req.body.nombre,
+      precio: Number(req.body.precio),
+      marca: req.body.marca,
+      categoria: req.body.categoria,
+      descripcion: req.body.descripcion,
+    };
+    const id = req.params.id;
+    const imagen = req.file
+      ? req.file.filename
+      : productService.getProduct(id).imagen;
+    product.imagen = imagen;
+    productService.updateProduct(id, product);
+    res.redirect("/products");
   },
 };
