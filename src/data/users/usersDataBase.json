@@ -128,5 +128,25 @@
     "password_repeat": "123",
     "category": "user",
     "avatar": "avatar-1696176535667.jpg"
+  },
+  {
+    "id": "60f1f7ba-72a4-43df-9f6d-622cca26f9a2",
+    "name": "prueba final",
+    "last_name": "finish",
+    "email": "correo@mail.com",
+    "password": "asd",
+    "password_repeat": "asf",
+    "category": "user",
+    "avatar": "users_default.png"
+  },
+  {
+    "id": "b57fe16a-0b26-4df9-b474-6e5bcffca45a",
+    "name": "prueba final con avatar",
+    "last_name": "finish",
+    "email": "correo@mail.com",
+    "password": "123",
+    "password_repeat": "123",
+    "category": "user",
+    "avatar": "avatar-1696190264579.png"
   }
 ]

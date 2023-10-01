@@ -1,5 +1,6 @@
 const path = require("path");
 const userService = require("../services/userService");
+const { validationResult } = require("express-validator");
 
 module.exports = {
   // Obtener todos los usuarios
@@ -32,6 +33,14 @@ module.exports = {
 
   // Método de creación de usuario
   createUser: (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
     const user = {
       name: req.body.name,
       last_name: req.body.last_name,
