@@ -118,5 +118,15 @@
     "password_repeat": "123",
     "category": "user",
     "avatar": "users_default.png"
+  },
+  {
+    "id": "0c2c4279-5697-4f7c-96de-e940aa393a01",
+    "name": "con imagen",
+    "last_name": "imagen",
+    "email": "img@mail.com",
+    "password": "123",
+    "password_repeat": "123",
+    "category": "user",
+    "avatar": "avatar-1696176535667.jpg"
   }
 ]
