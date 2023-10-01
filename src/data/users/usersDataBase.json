@@ -98,5 +98,25 @@
     "password_repeat": "Ar123456",
     "avatar": "",
     "category": "user"
+  },
+  {
+    "id": "0b5df0d2-bc23-4284-a78f-428c11a077f2",
+    "name": "pablo",
+    "last_name": "gomez",
+    "email": "pablo@mail.com",
+    "password": "123",
+    "password_repeat": "123",
+    "category": "user",
+    "avatar": "users_default.png"
+  },
+  {
+    "id": "730b4e68-0d9f-4b6e-96f9-a0c751d0e786",
+    "name": "esteban",
+    "last_name": "gomez",
+    "email": "esteban@mail.com",
+    "password": "123",
+    "password_repeat": "123",
+    "category": "user",
+    "avatar": "users_default.png"
   }
 ]
