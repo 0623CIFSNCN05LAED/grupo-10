@@ -148,5 +148,15 @@
     "password_repeat": "123",
     "category": "user",
     "avatar": "avatar-1696190264579.png"
+  },
+  {
+    "id": "99e66944-887a-4eda-909b-177c9df82074",
+    "name": "prueba con hash",
+    "last_name": "gomez",
+    "email": "mail@mail.com",
+    "password": "$2a$10$lNnLwDGjPOUG1yNFgqwPuuw9MQh1mvS5leE95KVeaf3qb8oM351hG",
+    "password_repeat": "$2a$10$gdLKB4IlCADlGwpQJznAmuuwXRgKuc8A4fBJsY59HzVbGI36bP7ru",
+    "category": "user",
+    "avatar": "avatar-1696191910301.jpg"
   }
 ]

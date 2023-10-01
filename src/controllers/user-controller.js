@@ -1,6 +1,7 @@
 const path = require("path");
 const userService = require("../services/userService");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 
 module.exports = {
   // Obtener todos los usuarios
@@ -45,8 +46,8 @@ module.exports = {
       name: req.body.name,
       last_name: req.body.last_name,
       email: req.body.email,
-      password: req.body.password,
-      password_repeat: req.body.password_repeat,
+      password: bcrypt.hashSync(req.body.password, 10),
+      password_repeat: bcrypt.hashSync(req.body.password_repeat, 10),
       category: "user",
       avatar: req.file ? req.file.filename : "users_default.png",
     };
