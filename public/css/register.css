@@ -119,6 +119,12 @@ a {
   padding-left: 10px;
 }
 
+.reg-text-danger {
+  color: red;
+  font-size: 0.8rem;
+  padding-left: 10px;
+}
+
 @media (min-width: 520px) {
   .reg-md-flex {
     display: flex;
