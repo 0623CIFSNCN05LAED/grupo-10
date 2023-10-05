@@ -26,6 +26,12 @@ module.exports = {
     res.render("users/login");
   },
 
+  //Método de proceso de login
+
+  loginProcess:(req, res)=>{
+    return res.send(console.log(req.body));
+  },
+
   // Formulario de creación de usuario
   register: (req, res) => {
     res.render("users/register");

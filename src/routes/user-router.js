@@ -24,6 +24,7 @@ const userController = require("../controllers/user-controller");
 
 //USUARIOS EN GENERAL
 router.get("/login/", userController.login);
+router.post("/login/", userController.loginProcess)
 
 //CREACION DE USUARIO
 router.get("/register/", userController.register);
@@ -31,7 +32,8 @@ router.post(
   "/register/",
   upload.single("avatar"),
   validationsRegister,
-  validateFormRegister,
+  validateFormRegister.campo,
+  validateFormRegister.correo,
   userController.createUser
 );
 
