@@ -37,3 +37,26 @@
 
 ## Dejar de hacer
 -**Olvidarnos de las tareas del compañero:** no esperar al ultimo día para hacernos cargo de las tareas asignadas a otro compañero y que no llegaron a completarse.
+
+# Retro Sprint 3
+# No la hicimos 
+
+# Retro Sprint 4
+## Comenzar a hacer
+-Empezar a comunicarse mas 
+
+## Hacer mas
+-Trabajar mas y preguntarle mas a los profesores sino sabemos como seguir.
+
+## Continuar Haciendo
+-**Motivarnos:** apoyarnos unos a otros
+-**Reunirnos los sabados/Weekly:** 1 pm colombia / 3 pm Argentina
+-**Mini reunion intrasemanal** Reunirnos los miercoles luego de clase.
+-**Comitear mas seguido** Apenas tenes algo echo comitear 	
+-**comunicacion** Comunicar cuando no podes hacer algo o no sabes o si tenes algun problema 
+
+## Hacer menos
+-**Procrastinar:** Empezar antes nuestra actividades, para tener mayor tiempo para contextualizarlo.
+
+## Dejar de hacer
+-**Olvidarnos de las tareas del compañero:** No esperar al ultimo día para hacernos cargo de las tareas asignadas a otro compañero y que no llegaron a completarse.
