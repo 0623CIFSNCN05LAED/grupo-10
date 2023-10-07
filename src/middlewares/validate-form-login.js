@@ -17,7 +17,7 @@ module.exports = {
     if (!userService.findByField("password", user.password)) {
       return res.status(400).json({
         error: "Esta mala la clave", //to do have the alert appear in the field email
-      });
+      }); //probando esto para u comit
     }
     next();
   },
