@@ -98,6 +98,25 @@
     "password_repeat": "Ar123456",
     "avatar": "",
     "category": "user"
+  },
+  {
+    "id": "356e223f-4329-4c95-9af5-f5fdb69ba35c",
+    "name": "juan",
+    "last_name": "varlos",
+    "email": "carmenls.ortiz@email.com",
+    "password": "$2a$10$R9MnK3XJVXRda4GbKi7NIOoNwziA.tYhLqk.Bupb/wo2TBR5xARlS",
+    "password_repeat": "$2a$10$MQAy/S98F5TRLhjlMlqrbOcgEOMPFtTP7Vl.Nd4ZM.B6zVfZHj6uS",
+    "category": "user",
+    "avatar": "users_default.png"
+  },
+  {
+    "id": "a6db4710-8581-4879-9714-72ad57fb57a9",
+    "name": "estiven",
+    "last_name": "yeés",
+    "email": "estiven@mail.com",
+    "password": "$2a$10$PuIcanIA/fQyEiIkAQNBu.kAba.9WjqFTlmCH5PKt91raqP8dCvTe",
+    "password_repeat": "$2a$10$qBSHCgW8GqEZK6G4.iB2HO/PR2DSpNbpvX5qh8Bc/EbKxcwuVHXDq",
+    "category": "user",
+    "avatar": "users_default.png"
   }
- 
 ]

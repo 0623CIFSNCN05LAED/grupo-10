@@ -22,9 +22,7 @@ campo: (req, res, next) => {
             error:
               "El correo electrónico ya está registrado. Por favor, elija otro.", //to do have the alert appear in the field email
           });
-   }
+      }
   next();
- 
-}
-
+    },
 }
