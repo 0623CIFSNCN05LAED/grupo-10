@@ -31,6 +31,10 @@ module.exports = {
   },
   findByField: function (field, text) {
     const userFound = this.getUsers().find((usuario) => usuario[field] == text);
+    return !!userFound;
+  },
+  findByMeil:function (field, text) {
+    const userFound = this.getUsers().find((usuario) => usuario[field] == text);
     return userFound;
   },
   update: function (id, user) {

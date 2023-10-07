@@ -1,24 +1,41 @@
 const { validationResult } = require("express-validator");
-const userService = require('../services/userService')
+// const userService = require("../services/userService");
+const user = require('../data/users/users')
 const bcrypt = require("bcryptjs");
 module.exports = {
-  correo: (req, res, next) => {
-    const { user_name } = req.body;
-    if (!userService.findByField("email", user_name)) {
-      return res.status(400).json({
-        error:
-          "El correo electrónico no está registrado. Por favor, elija otro.", //to do have the alert appear in the field email
+  campo: (req, res, next) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
       });
     }
     next();
   },
-  password: (req, res, next) => {
-     const passwordToLogin = userService.usersByFile
-    if (!userService.findByField("password", user.password)) {
-      return res.status(400).json({
-        error: "Esta mala la clave", //to do have the alert appear in the field email
-      }); //probando esto para u comit
+  correo: (req, res, next) => {
+    const resultValidation = validationResult(req);
+    const email = req.body.user_name;
+    if (!user.findByField("email", email)) {
+      return res.render("users/login", {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      });
+    
     }
     next();
   },
+  password: (req, res, next) => {
+    const resultValidation = validationResult(req);
+    const userToLogin = user.findByMeil('email', req.body.user_name)
+        const paswordOK = bcrypt.compareSync(req.body.password, userToLogin.password)
+    if(!paswordOK){
+      return res.render("users/login", {
+        errors: resultValidation.mapped(),
+      });
+      
+    }
+    next()
+  }
 };

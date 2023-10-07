@@ -33,7 +33,7 @@ router.post(
   }),
   validationsLogin,
   validateFormLogin.correo,
-  // validateFormLogin.password,
+  validateFormLogin.password,
   userController.loginProcess,
 );
 

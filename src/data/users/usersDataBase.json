@@ -118,5 +118,15 @@
     "password_repeat": "$2a$10$qBSHCgW8GqEZK6G4.iB2HO/PR2DSpNbpvX5qh8Bc/EbKxcwuVHXDq",
     "category": "user",
     "avatar": "users_default.png"
+  },
+  {
+    "id": "6f451efc-27f4-4a44-9798-d0b15ff301b1",
+    "name": "dsfa",
+    "last_name": "asdfa",
+    "email": "estivefan@mail.com",
+    "password": "$2a$10$uthirFvummkKpKt8omhSG.4BvEQPqD5DG.Mpc0UwjBV.B2XSuJJhi",
+    "password_repeat": "$2a$10$yAM3gmvVPNNJ1VeA8U6SAuTxTrOfepgGELKpBcliXXoigk1FD.kWO",
+    "category": "user",
+    "avatar": "users_default.png"
   }
 ]
