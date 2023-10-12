@@ -6,7 +6,7 @@ const userService = {
     return users;
   },
   getUser: (id) => {
-    const user = db.users.findById();
+    const user = db.users.findById(id);
     return user;
   },
   userCreating: (user) => {

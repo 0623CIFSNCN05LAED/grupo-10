@@ -35,4 +35,7 @@ router.post(
   userController.createUser
 );
 
+//VISTA DE USUARIO
+router.get("/:id/", userController.userProfile);
+
 module.exports = router;

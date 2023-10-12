@@ -18,7 +18,7 @@ module.exports = {
   userProfile: (req, res) => {
     const id = req.params.id;
     const user = userService.getUser(id);
-    res.render("users/VISTA-PERFIL", { user });
+    res.render("users/userProfileView", { user });
   },
 
   // Formulario para logueo de usuario

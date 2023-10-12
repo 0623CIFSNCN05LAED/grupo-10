@@ -1,0 +1,19 @@
+<html lang="es">
+    <head>
+        <%- include('../partials/head', {title: 'Mi perfil'}) %>
+    <link rel="stylesheet" href="/css/userProfileView.css"/>
+    </head>
+<body>
+    <%- include("../partials/header") %>
+    <div class="container">
+        <label for="uname">Nombre de usuario:</label><br>
+          <h3><%=user.name%> <%=user.last_name%></h3>
+        <label for="email">Email:</label><br>
+            <h3><%=user.email%></h3>
+            <label for="psw">Contraseña:</label><br>
+            <h3><%=user.password%></h3>
+       
+    </div>
+</body>
+<footer class="foot"><%- include("../partials/footer") %></footer>
+</html>
