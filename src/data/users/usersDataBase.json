@@ -128,5 +128,25 @@
     "password_repeat": "$2a$10$yAM3gmvVPNNJ1VeA8U6SAuTxTrOfepgGELKpBcliXXoigk1FD.kWO",
     "category": "user",
     "avatar": "users_default.png"
+  },
+  {
+    "id": "3e740b0e-a029-4139-a667-f0d05776240d",
+    "name": "loca",
+    "last_name": "lucas",
+    "email": "albeiro@gmail.com",
+    "password": "$2a$10$A31vhKrZiBbAjx.ft8udcOO/PNVpb1/ytP30sEvA1myF0pIVumBYu",
+    "password_repeat": "$2a$10$lnCQAk4xWHkRUi6hnQWrueAxCD/xRW86Ji.kL7GPzXyMnF0ja7Px6",
+    "category": "user",
+    "avatar": "users_default.png"
+  },
+  {
+    "id": "d13b43a7-fa0e-407e-89c5-631c98c42af6",
+    "name": "adfa",
+    "last_name": "asdfa",
+    "email": "jonas@gmail.com",
+    "password": "$2a$10$ZdRZ40tuiQ1Lul2abq2R8.dITWIWrItvL9Hi0a2F2Y6VMToS.0mxG",
+    "password_repeat": "$2a$10$SYM9gFhXUqPv2NrAcUCJ1efwQl8a8S/0CJXhCbGu39ttHWqskxcJ2",
+    "category": "user",
+    "avatar": "users_default.png"
   }
 ]

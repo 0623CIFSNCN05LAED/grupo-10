@@ -31,7 +31,7 @@ module.exports = {
   //Método de proceso de login
 
   loginProcess:(req, res)=>{       
-    res.redirect("login");
+    res.render("index");
   },
 
   // Formulario de creación de usuario

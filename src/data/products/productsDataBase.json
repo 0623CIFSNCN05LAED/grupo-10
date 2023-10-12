@@ -40,16 +40,6 @@
     "imagen": "onePlus9.jpg"
   },
   {
-    "id": 5,
-    "nombre": "Xiaomi Mi 11",
-    "precio": 699.99,
-    "marca": "Xiaomi",
-    "categoria": "celulares",
-    "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
-    "masBuscado": true,
-    "imagen": "xiaomiMi11.jpg"
-  },
-  {
     "id": 6,
     "nombre": "MacBook Pro",
     "precio": 1299.99,

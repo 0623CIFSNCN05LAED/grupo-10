@@ -18,11 +18,16 @@ module.exports = {
     const resultValidation = validationResult(req);
     const email = req.body.user_name;
     if (!user.findByField("email", email)) {
-      return res.render("users/login", {
-        errors: resultValidation.mapped(),
-        oldData: req.body
-      });
-    
+      // return res.render("users/login", {
+      //   errors: resultValidation.mapped(),
+      //   oldData: req.body
+      // });
+      return res
+        .status(400)
+        .json({
+          error:
+            "El correo electrónico no está registrado. Por favor, ingrese el correo correcto.", //to do have the alert appear in the field email
+        });
     }
     next();
   },
@@ -31,10 +36,15 @@ module.exports = {
     const userToLogin = user.findByMeil('email', req.body.user_name)
         const paswordOK = bcrypt.compareSync(req.body.password, userToLogin.password)
     if(!paswordOK){
-      return res.render("users/login", {
-        errors: resultValidation.mapped(),
-      });
-      
+      // return res.render("users/login", {
+      //   errors: resultValidation.mapped(),
+      // });
+      return res
+        .status(400)
+        .json({
+          error:
+            "La contraseña es incorrecta intentelo de nuevo.", //to do have the alert appear in the field email
+        });
     }
     next()
   }
