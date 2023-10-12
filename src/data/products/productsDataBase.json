@@ -40,16 +40,6 @@
     "imagen": "onePlus9.jpg"
   },
   {
-    "id": 5,
-    "nombre": "Xiaomi Mi 11",
-    "precio": 699.99,
-    "marca": "Xiaomi",
-    "categoria": "celulares",
-    "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
-    "masBuscado": true,
-    "imagen": "xiaomiMi11.jpg"
-  },
-  {
     "id": 6,
     "nombre": "MacBook Pro",
     "precio": 1299.99,
@@ -148,14 +138,5 @@
     "descripcion": "Protección y estilo para tu portátil.",
     "masBuscado": true,
     "imagen": "fundaLaptopCase.jpg"
-  },
-  {
-    "id": "1d7ccbd7-0ce3-41a9-ae9b-523b43373519",
-    "nombre": "COMPUTER MULTER 4",
-    "precio": 12000.58,
-    "marca": "ASUS",
-    "categoria": "pcs",
-    "descripcion": "INTENTANDO SUBIR UNA IMAGEN 4",
-    "imagen": "imagen-1695577747378.png"
   }
 ]
