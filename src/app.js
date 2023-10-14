@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override"); // para usar los metodos PUT y DELETE
+const session = require("express-session");
 
 // ************ express() ************
 const app = express();
@@ -15,6 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(methodOverride("_method"));
+app.use(
+  session({ secret: "HorizonX", resave: false, saveUninitialized: false })
+);
 
 // ************ Route System require and use() ************
 const mainRoute = require("./routes/main-router");

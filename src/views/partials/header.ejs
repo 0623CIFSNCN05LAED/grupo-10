@@ -9,15 +9,17 @@
             <div class="nav-bar-pc"><a href="">PCs</a></div>
             <div class="nav-bar-pc"><a href="">Accesorios</a></div>
             <!-- <div class="icon-nav-pc nav-bar-pc"> -->
-                <div class="nav-bar-pc icon-nav-pc"><a href="/users/login"><i class="fa-solid fa-user"></i></a></div>
+                <div class="nav-bar-pc icon-nav-pc"><a href="/users/login"><i class="fa-solid fa-user"></i></a></div>   
                 <div class="nav-bar-pc icon-nav-pc"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
                 <div class="nav-bar-pc icon-nav-pc"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></div> 
-            
+                
             <div class="h-open-close nav-bar-pc ham">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         </nav>
-       
+        <% if (user_name) { %>
+                   <h4 style="color: white; text-align: center; font-size: 1.2rem;">Hola <%= user_name %></h4>
+        <% } %>
     </div>
 </header>
