@@ -19,9 +19,9 @@ const productService = {
       .filter((product) => product.marca == "ASUS");
     return products;
   },
-  getProduct: (id) => {
-    const product = db.products.findById(id);
-    return product;
+    getProduct: (id) => {
+      const product = db.products.findById(id);
+      return product;
   },
   produtcCreating: (product) => {
     db.products.create(product);

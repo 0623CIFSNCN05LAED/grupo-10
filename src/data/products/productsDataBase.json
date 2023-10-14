@@ -148,35 +148,5 @@
     "descripcion": "Protección y estilo para tu portátil.",
     "masBuscado": "si",
     "imagen": "fundaLaptopCase.jpg"
-  },
-  {
-    "id": "1d7ccbd7-0ce3-41a9-ae9b-523b43373519",
-    "nombre": "COMPUTER MULTER 4",
-    "precio": 12000.58,
-    "marca": "ASUS",
-    "categoria": "pcs",
-    "descripcion": "INTENTANDO SUBIR UNA IMAGEN 4",
-    "masBuscado": "no",
-    "imagen": "imagen-1695577747378.png"
-  },
-  {
-    "id": "ac628c75-456b-4e21-9456-b9991c075a87",
-    "nombre": "Prueba input radio",
-    "precio": 4545.5,
-    "marca": "ASUS",
-    "categoria": "celulares",
-    "descripcion": "radio input",
-    "masBuscado": "no",
-    "imagen": "imagen-1696766563331.png"
-  },
-  {
-    "id": "7d3d6929-1a20-4612-a9ff-0501e3909f4f",
-    "nombre": "Prueba con mas buscado",
-    "precio": 4545.36,
-    "marca": "ASUS",
-    "categoria": "pcs",
-    "descripcion": "pcs mas buscada",
-    "masBuscado": "si",
-    "imagen": "imagen-1696768472352.png"
   }
 ]

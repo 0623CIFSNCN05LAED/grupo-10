@@ -1,6 +1,8 @@
 const path = require("path");
 const userService = require("../services/userService");
 const bcrypt = require("bcryptjs");
+const { log } = require("console");
+const users = require('../data/users/users')
 
 module.exports = {
   // Obtener todos los usuarios
@@ -26,8 +28,15 @@ module.exports = {
     res.render("users/login");
   },
 
+  //Método de proceso de login
+
+  loginProcess:(req, res)=>{       
+    res.render("index");
+  },
+
   // Formulario de creación de usuario
   register: (req, res) => {
+  
     res.render("users/register");
   },
 

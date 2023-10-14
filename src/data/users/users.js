@@ -1,6 +1,8 @@
+const { log } = require("console");
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const { users } = require("../db");
 
 module.exports = {
   // Obtener todos los usuarios
@@ -26,6 +28,14 @@ module.exports = {
   findById: function (id) {
     const user = this.getUsers().find((usuario) => usuario.id == id);
     return user;
+  },
+  findByField: function (field, text) {
+    const userFound = this.getUsers().find((usuario) => usuario[field] == text);
+    return !!userFound;
+  },
+  findByMeil:function (field, text) {
+    const userFound = this.getUsers().find((usuario) => usuario[field] == text);
+    return userFound;
   },
   update: function (id, user) {
     console.log(`Actualizando usuario ${user.name}`);
