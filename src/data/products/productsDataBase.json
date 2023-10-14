@@ -6,7 +6,7 @@
     "marca": "Apple",
     "categoria": "celulares",
     "descripcion": "Smartphone de Última generación con pantalla OLED.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "Iphone13.jpg"
   },
   {
@@ -16,37 +16,37 @@
     "marca": "ASUS",
     "categoria": "celulares",
     "descripcion": "Potente smartphone con cámara de alta resolución.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "galaxyS22.jpg"
   },
   {
     "id": 3,
     "nombre": "Pixel 6",
     "precio": 799.99,
-    "marca": "Google",
+    "marca": "Lenovo",
     "categoria": "celulares",
     "descripcion": "Experiencia Android pura con excelente cámara.",
-    "masBuscado": true,
+    "masBuscado": "no",
     "imagen": "pixel6.jpg"
   },
   {
     "id": 4,
     "nombre": "OnePlus 9",
     "precio": 749.99,
-    "marca": "OnePlus",
+    "marca": "Apple",
     "categoria": "celulares",
     "descripcion": "Diseño elegante con carga rápida.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "onePlus9.jpg"
   },
   {
     "id": 5,
     "nombre": "Xiaomi Mi 11",
     "precio": 699.99,
-    "marca": "Xiaomi",
+    "marca": "Apple",
     "categoria": "celulares",
     "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "xiaomiMi11.jpg"
   },
   {
@@ -56,17 +56,17 @@
     "marca": "Apple",
     "categoria": "pcs",
     "descripcion": "Portátil potente con chip M1.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "mcBookPro.jpg"
   },
   {
     "id": 7,
     "nombre": "Dell XPS 13",
     "precio": 1199.99,
-    "marca": "OnePlus",
+    "marca": "Corsair",
     "categoria": "pcs",
     "descripcion": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "dellXPS13.jpg"
   },
   {
@@ -76,7 +76,7 @@
     "marca": "Lenovo",
     "categoria": "pcs",
     "descripcion": "Ideal para negocios con teclado de alta calidad.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "lenovoTPadX1.jpg"
   },
   {
@@ -86,7 +86,7 @@
     "marca": "Lenovo",
     "categoria": "pcs",
     "descripcion": "Convertible con diseño premium y pantalla táctil.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "hpSpectre.jpg"
   },
   {
@@ -96,7 +96,7 @@
     "marca": "ASUS",
     "categoria": "pcs",
     "descripcion": "Doble pantalla para multitasking avanzado.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "azusZenBook.jpg"
   },
   {
@@ -106,7 +106,7 @@
     "marca": "ASUS",
     "categoria": "accesorios",
     "descripcion": "Cargador de 30W con tecnología Power Delivery.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "cargadorRapidoC.jpg"
   },
   {
@@ -116,37 +116,37 @@
     "marca": "Corsair",
     "categoria": "accesorios",
     "descripcion": "Teclado con retroiluminación y teclas Cherry MX.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "tecladoMecanicoRGB.jpg"
   },
   {
     "id": 13,
     "nombre": "Auriculares Bluetooth",
     "precio": 79.99,
-    "marca": "Sony",
+    "marca": "Corsair",
     "categoria": "accesorios",
     "descripcion": "Sonido de alta calidad con cancelación de ruido.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "auricBluetooth.jpg"
   },
   {
     "id": 14,
     "nombre": "Mouse Gamer",
     "precio": 49.99,
-    "marca": "Logitech",
+    "marca": "Corsair",
     "categoria": "accesorios",
     "descripcion": "Precisión para juegos con múltiples botones programables.",
-    "masBuscado": false,
+    "masBuscado": "no",
     "imagen": "mouseGamerLog.jpg"
   },
   {
     "id": 15,
     "nombre": "Funda para Laptop",
     "precio": 24.99,
-    "marca": "Case Logic",
+    "marca": "Lenovo",
     "categoria": "accesorios",
     "descripcion": "Protección y estilo para tu portátil.",
-    "masBuscado": true,
+    "masBuscado": "si",
     "imagen": "fundaLaptopCase.jpg"
   },
   {
@@ -156,6 +156,27 @@
     "marca": "ASUS",
     "categoria": "pcs",
     "descripcion": "INTENTANDO SUBIR UNA IMAGEN 4",
+    "masBuscado": "no",
     "imagen": "imagen-1695577747378.png"
+  },
+  {
+    "id": "ac628c75-456b-4e21-9456-b9991c075a87",
+    "nombre": "Prueba input radio",
+    "precio": 4545.5,
+    "marca": "ASUS",
+    "categoria": "celulares",
+    "descripcion": "radio input",
+    "masBuscado": "no",
+    "imagen": "imagen-1696766563331.png"
+  },
+  {
+    "id": "7d3d6929-1a20-4612-a9ff-0501e3909f4f",
+    "nombre": "Prueba con mas buscado",
+    "precio": 4545.36,
+    "marca": "ASUS",
+    "categoria": "pcs",
+    "descripcion": "pcs mas buscada",
+    "masBuscado": "si",
+    "imagen": "imagen-1696768472352.png"
   }
 ]

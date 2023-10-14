@@ -102,11 +102,21 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label>Producto más buscado? :</label>
-            <input type="radio" name="masBuscado" value="true"/>
+           <label for="masBuscado">Producto mas buscado?:</label>
+            <select name="masBuscado" id="masBuscado" class="reg-form-input">
+              <option value="" <% if (product.masBuscado=="") { %>
+               selected
+              <% } %>>Producto mas buscado?:</option>
+              <option value="si" <% if (product.masBuscado=="si") { %>
+               selected  <% } %>>Si</option>
+              <option value="no" <% if (product.masBuscado=="no") { %>
+               selected
+              <% } %>>No</option>
+            </select>
           </div>
-          
-          <div class="reg-mb-15">
+          <hr class="reg-linea">
+                                        
+          <div class="reg-mb-15 reg flex reg-flex-center" >
             <button type="submit" class="reg-button">Guardar cambios</button>
 
             <button type="reset" class="reg-button-login">Cancelar</button>

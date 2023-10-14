@@ -188,5 +188,25 @@
     "password_repeat": "$2a$10$tsJFqLzVIAgL9xLKJEgqs.yFiG7fExehzR35DMxZv2O7rdKfzNZFW",
     "category": "user",
     "avatar": "avatar-1696200556291.jpg"
+  },
+  {
+    "id": "f29f2d84-fb73-4a69-94c1-3ac033324a90",
+    "name": "Juan",
+    "last_name": "Perez",
+    "email": "mail@mail.com",
+    "password": "$2a$10$QvlS.hcQtcOwUG6Hq/lMZO.vxVUVJIS2VmloHCrIKUWcADPsleism",
+    "password_repeat": "$2a$10$dBeOoUGMx.JVPVSFCDzI..AaaIjhCetw1xZuDvyLyM1ONnRsvazcC",
+    "category": "user",
+    "avatar": "avatar-1696247300906.jpg"
+  },
+  {
+    "id": "4e9595ff-6984-4b3b-9bd1-cd12fa11dec2",
+    "name": "juancito",
+    "last_name": "perez",
+    "email": "jp@mail.com",
+    "password": "$2a$10$JpsuWgRnzsHNfBS4VeHucOtg7GPRWbTugt2vJwDjwSMfjV3ZHvvDa",
+    "password_repeat": "$2a$10$ok0TUaonKndlYFMRX7yCyuJkNZAfzMJ14.XcCHAlL6uF2md2VeBZq",
+    "category": "user",
+    "avatar": "avatar-1696247398588.jpg"
   }
 ]

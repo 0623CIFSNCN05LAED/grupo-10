@@ -73,7 +73,8 @@ body {
   border-radius: 4px;
   font-size: 20px;
   padding: 10px;
-  flex-grow: 1;
+  flex-grow: 0.8;
+  margin-right: 10px;
 }
 
 .reg-button-login {
@@ -85,7 +86,7 @@ body {
   color: #0a74da;
   font-size: 20px;
   padding: 10px;
-  flex-grow: 0.15;
+  flex-grow: 0.2;
   margin: auto;
 }
 
