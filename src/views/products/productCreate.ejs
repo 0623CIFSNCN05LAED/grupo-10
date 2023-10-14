@@ -85,11 +85,16 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label>Producto más buscado? :</label>
-            <input type="radio" name="masBuscado" value="true" />
+            <label for="masBuscado">Producto mas buscado?:</label>
+            <select name="masBuscado" id="masBuscado" class="reg-form-input">
+              <option value="">Seleccioná</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
           </div>
+          <hr class="reg-linea" />
 
-          <div class="reg-mb-15">
+          <div class="reg-mb-15 reg-flex reg-flex-center">
             <button type="submit" class="reg-button">Crear Producto</button>
 
             <button type="reset" class="reg-button-login">Cancelar</button>

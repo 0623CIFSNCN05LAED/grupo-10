@@ -34,6 +34,7 @@ module.exports = {
       marca: req.body.marca,
       categoria: req.body.categoria,
       descripcion: req.body.descripcion,
+      masBuscado: req.body.masBuscado,
       imagen: req.file ? req.file.filename : "default.png",
     };
     productService.produtcCreating(product);

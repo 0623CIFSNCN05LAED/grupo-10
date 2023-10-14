@@ -147,6 +147,36 @@
     "password": "$2a$10$ZdRZ40tuiQ1Lul2abq2R8.dITWIWrItvL9Hi0a2F2Y6VMToS.0mxG",
     "password_repeat": "$2a$10$SYM9gFhXUqPv2NrAcUCJ1efwQl8a8S/0CJXhCbGu39ttHWqskxcJ2",
     "category": "user",
-    "avatar": "users_default.png"
+    "avatar": "avatar-1696200295274.jpg"
+  },
+  {
+    "id": "1f880b89-32c4-42c2-96e8-ed946cb0af61",
+    "name": "final prueba",
+    "last_name": "con middleware",
+    "email": "mail@mail.com",
+    "password": "$2a$10$i/v3KCumttRdeNCBy0xu6OaUOsVzpKFbiOkXcl2qQD8QpFM9eGaEm",
+    "password_repeat": "$2a$10$tsJFqLzVIAgL9xLKJEgqs.yFiG7fExehzR35DMxZv2O7rdKfzNZFW",
+    "category": "user",
+    "avatar": "avatar-1696200556291.jpg"
+  },
+  {
+    "id": "f29f2d84-fb73-4a69-94c1-3ac033324a90",
+    "name": "Juan",
+    "last_name": "Perez",
+    "email": "mail@mail.com",
+    "password": "$2a$10$QvlS.hcQtcOwUG6Hq/lMZO.vxVUVJIS2VmloHCrIKUWcADPsleism",
+    "password_repeat": "$2a$10$dBeOoUGMx.JVPVSFCDzI..AaaIjhCetw1xZuDvyLyM1ONnRsvazcC",
+    "category": "user",
+    "avatar": "avatar-1696247300906.jpg"
+  },
+  {
+    "id": "4e9595ff-6984-4b3b-9bd1-cd12fa11dec2",
+    "name": "juancito",
+    "last_name": "perez",
+    "email": "jp@mail.com",
+    "password": "$2a$10$JpsuWgRnzsHNfBS4VeHucOtg7GPRWbTugt2vJwDjwSMfjV3ZHvvDa",
+    "password_repeat": "$2a$10$ok0TUaonKndlYFMRX7yCyuJkNZAfzMJ14.XcCHAlL6uF2md2VeBZq",
+    "category": "user",
+    "avatar": "avatar-1696247398588.jpg"
   }
 ]

@@ -10,15 +10,22 @@
     <main>
       <div class="product">
         <div class="product-image">
+          <% if (product && product.imagen) { %>
           <img
             src="/images/products/<%= product.imagen %>"
             alt="imagen <%= product.nombre %>"
           />
+          <% } %>
         </div>
         <div class="product-details">
+          <% if (product && product.nombre) { %>
           <h1><%= product.nombre %></h1>
+          <% } %> <% if (product && product.precio) { %>
           <p class="price">$<%= product.precio %></p>
+          <% } %> <% if (product && product.descripcion) { %>
           <p class="description"><%= product.descripcion %>.</p>
+          <% } %>
+
           <div class="product-actions">
             <button class="add-to-cart">Agregar al Carrito</button>
             <button class="buy-now">Comprar Ahora</button>
@@ -26,6 +33,8 @@
         </div>
         <hr />
         <div style="display: flex; justify-content: space-around">
+          <% if (product && product.id) { %>
+
           <a href="/products/edit/<%= product.id %>" class="product-actions"
             ><button class="edit-product">Editar Producto</button></a
           >
@@ -38,6 +47,7 @@
               Eliminar Producto
             </button>
           </form>
+          <% } %>
         </div>
       </div>
     </main>
