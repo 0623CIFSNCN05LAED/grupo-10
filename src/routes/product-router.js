@@ -2,6 +2,7 @@
 const { Router } = require("express");
 const router = Router();
 const path = require("path");
+const userGuard = require("../middlewares/user-guard");
 
 const multer = require("multer");
 
@@ -24,17 +25,17 @@ const productController = require("../controllers/product-controller");
 router.get("/", productController.products);
 
 //CARRITO DE PRODUCTO
-router.get("/cart/", productController.productCart);
+router.get("/cart/", userGuard, productController.productCart);
 
 //CREACION
-router.get("/create/", productController.productCreateForm);
+router.get("/create/", userGuard, productController.productCreateForm);
 router.post("/", upload.single("imagen"), productController.createProduct);
 
 //OBTENER UN PRODUCTO
 router.get("/:id/", productController.productDetail);
 
 //EDICION DE PRODUCTO
-router.get("/edit/:id/", productController.productEdit);
+router.get("/edit/:id/", userGuard, productController.productEdit);
 router.put("/:id/", upload.single("imagen"), productController.productUpdate);
 
 //ELIMINAR UN PRODUCTO
