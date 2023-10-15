@@ -178,5 +178,15 @@
     "password_repeat": "$2a$10$ok0TUaonKndlYFMRX7yCyuJkNZAfzMJ14.XcCHAlL6uF2md2VeBZq",
     "category": "user",
     "avatar": "avatar-1696247398588.jpg"
+  },
+  {
+    "id": "69efcb50-28d6-4218-970b-0b920797a8e1",
+    "name": "Pablo",
+    "last_name": "Gomez",
+    "email": "pablo@mail.com",
+    "password": "$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6",
+    "password_repeat": "$2a$10$6xXAiKdzCcv2PwwlzJamC.U6A6bnoryjPrKn/zjN/86p1zf.Otn1K",
+    "category": "user",
+    "avatar": "users_default.png"
   }
 ]
