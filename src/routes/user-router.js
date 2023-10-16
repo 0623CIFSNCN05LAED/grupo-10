@@ -33,8 +33,9 @@ router.post(
     extended: false,
   }),
   validationsLogin,
-  validateFormLogin.correo,
-  validateFormLogin.password,
+  validateFormLogin,
+  //validateFormLogin.correo,
+  //validateFormLogin.password,
   userController.loginProcess
 );
 
@@ -44,8 +45,8 @@ router.post(
   "/register/",
   upload.single("avatar"),
   validationsRegister,
-  validateFormRegister.campo,
-  validateFormRegister.correo,
+  validateFormRegister,
+  //validateFormRegister.correo,
   userController.createUser
 );
 

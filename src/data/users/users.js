@@ -30,12 +30,14 @@ module.exports = {
     return user;
   },
   findByField: function (field, text) {
-    const userFound = this.getUsers().find((usuario) => usuario[field] == text);
-    return !!userFound;
-  },
-  findByMeil: function (field, text) {
-    const userFound = this.getUsers().find((usuario) => usuario[field] == text);
+    const userFound = this.getUsers().find((usuario) => usuario.field == text);
     return userFound;
+  },
+  findByEmail: function (email) {
+    const userFound = this.getUsers().find(
+      (usuario) => usuario.email.toLowerCase() == email.toLowerCase()
+    );
+    return userFound ? userFound : false;
   },
   update: function (id, user) {
     console.log(`Actualizando usuario ${user.name}`);
