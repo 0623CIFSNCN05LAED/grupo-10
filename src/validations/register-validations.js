@@ -1,7 +1,6 @@
 const { body } = require("express-validator");
 const path = require("path");
 const users = require("../data/users/users");
-const { urlencoded } = require("express");
 
 module.exports = [
   body("name").notEmpty().withMessage("Tienes que escribir un nombre"),
@@ -11,23 +10,32 @@ module.exports = [
     .withMessage("Tienes que escribir un correo eléctrónico")
     .bail()
     .isEmail()
-    .withMessage("Debes ingresar un formato de correo válido"),
-
-  body("email").custom((value, { req }) => {
-    let email = req.body.email;
-    let checkEmail = users.findByEmail(email);
-    if (!checkEmail) {
-      return true;
-    } else {
-      throw new Error(
-        `El correo electrónico ${email} ya está registrado. Por favor elija otro correo o rediríjase a login.`
-      );
-    }
-  }),
+    .withMessage("Debes ingresar un formato de correo válido")
+    .bail()
+    .custom((value, { req }) => {
+      let email = req.body.email;
+      let checkEmail = users.findByEmail(email);
+      if (!checkEmail) {
+        return true;
+      } else {
+        throw new Error(`El correo electrónico ${email} ya está registrado.`);
+      }
+    }),
   body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
   body("password_repeat")
     .notEmpty()
-    .withMessage("Tienes que repetir la contraseña"),
+    .withMessage("Tienes que repetir la contraseña")
+    .bail()
+    .custom((value, { req }) => {
+      const password = req.body.password;
+      const password2 = req.body.password_repeat;
+      const checkPasswords = password === password2;
+      if (!checkPasswords) {
+        throw new Error(`Las contraseñas ingresadas no son iguales.`);
+      } else {
+        return true;
+      }
+    }),
   body("avatar").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png", ".gif"];
