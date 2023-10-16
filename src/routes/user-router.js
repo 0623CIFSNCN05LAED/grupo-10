@@ -33,8 +33,9 @@ router.post(
     extended: false,
   }),
   validationsLogin,
-  validateFormLogin.correo,
-  validateFormLogin.password,
+  validateFormLogin,
+  //validateFormLogin.correo,
+  //validateFormLogin.password,
   userController.loginProcess
 );
 
