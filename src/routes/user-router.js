@@ -44,8 +44,8 @@ router.post(
   "/register/",
   upload.single("avatar"),
   validationsRegister,
-  validateFormRegister.campo,
-  validateFormRegister.correo,
+  validateFormRegister,
+  //validateFormRegister.correo,
   userController.createUser
 );
 

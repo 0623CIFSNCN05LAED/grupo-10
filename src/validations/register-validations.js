@@ -1,5 +1,7 @@
 const { body } = require("express-validator");
 const path = require("path");
+const users = require("../data/users/users");
+const { urlencoded } = require("express");
 
 module.exports = [
   body("name").notEmpty().withMessage("Tienes que escribir un nombre"),
@@ -10,6 +12,18 @@ module.exports = [
     .bail()
     .isEmail()
     .withMessage("Debes ingresar un formato de correo válido"),
+
+  body("email").custom((value, { req }) => {
+    let email = req.body.email;
+    let checkEmail = users.findByEmail(email);
+    if (!checkEmail) {
+      return true;
+    } else {
+      throw new Error(
+        `El correo electrónico ${email} ya está registrado. Por favor elija otro correo o rediríjase a login.`
+      );
+    }
+  }),
   body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
   body("password_repeat")
     .notEmpty()
