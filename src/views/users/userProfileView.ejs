@@ -1,0 +1,30 @@
+<html lang="es">
+    <head>
+        <%- include('../partials/head', {title: 'Mi perfil'}) %>
+    <link rel="stylesheet" href="/css/userProfileView.css"/>
+    </head>
+<body>
+    <%- include("../partials/header") %>
+    <img
+        src="/images/login.png"
+        alt="imagen login"
+        class="log-w-100px log-lg-alig-center log-lg-w-300"/>
+   
+    <div class="container">
+        <div>
+        <label for="uname">Nombre de usuario:</label><br>
+            <h3 class="inf-perfil" ><%=user.name%> <%=user.last_name%></h3>
+        </div>
+        <div> 
+            <label for="email">Email:</label><br>
+            <h3 class="inf-perfil" ><%=user.email%></h3>
+        </div>
+        <div>
+            <label for="psw">Contraseña:</label><br>
+            <h3 class="inf-perfil" ><%=user.password%></h3>
+        </div>
+       
+    </div>
+</body>
+<footer class="foot"><%- include("../partials/footer") %></footer>
+</html>
