@@ -2,6 +2,11 @@ const path = require("path");
 const productService = require("../services/productService");
 module.exports = {
   products: (req, res) => {
+    let user_name = null;
+    const data = req.session.userData;
+    if (data) {
+      user_name = data.user_name;
+    }
     const productsLenovo = productService.getProductsLenovo();
     const productsApple = productService.getProductsApple();
     const productsAsus = productService.getProductsAsus();
@@ -10,21 +15,38 @@ module.exports = {
       productsLenovo,
       productsApple,
       productsAsus,
+      user_name,
     });
   },
   productCart: (req, res) => {
-    res.render("products/productCart");
+    let user_name = null;
+    const data = req.session.userData;
+    if (data) {
+      user_name = data.user_name;
+    }
+    res.render("products/productCart", { user_name });
   },
   //Detalle de un producto
   productDetail: (req, res) => {
     const id = req.params.id;
     const product = productService.getProduct(id);
-    res.render("products/productDetail", { product });
+
+    let user_name = null;
+    const data = req.session.userData;
+    if (data) {
+      user_name = data.user_name;
+    }
+    res.render("products/productDetail", { product, user_name });
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
   productCreateForm: (req, res) => {
-    res.render("products/productCreate");
+    let user_name = null;
+    const data = req.session.userData;
+    if (data) {
+      user_name = data.user_name;
+    }
+    res.render("products/productCreate", { user_name });
   },
   //METODO DE CREACION DE PRODUCTOS
   createProduct: (req, res) => {
@@ -34,6 +56,7 @@ module.exports = {
       marca: req.body.marca,
       categoria: req.body.categoria,
       descripcion: req.body.descripcion,
+      masBuscado: req.body.masBuscado,
       imagen: req.file ? req.file.filename : "default.png",
     };
     productService.produtcCreating(product);
@@ -41,9 +64,15 @@ module.exports = {
   },
   // Update - Form to edit one product
   productEdit: (req, res) => {
+    let user_name = null;
+    const data = req.session.userData;
+    if (data) {
+      user_name = data.user_name;
+    }
+
     const id = req.params.id;
     const product = productService.getProduct(id);
-    res.render("products/productEdit", { product });
+    res.render("products/productEdit", { product, user_name });
   },
   // Update - Method to update
   productUpdate: (req, res) => {

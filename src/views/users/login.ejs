@@ -3,6 +3,7 @@
   <head>
     <%- include('../partials/head', {title: 'Ingresá'}) %>
     <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/register.css" />
   </head>
   <body>
     <%- include("../partials/header") %>
@@ -15,7 +16,7 @@
           class="log-w-100px log-lg-alig-center log-lg-w-300"
         />
       </div>
-      <form action="/index" method="post" class="log-grow-70">
+      <form action="/users/login" method="post" class="log-grow-70">
         <div class="log-mb-15">
           <span class="log-span log-w-600">Bienvenido a HorizonX</span>
         </div>
@@ -27,9 +28,12 @@
             name="user_name"
             id="user_name"
             placeholder="Correo electrónico"
-            required
+            value="<%= locals.oldData? oldData.user_name : null %>"
             class="log-form-input"
           />
+           <% if (locals.errors && errors.user_name) { %>
+            <div class="reg-text-danger"><%= errors.user_name.msg %>
+           <% } %> 
         </div>
 
         <div class="log-mb-15">
@@ -39,9 +43,11 @@
             name="password"
             id="password"
             placeholder="Contraseña"
-            required
             class="log-form-input"
           />
+          <% if (locals.errors && errors.password) { %>
+          <div class="reg-text-danger"><%= errors.password.msg %></div>
+          <% } %>
         </div>
 
         <span class="log-span2 log-f-12"

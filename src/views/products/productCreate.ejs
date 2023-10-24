@@ -28,7 +28,11 @@
               id="nombre"
               placeholder="nombre del producto"
               class="reg-form-input"
+              value="<%= locals.oldData? oldData.nombre : null %>"
             />
+            <% if (locals.errors && errors.nombre) { %>
+            <div class="reg-text-danger"><%= errors.nombre.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -40,28 +44,52 @@
               id="precio"
               placeholder="123.45"
               class="reg-form-input"
+              value="<%= locals.oldData? oldData.precio : null %>"
             />
+            <% if (locals.errors && errors.precio) { %>
+            <div class="reg-text-danger"><%= errors.precio.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
             <label for="marca">Marca:</label>
             <select name="marca" id="marca" class="reg-form-input">
               <option value="">Elegí una marca</option>
-              <option value="ASUS">ASUS</option>
-              <option value="Lenovo">Lenovo</option>
-              <option value="Apple">Apple</option>
-              <option value="Corsair">Corsair</option>
+              <option value="ASUS" <% if (locals.oldData && oldData.marca=="ASUS") { %>
+               selected
+              <% } %>>ASUS</option>
+              <option value="Lenovo" <% if (locals.oldData && oldData.marca=="Lenovo") { %>
+               selected
+              <% } %>>Lenovo</option>
+              <option value="Apple" <% if (locals.oldData && oldData.marca=="Apple") { %>
+               selected
+              <% } %>>Apple</option>
+              <option value="Corsair" <% if (locals.oldData && oldData.marca=="Corsair") { %>
+               selected
+              <% } %>>Corsair</option>
             </select>
+            <% if (locals.errors && errors.marca) { %>
+            <div class="reg-text-danger"><%= errors.marca.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
             <label for="categoria">Categoría:</label>
             <select name="categoria" id="categoria" class="reg-form-input">
               <option value="">Elegí una categoría</option>
-              <option value="celulares">Celulares</option>
-              <option value="pcs">PCs</option>
-              <option value="accesorios">Accesorios</option>
+              <option value="celulares" <% if (locals.oldData && oldData.categoria=="celulares") { %>
+               selected
+              <% } %>>Celulares</option>
+              <option value="pcs" <% if (locals.oldData && oldData.categoria=="pcs") { %>
+               selected
+              <% } %>>PCs</option>
+              <option value="accesorios" <% if (locals.oldData && oldData.categoria=="accesorios") { %>
+               selected
+              <% } %>>Accesorios</option>
             </select>
+            <% if (locals.errors && errors.categoria) { %>
+            <div class="reg-text-danger"><%= errors.categoria.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -72,6 +100,9 @@
               placeholder="describi el producto"
               class="reg-form-input"
             ></textarea>
+            <% if (locals.errors && errors.descripcion) { %>
+            <div class="reg-text-danger"><%= errors.descripcion.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -85,11 +116,16 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label>Producto más buscado? :</label>
-            <input type="radio" name="masBuscado" value="true" />
+            <label for="masBuscado">Producto mas buscado?:</label>
+            <select name="masBuscado" id="masBuscado" class="reg-form-input">
+              <option value="">Seleccioná</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
           </div>
+          <hr class="reg-linea" />
 
-          <div class="reg-mb-15">
+          <div class="reg-mb-15 reg-flex reg-flex-center">
             <button type="submit" class="reg-button">Crear Producto</button>
 
             <button type="reset" class="reg-button-login">Cancelar</button>

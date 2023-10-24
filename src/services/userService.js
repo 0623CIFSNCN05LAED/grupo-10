@@ -9,6 +9,10 @@ const userService = {
     const user = db.users.findById(id);
     return user;
   },
+  usersByFile: (field, text) =>{
+    const user = db.users.findByField();
+    return user;
+  },
   userCreating: (user) => {
     db.users.create(user);
   },
