@@ -5,7 +5,7 @@
     "price": 999.99,
     "brand": "Apple",
     "category": "celulares",
-    "descripcion": "Smartphone de Última generación con pantalla OLED.",
+    "description": "Smartphone de Última generación con pantalla OLED.",
     "masBuscado": "si",
     "imagen": "Iphone13.jpg"
   },
@@ -15,7 +15,7 @@
     "price": 899.99,
     "brand": "ASUS",
     "category": "celulares",
-    "descripcion": "Potente smartphone con cámara de alta resolución.",
+    "description": "Potente smartphone con cámara de alta resolución.",
     "masBuscado": "no",
     "imagen": "galaxyS22.jpg"
   },
@@ -25,7 +25,7 @@
     "price": 799.99,
     "brand": "Lenovo",
     "category": "celulares",
-    "descripcion": "Experiencia Android pura con excelente cámara.",
+    "description": "Experiencia Android pura con excelente cámara.",
     "masBuscado": "no",
     "imagen": "pixel6.jpg"
   },
@@ -35,7 +35,7 @@
     "price": 749.99,
     "brand": "Apple",
     "category": "celulares",
-    "descripcion": "Diseño elegante con carga rápida.",
+    "description": "Diseño elegante con carga rápida.",
     "masBuscado": "no",
     "imagen": "onePlus9.jpg"
   },
@@ -45,7 +45,7 @@
     "price": 699.99,
     "brand": "Apple",
     "category": "celulares",
-    "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
+    "description": "Alto rendimiento con una gran relación calidad-precio.",
     "masBuscado": "si",
     "imagen": "xiaomiMi11.jpg"
   },
@@ -55,7 +55,7 @@
     "price": 1299.99,
     "brand": "Apple",
     "category": "pcs",
-    "descripcion": "Portátil potente con chip M1.",
+    "description": "Portátil potente con chip M1.",
     "masBuscado": "no",
     "imagen": "mcBookPro.jpg"
   },
@@ -65,7 +65,7 @@
     "price": 1199.99,
     "brand": "Corsair",
     "category": "pcs",
-    "descripcion": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
+    "description": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
     "masBuscado": "si",
     "imagen": "dellXPS13.jpg"
   },
@@ -75,7 +75,7 @@
     "price": 1249.99,
     "brand": "Lenovo",
     "category": "pcs",
-    "descripcion": "Ideal para negocios con teclado de alta calidad.",
+    "description": "Ideal para negocios con teclado de alta calidad.",
     "masBuscado": "no",
     "imagen": "lenovoTPadX1.jpg"
   },
@@ -85,7 +85,7 @@
     "price": 1149.99,
     "brand": "Lenovo",
     "category": "pcs",
-    "descripcion": "Convertible con diseño premium y pantalla táctil.",
+    "description": "Convertible con diseño premium y pantalla táctil.",
     "masBuscado": "si",
     "imagen": "hpSpectre.jpg"
   },
@@ -95,7 +95,7 @@
     "price": 1349.99,
     "brand": "ASUS",
     "category": "pcs",
-    "descripcion": "Doble pantalla para multitasking avanzado.",
+    "description": "Doble pantalla para multitasking avanzado.",
     "masBuscado": "no",
     "imagen": "azusZenBook.jpg"
   },
@@ -105,7 +105,7 @@
     "price": 29.99,
     "brand": "ASUS",
     "category": "accesorios",
-    "descripcion": "Cargador de 30W con tecnología Power Delivery.",
+    "description": "Cargador de 30W con tecnología Power Delivery.",
     "masBuscado": "si",
     "imagen": "cargadorRapidoC.jpg"
   },
@@ -115,7 +115,7 @@
     "price": 59.99,
     "brand": "Corsair",
     "category": "accesorios",
-    "descripcion": "Teclado con retroiluminación y teclas Cherry MX.",
+    "description": "Teclado con retroiluminación y teclas Cherry MX.",
     "masBuscado": "no",
     "imagen": "tecladoMecanicoRGB.jpg"
   },
@@ -125,7 +125,7 @@
     "price": 79.99,
     "brand": "Corsair",
     "category": "accesorios",
-    "descripcion": "Sonido de alta calidad con cancelación de ruido.",
+    "description": "Sonido de alta calidad con cancelación de ruido.",
     "masBuscado": "si",
     "imagen": "auricBluetooth.jpg"
   },
@@ -135,7 +135,7 @@
     "price": 49.99,
     "brand": "Corsair",
     "category": "accesorios",
-    "descripcion": "Precisión para juegos con múltiples botones programables.",
+    "description": "Precisión para juegos con múltiples botones programables.",
     "masBuscado": "no",
     "imagen": "mouseGamerLog.jpg"
   },
@@ -145,7 +145,7 @@
     "price": 24.99,
     "brand": "Lenovo",
     "category": "accesorios",
-    "descripcion": "Protección y estilo para tu portátil.",
+    "description": "Protección y estilo para tu portátil.",
     "masBuscado": "si",
     "imagen": "fundaLaptopCase.jpg"
   }

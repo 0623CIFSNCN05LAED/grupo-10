@@ -6,5 +6,5 @@ module.exports = [
   body("price").notEmpty().withMessage("Debes ingresar un precio"),
   body("brand").notEmpty().withMessage(`Debes seleccionar una marca`),
   body("category").notEmpty().withMessage("Debes seleccionar una categoría"),
-  body("descripcion").notEmpty().withMessage("Debes ingresar una descripción"),
+  body("description").notEmpty().withMessage("Debes ingresar una descripción"),
 ];
