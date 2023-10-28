@@ -7,6 +7,7 @@ const validationsLogin = require("../validations/login-validations");
 const validateFormLogin = require("../middlewares/validate-form-login");
 const path = require("path");
 const guestGuard = require("../middlewares/guest-guard");
+const userGuard = require("../middlewares/user-guard");
 
 const multer = require("multer");
 
@@ -51,6 +52,6 @@ router.post(
 );
 
 //VISTA DE USUARIO
-router.get("/:id/", userController.userProfile);
+router.get("/:id/", userGuard, userController.userProfile);
 
 module.exports = router;
