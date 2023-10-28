@@ -3,7 +3,7 @@ const path = require("path");
 const users = require("../data/users/users");
 
 module.exports = [
-  body("name").notEmpty().withMessage("Tienes que escribir un nombre"),
+  body("first_name").notEmpty().withMessage("Tienes que escribir un nombre"),
   body("last_name").notEmpty().withMessage("Tienes que escribir un apellido"),
   body("email")
     .notEmpty()

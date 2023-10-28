@@ -32,7 +32,6 @@ module.exports = {
       user_name = data.user_name;
     }
     res.render("users/userProfileView", { user, user_name });
- 
   },
 
   // Formulario para logueo de usuario
@@ -66,11 +65,10 @@ module.exports = {
   // Método de creación de usuario
   createUser: (req, res) => {
     const user = {
-      name: req.body.name,
+      first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      password_repeat: bcrypt.hashSync(req.body.password_repeat, 10),
       category: "user",
       avatar: req.file ? req.file.filename : "users_default.png",
     };

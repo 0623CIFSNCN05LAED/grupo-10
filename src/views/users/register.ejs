@@ -22,17 +22,17 @@
           <span class="reg-span reg-font-w-600">Registrate</span>
         </div>
         <div class="reg-mb-15">
-          <label for="name" class="reg-label">Nombre:</label>
+          <label for="first_name" class="reg-label">Nombre:</label>
           <input
             type="text"
-            name="name"
-            id="name"
+            name="first_name"
+            id="first_name"
             placeholder="Ejemplo: Juan"
             class="reg-form-input"
-            value="<%= locals.oldData? oldData.name : null %>"
+            value="<%= locals.oldData? oldData.first_name : null %>"
           />
-          <% if (locals.errors && errors.name) { %>
-          <div class="reg-text-danger"><%= errors.name.msg %></div>
+          <% if (locals.errors && errors.first_name) { %>
+          <div class="reg-text-danger"><%= errors.first_name.msg %></div>
           <% } %>
         </div>
         <div class="reg-mb-15">

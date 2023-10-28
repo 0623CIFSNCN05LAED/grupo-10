@@ -16,7 +16,7 @@ module.exports = {
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
   },
   create: function (user) {
-    console.log(`Creating user ${user.name} ${user.last_name}`);
+    console.log(`Creating user ${user.first_name} ${user.last_name}`);
     const users = this.getUsers();
     const newUser = {
       id: uuidv4(),
@@ -40,7 +40,7 @@ module.exports = {
     return userFound ? userFound : false;
   },
   update: function (id, user) {
-    console.log(`Actualizando usuario ${user.name}`);
+    console.log(`Actualizando usuario ${user.first_name}`);
     // cargar todos los usuarios
     const users = this.getUsers();
     // buscar un usuario por id
