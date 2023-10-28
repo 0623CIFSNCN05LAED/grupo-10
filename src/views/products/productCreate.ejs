@@ -21,17 +21,17 @@
           class="reg-grow-70 reg-md-flex"
         >
           <div class="reg-mb-15 reg-md-prod">
-            <label for="nombre">Nombre:</label>
+            <label for="name">Nombre:</label>
             <input
               type="text"
-              name="nombre"
-              id="nombre"
+              name="name"
+              id="name"
               placeholder="nombre del producto"
               class="reg-form-input"
-              value="<%= locals.oldData? oldData.nombre : null %>"
+              value="<%= locals.oldData? oldData.name : null %>"
             />
-            <% if (locals.errors && errors.nombre) { %>
-            <div class="reg-text-danger"><%= errors.nombre.msg %></div>
+            <% if (locals.errors && errors.name) { %>
+            <div class="reg-text-danger"><%= errors.name.msg %></div>
             <% } %>
           </div>
 

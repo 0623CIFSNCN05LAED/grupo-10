@@ -51,7 +51,7 @@ module.exports = {
   //METODO DE CREACION DE PRODUCTOS
   createProduct: (req, res) => {
     const product = {
-      nombre: req.body.nombre,
+      name: req.body.name,
       precio: Number(req.body.precio),
       marca: req.body.marca,
       categoria: req.body.categoria,
@@ -77,7 +77,7 @@ module.exports = {
   // Update - Method to update
   productUpdate: (req, res) => {
     const product = {
-      nombre: req.body.nombre,
+      name: req.body.name,
       precio: Number(req.body.precio),
       marca: req.body.marca,
       categoria: req.body.categoria,

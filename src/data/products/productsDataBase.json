@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nombre": "iPhone 13",
+    "name": "iPhone 13",
     "precio": 999.99,
     "marca": "Apple",
     "categoria": "celulares",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "nombre": "Galaxy S22",
+    "name": "Galaxy S22",
     "precio": 899.99,
     "marca": "ASUS",
     "categoria": "celulares",
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "nombre": "Pixel 6",
+    "name": "Pixel 6",
     "precio": 799.99,
     "marca": "Lenovo",
     "categoria": "celulares",
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "nombre": "OnePlus 9",
+    "name": "OnePlus 9",
     "precio": 749.99,
     "marca": "Apple",
     "categoria": "celulares",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "nombre": "Xiaomi Mi 11",
+    "name": "Xiaomi Mi 11",
     "precio": 699.99,
     "marca": "Apple",
     "categoria": "celulares",
@@ -51,7 +51,7 @@
   },
   {
     "id": 6,
-    "nombre": "MacBook Pro",
+    "name": "MacBook Pro",
     "precio": 1299.99,
     "marca": "Apple",
     "categoria": "pcs",
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "nombre": "Dell XPS 13",
+    "name": "Dell XPS 13",
     "precio": 1199.99,
     "marca": "Corsair",
     "categoria": "pcs",
@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "nombre": "Lenovo ThinkPad X1",
+    "name": "Lenovo ThinkPad X1",
     "precio": 1249.99,
     "marca": "Lenovo",
     "categoria": "pcs",
@@ -81,7 +81,7 @@
   },
   {
     "id": 9,
-    "nombre": "HP Spectre x360",
+    "name": "HP Spectre x360",
     "precio": 1149.99,
     "marca": "Lenovo",
     "categoria": "pcs",
@@ -91,7 +91,7 @@
   },
   {
     "id": 10,
-    "nombre": "ASUS ZenBook Duo",
+    "name": "ASUS ZenBook Duo",
     "precio": 1349.99,
     "marca": "ASUS",
     "categoria": "pcs",
@@ -101,7 +101,7 @@
   },
   {
     "id": 11,
-    "nombre": "Cargador rápido USB-C",
+    "name": "Cargador rápido USB-C",
     "precio": 29.99,
     "marca": "ASUS",
     "categoria": "accesorios",
@@ -111,7 +111,7 @@
   },
   {
     "id": 12,
-    "nombre": "Teclado Mecánico RGB",
+    "name": "Teclado Mecánico RGB",
     "precio": 59.99,
     "marca": "Corsair",
     "categoria": "accesorios",
@@ -121,7 +121,7 @@
   },
   {
     "id": 13,
-    "nombre": "Auriculares Bluetooth",
+    "name": "Auriculares Bluetooth",
     "precio": 79.99,
     "marca": "Corsair",
     "categoria": "accesorios",
@@ -131,7 +131,7 @@
   },
   {
     "id": 14,
-    "nombre": "Mouse Gamer",
+    "name": "Mouse Gamer",
     "precio": 49.99,
     "marca": "Corsair",
     "categoria": "accesorios",
@@ -141,7 +141,7 @@
   },
   {
     "id": 15,
-    "nombre": "Funda para Laptop",
+    "name": "Funda para Laptop",
     "precio": 24.99,
     "marca": "Lenovo",
     "categoria": "accesorios",
