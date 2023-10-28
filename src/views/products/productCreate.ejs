@@ -36,18 +36,18 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="precio">Precio:</label>
+            <label for="price">Precio:</label>
             <input
               type="number"
-              name="precio"
+              name="price"
               step="0.01"
-              id="precio"
+              id="price"
               placeholder="123.45"
               class="reg-form-input"
-              value="<%= locals.oldData? oldData.precio : null %>"
+              value="<%= locals.oldData? oldData.price : null %>"
             />
-            <% if (locals.errors && errors.precio) { %>
-            <div class="reg-text-danger"><%= errors.precio.msg %></div>
+            <% if (locals.errors && errors.price) { %>
+            <div class="reg-text-danger"><%= errors.price.msg %></div>
             <% } %>
           </div>
 

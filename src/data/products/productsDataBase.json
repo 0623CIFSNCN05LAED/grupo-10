@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "iPhone 13",
-    "precio": 999.99,
+    "price": 999.99,
     "marca": "Apple",
     "categoria": "celulares",
     "descripcion": "Smartphone de Última generación con pantalla OLED.",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "name": "Galaxy S22",
-    "precio": 899.99,
+    "price": 899.99,
     "marca": "ASUS",
     "categoria": "celulares",
     "descripcion": "Potente smartphone con cámara de alta resolución.",
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Pixel 6",
-    "precio": 799.99,
+    "price": 799.99,
     "marca": "Lenovo",
     "categoria": "celulares",
     "descripcion": "Experiencia Android pura con excelente cámara.",
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "OnePlus 9",
-    "precio": 749.99,
+    "price": 749.99,
     "marca": "Apple",
     "categoria": "celulares",
     "descripcion": "Diseño elegante con carga rápida.",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Xiaomi Mi 11",
-    "precio": 699.99,
+    "price": 699.99,
     "marca": "Apple",
     "categoria": "celulares",
     "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "MacBook Pro",
-    "precio": 1299.99,
+    "price": 1299.99,
     "marca": "Apple",
     "categoria": "pcs",
     "descripcion": "Portátil potente con chip M1.",
@@ -62,7 +62,7 @@
   {
     "id": 7,
     "name": "Dell XPS 13",
-    "precio": 1199.99,
+    "price": 1199.99,
     "marca": "Corsair",
     "categoria": "pcs",
     "descripcion": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "name": "Lenovo ThinkPad X1",
-    "precio": 1249.99,
+    "price": 1249.99,
     "marca": "Lenovo",
     "categoria": "pcs",
     "descripcion": "Ideal para negocios con teclado de alta calidad.",
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "name": "HP Spectre x360",
-    "precio": 1149.99,
+    "price": 1149.99,
     "marca": "Lenovo",
     "categoria": "pcs",
     "descripcion": "Convertible con diseño premium y pantalla táctil.",
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "name": "ASUS ZenBook Duo",
-    "precio": 1349.99,
+    "price": 1349.99,
     "marca": "ASUS",
     "categoria": "pcs",
     "descripcion": "Doble pantalla para multitasking avanzado.",
@@ -102,7 +102,7 @@
   {
     "id": 11,
     "name": "Cargador rápido USB-C",
-    "precio": 29.99,
+    "price": 29.99,
     "marca": "ASUS",
     "categoria": "accesorios",
     "descripcion": "Cargador de 30W con tecnología Power Delivery.",
@@ -112,7 +112,7 @@
   {
     "id": 12,
     "name": "Teclado Mecánico RGB",
-    "precio": 59.99,
+    "price": 59.99,
     "marca": "Corsair",
     "categoria": "accesorios",
     "descripcion": "Teclado con retroiluminación y teclas Cherry MX.",
@@ -122,7 +122,7 @@
   {
     "id": 13,
     "name": "Auriculares Bluetooth",
-    "precio": 79.99,
+    "price": 79.99,
     "marca": "Corsair",
     "categoria": "accesorios",
     "descripcion": "Sonido de alta calidad con cancelación de ruido.",
@@ -132,7 +132,7 @@
   {
     "id": 14,
     "name": "Mouse Gamer",
-    "precio": 49.99,
+    "price": 49.99,
     "marca": "Corsair",
     "categoria": "accesorios",
     "descripcion": "Precisión para juegos con múltiples botones programables.",
@@ -142,7 +142,7 @@
   {
     "id": 15,
     "name": "Funda para Laptop",
-    "precio": 24.99,
+    "price": 24.99,
     "marca": "Lenovo",
     "categoria": "accesorios",
     "descripcion": "Protección y estilo para tu portátil.",
