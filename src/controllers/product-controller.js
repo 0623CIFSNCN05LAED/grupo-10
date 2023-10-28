@@ -53,7 +53,7 @@ module.exports = {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
-      marca: req.body.marca,
+      brand: req.body.brand,
       categoria: req.body.categoria,
       descripcion: req.body.descripcion,
       masBuscado: req.body.masBuscado,
@@ -79,7 +79,7 @@ module.exports = {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
-      marca: req.body.marca,
+      brand: req.body.brand,
       categoria: req.body.categoria,
       descripcion: req.body.descripcion,
     };

@@ -52,24 +52,24 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="marca">Marca:</label>
-            <select name="marca" id="marca" class="reg-form-input">
+            <label for="brand">Marca:</label>
+            <select name="brand" id="brand" class="reg-form-input">
               <option value="">Elegí una marca</option>
-              <option value="ASUS" <% if (locals.oldData && oldData.marca=="ASUS") { %>
+              <option value="ASUS" <% if (locals.oldData && oldData.brand=="ASUS") { %>
                selected
               <% } %>>ASUS</option>
-              <option value="Lenovo" <% if (locals.oldData && oldData.marca=="Lenovo") { %>
+              <option value="Lenovo" <% if (locals.oldData && oldData.brand=="Lenovo") { %>
                selected
               <% } %>>Lenovo</option>
-              <option value="Apple" <% if (locals.oldData && oldData.marca=="Apple") { %>
+              <option value="Apple" <% if (locals.oldData && oldData.brand=="Apple") { %>
                selected
               <% } %>>Apple</option>
-              <option value="Corsair" <% if (locals.oldData && oldData.marca=="Corsair") { %>
+              <option value="Corsair" <% if (locals.oldData && oldData.brand=="Corsair") { %>
                selected
               <% } %>>Corsair</option>
             </select>
-            <% if (locals.errors && errors.marca) { %>
-            <div class="reg-text-danger"><%= errors.marca.msg %></div>
+            <% if (locals.errors && errors.brand) { %>
+            <div class="reg-text-danger"><%= errors.brand.msg %></div>
             <% } %>
           </div>
 
