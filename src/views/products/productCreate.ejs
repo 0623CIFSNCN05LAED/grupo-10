@@ -74,21 +74,21 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="categoria">Categoría:</label>
-            <select name="categoria" id="categoria" class="reg-form-input">
+            <label for="category">Categoría:</label>
+            <select name="category" id="category" class="reg-form-input">
               <option value="">Elegí una categoría</option>
-              <option value="celulares" <% if (locals.oldData && oldData.categoria=="celulares") { %>
+              <option value="celulares" <% if (locals.oldData && oldData.category=="celulares") { %>
                selected
               <% } %>>Celulares</option>
-              <option value="pcs" <% if (locals.oldData && oldData.categoria=="pcs") { %>
+              <option value="pcs" <% if (locals.oldData && oldData.category=="pcs") { %>
                selected
               <% } %>>PCs</option>
-              <option value="accesorios" <% if (locals.oldData && oldData.categoria=="accesorios") { %>
+              <option value="accesorios" <% if (locals.oldData && oldData.category=="accesorios") { %>
                selected
               <% } %>>Accesorios</option>
             </select>
-            <% if (locals.errors && errors.categoria) { %>
-            <div class="reg-text-danger"><%= errors.categoria.msg %></div>
+            <% if (locals.errors && errors.category) { %>
+            <div class="reg-text-danger"><%= errors.category.msg %></div>
             <% } %>
           </div>
 

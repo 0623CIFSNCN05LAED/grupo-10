@@ -65,17 +65,17 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="categoria">Categoría:</label>
-            <select name="categoria" id="categoria" class="reg-form-input">
-              <option value="" <% if (product.categoria=="") { %>
+            <label for="category">Categoría:</label>
+            <select name="category" id="category" class="reg-form-input">
+              <option value="" <% if (product.category=="") { %>
                selected
               <% } %>>Elegí una categoría</option>
-              <option value="celulares" <% if (product.categoria=="celulares") { %>
+              <option value="celulares" <% if (product.category=="celulares") { %>
                selected  <% } %>>Celulares</option>
-              <option value="pcs" <% if (product.categoria=="pcs") { %>
+              <option value="pcs" <% if (product.category=="pcs") { %>
                selected
               <% } %>>PCs</option>
-              <option value="accesorios" <% if (product.categoria=="accesorios") { %>
+              <option value="accesorios" <% if (product.category=="accesorios") { %>
                selected
               <% } %>>Accesorios</option>
             </select>

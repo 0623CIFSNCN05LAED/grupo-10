@@ -4,7 +4,7 @@
     "name": "iPhone 13",
     "price": 999.99,
     "brand": "Apple",
-    "categoria": "celulares",
+    "category": "celulares",
     "descripcion": "Smartphone de Última generación con pantalla OLED.",
     "masBuscado": "si",
     "imagen": "Iphone13.jpg"
@@ -14,7 +14,7 @@
     "name": "Galaxy S22",
     "price": 899.99,
     "brand": "ASUS",
-    "categoria": "celulares",
+    "category": "celulares",
     "descripcion": "Potente smartphone con cámara de alta resolución.",
     "masBuscado": "no",
     "imagen": "galaxyS22.jpg"
@@ -24,7 +24,7 @@
     "name": "Pixel 6",
     "price": 799.99,
     "brand": "Lenovo",
-    "categoria": "celulares",
+    "category": "celulares",
     "descripcion": "Experiencia Android pura con excelente cámara.",
     "masBuscado": "no",
     "imagen": "pixel6.jpg"
@@ -34,7 +34,7 @@
     "name": "OnePlus 9",
     "price": 749.99,
     "brand": "Apple",
-    "categoria": "celulares",
+    "category": "celulares",
     "descripcion": "Diseño elegante con carga rápida.",
     "masBuscado": "no",
     "imagen": "onePlus9.jpg"
@@ -44,7 +44,7 @@
     "name": "Xiaomi Mi 11",
     "price": 699.99,
     "brand": "Apple",
-    "categoria": "celulares",
+    "category": "celulares",
     "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
     "masBuscado": "si",
     "imagen": "xiaomiMi11.jpg"
@@ -54,7 +54,7 @@
     "name": "MacBook Pro",
     "price": 1299.99,
     "brand": "Apple",
-    "categoria": "pcs",
+    "category": "pcs",
     "descripcion": "Portátil potente con chip M1.",
     "masBuscado": "no",
     "imagen": "mcBookPro.jpg"
@@ -64,7 +64,7 @@
     "name": "Dell XPS 13",
     "price": 1199.99,
     "brand": "Corsair",
-    "categoria": "pcs",
+    "category": "pcs",
     "descripcion": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
     "masBuscado": "si",
     "imagen": "dellXPS13.jpg"
@@ -74,7 +74,7 @@
     "name": "Lenovo ThinkPad X1",
     "price": 1249.99,
     "brand": "Lenovo",
-    "categoria": "pcs",
+    "category": "pcs",
     "descripcion": "Ideal para negocios con teclado de alta calidad.",
     "masBuscado": "no",
     "imagen": "lenovoTPadX1.jpg"
@@ -84,7 +84,7 @@
     "name": "HP Spectre x360",
     "price": 1149.99,
     "brand": "Lenovo",
-    "categoria": "pcs",
+    "category": "pcs",
     "descripcion": "Convertible con diseño premium y pantalla táctil.",
     "masBuscado": "si",
     "imagen": "hpSpectre.jpg"
@@ -94,7 +94,7 @@
     "name": "ASUS ZenBook Duo",
     "price": 1349.99,
     "brand": "ASUS",
-    "categoria": "pcs",
+    "category": "pcs",
     "descripcion": "Doble pantalla para multitasking avanzado.",
     "masBuscado": "no",
     "imagen": "azusZenBook.jpg"
@@ -104,7 +104,7 @@
     "name": "Cargador rápido USB-C",
     "price": 29.99,
     "brand": "ASUS",
-    "categoria": "accesorios",
+    "category": "accesorios",
     "descripcion": "Cargador de 30W con tecnología Power Delivery.",
     "masBuscado": "si",
     "imagen": "cargadorRapidoC.jpg"
@@ -114,7 +114,7 @@
     "name": "Teclado Mecánico RGB",
     "price": 59.99,
     "brand": "Corsair",
-    "categoria": "accesorios",
+    "category": "accesorios",
     "descripcion": "Teclado con retroiluminación y teclas Cherry MX.",
     "masBuscado": "no",
     "imagen": "tecladoMecanicoRGB.jpg"
@@ -124,7 +124,7 @@
     "name": "Auriculares Bluetooth",
     "price": 79.99,
     "brand": "Corsair",
-    "categoria": "accesorios",
+    "category": "accesorios",
     "descripcion": "Sonido de alta calidad con cancelación de ruido.",
     "masBuscado": "si",
     "imagen": "auricBluetooth.jpg"
@@ -134,7 +134,7 @@
     "name": "Mouse Gamer",
     "price": 49.99,
     "brand": "Corsair",
-    "categoria": "accesorios",
+    "category": "accesorios",
     "descripcion": "Precisión para juegos con múltiples botones programables.",
     "masBuscado": "no",
     "imagen": "mouseGamerLog.jpg"
@@ -144,7 +144,7 @@
     "name": "Funda para Laptop",
     "price": 24.99,
     "brand": "Lenovo",
-    "categoria": "accesorios",
+    "category": "accesorios",
     "descripcion": "Protección y estilo para tu portátil.",
     "masBuscado": "si",
     "imagen": "fundaLaptopCase.jpg"

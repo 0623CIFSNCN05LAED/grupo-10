@@ -54,7 +54,7 @@ module.exports = {
       name: req.body.name,
       price: Number(req.body.price),
       brand: req.body.brand,
-      categoria: req.body.categoria,
+      category: req.body.category,
       descripcion: req.body.descripcion,
       masBuscado: req.body.masBuscado,
       imagen: req.file ? req.file.filename : "default.png",
@@ -80,7 +80,7 @@ module.exports = {
       name: req.body.name,
       price: Number(req.body.price),
       brand: req.body.brand,
-      categoria: req.body.categoria,
+      category: req.body.category,
       descripcion: req.body.descripcion,
     };
     const id = req.params.id;
