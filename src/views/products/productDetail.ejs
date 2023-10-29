@@ -10,20 +10,20 @@
     <main>
       <div class="product">
         <div class="product-image">
-          <% if (product && product.imagen) { %>
+          <% if (product && product.image) { %>
           <img
-            src="/images/products/<%= product.imagen %>"
-            alt="imagen <%= product.nombre %>"
+            src="/images/products/<%= product.image %>"
+            alt="imagen <%= product.name %>"
           />
           <% } %>
         </div>
         <div class="product-details">
-          <% if (product && product.nombre) { %>
-          <h1><%= product.nombre %></h1>
-          <% } %> <% if (product && product.precio) { %>
-          <p class="price">$<%= product.precio %></p>
-          <% } %> <% if (product && product.descripcion) { %>
-          <p class="description"><%= product.descripcion %>.</p>
+          <% if (product && product.name) { %>
+          <h1><%= product.name %></h1>
+          <% } %> <% if (product && product.price) { %>
+          <p class="price">$<%= product.price %></p>
+          <% } %> <% if (product && product.description) { %>
+          <p class="description"><%= product.description %>.</p>
           <% } %>
 
           <div class="product-actions">

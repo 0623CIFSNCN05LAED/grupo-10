@@ -10,7 +10,7 @@
     <main>
       <div>
         <h2 class="reg-form-main reg-span">
-          Estás editando el producto: <%= product.nombre %>
+          Estás editando el producto: <%= product.name %>
         </h2>
       </div>
       <div class="reg-form-main reg-flex reg-flex-center">
@@ -20,62 +20,62 @@
           class="reg-grow-70 reg-md-flex"
         >
           <div class="reg-mb-15 reg-md-prod">
-            <label for="nombre">Nombre:</label>
+            <label for="name">Nombre:</label>
             <input
               type="text"
-              name="nombre"
-              id="nombre"
+              name="name"
+              id="name"
               placeholder="nombre del producto"
-              value="<%= product.nombre %>"
+              value="<%= product.name %>"
               class="reg-form-input"
             />
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="precio">Precio:</label>
+            <label for="price">Precio:</label>
             <input
               type="number" step="0.01"
-              name="precio"
-              id="precio"
+              name="price"
+              id="price"
               placeholder="123.45"
-              value="<%= product.precio %>"
+              value="<%= product.price %>"
               class="reg-form-input"
             />
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="marca">Marca:</label>
-            <select name="marca" id="marca" class="reg-form-input">
-              <option value="" <% if (product.marca=="") { %>
+            <label for="brand">Marca:</label>
+            <select name="brand" id="brand" class="reg-form-input">
+              <option value="" <% if (product.brand=="") { %>
                 selected <% } %>>Elegí una marca
               </option>
-              <option value="ASUS" <% if (product.marca=="ASUS") { %>
+              <option value="ASUS" <% if (product.brand=="ASUS") { %>
                 selected <% } %>>ASUS
               </option>
-              <option value="Lenovo" <% if (product.marca =="Lenovo") { %>
+              <option value="Lenovo" <% if (product.brand =="Lenovo") { %>
                 selected <% } %>>Lenovo
               </option>
-              <option value="Apple" <% if (product.marca=="Apple") { %>
+              <option value="Apple" <% if (product.brand=="Apple") { %>
                 selected <% } %>>Apple
               </option>
-              <option value="Corsair" <% if (product.marca=="Corsair") { %>
+              <option value="Corsair" <% if (product.brand=="Corsair") { %>
                 selected <% } %>>Corsair
               </option>
             </select>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="categoria">Categoría:</label>
-            <select name="categoria" id="categoria" class="reg-form-input">
-              <option value="" <% if (product.categoria=="") { %>
+            <label for="category">Categoría:</label>
+            <select name="category" id="category" class="reg-form-input">
+              <option value="" <% if (product.category=="") { %>
                selected
               <% } %>>Elegí una categoría</option>
-              <option value="celulares" <% if (product.categoria=="celulares") { %>
+              <option value="celulares" <% if (product.category=="celulares") { %>
                selected  <% } %>>Celulares</option>
-              <option value="pcs" <% if (product.categoria=="pcs") { %>
+              <option value="pcs" <% if (product.category=="pcs") { %>
                selected
               <% } %>>PCs</option>
-              <option value="accesorios" <% if (product.categoria=="accesorios") { %>
+              <option value="accesorios" <% if (product.category=="accesorios") { %>
                selected
               <% } %>>Accesorios</option>
             </select>
@@ -84,19 +84,19 @@
           <div class="reg-mb-15 reg-md-prod">
             <label>Descripción:</label>
             <textarea
-              name="descripcion"
+              name="description"
               maxlength="500"
               placeholder="describi el producto"
                 class="reg-form-input"
-            ><%= product.descripcion %></textarea>
+            ><%= product.description %></textarea>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="imagen">Imagen del producto:</label>
+            <label for="image">Imagen del producto:</label>
             <input
               type="file"
-              name="imagen"
-              id="imagen"
+              name="image"
+              id="image"
               class="reg-form-input"
             />
           </div>

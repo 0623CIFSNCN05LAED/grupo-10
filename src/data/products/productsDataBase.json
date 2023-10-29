@@ -1,152 +1,152 @@
 [
   {
     "id": 1,
-    "nombre": "iPhone 13",
-    "precio": 999.99,
-    "marca": "Apple",
-    "categoria": "celulares",
-    "descripcion": "Smartphone de Última generación con pantalla OLED.",
+    "name": "iPhone 13",
+    "price": 999.99,
+    "brand": "Apple",
+    "category": "celulares",
+    "description": "Smartphone de Última generación con pantalla OLED.",
     "masBuscado": "si",
-    "imagen": "Iphone13.jpg"
+    "image": "Iphone13.jpg"
   },
   {
     "id": 2,
-    "nombre": "Galaxy S22",
-    "precio": 899.99,
-    "marca": "ASUS",
-    "categoria": "celulares",
-    "descripcion": "Potente smartphone con cámara de alta resolución.",
+    "name": "Galaxy S22",
+    "price": 899.99,
+    "brand": "ASUS",
+    "category": "celulares",
+    "description": "Potente smartphone con cámara de alta resolución.",
     "masBuscado": "no",
-    "imagen": "galaxyS22.jpg"
+    "image": "galaxyS22.jpg"
   },
   {
     "id": 3,
-    "nombre": "Pixel 6",
-    "precio": 799.99,
-    "marca": "Lenovo",
-    "categoria": "celulares",
-    "descripcion": "Experiencia Android pura con excelente cámara.",
+    "name": "Pixel 6",
+    "price": 799.99,
+    "brand": "Lenovo",
+    "category": "celulares",
+    "description": "Experiencia Android pura con excelente cámara.",
     "masBuscado": "no",
-    "imagen": "pixel6.jpg"
+    "image": "pixel6.jpg"
   },
   {
     "id": 4,
-    "nombre": "OnePlus 9",
-    "precio": 749.99,
-    "marca": "Apple",
-    "categoria": "celulares",
-    "descripcion": "Diseño elegante con carga rápida.",
+    "name": "OnePlus 9",
+    "price": 749.99,
+    "brand": "Apple",
+    "category": "celulares",
+    "description": "Diseño elegante con carga rápida.",
     "masBuscado": "no",
-    "imagen": "onePlus9.jpg"
+    "image": "onePlus9.jpg"
   },
   {
     "id": 5,
-    "nombre": "Xiaomi Mi 11",
-    "precio": 699.99,
-    "marca": "Apple",
-    "categoria": "celulares",
-    "descripcion": "Alto rendimiento con una gran relación calidad-precio.",
+    "name": "Xiaomi Mi 11",
+    "price": 699.99,
+    "brand": "Apple",
+    "category": "celulares",
+    "description": "Alto rendimiento con una gran relación calidad-precio.",
     "masBuscado": "si",
-    "imagen": "xiaomiMi11.jpg"
+    "image": "xiaomiMi11.jpg"
   },
   {
     "id": 6,
-    "nombre": "MacBook Pro",
-    "precio": 1299.99,
-    "marca": "Apple",
-    "categoria": "pcs",
-    "descripcion": "Portátil potente con chip M1.",
+    "name": "MacBook Pro",
+    "price": 1299.99,
+    "brand": "Apple",
+    "category": "pcs",
+    "description": "Portátil potente con chip M1.",
     "masBuscado": "no",
-    "imagen": "mcBookPro.jpg"
+    "image": "mcBookPro.jpg"
   },
   {
     "id": 7,
-    "nombre": "Dell XPS 13",
-    "precio": 1199.99,
-    "marca": "Corsair",
-    "categoria": "pcs",
-    "descripcion": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
+    "name": "Dell XPS 13",
+    "price": 1199.99,
+    "brand": "Corsair",
+    "category": "pcs",
+    "description": "Ultrabook con diseño delgado y pantalla InfinityEdge.",
     "masBuscado": "si",
-    "imagen": "dellXPS13.jpg"
+    "image": "dellXPS13.jpg"
   },
   {
     "id": 8,
-    "nombre": "Lenovo ThinkPad X1",
-    "precio": 1249.99,
-    "marca": "Lenovo",
-    "categoria": "pcs",
-    "descripcion": "Ideal para negocios con teclado de alta calidad.",
+    "name": "Lenovo ThinkPad X1",
+    "price": 1249.99,
+    "brand": "Lenovo",
+    "category": "pcs",
+    "description": "Ideal para negocios con teclado de alta calidad.",
     "masBuscado": "no",
-    "imagen": "lenovoTPadX1.jpg"
+    "image": "lenovoTPadX1.jpg"
   },
   {
     "id": 9,
-    "nombre": "HP Spectre x360",
-    "precio": 1149.99,
-    "marca": "Lenovo",
-    "categoria": "pcs",
-    "descripcion": "Convertible con diseño premium y pantalla táctil.",
+    "name": "HP Spectre x360",
+    "price": 1149.99,
+    "brand": "Lenovo",
+    "category": "pcs",
+    "description": "Convertible con diseño premium y pantalla táctil.",
     "masBuscado": "si",
-    "imagen": "hpSpectre.jpg"
+    "image": "hpSpectre.jpg"
   },
   {
     "id": 10,
-    "nombre": "ASUS ZenBook Duo",
-    "precio": 1349.99,
-    "marca": "ASUS",
-    "categoria": "pcs",
-    "descripcion": "Doble pantalla para multitasking avanzado.",
+    "name": "ASUS ZenBook Duo",
+    "price": 1349.99,
+    "brand": "ASUS",
+    "category": "pcs",
+    "description": "Doble pantalla para multitasking avanzado.",
     "masBuscado": "no",
-    "imagen": "azusZenBook.jpg"
+    "image": "azusZenBook.jpg"
   },
   {
     "id": 11,
-    "nombre": "Cargador rápido USB-C",
-    "precio": 29.99,
-    "marca": "ASUS",
-    "categoria": "accesorios",
-    "descripcion": "Cargador de 30W con tecnología Power Delivery.",
+    "name": "Cargador rápido USB-C",
+    "price": 29.99,
+    "brand": "ASUS",
+    "category": "accesorios",
+    "description": "Cargador de 30W con tecnología Power Delivery.",
     "masBuscado": "si",
-    "imagen": "cargadorRapidoC.jpg"
+    "image": "cargadorRapidoC.jpg"
   },
   {
     "id": 12,
-    "nombre": "Teclado Mecánico RGB",
-    "precio": 59.99,
-    "marca": "Corsair",
-    "categoria": "accesorios",
-    "descripcion": "Teclado con retroiluminación y teclas Cherry MX.",
+    "name": "Teclado Mecánico RGB",
+    "price": 59.99,
+    "brand": "Corsair",
+    "category": "accesorios",
+    "description": "Teclado con retroiluminación y teclas Cherry MX.",
     "masBuscado": "no",
-    "imagen": "tecladoMecanicoRGB.jpg"
+    "image": "tecladoMecanicoRGB.jpg"
   },
   {
     "id": 13,
-    "nombre": "Auriculares Bluetooth",
-    "precio": 79.99,
-    "marca": "Corsair",
-    "categoria": "accesorios",
-    "descripcion": "Sonido de alta calidad con cancelación de ruido.",
+    "name": "Auriculares Bluetooth",
+    "price": 79.99,
+    "brand": "Corsair",
+    "category": "accesorios",
+    "description": "Sonido de alta calidad con cancelación de ruido.",
     "masBuscado": "si",
-    "imagen": "auricBluetooth.jpg"
+    "image": "auricBluetooth.jpg"
   },
   {
     "id": 14,
-    "nombre": "Mouse Gamer",
-    "precio": 49.99,
-    "marca": "Corsair",
-    "categoria": "accesorios",
-    "descripcion": "Precisión para juegos con múltiples botones programables.",
+    "name": "Mouse Gamer",
+    "price": 49.99,
+    "brand": "Corsair",
+    "category": "accesorios",
+    "description": "Precisión para juegos con múltiples botones programables.",
     "masBuscado": "no",
-    "imagen": "mouseGamerLog.jpg"
+    "image": "mouseGamerLog.jpg"
   },
   {
     "id": 15,
-    "nombre": "Funda para Laptop",
-    "precio": 24.99,
-    "marca": "Lenovo",
-    "categoria": "accesorios",
-    "descripcion": "Protección y estilo para tu portátil.",
+    "name": "Funda para Laptop",
+    "price": 24.99,
+    "brand": "Lenovo",
+    "category": "accesorios",
+    "description": "Protección y estilo para tu portátil.",
     "masBuscado": "si",
-    "imagen": "fundaLaptopCase.jpg"
+    "image": "fundaLaptopCase.jpg"
   }
 ]

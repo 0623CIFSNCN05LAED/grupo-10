@@ -34,7 +34,7 @@ router.get("/cart/", userGuard, productController.productCart);
 router.get("/create/", userGuard, productController.productCreateForm);
 router.post(
   "/",
-  upload.single("imagen"),
+  upload.single("image"),
   validationsProduct,
   validateFormProductCreate,
   productController.createProduct
@@ -45,7 +45,7 @@ router.get("/:id/", productController.productDetail);
 
 //EDICION DE PRODUCTO
 router.get("/edit/:id/", userGuard, productController.productEdit);
-router.put("/:id/", upload.single("imagen"), productController.productUpdate);
+router.put("/:id/", upload.single("image"), productController.productUpdate);
 
 //ELIMINAR UN PRODUCTO
 router.delete("/:id", productController.destroy);

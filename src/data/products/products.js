@@ -13,7 +13,7 @@ module.exports = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
   },
   create: function (product) {
-    console.log(`Creating product ${product.nombre}`);
+    console.log(`Creating product ${product.name}`);
     const products = this.getProducts();
     /*const lastProduct = [products.length - 1];
     const bigIdProduct = lastProduct.id;*/
@@ -29,7 +29,7 @@ module.exports = {
     return product;
   },
   update: function (id, product) {
-    console.log(`Actualizando producto ${product.nombre}`);
+    console.log(`Actualizando producto ${product.name}`);
     // cargar todos los productos
     const products = this.getProducts();
     // buscar un producto por id

@@ -51,13 +51,13 @@ module.exports = {
   //METODO DE CREACION DE PRODUCTOS
   createProduct: (req, res) => {
     const product = {
-      nombre: req.body.nombre,
-      precio: Number(req.body.precio),
-      marca: req.body.marca,
-      categoria: req.body.categoria,
-      descripcion: req.body.descripcion,
+      name: req.body.name,
+      price: Number(req.body.price),
+      brand: req.body.brand,
+      category: req.body.category,
+      description: req.body.description,
       masBuscado: req.body.masBuscado,
-      imagen: req.file ? req.file.filename : "default.png",
+      image: req.file ? req.file.filename : "default.png",
     };
     productService.produtcCreating(product);
     res.redirect("products");
@@ -77,17 +77,17 @@ module.exports = {
   // Update - Method to update
   productUpdate: (req, res) => {
     const product = {
-      nombre: req.body.nombre,
-      precio: Number(req.body.precio),
-      marca: req.body.marca,
-      categoria: req.body.categoria,
-      descripcion: req.body.descripcion,
+      name: req.body.name,
+      price: Number(req.body.price),
+      brand: req.body.brand,
+      category: req.body.category,
+      description: req.body.description,
     };
     const id = req.params.id;
-    const imagen = req.file
+    const image = req.file
       ? req.file.filename
-      : productService.getProduct(id).imagen;
-    product.imagen = imagen;
+      : productService.getProduct(id).image;
+    product.image = image;
     productService.updateProduct(id, product);
     res.redirect("/products");
   },
