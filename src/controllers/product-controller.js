@@ -18,11 +18,6 @@ module.exports = {
     });
   },
   productCart: (req, res) => {
-    // let user_name = null;
-    // const data = req.session.userData;
-    // if (data) {
-    //   user_name = data.user_name;
-    // }
     res.render("products/productCart");
   },
   //Detalle de un producto
@@ -30,21 +25,11 @@ module.exports = {
     const id = req.params.id;
     const product = productService.getProduct(id);
 
-    // let user_name = null;
-    // const data = req.session.userData;
-    // if (data) {
-    //   user_name = data.user_name;
-    // }
     res.render("products/productDetail", { product });
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
   productCreateForm: (req, res) => {
-    // let user_name = null;
-    // const data = req.session.userData;
-    // if (data) {
-    //   user_name = data.user_name;
-    // }
     res.render("products/productCreate");
   },
   //METODO DE CREACION DE PRODUCTOS
@@ -63,12 +48,6 @@ module.exports = {
   },
   // Update - Form to edit one product
   productEdit: (req, res) => {
-    // let user_name = null;
-    // const data = req.session.userData;
-    // if (data) {
-    //   user_name = data.user_name;
-    // }
-
     const id = req.params.id;
     const product = productService.getProduct(id);
     res.render("products/productEdit", { product });

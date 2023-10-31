@@ -35,8 +35,6 @@ router.post(
   }),
   validationsLogin,
   validateFormLogin,
-  //validateFormLogin.correo,
-  //validateFormLogin.password,
   userController.loginProcess
 );
 
@@ -47,7 +45,6 @@ router.post(
   upload.single("avatar"),
   validationsRegister,
   validateFormRegister,
-  //validateFormRegister.correo,
   userController.createUser
 );
 
