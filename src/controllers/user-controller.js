@@ -32,7 +32,10 @@ module.exports = {
   loginProcess: (req, res) => {
     const data = req.body;
     req.session.userData = data;
-    res.redirect("/");
+    const email = data.user_name;
+    const user = users.findByEmail(email);
+    const user_id = user.id;
+    res.redirect("/users/" + user_id);
   },
 
   // Formulario de creación de usuario
