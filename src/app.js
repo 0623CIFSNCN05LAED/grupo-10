@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override"); // para usar los metodos PUT y DELETE
 const session = require("express-session");
+const user_auth_middleware = require("./middlewares/user_auth");
 
 // ************ express() ************
 const app = express();
@@ -19,6 +20,7 @@ app.use(methodOverride("_method"));
 app.use(
   session({ secret: "HorizonX", resave: false, saveUninitialized: false })
 );
+app.use(user_auth_middleware);
 
 // ************ Route System require and use() ************
 const mainRoute = require("./routes/main-router");
