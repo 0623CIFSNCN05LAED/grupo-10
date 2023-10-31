@@ -9,20 +9,21 @@ const path = require("path");
 const guestGuard = require("../middlewares/guest-guard");
 const userGuard = require("../middlewares/user-guard");
 const userAuth = require("../middlewares/user_auth");
+const upload = require("../middlewares/multer-users");
 
-const multer = require("multer");
+// const multer = require("multer");
 
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/images/users"),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: path.join(__dirname, "../../public/images/users"),
+//   filename: function (req, file, cb) {
+//     cb(
+//       null,
+//       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+//     );
+//   },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
 // ************ Controller Require ************
 const userController = require("../controllers/user-controller");

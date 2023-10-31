@@ -7,20 +7,6 @@ const validationsProduct = require("../validations/product-validations");
 const validationFormProductCreate = require("../middlewares/validate-form-productCreate");
 const upload = require("../middlewares/multer-products");
 
-// const multer = require("multer");
-
-// const storage = multer.diskStorage({
-//   destination: path.join(__dirname, "../../public/images/products"),
-//   filename: function (req, file, cb) {
-//     cb(
-//       null,
-//       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-//     );
-//   },
-// });
-
-// const upload = multer({ storage: storage });
-
 // ************ Controller Require ************
 const productController = require("../controllers/product-controller");
 const validateFormProductCreate = require("../middlewares/validate-form-productCreate");
