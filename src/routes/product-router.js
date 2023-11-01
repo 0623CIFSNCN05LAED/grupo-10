@@ -5,20 +5,7 @@ const path = require("path");
 const userGuard = require("../middlewares/user-guard");
 const validationsProduct = require("../validations/product-validations");
 const validationFormProductCreate = require("../middlewares/validate-form-productCreate");
-
-const multer = require("multer");
-
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/images/products"),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
-const upload = multer({ storage: storage });
+const upload = require("../middlewares/multer-products");
 
 // ************ Controller Require ************
 const productController = require("../controllers/product-controller");
