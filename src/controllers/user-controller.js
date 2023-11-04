@@ -9,14 +9,8 @@ module.exports = {
   // DEFINIR VISTA DE TODOS LOS USUARIOS Y CORREGIR RENDER
   users: (req, res) => {
     const allUsers = userService.getUsers;
-    let user_name = null;
-    const data = req.session.userData;
-    if (data) {
-      user_name = data.user_name;
-    }
     res.render("users/VISTA-TODOS-LOS-USUARIOS", {
       allUsers,
-      user_name,
     });
   },
 
@@ -25,23 +19,12 @@ module.exports = {
   userProfile: (req, res) => {
     const id = req.params.id;
     const user = userService.getUser(id);
-
-    let user_name = null;
-    const data = req.session.userData;
-    if (data) {
-      user_name = data.user_name;
-    }
-    res.render("users/userProfileView", { user, user_name });
+    res.render("users/userProfileView", { user });
   },
 
   // Formulario para logueo de usuario
   login: (req, res) => {
-    let user_name = null;
-    const data = req.session.userData;
-    if (data) {
-      user_name = data.user_name;
-    }
-    res.render("users/login", { user_name });
+    res.render("users/login");
   },
 
   //Método de proceso de login
@@ -49,17 +32,15 @@ module.exports = {
   loginProcess: (req, res) => {
     const data = req.body;
     req.session.userData = data;
-    res.redirect("/");
+    const email = data.user_name;
+    const user = users.findByEmail(email);
+    const user_id = user.id;
+    res.redirect("/users/" + user_id);
   },
 
   // Formulario de creación de usuario
   register: (req, res) => {
-    let user_name = null;
-    const data = req.session.userData;
-    if (data) {
-      user_name = data.user_name;
-    }
-    res.render("users/register", { user_name });
+    res.render("users/register");
   },
 
   // Método de creación de usuario
