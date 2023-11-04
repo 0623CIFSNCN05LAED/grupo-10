@@ -129,14 +129,14 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id_User` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id unico de la tabla ',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id unico de la tabla ',
   `first_name` varchar(100) NOT NULL COMMENT 'Primer nombre del usuaria',
   `last_name` varchar(100) NOT NULL COMMENT 'Apellido del usuario',
   `email` varchar(100) NOT NULL COMMENT 'Email del usuario',
   `password` varchar(100) NOT NULL COMMENT 'contrasena del usuario',
   `avatar` varchar(100) DEFAULT NULL COMMENT 'avatar del usuario',
   `category_Id` varchar(100) NOT NULL COMMENT 'FK',
-  PRIMARY KEY (`id_User`),
+  PRIMARY KEY (`id`),
   KEY `users_FK` (`category_Id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`category_Id`) REFERENCES `users_category` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='tabla con todos los datos de los usuarios del sistema';
