@@ -16,21 +16,25 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `most_visited_productos`
---
 DROP DATABASE IF EXISTS grupo_10;
 CREATE DATABASE grupo_10;
 USE grupo_10;
+--
 
-DROP TABLE IF EXISTS `most_visited_productos`;
+--
+-- Table structure for table `most_visited_products`
+--
+
+DROP TABLE IF EXISTS `most_visited_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `most_visited_productos` (
-  `id` varchar(100) NOT NULL COMMENT 'id llave primaria',
-  `product_id` varchar(100) NOT NULL COMMENT 'FK',
+CREATE TABLE `most_visited_products` (
+  `id` varchar(36) NOT NULL unique DEFAULT (UUID()) COMMENT 'id llave primaria',
+  `visits` INT NOT NULL DEFAULT 0,
+  `product_id` varchar(36) NOT NULL unique COMMENT 'FK',
   PRIMARY KEY (`id`),
-  KEY `most_visited_productos_FK` (`product_id`),
-  CONSTRAINT `most_visited_productos_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+  KEY `most_visited_products_FK` (`product_id`),
+  CONSTRAINT `most_visited_products_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,9 +42,9 @@ CREATE TABLE `most_visited_productos` (
 -- Dumping data for table `most_visited_productos`
 --
 
-LOCK TABLES `most_visited_productos` WRITE;
-/*!40000 ALTER TABLE `most_visited_productos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `most_visited_productos` ENABLE KEYS */;
+LOCK TABLES `most_visited_products` WRITE;
+/*!40000 ALTER TABLE `most_visited_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `most_visited_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -51,13 +55,13 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `id` varchar(100) NOT NULL COMMENT 'id PK',
-  `name` varchar(100) NOT NULL COMMENT 'nombre del producto',
-  `price` float NOT NULL COMMENT 'precio producto',
-  `brand_id` varchar(100) NOT NULL,
-  `description` varchar(300) NOT NULL COMMENT 'descripcion del producto',
-  `category_id` varchar(100) NOT NULL,
-  `image` varchar(100) DEFAULT NULL,
+  `id` varchar(36) NOT NULL unique default (UUID()) COMMENT 'id PK',
+  `name` varchar(50) NOT NULL COMMENT 'nombre del producto',
+  `price` DECIMAL(10,2) NOT NULL COMMENT 'precio producto',
+  `brand_id` varchar(36) NOT NULL,
+  `description` varchar(300) COMMENT 'descripcion del producto',
+  `category_id` varchar(36) NOT NULL,
+  `image` varchar(255),
   PRIMARY KEY (`id`),
   KEY `products_FK` (`brand_id`),
   KEY `products_FK_1` (`category_id`),
@@ -83,8 +87,8 @@ DROP TABLE IF EXISTS `products_brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products_brand` (
-  `id` varchar(100) NOT NULL COMMENT 'llave primaria',
-  `name` varchar(100) NOT NULL COMMENT 'FK',
+  `id` varchar(36) NOT NULL unique default (UUID()) COMMENT 'llave primaria',
+  `name` varchar(50) NOT NULL COMMENT 'FK',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -106,8 +110,8 @@ DROP TABLE IF EXISTS `products_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products_category` (
-  `id` varchar(100) NOT NULL COMMENT 'id llave primaria',
-  `name` varchar(100) NOT NULL COMMENT 'FK',
+  `id` varchar(36) NOT NULL unique default (UUID()) COMMENT 'id llave primaria',
+  `name` varchar(50) NOT NULL UNIQUE COMMENT 'FK',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -129,16 +133,16 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id_User` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id unico de la tabla ',
-  `first_name` varchar(100) NOT NULL COMMENT 'Primer nombre del usuaria',
-  `last_name` varchar(100) NOT NULL COMMENT 'Apellido del usuario',
-  `email` varchar(100) NOT NULL COMMENT 'Email del usuario',
+  `id` VARCHAR(36) NOT NULL unique default (UUID()) COMMENT 'Id unico de la tabla ',
+  `first_name` varchar(50) NOT NULL COMMENT 'Primer nombre del usuaria',
+  `last_name` varchar(50) NOT NULL COMMENT 'Apellido del usuario',
+  `email` varchar(50) NOT NULL unique COMMENT 'Email del usuario',
   `password` varchar(100) NOT NULL COMMENT 'contrasena del usuario',
-  `avatar` varchar(100) DEFAULT NULL COMMENT 'avatar del usuario',
-  `category_Id` varchar(100) NOT NULL COMMENT 'FK',
-  PRIMARY KEY (`id_User`),
-  KEY `users_FK` (`category_Id`),
-  CONSTRAINT `users_FK` FOREIGN KEY (`category_Id`) REFERENCES `users_category` (`id`)
+  `avatar` varchar(255) NOT NULL COMMENT 'avatar del usuario',
+  `category_id` varchar(36) NOT NULL COMMENT 'FK',
+  PRIMARY KEY (`id`),
+  KEY `users_FK` (`category_id`),
+  CONSTRAINT `users_FK` FOREIGN KEY (`category_id`) REFERENCES `users_category` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='tabla con todos los datos de los usuarios del sistema';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -159,8 +163,8 @@ DROP TABLE IF EXISTS `users_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users_category` (
-  `id` varchar(100) NOT NULL COMMENT 'columna con el dato para la llave foranea',
-  `name` varchar(100) DEFAULT NULL COMMENT 'nombre de la categoria de usuarios',
+  `id` varchar(36) NOT NULL unique default (UUID()) COMMENT 'columna con el dato para la llave foranea',
+  `name` varchar(100) NOT NULL unique COMMENT 'nombre de la categoria de usuarios',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
