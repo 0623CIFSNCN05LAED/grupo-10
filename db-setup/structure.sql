@@ -18,6 +18,9 @@
 --
 -- Table structure for table `most_visited_productos`
 --
+DROP DATABASE IF EXISTS grupo_10;
+CREATE DATABASE grupo_10;
+USE grupo_10;
 
 DROP TABLE IF EXISTS `most_visited_productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
