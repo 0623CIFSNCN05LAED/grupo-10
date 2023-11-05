@@ -10,6 +10,7 @@ module.exports = (req, res, next) => {
     res.locals.user = user;
   } else {
     res.locals.user_log = null;
+    res.locals.user = null;
   }
   next();
 };

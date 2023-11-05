@@ -50,6 +50,9 @@ router.post(
   userController.createUser
 );
 
+//CERRAR SESION
+router.get("/logout/", userGuard, userController.logout);
+
 //VISTA DE USUARIO
 router.get("/:id/", userGuard, userAuth, userController.userProfile);
 

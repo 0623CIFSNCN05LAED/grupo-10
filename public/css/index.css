@@ -230,6 +230,7 @@ a {
   font-size: 0.5rem;
   /* background-color: #f9f9f9; */
   min-width: 160px;
+  background-color: #0a74da;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
   padding: 12px 16px;
   z-index: 1;

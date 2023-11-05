@@ -11,18 +11,18 @@
             <!-- <div class="icon-nav-pc nav-bar-pc"> -->
                 <div class="nav-bar-pc icon-nav-pc dropdown">
                     <ul>
-                        <% if (locals.user_log) { %>
+                        <% if (user_log) { %>
                          <li>
                             <a class="nav-bar-pc">
-                                <img src="/images/users/<%= locals.user.avatar %>" width="50" style="border-radius: 100%; size:10px;">
-                                 Hola, <%= locals.user_log %>
+                                <img src="/images/users/<%= user.avatar %>" width="50" style="border-radius: 100%; size:10px;">
+                                 Hola, <%= user_log %>
                             </a>
                             <ul class="dropdown-content">
                                 <li>
                                     <a href="/users/<%= user.id %>">Mi perfil</a>
                                 </li>
                                 <li>
-                                    <a href="/users/<%= user.id %>">Logout</a>
+                                    <a href="/users/logout">Logout</a>
                                 </li>
                             </ul>
                          </li>
@@ -48,8 +48,6 @@
             </div>
         </div>
         </nav>
-        <!-- <% if (user_log) { %>
-                   <h4 style="color: white; text-align: center; font-size: 1.2rem;">Hola <%= user_log %></h4>
-        <% } %> -->
+        
     </div>
 </header>
