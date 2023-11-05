@@ -33,12 +33,18 @@ module.exports = {
     const email = data.user_name;
     const user = users.findByEmail(email);
     const user_id = user.id;
+    if (req.body.remember_me) {
+      res.cookie("userEmail", req.body.user_name, {
+        maxAge: 1000 * 60 * 1,
+      });
+    }
     res.redirect("/users/" + user_id);
   },
 
   //Método de cierre de sesión
 
   logout: (req, res) => {
+    res.clearCookie("userEmail");
     req.session.destroy();
     res.redirect("/");
   },
