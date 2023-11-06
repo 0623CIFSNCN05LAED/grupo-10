@@ -9,7 +9,37 @@
             <div class="nav-bar-pc"><a href="">PCs</a></div>
             <div class="nav-bar-pc"><a href="">Accesorios</a></div>
             <!-- <div class="icon-nav-pc nav-bar-pc"> -->
-                <div class="nav-bar-pc icon-nav-pc"><a href="/users/login"><i class="fa-solid fa-user"></i></a></div>   
+                <div class="nav-bar-pc icon-nav-pc dropdown">
+                    <ul>
+                        <% if (user_log) { %>
+                         <li>
+                            <a class="nav-bar-pc">
+                                <img src="/images/users/<%= user.avatar %>" width="50" style="border-radius: 100%; size:10px;">
+                                 Hola, <%= user_log %>
+                            </a>
+                            <ul class="dropdown-content">
+                                <li>
+                                    <a href="/users/<%= user.id %>">Mi perfil</a>
+                                </li>
+                                <li>
+                                    <a href="/users/logout">Logout</a>
+                                </li>
+                            </ul>
+                         </li>
+                         <% } else { %>
+                                <li>
+                                    <a>
+                                        <i class="fa-solid fa-user"></i>
+                                    </a>
+                                    <ul class="dropdown-content">
+                                        <li><a href="/users/login">Ingresá</a></li>
+                                        <li><a href="/users/register">Registrate</a></li>
+                                    </ul>
+                                </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <!-- <div class="nav-bar-pc icon-nav-pc"><a href="/users/login"><i class="fa-solid fa-user"></i></a></div>    -->
                 <div class="nav-bar-pc icon-nav-pc"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
                 <div class="nav-bar-pc icon-nav-pc"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></div> 
                 
@@ -18,8 +48,6 @@
             </div>
         </div>
         </nav>
-        <% if (user_log) { %>
-                   <h4 style="color: white; text-align: center; font-size: 1.2rem;">Hola <%= user_log %></h4>
-        <% } %>
+        
     </div>
 </header>
