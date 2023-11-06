@@ -2,24 +2,7 @@ const path = require("path");
 const productService = require("../services/productService");
 
 module.exports = {
-  products: (req, res) => {
-    //let user_name = null;
-    //const data = req.session.userData;
-    //if (data) {
-    //user_name = data.user_name;
-    //}
-    const productsLenovo = productService.getProductsLenovo();
-    const productsApple = productService.getProductsApple();
-    const productsAsus = productService.getProductsAsus();
-
-    res.render("products/products", {
-      productsLenovo,
-      productsApple,
-      productsAsus,
-    });
-  },
-  
-  productCart: (req, res) => {
+    productCart: (req, res) => {
     res.render("products/productCart");
   },
   //Detalle de un producto
@@ -80,11 +63,37 @@ module.exports = {
   },
           //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
-  list: (req, res) => {
-      productService.getAllProducts().then((products) => {
+  products: (req, res) => {
+    productService.getAllProducts().then((products) => {
       res.render('products/productsList', { products })
      })
   },
+  lenovo: (req, res) => {
+    productService.getLenovoProducts().then((products) => {
+      res.render('products/lenovo', { products })
+     })
+  },
+  apple: (req, res) => {
+    productService.getAppleProducts().then((products) => {
+      res.render('products/apple', { products })
+     })
+  },
+  corsair: (req, res) => {
+    productService.getCorsairProducts().then((products) => {
+      res.render('products/corsair', { products })
+     })
+  },
+  asus: (req, res) => {
+    productService.getAsusProducts().then((products) => {
+      res.render('products/asus', { products })
+     })
+  },
+  razer: (req, res) => {
+    productService.getAsusProducts().then((products) => {
+      res.render('products/razer', { products })
+     })
+  },
+
 
 
 };

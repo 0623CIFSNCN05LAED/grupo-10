@@ -13,8 +13,11 @@ const validateFormProductCreate = require("../middlewares/validate-form-productC
 
 //PRODUCTOS EN GENERAL
 router.get("/", productController.products);
-//PRODUCTOS EN GENERAL base de datps
-router.get("/list", productController.list);
+router.get("/lenovo", productController.lenovo);
+router.get("/apple", productController.apple);
+router.get("/asus", productController.asus);
+router.get("/corsair", productController.corsair);
+router.get("/razer", productController.razer);
 //CARRITO DE PRODUCTO
 router.get("/cart/", userGuard, productController.productCart);
 
