@@ -1,4 +1,5 @@
 const db = require("../data/db");
+const { Product } = require('../database/models');
 
 const productService = {
   getProductsLenovo: () => {
@@ -32,6 +33,12 @@ const productService = {
   deleteProduct: (id) => {
     db.products.delete(id);
   },
+
+  //--------- TRABAJANDO CON LA BASE DE DATOS---------------
+
+  getAllProducts: ()=>{
+    return Product.findAll()
+  }
 };
 
 module.exports = productService;

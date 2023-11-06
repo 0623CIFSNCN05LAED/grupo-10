@@ -1,17 +1,27 @@
-module.exports = (sequelize, Datatypes)=>{
-    const Model =   sequelize.define(
-        "Products", {
-            name: Datatypes.STRING,
-            price: Datatypes.DECIMAL, 
-            description: Datatypes.STRING, 
-            
-        },
+module.exports = (sequelize, DataTypes) => {
+    const Product = sequelize.define(
+        "Product", {
+        name: DataTypes.STRING,
+        price: DataTypes.DECIMAL,
+        description: DataTypes.STRING,
+    },
         {
-            tableName: 'products', 
-            timestamps: false, // Deshabilita las marcas de tiempo (created_at y updated_at)         
-                    
+            tableName: 'products',
+            timestamps: false,
         }
-    )
+    );
 
-    return Model;
+    Product.associate = (models) => {
+        Product.belongsTo(models.ProductBrand, {
+            as: "productBrand",
+            foreignKey: "brand_id",
+        });
+
+        Product.belongsTo(models.ProductCategory, {
+            as: "productCategory",
+            foreignKey: "category_id",
+        });
+    };
+
+    return Product;
 };

@@ -1,6 +1,6 @@
 const path = require("path");
 const productService = require("../services/productService");
-const { Products } = require('../database/models');
+
 module.exports = {
   products: (req, res) => {
     //let user_name = null;
@@ -81,9 +81,9 @@ module.exports = {
           //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
   list: (req, res) => {
-    const productsLenovo = Products.findAll().then((productsLenovo) => {
-      res.render('products/productsList', { productsLenovo })
-    })
+      productService.getAllProducts().then((products) => {
+      res.render('products/productsList', { products })
+     })
   },
 
 

@@ -38,4 +38,8 @@ router.put("/:id/", upload.single("image"), productController.productUpdate);
 //ELIMINAR UN PRODUCTO
 router.delete("/:id", productController.destroy);
 
+                  
+
+
+
 module.exports = router;
