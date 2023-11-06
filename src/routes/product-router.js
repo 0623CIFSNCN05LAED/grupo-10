@@ -13,7 +13,8 @@ const validateFormProductCreate = require("../middlewares/validate-form-productC
 
 //PRODUCTOS EN GENERAL
 router.get("/", productController.products);
-
+//PRODUCTOS EN GENERAL base de datps
+router.get("/list", productController.list);
 //CARRITO DE PRODUCTO
 router.get("/cart/", userGuard, productController.productCart);
 

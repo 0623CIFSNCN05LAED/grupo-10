@@ -1,5 +1,6 @@
 const path = require("path");
 const productService = require("../services/productService");
+const { Products } = require('../database/models');
 module.exports = {
   products: (req, res) => {
     //let user_name = null;
@@ -17,6 +18,7 @@ module.exports = {
       productsAsus,
     });
   },
+  
   productCart: (req, res) => {
     res.render("products/productCart");
   },
@@ -76,4 +78,18 @@ module.exports = {
     productService.deleteProduct(id);
     res.redirect("/products");
   },
+          //--------- TRABAJANDO CON LA BASE DE DATOS---------------
+
+  list: (req, res) => {
+    const productsLenovo = Products.findAll().then((productsLenovo) => {
+      res.render('products/productsList', { productsLenovo })
+    })
+  },
+
+
 };
+
+
+
+
+              

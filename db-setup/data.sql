@@ -30,7 +30,7 @@ INSERT INTO `products_category` (id, name) values
 
 INSERT INTO `products` (id, name, price, brand_id, description, category_id, image) 
 values
-(UUID(),'ROG Strix Scar 18', 4325843, 'asus', 'Disfrutá de la perfecta combinación de rendimiento y diseño con esta notebook.', 'pcs', 'asus-ROG-strix.png'),
+(UUID(),'ROG Strix Scar 18', 4325843, 'asus', 'Disfrutá de la perfecta combinación de rendimiento y diseño con esta notebook.', 'pcs', '../'),
 (UUID(), 'ASUS Zenbook S 13 OLED', 1799900, 'asus', 'La Notebook OLED más delgada del mundo', 'pcs', 'asus-zenbook.png'),
 (UUID(), 'Mouse Asus Rog Gladius', 279909, 'asus', 'Óptico, inalámbrico, diseñado ergonómicamente para todos los tipos de agarre', 'accesorios', 'mouse-asus.jpg'),
 (UUID(), 'Notebook Lenovo Legion 5', 1210000, 'lenovo', 'Laptop para gaming equipada con todo lo que necesitas para ganar', 'pcs', 'lenovo-legion.jpg'),
