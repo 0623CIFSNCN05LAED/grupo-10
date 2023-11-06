@@ -31,23 +31,26 @@
             <button class="buy-now">Comprar Ahora</button>
           </div>
         </div>
-        <hr />
-        <div style="display: flex; justify-content: space-around">
-          <% if (product && product.id) { %>
+        <div <% if (!user_log) { %>
+          class="display-none" <% } %>>
+          <hr />
+          <div style="display: flex; justify-content: space-around">
+            <% if (product && product.id) { %>
 
-          <a href="/products/edit/<%= product.id %>" class="product-actions"
-            ><button class="edit-product">Editar Producto</button></a
-          >
-          <form
-            action="/products/<%= product.id %>?_method=delete"
-            method="POST"
-            class="product-actions"
-          >
-            <button type="submit" class="delete-product">
-              Eliminar Producto
-            </button>
-          </form>
-          <% } %>
+            <a href="/products/edit/<%= product.id %>" class="product-actions"
+              ><button class="edit-product">Editar Producto</button></a
+            >
+            <form
+              action="/products/<%= product.id %>?_method=delete"
+              method="POST"
+              class="product-actions"
+            >
+              <button type="submit" class="delete-product">
+                Eliminar Producto
+              </button>
+            </form>
+            <% } %>
+          </div>
         </div>
       </div>
     </main>

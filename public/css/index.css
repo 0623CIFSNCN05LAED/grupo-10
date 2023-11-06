@@ -240,6 +240,10 @@ a {
   display: block;
 }
 
+.display-none {
+  display: none;
+}
+
 /* ------------------------------ */
 
 @media (min-width: 1220px) {
