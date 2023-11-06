@@ -35,7 +35,7 @@ module.exports = {
     const user_id = user.id;
     if (req.body.remember_me) {
       res.cookie("userEmail", req.body.user_name, {
-        maxAge: 1000 * 60 * 1,
+        maxAge: 1000 * 60 * 2,
       });
     }
     res.redirect("/users/" + user_id);
