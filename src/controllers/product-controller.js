@@ -93,7 +93,21 @@ module.exports = {
       res.render('products/razer', { products })
      })
   },
-
+  productsCategoryPcs: (req, res)=>{
+    productService.pcsCategory().then((products)=>{
+      res.render('products/pcs', {products})
+    })
+  },
+  productsCategoryCelulares: (req, res)=>{
+    productService.celularesCategory().then((products)=>{
+      res.render('products/celulares', {products})
+    })
+  },
+  productsCategoryAccesosrios: (req, res)=>{
+    productService.accesoriosCategory().then((products)=>{
+      res.render('products/accesorios', {products})
+    })
+  },
 
 
 };

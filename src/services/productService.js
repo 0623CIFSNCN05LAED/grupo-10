@@ -21,7 +21,7 @@ const productService = {
   //   return products;
   // },
 
-  //esta seccion ya se puede eliminar//
+  
   
   getProduct: (id) => {
     const product = db.products.findById(id);
@@ -67,6 +67,22 @@ const productService = {
       where: { brand_id: 'lenovo' },
     });
   },
+  pcsCategory: ()=>{
+    return Product.findAll({
+      where: {category_id:'pcs' }
+    })
+  },
+  celularesCategory: ()=>{
+    return Product.findAll({
+      where: {category_id:'celulares' }
+    })
+  },
+  accesoriosCategory: ()=>{
+    return Product.findAll({
+      where: {category_id:'accesorios' }
+    })
+  },
+
 }
 module.exports = productService;
 
