@@ -89,7 +89,7 @@ module.exports = {
      })
   },
   razer: (req, res) => {
-    productService.getAsusProducts().then((products) => {
+    productService.getRazerProducts().then((products) => {
       res.render('products/razer', { products })
      })
   },
