@@ -2,11 +2,23 @@ const users = require("../data/users/users");
 
 module.exports = (req, res, next) => {
   const data = req.session.userData;
-  const email = data.user_name;
-  const user = users.findByEmail(email);
-  const user_id = user.id;
+  let emailInCookie = req.cookies.userEmail;
+  let email = "";
+  let user_id = "";
   const route_user_id = req.params.id;
-  const checkId = user_id === route_user_id;
+  let checkId = false;
+
+  if (data) {
+    email = data.user_name;
+    const user = users.findByEmail(email);
+    user_id = user.id;
+    checkId = user_id === route_user_id;
+  } else if (emailInCookie) {
+    email = emailInCookie;
+    const userInCookie = users.findByEmail(email);
+    user_id = userInCookie.id;
+    checkId = user_id === route_user_id;
+  }
 
   if (checkId) {
     next();

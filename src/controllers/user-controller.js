@@ -1,7 +1,6 @@
 const path = require("path");
 const userService = require("../services/userService");
 const bcrypt = require("bcryptjs");
-const { log } = require("console");
 const users = require("../data/users/users");
 
 module.exports = {
@@ -15,7 +14,6 @@ module.exports = {
   },
 
   // Perfil de usuario
-  // DEFINIR LA VISTA DE PERFIL Y AGREGAR A RENDER
   userProfile: (req, res) => {
     const id = req.params.id;
     const user = userService.getUser(id);
@@ -35,7 +33,20 @@ module.exports = {
     const email = data.user_name;
     const user = users.findByEmail(email);
     const user_id = user.id;
+    if (req.body.remember_me) {
+      res.cookie("userEmail", req.body.user_name, {
+        maxAge: 1000 * 60 * 2,
+      });
+    }
     res.redirect("/users/" + user_id);
+  },
+
+  //Método de cierre de sesión
+
+  logout: (req, res) => {
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    res.redirect("/");
   },
 
   // Formulario de creación de usuario
