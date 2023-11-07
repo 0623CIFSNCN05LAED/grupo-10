@@ -56,10 +56,10 @@ DROP TABLE IF EXISTS `products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` varchar(36) NOT NULL unique default (UUID()) COMMENT 'id PK',
-  `name` varchar(50) NOT NULL COMMENT 'nombre del producto',
+  `name` varchar(25) NOT NULL COMMENT 'nombre del producto',
   `price` DECIMAL(10,2) NOT NULL COMMENT 'precio producto',
   `brand_id` varchar(36) NOT NULL,
-  `description` varchar(300) COMMENT 'descripcion del producto',
+  `description` varchar(75) COMMENT 'descripcion del producto',
   `category_id` varchar(36) NOT NULL,
   `image` varchar(255),
   PRIMARY KEY (`id`),
