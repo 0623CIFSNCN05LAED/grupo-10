@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("../partials/head", {title: 'All Products'}) %>
+    <link rel="stylesheet" href="/css/styles-carrito.css" />
+  </head>
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+     <!-- Header -->
+    
+     <!-- todos los productos -->
+     <!-- marca lenovo -->
+    <section>
+        <article>
+            <H3>PRODUCTOS EN GENERAL</H3>
+            <div class="tarjetas flex">
+                      
+                <% products.forEach(product => { %>
+                    <%- include("../partials/product-card",{product}) %>   
+                <% }); %>
+        </article>
+    </section>
+      <!-- footer -->
+    <footer class="foot"><%- include("../partials/footer") %></footer>
+      <!-- footer -->
+</body>
+</html>

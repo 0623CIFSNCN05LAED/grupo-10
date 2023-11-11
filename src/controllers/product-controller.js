@@ -1,23 +1,8 @@
 const path = require("path");
 const productService = require("../services/productService");
-module.exports = {
-  products: (req, res) => {
-    //let user_name = null;
-    //const data = req.session.userData;
-    //if (data) {
-    //user_name = data.user_name;
-    //}
-    const productsLenovo = productService.getProductsLenovo();
-    const productsApple = productService.getProductsApple();
-    const productsAsus = productService.getProductsAsus();
 
-    res.render("products/products", {
-      productsLenovo,
-      productsApple,
-      productsAsus,
-    });
-  },
-  productCart: (req, res) => {
+module.exports = {
+    productCart: (req, res) => {
     res.render("products/productCart");
   },
   //Detalle de un producto
@@ -76,4 +61,58 @@ module.exports = {
     productService.deleteProduct(id);
     res.redirect("/products");
   },
+          //--------- TRABAJANDO CON LA BASE DE DATOS---------------
+
+  products: (req, res) => {
+    productService.getAllProducts().then((products) => {
+      res.render('products/productsList', { products })
+     })
+  },
+  lenovo: (req, res) => {
+    productService.getLenovoProducts().then((products) => {
+      res.render('products/lenovo', { products })
+     })
+  },
+  apple: (req, res) => {
+    productService.getAppleProducts().then((products) => {
+      res.render('products/apple', { products })
+     })
+  },
+  corsair: (req, res) => {
+    productService.getCorsairProducts().then((products) => {
+      res.render('products/corsair', { products })
+     })
+  },
+  asus: (req, res) => {
+    productService.getAsusProducts().then((products) => {
+      res.render('products/asus', { products })
+     })
+  },
+  razer: (req, res) => {
+    productService.getRazerProducts().then((products) => {
+      res.render('products/razer', { products })
+     })
+  },
+  productsCategoryPcs: (req, res)=>{
+    productService.pcsCategory().then((products)=>{
+      res.render('products/pcs', {products})
+    })
+  },
+  productsCategoryCelulares: (req, res)=>{
+    productService.celularesCategory().then((products)=>{
+      res.render('products/celulares', {products})
+    })
+  },
+  productsCategoryAccesosrios: (req, res)=>{
+    productService.accesoriosCategory().then((products)=>{
+      res.render('products/accesorios', {products})
+    })
+  },
+
+
 };
+
+
+
+
+              
