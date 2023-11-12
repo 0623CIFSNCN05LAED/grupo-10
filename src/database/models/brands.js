@@ -1,20 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
-    const ProductBrand = sequelize.define(
-        "ProductBrand", {
-        name: DataTypes.STRING,
+  const Model = sequelize.define(
+    "ProductBrand",
+    {
+      id: { type: DataTypes.STRING, primaryKey: true },
+      name: DataTypes.STRING,
     },
-        {
-            tableName: 'products_brand',
-            timestamps: false,
-        }
-    );
+    {
+      tableName: "products_brand",
+      timestamps: false,
+    }
+  );
 
-    ProductBrand.associate = (models) => {
-        ProductBrand.hasMany(models.Product, {
-            as: "products",
-            foreignKey: "brand_id",
-        });
-    };
+  Model.associate = (models) => {
+    Model.hasMany(models.Product, {
+      as: "products",
+      foreignKey: "brand_id",
+    });
+  };
 
-    return ProductBrand;
+  return Model;
 };

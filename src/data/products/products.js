@@ -25,8 +25,11 @@ module.exports = {
     products.push(newProduct);
     this.saveProducts(products);
   },
-  findById: function (id) {
-    const product = this.getProducts().find((producto) => producto.id == id);
+  findById: async function (id) {
+    //const product = this.getProducts().find((producto) => producto.id == id);
+    const product = await Product.findByPk(id, {
+      include: ["productBrand", "productCategory"],
+    });
     return product;
   },
   update: function (id, product) {

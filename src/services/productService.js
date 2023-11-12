@@ -21,7 +21,8 @@ const productService = {
   //   return products;
   // },
 
-  getProduct: (id) => {
+  getProduct: async (id) => {
+    //const product = await Product.findByPk(id);
     const product = db.products.findById(id);
     return product;
   },
