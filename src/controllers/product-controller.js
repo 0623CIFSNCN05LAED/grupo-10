@@ -24,13 +24,12 @@ module.exports = {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
-      brand: req.body.brand,
-      category: req.body.category,
+      brand_id: req.body.brand_id,
+      category_id: req.body.category_id,
       description: req.body.description,
-      masBuscado: req.body.masBuscado,
       image: req.file ? req.file.filename : "default.png",
     };
-    productService.produtcCreating(product);
+    productService.productCreating(product);
     res.redirect("products");
   },
   // Update - Form to edit one product

@@ -21,14 +21,9 @@ const productService = {
   //   return products;
   // },
 
-  getProduct: async (id) => {
-    //const product = await Product.findByPk(id);
-    const product = db.products.findById(id);
-    return product;
-  },
-  produtcCreating: (product) => {
-    db.products.create(product);
-  },
+  // productCreating: (product) => {
+  //   db.products.create(product);
+  // },
   updateProduct: (id, product) => {
     db.products.update(id, product);
   },
@@ -80,6 +75,14 @@ const productService = {
     return Product.findAll({
       where: { category_id: "accesorios" },
     });
+  },
+  getProduct: async (id) => {
+    const product = await db.products.findById(id);
+    console.log("pase por getProduct");
+    return product;
+  },
+  productCreating: (product) => {
+    db.products.create(product);
   },
 };
 module.exports = productService;
