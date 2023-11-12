@@ -9,10 +9,10 @@ module.exports = {
     //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     return await Product.findAll();
   },
-  saveProducts: function (products) {
-    const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-  },
+  // saveProducts: function (products) {
+  //   const productsFilePath = path.join(__dirname, "./productsDataBase.json");
+  //   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+  // },
   create: async function (product) {
     console.log(`Creating product ${product.name}`);
     //const products = this.getProducts();
