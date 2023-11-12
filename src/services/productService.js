@@ -1,5 +1,5 @@
 const db = require("../data/db");
-const { Product } = require('../database/models');
+const { Product } = require("../database/models");
 
 const productService = {
   // getProductsLenovo: () => {
@@ -21,8 +21,6 @@ const productService = {
   //   return products;
   // },
 
-  
-  
   getProduct: (id) => {
     const product = db.products.findById(id);
     return product;
@@ -40,49 +38,47 @@ const productService = {
   //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
   getAllProducts: () => {
-    return Product.findAll()
+    return db.products.getProducts();
   },
   getAppleProducts: () => {
     return Product.findAll({
-      where: {brand_id: 'apple'}
+      where: { brand_id: "apple" },
     });
   },
   getCorsairProducts: () => {
     return Product.findAll({
-      where: {brand_id: 'corsair'},
+      where: { brand_id: "corsair" },
     });
   },
   getRazerProducts: () => {
     return Product.findAll({
-      where: {brand_id: 'razer'},
+      where: { brand_id: "razer" },
     });
   },
   getLenovoProducts: () => {
     return Product.findAll({
-      where: { brand_id: 'lenovo' },
+      where: { brand_id: "lenovo" },
     });
   },
   getAsusProducts: () => {
     return Product.findAll({
-      where: { brand_id: 'lenovo' },
+      where: { brand_id: "lenovo" },
     });
   },
-  pcsCategory: ()=>{
+  pcsCategory: () => {
     return Product.findAll({
-      where: {category_id:'pcs' }
-    })
+      where: { category_id: "pcs" },
+    });
   },
-  celularesCategory: ()=>{
+  celularesCategory: () => {
     return Product.findAll({
-      where: {category_id:'celulares' }
-    })
+      where: { category_id: "celulares" },
+    });
   },
-  accesoriosCategory: ()=>{
+  accesoriosCategory: () => {
     return Product.findAll({
-      where: {category_id:'accesorios' }
-    })
+      where: { category_id: "accesorios" },
+    });
   },
-
-}
+};
 module.exports = productService;
-

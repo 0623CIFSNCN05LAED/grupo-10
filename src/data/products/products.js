@@ -1,13 +1,16 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const { Product } = require("../../database/models");
 
 module.exports = {
-  getProducts: function () {
-    const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    return products;
+  getProducts: async function () {
+    //const productsFilePath = path.join(__dirname, "./productsDataBase.json");
+    //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+    return await Product.findAll();
   },
+
   saveProducts: function (products) {
     const productsFilePath = path.join(__dirname, "./productsDataBase.json");
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
