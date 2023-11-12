@@ -58,8 +58,9 @@ module.exports = {
   },
   delete: function (id) {
     console.log(`Deleting product with id ${id}`);
-    const products = this.getProducts();
-    const nonDeleteProducts = products.filter((product) => product.id != id);
-    this.saveProducts(nonDeleteProducts);
+    // const products = this.getProducts();
+    // const nonDeleteProducts = products.filter((product) => product.id != id);
+    // this.saveProducts(nonDeleteProducts);
+    return Product.destroy({ where: { id } });
   },
 };
