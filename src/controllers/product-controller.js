@@ -1,5 +1,6 @@
 const path = require("path");
 const productService = require("../services/productService");
+const { log } = require("console");
 
 module.exports = {
   productCart: (req, res) => {
@@ -33,9 +34,9 @@ module.exports = {
     res.redirect("products");
   },
   // Update - Form to edit one product
-  productEdit: (req, res) => {
+  productEdit: async (req, res) => {
     const id = req.params.id;
-    const product = productService.getProduct(id);
+    const product = await productService.getProduct(id);
     res.render("products/productEdit", { product });
   },
   // Update - Method to update
@@ -43,8 +44,8 @@ module.exports = {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
-      brand: req.body.brand,
-      category: req.body.category,
+      brand_id: req.body.brand_id,
+      category_id: req.body.category_id,
       description: req.body.description,
     };
     const id = req.params.id;

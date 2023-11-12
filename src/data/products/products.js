@@ -34,15 +34,27 @@ module.exports = {
   },
   update: function (id, product) {
     console.log(`Actualizando producto ${product.name}`);
+    console.log("id a actualizar " + id);
+    console.log("producto: " + product);
     // cargar todos los productos
-    const products = this.getProducts();
+    //const products = this.getProducts();
     // buscar un producto por id
-    const productToEdit = products.find((product) => product.id == id);
+    //const productToEdit = products.find((product) => product.id == id);
     // pisar las propiedades
-    Object.assign(productToEdit, product);
+    // Object.assign(productToEdit, product);
     // guardar el producto editado
-    this.saveProducts(products);
-    return product;
+    //this.saveProducts(products);
+    return Product.update(
+      {
+        name: product.name,
+        price: product.price,
+        brand_id: product.brand_id,
+        category_id: product.category_id,
+        description: product.description,
+        image: product.image,
+      },
+      { where: { id } }
+    );
   },
   delete: function (id) {
     console.log(`Deleting product with id ${id}`);
