@@ -22,9 +22,9 @@ router.get("/corsair", productController.corsair);
 router.get("/razer", productController.razer);
 
 //PRODUCTO POR CATEGORIA
-router.get('/pcs', productController.productsCategoryPcs);
-router.get('/celulares', productController.productsCategoryCelulares);
-router.get('/accesorios', productController.productsCategoryAccesosrios);
+router.get("/pcs", productController.productsCategoryPcs);
+router.get("/celulares", productController.productsCategoryCelulares);
+router.get("/accesorios", productController.productsCategoryAccesosrios);
 //CARRITO DE PRODUCTO
 router.get("/cart/", userGuard, productController.productCart);
 
@@ -47,9 +47,5 @@ router.put("/:id/", upload.single("image"), productController.productUpdate);
 
 //ELIMINAR UN PRODUCTO
 router.delete("/:id", productController.destroy);
-
-                  
-
-
 
 module.exports = router;

@@ -1,53 +1,77 @@
 <header class="hcolor-header h-header">
-    <div class="final">
-        <nav class="menu flex hend">
-            <div class="hlogo">
-                <a href="/"><img src="/images/Frame.png" alt="" /></a>
-            </div>
-            <div class="nav-bar-pc"><a href="">Lo ultimo</a></div>
-            <div class="nav-bar-pc"><a href="../products/celulares">Celulares</a></div>
-            <div class="nav-bar-pc"><a href="../products/pcs">PCs</a></div>
-            <div class="nav-bar-pc"><a href="../products/accesorios">Accesorios</a></div>
-            <!-- <div class="icon-nav-pc nav-bar-pc"> -->
-                <div class="nav-bar-pc icon-nav-pc dropdown">
-                    <ul>
-                        <% if (user_log) { %>
-                         <li>
-                            <a class="nav-bar-pc">
-                                <img src="/images/users/<%= user.avatar %>" width="50" style="border-radius: 100%; size:10px;">
-                                 Hola, <%= user_log %>
-                            </a>
-                            <ul class="dropdown-content">
-                                <li>
-                                    <a href="/users/<%= user.id %>">Mi perfil</a>
-                                </li>
-                                <li>
-                                    <a href="/users/logout">Logout</a>
-                                </li>
-                            </ul>
-                         </li>
-                         <% } else { %>
-                                <li>
-                                    <a>
-                                        <i class="fa-solid fa-user"></i>
-                                    </a>
-                                    <ul class="dropdown-content">
-                                        <li><a href="/users/login">Ingresá</a></li>
-                                        <li><a href="/users/register">Registrate</a></li>
-                                    </ul>
-                                </li>
-                        <% } %>
-                    </ul>
-                </div>
-                <!-- <div class="nav-bar-pc icon-nav-pc"><a href="/users/login"><i class="fa-solid fa-user"></i></a></div>    -->
-                <div class="nav-bar-pc icon-nav-pc"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
-                <div class="nav-bar-pc icon-nav-pc"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></div> 
-                
-            <div class="h-open-close nav-bar-pc ham">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-        </nav>
-        
-    </div>
+  <div class="final">
+    <nav class="menu flex hend">
+      <div class="hlogo">
+        <a href="/"><img src="/images/Frame.png" alt="" /></a>
+      </div>
+      <div class="nav-bar-pc"><a href="">Lo ultimo</a></div>
+      <div class="nav-bar-pc">
+        <a href="../products/celulares">Celulares</a>
+      </div>
+      <div class="nav-bar-pc"><a href="../products/pcs">PCs</a></div>
+      <div class="nav-bar-pc">
+        <a href="../products/accesorios">Accesorios</a>
+      </div>
+      <!-- <div class="icon-nav-pc nav-bar-pc"> -->
+      <div class="nav-bar-pc icon-nav-pc dropdown">
+        <ul>
+          <% if (user_log) { %>
+          <li>
+            <a class="nav-bar-pc">
+              <img
+                src="/images/users/<%= user.avatar %>"
+                width="50"
+                style="border-radius: 100%; size: 10px"
+              />
+              Hola, <%= user_log %>
+            </a>
+            <ul class="dropdown-content">
+              <li>
+                <a href="/users/<%= user.id %>">Mi perfil</a>
+              </li>
+              <li>
+                <a href="/users/logout">Logout</a>
+              </li>
+            </ul>
+          </li>
+          <% } else { %>
+          <li>
+            <a>
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="/users/login">Ingresá</a></li>
+              <li><a href="/users/register">Registrate</a></li>
+            </ul>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <!-- <div class="nav-bar-pc icon-nav-pc"><a href="/users/login"><i class="fa-solid fa-user"></i></a></div>    -->
+      <div class="nav-bar-pc icon-nav-pc">
+        <form action="/search" method="GET" class="search-form">
+          <input
+            type="text"
+            name="keywords"
+            placeholder="Buscar productos"
+            class="search-form_input"
+          />
+          <button type="submit" class="search-form_button">
+            <i
+              class="fa-solid fa-magnifying-glass"
+              style="color: lightgrey"
+            ></i>
+          </button>
+        </form>
+        <!-- <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div> -->
+      </div>
+      <div class="nav-bar-pc icon-nav-pc">
+        <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+
+      <div class="h-open-close nav-bar-pc ham">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </div>
 </header>
