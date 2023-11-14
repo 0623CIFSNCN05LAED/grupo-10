@@ -13,6 +13,7 @@ const validateFormProductCreate = require("../middlewares/validate-form-productC
 
 //PRODUCTOS EN GENERAL
 router.get("/", productController.products);
+router.get("/search", productController.search);
 
 //PRODUCTOS POR MARCA
 router.get("/lenovo/", productController.lenovo);

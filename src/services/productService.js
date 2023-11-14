@@ -26,15 +26,18 @@ const productService = {
   // },
   // updateProduct: (id, product) => {
   //   db.products.update(id, product);
+  // // },
+  // deleteProduct: (id) => {
+  //   db.products.delete(id);
   // },
-  deleteProduct: (id) => {
-    db.products.delete(id);
-  },
 
   //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
   getAllProducts: () => {
     return db.products.getProducts();
+  },
+  searchProducts: (query) => {
+    return db.products.getProductsByQuery(query);
   },
   getAppleProducts: () => {
     return Product.findAll({
@@ -86,6 +89,9 @@ const productService = {
   },
   updateProduct: (id, product) => {
     db.products.update(id, product);
+  },
+  deleteProduct: (id) => {
+    db.products.delete(id);
   },
 };
 module.exports = productService;
