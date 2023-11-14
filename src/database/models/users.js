@@ -1,25 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-    const users = sequelize.define(
-        "users",
-        {
-            first_name: DataTypes.STRING,
-            last_name: DataTypes.STRING,
-            email: DataTypes.STRING,
-            password: DataTypes.STRING,
-            avatar: DataTypes.STRING,
-        },
-        {
-            tableName: "users",
-            timestamps: false,
-        }
-    );
+  const Model = sequelize.define(
+    "users",
+    {
+      id: { type: DataTypes.STRING, primaryKey: true },
+      first_name: DataTypes.STRING,
+      last_name: DataTypes.STRING,
+      email: DataTypes.STRING,
+      password: DataTypes.STRING,
+      avatar: DataTypes.STRING,
+      category_id: DataTypes.STRING,
+    },
+    {
+      tableName: "users",
+      timestamps: false,
+    }
+  );
 
-    users.associate = (models) => {
-        users.hasMany(models.users_category, {
-          as: 'users_category',
-          foreignKey: 'users_id',
-        });
-      };
-    return users;
+  Model.associate = (models) => {
+    Model.hasMany(models.users_category, {
+      as: "users_category",
+      foreignKey: "category_id",
+    });
+  };
+  return Model;
 };
-

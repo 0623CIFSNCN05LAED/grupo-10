@@ -44,38 +44,41 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="brand">Marca:</label>
-            <select name="brand" id="brand" class="reg-form-input">
-              <option value="" <% if (product.brand=="") { %>
+            <label for="brand_id">Marca:</label>
+            <select name="brand_id" id="brand_id" class="reg-form-input">
+              <option value="" <% if (product.brand_id=="") { %>
                 selected <% } %>>Elegí una marca
               </option>
-              <option value="ASUS" <% if (product.brand=="ASUS") { %>
+              <option value="asus" <% if (product.brand_id=="asus") { %>
                 selected <% } %>>ASUS
               </option>
-              <option value="Lenovo" <% if (product.brand =="Lenovo") { %>
+              <option value="lenovo" <% if (product.brand_id =="lenovo") { %>
                 selected <% } %>>Lenovo
               </option>
-              <option value="Apple" <% if (product.brand=="Apple") { %>
+              <option value="apple" <% if (product.brand_id=="apple") { %>
                 selected <% } %>>Apple
               </option>
-              <option value="Corsair" <% if (product.brand=="Corsair") { %>
+              <option value="corsair" <% if (product.brand_id=="corsair") { %>
                 selected <% } %>>Corsair
+              </option>
+              <option value="razer" <% if (product.brand_id=="razer") { %>
+                selected <% } %>>Razer
               </option>
             </select>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="category">Categoría:</label>
-            <select name="category" id="category" class="reg-form-input">
-              <option value="" <% if (product.category=="") { %>
+            <label for="category_id">Categoría:</label>
+            <select name="category_id" id="category_id" class="reg-form-input">
+              <option value="" <% if (product.category_id=="") { %>
                selected
               <% } %>>Elegí una categoría</option>
-              <option value="celulares" <% if (product.category=="celulares") { %>
+              <option value="celulares" <% if (product.category_id=="celulares") { %>
                selected  <% } %>>Celulares</option>
-              <option value="pcs" <% if (product.category=="pcs") { %>
+              <option value="pcs" <% if (product.category_id=="pcs") { %>
                selected
               <% } %>>PCs</option>
-              <option value="accesorios" <% if (product.category=="accesorios") { %>
+              <option value="accesorios" <% if (product.category_id=="accesorios") { %>
                selected
               <% } %>>Accesorios</option>
             </select>
@@ -101,7 +104,7 @@
             />
           </div>
 
-          <div class="reg-mb-15 reg-md-prod">
+          <!-- <div class="reg-mb-15 reg-md-prod">
            <label for="masBuscado">Producto mas buscado?:</label>
             <select name="masBuscado" id="masBuscado" class="reg-form-input">
               <option value="" <% if (product.masBuscado=="") { %>
@@ -113,7 +116,7 @@
                selected
               <% } %>>No</option>
             </select>
-          </div>
+          </div> -->
           <hr class="reg-linea">
                                         
           <div class="reg-mb-15 reg flex reg-flex-center" >
