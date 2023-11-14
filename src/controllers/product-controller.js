@@ -1,15 +1,18 @@
 const path = require("path");
 const productService = require("../services/productService");
+const { log } = require("console");
 
 module.exports = {
-    productCart: (req, res) => {
+  productCart: (req, res) => {
     res.render("products/productCart");
   },
   //Detalle de un producto
-  productDetail: (req, res) => {
+  productDetail: async (req, res) => {
     const id = req.params.id;
-    const product = productService.getProduct(id);
-
+    console.log(id);
+    console.log("id recibido ", req.params.id);
+    const product = await productService.getProduct(id);
+    console.log(product);
     res.render("products/productDetail", { product });
   },
 
@@ -22,19 +25,18 @@ module.exports = {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
-      brand: req.body.brand,
-      category: req.body.category,
+      brand_id: req.body.brand_id,
+      category_id: req.body.category_id,
       description: req.body.description,
-      masBuscado: req.body.masBuscado,
       image: req.file ? req.file.filename : "default.png",
     };
-    productService.produtcCreating(product);
+    productService.productCreating(product);
     res.redirect("products");
   },
   // Update - Form to edit one product
-  productEdit: (req, res) => {
+  productEdit: async (req, res) => {
     const id = req.params.id;
-    const product = productService.getProduct(id);
+    const product = await productService.getProduct(id);
     res.render("products/productEdit", { product });
   },
   // Update - Method to update
@@ -42,8 +44,8 @@ module.exports = {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
-      brand: req.body.brand,
-      category: req.body.category,
+      brand_id: req.body.brand_id,
+      category_id: req.body.category_id,
       description: req.body.description,
     };
     const id = req.params.id;
@@ -61,58 +63,51 @@ module.exports = {
     productService.deleteProduct(id);
     res.redirect("/products");
   },
-          //--------- TRABAJANDO CON LA BASE DE DATOS---------------
+  //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
   products: (req, res) => {
     productService.getAllProducts().then((products) => {
-      res.render('products/productsList', { products })
-     })
+      res.render("products/productsList", { products });
+    });
   },
   lenovo: (req, res) => {
     productService.getLenovoProducts().then((products) => {
-      res.render('products/lenovo', { products })
-     })
+      res.render("products/lenovo", { products });
+    });
   },
   apple: (req, res) => {
     productService.getAppleProducts().then((products) => {
-      res.render('products/apple', { products })
-     })
+      res.render("products/apple", { products });
+    });
   },
   corsair: (req, res) => {
     productService.getCorsairProducts().then((products) => {
-      res.render('products/corsair', { products })
-     })
+      res.render("products/corsair", { products });
+    });
   },
   asus: (req, res) => {
     productService.getAsusProducts().then((products) => {
-      res.render('products/asus', { products })
-     })
+      res.render("products/asus", { products });
+    });
   },
   razer: (req, res) => {
     productService.getRazerProducts().then((products) => {
-      res.render('products/razer', { products })
-     })
+      res.render("products/razer", { products });
+    });
   },
-  productsCategoryPcs: (req, res)=>{
-    productService.pcsCategory().then((products)=>{
-      res.render('products/pcs', {products})
-    })
+  productsCategoryPcs: (req, res) => {
+    productService.pcsCategory().then((products) => {
+      res.render("products/pcs", { products });
+    });
   },
-  productsCategoryCelulares: (req, res)=>{
-    productService.celularesCategory().then((products)=>{
-      res.render('products/celulares', {products})
-    })
+  productsCategoryCelulares: (req, res) => {
+    productService.celularesCategory().then((products) => {
+      res.render("products/celulares", { products });
+    });
   },
-  productsCategoryAccesosrios: (req, res)=>{
-    productService.accesoriosCategory().then((products)=>{
-      res.render('products/accesorios', {products})
-    })
+  productsCategoryAccesosrios: (req, res) => {
+    productService.accesoriosCategory().then((products) => {
+      res.render("products/accesorios", { products });
+    });
   },
-
-
 };
-
-
-
-
-              

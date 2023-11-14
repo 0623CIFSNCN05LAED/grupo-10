@@ -1,47 +1,66 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const { Product } = require("../../database/models");
 
 module.exports = {
-  getProducts: function () {
-    const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    return products;
+  getProducts: async function () {
+    //const productsFilePath = path.join(__dirname, "./productsDataBase.json");
+    //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+    return await Product.findAll();
   },
-  saveProducts: function (products) {
-    const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-  },
-  create: function (product) {
+  // saveProducts: function (products) {
+  //   const productsFilePath = path.join(__dirname, "./productsDataBase.json");
+  //   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+  // },
+  create: async function (product) {
     console.log(`Creating product ${product.name}`);
-    const products = this.getProducts();
+    //const products = this.getProducts();
     const newProduct = {
       id: uuidv4(),
       ...product,
     };
-    products.push(newProduct);
-    this.saveProducts(products);
+    // products.push(newProduct);
+    // this.saveProducts(products);
+    return await Product.create(newProduct);
   },
-  findById: function (id) {
-    const product = this.getProducts().find((producto) => producto.id == id);
+  findById: async function (id) {
+    //const product = this.getProducts().find((producto) => producto.id == id);
+    const product = await Product.findByPk(id, {
+      include: ["productBrand", "productCategory"],
+    });
+    console.log("pase por findById");
     return product;
   },
   update: function (id, product) {
     console.log(`Actualizando producto ${product.name}`);
+    console.log("id a actualizar " + id);
+    console.log("producto: " + product);
     // cargar todos los productos
-    const products = this.getProducts();
+    //const products = this.getProducts();
     // buscar un producto por id
-    const productToEdit = products.find((product) => product.id == id);
+    //const productToEdit = products.find((product) => product.id == id);
     // pisar las propiedades
-    Object.assign(productToEdit, product);
+    // Object.assign(productToEdit, product);
     // guardar el producto editado
-    this.saveProducts(products);
-    return product;
+    //this.saveProducts(products);
+    return Product.update(
+      {
+        name: product.name,
+        price: product.price,
+        brand_id: product.brand_id,
+        category_id: product.category_id,
+        description: product.description,
+        image: product.image,
+      },
+      { where: { id } }
+    );
   },
   delete: function (id) {
     console.log(`Deleting product with id ${id}`);
-    const products = this.getProducts();
-    const nonDeleteProducts = products.filter((product) => product.id != id);
-    this.saveProducts(nonDeleteProducts);
+    // const products = this.getProducts();
+    // const nonDeleteProducts = products.filter((product) => product.id != id);
+    // this.saveProducts(nonDeleteProducts);
+    return Product.destroy({ where: { id } });
   },
 };

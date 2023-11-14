@@ -52,43 +52,46 @@
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="brand">Marca:</label>
-            <select name="brand" id="brand" class="reg-form-input">
+            <label for="brand_id">Marca:</label>
+            <select name="brand_id" id="brand_id" class="reg-form-input">
               <option value="">Elegí una marca</option>
-              <option value="ASUS" <% if (locals.oldData && oldData.brand=="ASUS") { %>
+              <option value="asus" <% if (locals.oldData && oldData.brand_id=="asus") { %>
                selected
               <% } %>>ASUS</option>
-              <option value="Lenovo" <% if (locals.oldData && oldData.brand=="Lenovo") { %>
+              <option value="lenovo" <% if (locals.oldData && oldData.brand_id=="lenovo") { %>
                selected
               <% } %>>Lenovo</option>
-              <option value="Apple" <% if (locals.oldData && oldData.brand=="Apple") { %>
+              <option value="apple" <% if (locals.oldData && oldData.brand_id=="apple") { %>
                selected
               <% } %>>Apple</option>
-              <option value="Corsair" <% if (locals.oldData && oldData.brand=="Corsair") { %>
+              <option value="corsair" <% if (locals.oldData && oldData.brand_id=="corsair") { %>
                selected
               <% } %>>Corsair</option>
+              <option value="razer" <% if (locals.oldData && oldData.brand_id=="razer") { %>
+               selected
+              <% } %>>Razer</option>
             </select>
-            <% if (locals.errors && errors.brand) { %>
-            <div class="reg-text-danger"><%= errors.brand.msg %></div>
+            <% if (locals.errors && errors.brand_id) { %>
+            <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
             <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="category">Categoría:</label>
-            <select name="category" id="category" class="reg-form-input">
+            <label for="category_id">Categoría:</label>
+            <select name="category_id" id="category_id" class="reg-form-input">
               <option value="">Elegí una categoría</option>
-              <option value="celulares" <% if (locals.oldData && oldData.category=="celulares") { %>
+              <option value="celulares" <% if (locals.oldData && oldData.category_id=="celulares") { %>
                selected
               <% } %>>Celulares</option>
-              <option value="pcs" <% if (locals.oldData && oldData.category=="pcs") { %>
+              <option value="pcs" <% if (locals.oldData && oldData.category_id=="pcs") { %>
                selected
               <% } %>>PCs</option>
-              <option value="accesorios" <% if (locals.oldData && oldData.category=="accesorios") { %>
+              <option value="accesorios" <% if (locals.oldData && oldData.category_id=="accesorios") { %>
                selected
               <% } %>>Accesorios</option>
             </select>
-            <% if (locals.errors && errors.category) { %>
-            <div class="reg-text-danger"><%= errors.category.msg %></div>
+            <% if (locals.errors && errors.category_id) { %>
+            <div class="reg-text-danger"><%= errors.category_id.msg %></div>
             <% } %>
           </div>
 
@@ -115,14 +118,14 @@
             />
           </div>
 
-          <div class="reg-mb-15 reg-md-prod">
+          <!-- <div class="reg-mb-15 reg-md-prod">
             <label for="masBuscado">Producto mas buscado?:</label>
             <select name="masBuscado" id="masBuscado" class="reg-form-input">
               <option value="">Seleccioná</option>
               <option value="si">Si</option>
               <option value="no">No</option>
             </select>
-          </div>
+          </div> -->
           <hr class="reg-linea" />
 
           <div class="reg-mb-15 reg-flex reg-flex-center">
