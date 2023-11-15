@@ -110,4 +110,13 @@ module.exports = {
       res.render("products/accesorios", { products });
     });
   },
+  search: async (req, res) => {
+    const query = req.query.keywords;
+    const productsByKeyword = await productService.searchProducts(query);
+    if (productsByKeyword.length > 0) {
+      res.render("products/search", { products: productsByKeyword });
+    } else {
+      res.redirect("/");
+    }
+  },
 };
