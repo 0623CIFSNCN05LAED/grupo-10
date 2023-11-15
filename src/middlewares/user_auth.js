@@ -14,6 +14,7 @@ module.exports = (req, res, next) => {
     user_id = user.id;
     checkId = user_id === route_user_id;
   } else if (emailInCookie) {
+    req.session.userData = { user_name: emailInCookie };
     email = emailInCookie;
     const userInCookie = users.findByEmail(email);
     user_id = userInCookie.id;
