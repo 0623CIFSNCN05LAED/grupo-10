@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Model.associate = (models) => {
-    Model.belongsTo(models.users, {
+    Model.belongsTo(models.User, {
       as: "users",
       foreignKey: "category_id",
     });

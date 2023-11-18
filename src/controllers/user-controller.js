@@ -1,7 +1,6 @@
 const path = require("path");
 const userService = require("../services/userService");
 const bcrypt = require("bcryptjs");
-const users = require("../data/users/users");
 
 module.exports = {
   // Obtener todos los usuarios
@@ -14,9 +13,9 @@ module.exports = {
   },
 
   // Perfil de usuario
-  userProfile: (req, res) => {
+  userProfile: async (req, res) => {
     const id = req.params.id;
-    const user = userService.getUser(id);
+    const user = await userService.getUser(id);
     res.render("users/userProfileView", { user });
   },
 
@@ -27,11 +26,12 @@ module.exports = {
 
   //Método de proceso de login
 
-  loginProcess: (req, res) => {
+  loginProcess: async (req, res) => {
+    console.log("entre a logInProcess");
     const data = req.body;
     req.session.userData = data;
     const email = data.user_name;
-    const user = users.findByEmail(email);
+    const user = await userService.userByEmail(email);
     const user_id = user.id;
     if (req.body.remember_me) {
       res.cookie("userEmail", req.body.user_name, {

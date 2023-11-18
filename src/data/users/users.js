@@ -1,13 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const { User } = require("../../database/models");
+//const Sequelize = require("sequelize");
 
 module.exports = {
   // Obtener todos los usuarios
-  getUsers: function () {
-    const usersFilePath = path.join(__dirname, "./usersDataBase.json");
-    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-    return users;
+  getUsers: async function () {
+    const allUsers = await User.findAll();
+    return allUsers;
   },
   saveUsers: function (users) {
     const usersFilePath = path.join(__dirname, "./usersDataBase.json");
@@ -23,18 +24,18 @@ module.exports = {
     users.push(newUser);
     this.saveUsers(users);
   },
-  findById: function (id) {
-    const user = this.getUsers().find((usuario) => usuario.id == id);
+  findById: async function (id) {
+    const user = await User.findByPk(id);
     return user;
   },
   findByField: function (field, text) {
     const userFound = this.getUsers().find((usuario) => usuario.field == text);
     return userFound;
   },
-  findByEmail: function (email) {
-    const userFound = this.getUsers().find(
-      (usuario) => usuario.email.toLowerCase() == email.toLowerCase()
-    );
+  findByEmail: async function (email) {
+    const emailToLower = email.toLowerCase();
+    const userFound = await User.findOne({ where: { email: emailToLower } });
+    console.log(userFound);
     return userFound ? userFound : false;
   },
   update: function (id, user) {
