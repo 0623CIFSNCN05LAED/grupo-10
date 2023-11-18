@@ -71,6 +71,7 @@ values
 (UUID(), 'Carmen', 'Ortiz', 'carmen.ortiz@email.com', 'Co123456', 'clemente.jpg', 'user'),
 (UUID(), 'Fernando', 'Ramos', 'fernando.ramos@email.com', 'Fr123456', 'larguirucho.jpg', 'user'),
 (UUID(), 'Ana', 'Ruiz', 'ana.ruiz@email.com', 'Ar123456', 'peggy.jpg', 'user'),
+(UUID(), 'Admin', 'Administrador', 'admin@admin.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'neurus.jpg', 'admin'),
 ('a6db4710-8581-4879-9714-72ad57fb57a9', 'estiven', 'yepes', 'estiven@mail.com', '$2a$10$PuIcanIA/fQyEiIkAQNBu.kAba.9WjqFTlmCH5PKt91raqP8dCvTe', 'users_default.png', 'user'),
 ('69efcb50-28d6-4218-970b-0b920797a8e1', 'Pablo', 'Gomez', 'pablo@mail.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'users_default.png', 'user')
 ;

@@ -178,5 +178,14 @@
     "password": "$2a$10$jKLskA40L0Z1Y1WG4m0/MOG/1S3DLJQApmW/mKr4/KGRZw10yAd06",
     "category": "user",
     "avatar": "avatar-1698855045417.jpg"
+  },
+  {
+    "id": "f75599f6-8421-11ee-ab18-30d042129a13",
+    "first_name": "Admin",
+    "last_name": "Administrador",
+    "email": "admin@admin.com",
+    "password": "$2a$10$jKLskA40L0Z1Y1WG4m0/MOG/1S3DLJQApmW/mKr4/KGRZw10yAd06",
+    "category": "admin",
+    "avatar": "neurus.jpg"
   }
 ]

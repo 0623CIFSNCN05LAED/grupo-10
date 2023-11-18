@@ -3,8 +3,18 @@ const path = require("path");
 const users = require("../data/users/users");
 
 module.exports = [
-  body("first_name").notEmpty().withMessage("Tienes que escribir un nombre"),
-  body("last_name").notEmpty().withMessage("Tienes que escribir un apellido"),
+  body("first_name")
+    .notEmpty()
+    .withMessage("Tienes que escribir un nombre")
+    .bail()
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener al menos dos caracteres"),
+  body("last_name")
+    .notEmpty()
+    .withMessage("Tienes que escribir un apellido")
+    .bail()
+    .isLength({ min: 2 })
+    .withMessage("El apellido debe tener al menos dos caracteres"),
   body("email")
     .notEmpty()
     .withMessage("Tienes que escribir un correo eléctrónico")
@@ -21,7 +31,24 @@ module.exports = [
         throw new Error(`El correo electrónico ${email} ya está registrado.`);
       }
     }),
-  body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
+  body("password")
+    .notEmpty()
+    .withMessage("Tienes que escribir una contraseña")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe tener al menos 8 caracteres")
+    .bail()
+    .matches(/[A-Z]/)
+    .withMessage("La contraseña debe contener al menos una letra mayúscula")
+    .bail()
+    .matches(/[a-z]/)
+    .withMessage("La contraseña debe contener al menos una letra minúscula")
+    .bail()
+    .matches(/[\d]/)
+    .withMessage("La contraseña debe contener al menos un número")
+    .bail()
+    .matches(/[!@#$%^&*(),.?":{}|<>]/)
+    .withMessage("La contraseña debe contener al menos un carácter especial"),
   body("password_repeat")
     .notEmpty()
     .withMessage("Tienes que repetir la contraseña")
@@ -38,7 +65,7 @@ module.exports = [
     }),
   body("avatar").custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = [".jpg", ".png", ".gif"];
+    let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
 
     if (!file) {
       return true;
