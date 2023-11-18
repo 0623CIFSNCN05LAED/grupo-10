@@ -116,6 +116,9 @@
               id="image"
               class="reg-form-input"
             />
+             <% if (locals.errors && errors.image) { %>
+            <div class="reg-text-danger"><%= errors.image.msg %></div>
+            <% } %>
           </div>
 
           <!-- <div class="reg-mb-15 reg-md-prod">
