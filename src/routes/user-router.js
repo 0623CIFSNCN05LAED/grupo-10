@@ -54,4 +54,7 @@ router.put(
   userController.userUpdate
 );
 
+//ELIMINAR UN USUARIO
+router.delete("/:id", userController.destroy);
+
 module.exports = router;

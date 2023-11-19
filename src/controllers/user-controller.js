@@ -88,4 +88,12 @@ module.exports = {
     userService.updateUser(id, user);
     res.redirect("/users/" + id);
   },
+  // Método para eliminar un usuario
+  destroy: (req, res) => {
+    const id = req.params.id;
+    userService.deleteUser(id);
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    res.redirect("login");
+  },
 };

@@ -19,6 +19,7 @@
         src="/images/users/<%= user.avatar %>"
         alt="imagen login"
         class="log-w-100px log-lg-alig-center log-lg-w-300"
+        style="margin-right: 10px"
       />
 
       <div class="container">
@@ -48,14 +49,16 @@
         <% if (user && user.id) { %>
 
         <a href="/users/edit/<%= user.id %>" class="product-actions"
-          ><button class="edit-product">Editar Perfil</button></a
+          ><button class="edit-product">Editar mi perfil</button></a
         >
         <form
           action="/users/<%= user.id %>?_method=delete"
           method="POST"
           class="product-actions"
         >
-          <button type="submit" class="delete-product">Eliminar Perfil</button>
+          <button type="submit" class="delete-product">
+            Eliminar mi cuenta
+          </button>
         </form>
         <% } %>
       </div>

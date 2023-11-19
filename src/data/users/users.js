@@ -65,8 +65,9 @@ module.exports = {
   },
   delete: function (id) {
     console.log(`Deleting user with id ${id}`);
-    const users = this.getUsers();
-    const nonDeleteUsers = users.filter((usuario) => usuario.id != id);
-    this.saveUsers(nonDeleteUsers);
+    // const users = this.getUsers();
+    // const nonDeleteUsers = users.filter((usuario) => usuario.id != id);
+    // this.saveUsers(nonDeleteUsers);
+    return User.destroy({ where: { id } });
   },
 };
