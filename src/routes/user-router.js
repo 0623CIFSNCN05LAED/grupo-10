@@ -42,4 +42,7 @@ router.get("/logout/", userGuard, userController.logout);
 //VISTA DE USUARIO
 router.get("/:id/", userGuard, userAuth, userController.userProfile);
 
+//EDICION DE USUARIOS
+router.get("/edit/:id", userController.userEdit);
+
 module.exports = router;

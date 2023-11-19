@@ -67,4 +67,27 @@ module.exports = {
     userService.userCreating(user);
     res.redirect("login");
   },
+  // Formulario de edición de usuario
+  userEdit: async (req, res) => {
+    const id = req.params.id;
+    const user = await userService.getUser(id);
+    res.render("users/edit", { user });
+  },
+
+  // Método de edición de usuario
+  userUpdate: (req, res) => {
+    const id = req.params.id;
+    const user = {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 10),
+    };
+    const avatar = req.file
+      ? req.file.filename
+      : userService.getUser(id).avatar;
+    user.avatar = avatar;
+    userService.updateUser(id, user);
+    res.render("users/userProfileView", { user });
+  },
 };
