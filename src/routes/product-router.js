@@ -4,12 +4,12 @@ const router = Router();
 const path = require("path");
 const userGuard = require("../middlewares/user-guard");
 const validationsProduct = require("../validations/product-validations");
-const validationFormProductCreate = require("../middlewares/validate-form-productCreate");
+const validateFormProductCreate = require("../middlewares/validate-form-productCreate");
+const validateFormProductEdit = require("../middlewares/validate-form-product-edit");
 const upload = require("../middlewares/multer-products");
 
 // ************ Controller Require ************
 const productController = require("../controllers/product-controller");
-const validateFormProductCreate = require("../middlewares/validate-form-productCreate");
 
 //PRODUCTOS EN GENERAL
 router.get("/", productController.products);
@@ -44,7 +44,13 @@ router.get("/:id/", productController.productDetail);
 
 //EDICION DE PRODUCTO
 router.get("/edit/:id/", userGuard, productController.productEdit);
-router.put("/:id/", upload.single("image"), productController.productUpdate);
+router.put(
+  "/:id/",
+  upload.single("image"),
+  validationsProduct,
+  validateFormProductEdit,
+  productController.productUpdate
+);
 
 //ELIMINAR UN PRODUCTO
 router.delete("/:id", productController.destroy);
