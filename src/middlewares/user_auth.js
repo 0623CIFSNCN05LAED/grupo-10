@@ -7,7 +7,6 @@ module.exports = async (req, res, next) => {
   let user_id = "";
   const route_user_id = req.params.id;
   let checkId = false;
-  console.log("entré a user_auth");
 
   if (data) {
     email = data.user_name;

@@ -59,9 +59,9 @@ module.exports = {
     const user = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      email: req.body.email,
+      email: req.body.email.toLowerCase(),
       password: bcrypt.hashSync(req.body.password, 10),
-      category: "user",
+      category_id: "user",
       avatar: req.file ? req.file.filename : "users_default.png",
     };
     userService.userCreating(user);

@@ -12,19 +12,20 @@ module.exports = {
     });
     return allUsers;
   },
-  saveUsers: function (users) {
-    const usersFilePath = path.join(__dirname, "./usersDataBase.json");
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-  },
-  create: function (user) {
+  // saveUsers: function (users) {
+  //   const usersFilePath = path.join(__dirname, "./usersDataBase.json");
+  //   fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+  // },
+  create: async function (user) {
     console.log(`Creating user ${user.first_name} ${user.last_name}`);
-    const users = this.getUsers();
+    //const users = this.getUsers();
     const newUser = {
       id: uuidv4(),
       ...user,
     };
-    users.push(newUser);
-    this.saveUsers(users);
+    return await User.create(newUser);
+    //users.push(newUser);
+    //this.saveUsers(users);
   },
   findById: async function (id) {
     const user = await User.findByPk(id, { include: ["users_category"] });

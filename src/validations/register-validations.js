@@ -1,6 +1,7 @@
 const { body } = require("express-validator");
 const path = require("path");
-const users = require("../data/users/users");
+//const users = require("../data/users/users");
+const userService = require("../services/userService");
 
 module.exports = [
   body("first_name")
@@ -22,9 +23,10 @@ module.exports = [
     .isEmail()
     .withMessage("Debes ingresar un formato de correo válido")
     .bail()
-    .custom((value, { req }) => {
+    .custom(async (value, { req }) => {
       let email = req.body.email;
-      let checkEmail = users.findByEmail(email);
+      let emailToLower = email.toLowerCase();
+      let checkEmail = await userService.userByEmail(emailToLower);
       if (!checkEmail) {
         return true;
       } else {
