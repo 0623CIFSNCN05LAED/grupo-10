@@ -80,14 +80,12 @@ module.exports = {
     const user = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
     };
     const avatar = req.file
       ? req.file.filename
       : userService.getUser(id).avatar;
     user.avatar = avatar;
     userService.updateUser(id, user);
-    res.render("users/userProfileView", { user });
+    res.redirect("/users/" + id);
   },
 };

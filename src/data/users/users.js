@@ -46,14 +46,22 @@ module.exports = {
   update: function (id, user) {
     console.log(`Actualizando usuario ${user.first_name}`);
     // cargar todos los usuarios
-    const users = this.getUsers();
+    //const users = this.getUsers();
     // buscar un usuario por id
-    const userToEdit = users.find((usuario) => usuario.id == id);
+    //const userToEdit = users.find((usuario) => usuario.id == id);
     // pisar las propiedades
-    Object.assign(userToEditToEdit, user);
+    //Object.assign(userToEditToEdit, user);
     // guardar el usuario editado
-    this.saveUsers(users);
-    return user;
+    //this.saveUsers(users);
+
+    return User.update(
+      {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        avatar: user.avatar,
+      },
+      { where: { id } }
+    );
   },
   delete: function (id) {
     console.log(`Deleting user with id ${id}`);

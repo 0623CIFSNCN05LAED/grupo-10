@@ -48,16 +48,7 @@ module.exports = {
   },
   update: function (id, product) {
     console.log(`Actualizando producto ${product.name}`);
-    console.log("id a actualizar " + id);
-    console.log("producto: " + product);
-    // cargar todos los productos
-    //const products = this.getProducts();
-    // buscar un producto por id
-    //const productToEdit = products.find((product) => product.id == id);
-    // pisar las propiedades
-    // Object.assign(productToEdit, product);
-    // guardar el producto editado
-    //this.saveProducts(products);
+
     return Product.update(
       {
         name: product.name,

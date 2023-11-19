@@ -3,9 +3,11 @@ const { validationResult } = require("express-validator");
 
 module.exports = (req, res, next) => {
   const resultValidation = validationResult(req);
+  const id = req.params.id;
 
   if (resultValidation.errors.length > 0) {
-    return res.render("users/register", {
+    console.log(resultValidation);
+    return res.render("users/edit", {
       errors: resultValidation.mapped(),
       oldData: req.body,
     });

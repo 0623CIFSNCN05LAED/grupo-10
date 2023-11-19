@@ -13,7 +13,7 @@
       </div>
 
       <form
-        action="/users/edit/<%= user.id %>?_method=put"
+        action="/users/<%= user.id %>?_method=put"
         method="post"
         enctype="multipart/form-data"
         class="reg-grow-70"
@@ -51,7 +51,7 @@
           <div class="reg-text-danger"><%= errors.last_name.msg %></div>
           <% } %>
         </div>
-        <div class="reg-mb-15">
+        <!-- <div class="reg-mb-15">
           <label for="email" class="reg-label">Correo electrónico:</label>
           <input
             type="text"
@@ -64,9 +64,9 @@
           <% if (locals.errors && errors.email) { %>
           <div class="reg-text-danger"><%= errors.email.msg %></div>
           <% } %>
-        </div>
+        </div> -->
 
-        <div class="reg-mb-15">
+        <!-- <div class="reg-mb-15">
           <label for="password" class="reg-label">Contraseña:</label>
           <input
             type="password"
@@ -93,7 +93,7 @@
           <% if (locals.errors && errors.password_repeat) { %>
           <div class="reg-text-danger"><%= errors.password_repeat.msg %></div>
           <% } %>
-        </div>
+        </div> -->
         <div class="reg-mb-15">
           <label for="avatar" class="reg-label">Avatar:</label>
           <input type="file" name="avatar" id="avatar" class="reg-form-input" />
@@ -108,7 +108,7 @@
             >Hé leído y acepto la <a href="#">política de privacidad.</a></label
           >
         </div>
-        <div class="reg-mb-15 reg-flex">
+        <div class="reg-mb-15 reg-flex" style="justify-content: center">
           <button type="submit" class="reg-button">Guardar Cambios</button>
         </div>
         <div>
@@ -117,11 +117,11 @@
         <!-- <div class="reg-mb-15">
           <span class="reg-span">¿ya tenés una cuenta?</span>
         </div> -->
-        <!-- <div class="reg-mb-15 reg-flex">
+        <div class="reg-mb-15 reg-flex">
           <button type="button" class="reg-button-login">
-            <a href="/users/login">Iniciar Sesion</a>
+            <a href="/users/<%=user.id %>">Volver a mi perfil</a>
           </button>
-        </div> -->
+        </div>
       </form>
     </main>
     <footer class="foot"><%- include("../partials/footer") %></footer>
