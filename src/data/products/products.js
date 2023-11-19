@@ -8,7 +8,9 @@ module.exports = {
   getProducts: async function () {
     //const productsFilePath = path.join(__dirname, "./productsDataBase.json");
     //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    return await Product.findAll();
+    return await Product.findAll({
+      include: ["productBrand", "productCategory"],
+    });
   },
   getProductsByQuery: async function (query) {
     const productsByQuery = await Product.findAll({

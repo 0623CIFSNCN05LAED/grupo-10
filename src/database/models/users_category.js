@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Model.associate = (models) => {
-    Model.belongsTo(models.User, {
+    Model.hasMany(models.User, {
       as: "users",
       foreignKey: "category_id",
     });

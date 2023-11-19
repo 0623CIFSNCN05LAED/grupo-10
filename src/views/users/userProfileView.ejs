@@ -20,9 +20,13 @@
         <label for="email">Email:</label><br />
         <h3 class="inf-perfil"><%=user.email%></h3>
       </div>
-      <div>
+      <!-- <div>
         <label for="psw">Contraseña:</label><br />
         <h3 class="inf-perfil"><%=user.password%></h3>
+      </div> -->
+      <div>
+        <label> Rol:</label>
+        <h3 class="inf-perfil"><%= user.users_category.name %></h3>
       </div>
     </div>
   </body>

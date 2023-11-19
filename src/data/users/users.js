@@ -7,7 +7,9 @@ const { User } = require("../../database/models");
 module.exports = {
   // Obtener todos los usuarios
   getUsers: async function () {
-    const allUsers = await User.findAll();
+    const allUsers = await User.findAll({
+      include: ["users_category"],
+    });
     return allUsers;
   },
   saveUsers: function (users) {
@@ -25,7 +27,7 @@ module.exports = {
     this.saveUsers(users);
   },
   findById: async function (id) {
-    const user = await User.findByPk(id);
+    const user = await User.findByPk(id, { include: ["users_category"] });
     return user;
   },
   findByField: function (field, text) {
@@ -34,8 +36,10 @@ module.exports = {
   },
   findByEmail: async function (email) {
     const emailToLower = email.toLowerCase();
-    const userFound = await User.findOne({ where: { email: emailToLower } });
-    console.log(userFound);
+    const userFound = await User.findOne(
+      { where: { email: emailToLower } },
+      { include: ["users_category"] }
+    );
     return userFound ? userFound : false;
   },
   update: function (id, user) {
