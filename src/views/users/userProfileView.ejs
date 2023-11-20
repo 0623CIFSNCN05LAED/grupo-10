@@ -1,28 +1,66 @@
 <html lang="es">
   <head>
     <%- include('../partials/head', {title: 'Mi perfil'}) %>
-    <link rel="stylesheet" href="/css/userProfileView.css" />
+    <link rel="stylesheet" href="/userProfileView.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/styles-p-d.css" />
   </head>
   <body>
     <%- include("../partials/header") %>
-    <img
-      src="/images/users/<%= user.avatar %>"
-      alt="imagen login"
-      class="log-w-100px log-lg-alig-center log-lg-w-300"
-    />
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 70px 10px;
+      "
+    >
+      <img
+        src="/images/users/<%= user.avatar %>"
+        alt="imagen login"
+        class="log-w-100px log-lg-alig-center log-lg-w-300"
+        style="margin-right: 10px"
+      />
 
-    <div class="container">
-      <div>
-        <label for="uname">Nombre de usuario:</label><br />
-        <h3 class="inf-perfil"><%=user.first_name%> <%=user.last_name%></h3>
-      </div>
-      <div>
-        <label for="email">Email:</label><br />
-        <h3 class="inf-perfil"><%=user.email%></h3>
-      </div>
-      <div>
+      <div class="container">
+        <div style="margin-bottom: 20px">
+          <label for="uname">Nombre de usuario:</label><br />
+          <h3 class="inf-perfil"><%=user.first_name%> <%=user.last_name%></h3>
+        </div>
+        <div style="margin-bottom: 20px">
+          <label for="email">Email:</label><br />
+          <h3 class="inf-perfil"><%=user.email%></h3>
+        </div>
+        <!-- <div>
         <label for="psw">Contraseña:</label><br />
         <h3 class="inf-perfil"><%=user.password%></h3>
+      </div> -->
+        <div style="margin-bottom: 20px">
+          <label> Rol:</label>
+          <h3 class="inf-perfil"><%= user.users_category.name %></h3>
+        </div>
+      </div>
+    </div>
+
+    <div <% if (!user_log) { %>
+      class="display-none" <% } %>>
+      <hr />
+      <div style="display: flex; justify-content: space-around">
+        <% if (user && user.id) { %>
+
+        <a href="/users/edit/<%= user.id %>" class="product-actions"
+          ><button class="edit-product">Editar mi perfil</button></a
+        >
+        <form
+          action="/users/<%= user.id %>?_method=delete"
+          method="POST"
+          class="product-actions"
+        >
+          <button type="submit" class="delete-product">
+            Eliminar mi cuenta
+          </button>
+        </form>
+        <% } %>
       </div>
     </div>
   </body>

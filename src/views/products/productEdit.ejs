@@ -26,9 +26,12 @@
               name="name"
               id="name"
               placeholder="nombre del producto"
-              value="<%= product.name %>"
+              value="<%= locals.oldData? oldData.name : product.name %>"
               class="reg-form-input"
             />
+            <% if (locals.errors && errors.name) { %>
+            <div class="reg-text-danger"><%= errors.name.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -38,10 +41,13 @@
               name="price"
               id="price"
               placeholder="123.45"
-              value="<%= product.price %>"
+              value="<%= locals.oldData? oldData.price : product.price %>"
               class="reg-form-input"
             />
-          </div>
+            <% if (locals.errors && errors.price) { %>
+            <div class="reg-text-danger"><%= errors.price.msg %></div>
+            <% } %>
+          </div>  
 
           <div class="reg-mb-15 reg-md-prod">
             <label for="brand_id">Marca:</label>
@@ -65,6 +71,9 @@
                 selected <% } %>>Razer
               </option>
             </select>
+            <% if (locals.errors && errors.brand_id) { %>
+            <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -82,6 +91,9 @@
                selected
               <% } %>>Accesorios</option>
             </select>
+            <% if (locals.errors && errors.category_id) { %>
+            <div class="reg-text-danger"><%= errors.category_id.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -92,6 +104,9 @@
               placeholder="describi el producto"
                 class="reg-form-input"
             ><%= product.description %></textarea>
+             <% if (locals.errors && errors.description) { %>
+            <div class="reg-text-danger"><%= errors.description.msg %></div>
+            <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">

@@ -5,25 +5,13 @@ const validationsRegister = require("../validations/register-validations");
 const validateFormRegister = require("../middlewares/validate-form-register");
 const validationsLogin = require("../validations/login-validations");
 const validateFormLogin = require("../middlewares/validate-form-login");
+const validationsUserEdit = require("../validations/user-edit-validations");
+const validateformUserEdit = require("../middlewares/validate-form-user-edit");
 const path = require("path");
 const guestGuard = require("../middlewares/guest-guard");
 const userGuard = require("../middlewares/user-guard");
 const userAuth = require("../middlewares/user_auth");
 const upload = require("../middlewares/multer-users");
-
-// const multer = require("multer");
-
-// const storage = multer.diskStorage({
-//   destination: path.join(__dirname, "../../public/images/users"),
-//   filename: function (req, file, cb) {
-//     cb(
-//       null,
-//       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-//     );
-//   },
-// });
-
-// const upload = multer({ storage: storage });
 
 // ************ Controller Require ************
 const userController = require("../controllers/user-controller");
@@ -55,5 +43,18 @@ router.get("/logout/", userGuard, userController.logout);
 
 //VISTA DE USUARIO
 router.get("/:id/", userGuard, userAuth, userController.userProfile);
+
+//EDICION DE USUARIOS
+router.get("/edit/:id", userGuard, userAuth, userController.userEdit);
+router.put(
+  "/:id/",
+  upload.single("avatar"),
+  validationsUserEdit,
+  validateformUserEdit,
+  userController.userUpdate
+);
+
+//ELIMINAR UN USUARIO
+router.delete("/:id", userController.destroy);
 
 module.exports = router;

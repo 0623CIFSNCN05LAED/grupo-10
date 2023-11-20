@@ -1,16 +1,20 @@
 const db = require("../data/db");
 
 const userService = {
-  getUsers: () => {
-    const users = db.users.getUsers();
+  getUsers: async () => {
+    const users = await db.users.getUsers();
     return users;
   },
-  getUser: (id) => {
-    const user = db.users.findById(id);
+  getUser: async (id) => {
+    const user = await db.users.findById(id);
     return user;
   },
-  usersByFile: (field, text) =>{
-    const user = db.users.findByField();
+  usersByField: (field, text) => {
+    const user = db.users.findByField(field, text);
+    return user;
+  },
+  userByEmail: async (email) => {
+    const user = await db.users.findByEmail(email);
     return user;
   },
   userCreating: (user) => {

@@ -1,7 +1,6 @@
 const path = require("path");
 const userService = require("../services/userService");
 const bcrypt = require("bcryptjs");
-const users = require("../data/users/users");
 
 module.exports = {
   // Obtener todos los usuarios
@@ -14,9 +13,9 @@ module.exports = {
   },
 
   // Perfil de usuario
-  userProfile: (req, res) => {
+  userProfile: async (req, res) => {
     const id = req.params.id;
-    const user = userService.getUser(id);
+    const user = await userService.getUser(id);
     res.render("users/userProfileView", { user });
   },
 
@@ -27,11 +26,12 @@ module.exports = {
 
   //Método de proceso de login
 
-  loginProcess: (req, res) => {
+  loginProcess: async (req, res) => {
+    console.log("entre a logInProcess");
     const data = req.body;
     req.session.userData = data;
     const email = data.user_name;
-    const user = users.findByEmail(email);
+    const user = await userService.userByEmail(email);
     const user_id = user.id;
     if (req.body.remember_me) {
       res.cookie("userEmail", req.body.user_name, {
@@ -59,12 +59,41 @@ module.exports = {
     const user = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      email: req.body.email,
+      email: req.body.email.toLowerCase(),
       password: bcrypt.hashSync(req.body.password, 10),
-      category: "user",
+      category_id: "user",
       avatar: req.file ? req.file.filename : "users_default.png",
     };
     userService.userCreating(user);
+    res.redirect("login");
+  },
+  // Formulario de edición de usuario
+  userEdit: async (req, res) => {
+    const id = req.params.id;
+    const user = await userService.getUser(id);
+    res.render("users/edit", { user });
+  },
+
+  // Método de edición de usuario
+  userUpdate: (req, res) => {
+    const id = req.params.id;
+    const user = {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+    };
+    const avatar = req.file
+      ? req.file.filename
+      : userService.getUser(id).avatar;
+    user.avatar = avatar;
+    userService.updateUser(id, user);
+    res.redirect("/users/" + id);
+  },
+  // Método para eliminar un usuario
+  destroy: (req, res) => {
+    const id = req.params.id;
+    userService.deleteUser(id);
+    res.clearCookie("userEmail");
+    req.session.destroy();
     res.redirect("login");
   },
 };

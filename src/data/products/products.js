@@ -8,7 +8,9 @@ module.exports = {
   getProducts: async function () {
     //const productsFilePath = path.join(__dirname, "./productsDataBase.json");
     //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    return await Product.findAll();
+    return await Product.findAll({
+      include: ["productBrand", "productCategory"],
+    });
   },
   getProductsByQuery: async function (query) {
     const productsByQuery = await Product.findAll({
@@ -46,16 +48,7 @@ module.exports = {
   },
   update: function (id, product) {
     console.log(`Actualizando producto ${product.name}`);
-    console.log("id a actualizar " + id);
-    console.log("producto: " + product);
-    // cargar todos los productos
-    //const products = this.getProducts();
-    // buscar un producto por id
-    //const productToEdit = products.find((product) => product.id == id);
-    // pisar las propiedades
-    // Object.assign(productToEdit, product);
-    // guardar el producto editado
-    //this.saveProducts(products);
+
     return Product.update(
       {
         name: product.name,

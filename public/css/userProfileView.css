@@ -9,19 +9,19 @@ img {
   max-width: 500px;
 }
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: #333;
 }
 
 h3 {
   font-size: 1.5em;
-  color: #007BFF;
+  color: #007bff;
 }
 .inf-perfil {
   width: 100%;
   border-radius: 5px;
-  border: #B0B0B0 solid 1px;
-  color:#B0B0B0;
+  border: #b0b0b0 solid 1px;
+  color: #b0b0b0;
   font-size: 12px;
   font-style: italic;
   padding: 10px;
@@ -32,4 +32,3 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
-

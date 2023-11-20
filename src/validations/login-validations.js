@@ -1,5 +1,5 @@
 const { body } = require("express-validator");
-const users = require("../data/users/users");
+const userService = require("../services/userService");
 const bcrypt = require("bcryptjs");
 
 module.exports = [
@@ -10,9 +10,9 @@ module.exports = [
     .isEmail()
     .withMessage("Debes ingresar un formato de correo válido")
     .bail()
-    .custom((value, { req }) => {
+    .custom(async (value, { req }) => {
       const email = req.body.user_name;
-      const userToLogin = users.findByEmail(email);
+      const userToLogin = await userService.userByEmail(email);
       if (userToLogin) {
         return true;
       } else {
@@ -25,9 +25,9 @@ module.exports = [
     .notEmpty()
     .withMessage("Tienes que escribir tu contraseña")
     .bail()
-    .custom((value, { req }) => {
+    .custom(async (value, { req }) => {
       const email = req.body.user_name;
-      const userToLogin = users.findByEmail(email);
+      const userToLogin = await userService.userByEmail(email);
       const formPassword = req.body.password;
       const passwordOk = userToLogin.password;
       const checkPassword = bcrypt.compareSync(formPassword, passwordOk);

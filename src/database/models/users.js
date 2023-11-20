@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
-    "users",
+    "User",
     {
-      id: { type: DataTypes.STRING, primaryKey: true },
+      id: { type: DataTypes.UUID, primaryKey: true },
       first_name: DataTypes.STRING,
       last_name: DataTypes.STRING,
       email: DataTypes.STRING,
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Model.associate = (models) => {
-    Model.hasMany(models.users_category, {
+    Model.belongsTo(models.users_category, {
       as: "users_category",
       foreignKey: "category_id",
     });
