@@ -39,7 +39,9 @@ module.exports = {
   productEdit: async (req, res) => {
     const id = req.params.id;
     const product = await productService.getProduct(id);
-    res.render("products/productEdit", { product });
+    const brands = await productService.getAllBrands();
+    const categories = await productService.getAllCategories();
+    res.render("products/productEdit", { product, brands, categories });
   },
   // Update - Method to update
   productUpdate: (req, res) => {

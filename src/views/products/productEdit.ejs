@@ -50,6 +50,20 @@
           </div>  
 
           <div class="reg-mb-15 reg-md-prod">
+              <label for="brand_id">Marca:</label>
+              <select name="brand_id" id="brand_id" class="reg-form-input">
+               <% brands.forEach(brand => { %>
+                <option value="<%= brand.id %>"  <% if (product.brand_id==brand.id) { %>
+               selected
+              <% } %>><%= brand.name %></option>
+               <% }) %>
+              </select>
+              <% if (locals.errors && errors.brand_id) { %>
+            <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
+            <% } %>
+          </div>
+
+          <!-- <div class="reg-mb-15 reg-md-prod">
             <label for="brand_id">Marca:</label>
             <select name="brand_id" id="brand_id" class="reg-form-input">
               <option value="" <% if (product.brand_id=="") { %>
@@ -74,7 +88,7 @@
             <% if (locals.errors && errors.brand_id) { %>
             <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
             <% } %>
-          </div>
+          </div> -->
 
           <div class="reg-mb-15 reg-md-prod">
             <label for="category_id">Categoría:</label>
