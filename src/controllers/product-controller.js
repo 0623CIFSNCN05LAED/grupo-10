@@ -17,11 +17,12 @@ module.exports = {
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
-  productCreateForm: (req, res) => {
-    res.render("products/productCreate");
+  productCreateForm: async (req, res) => {
+    const brands = await productService.getAllBrands();
+    res.render("products/productCreate", { brands });
   },
   //METODO DE CREACION DE PRODUCTOS
-  createProduct: (req, res) => {
+  createProduct: async (req, res) => {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),

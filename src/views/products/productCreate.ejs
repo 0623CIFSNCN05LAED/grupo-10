@@ -55,6 +55,22 @@
             <label for="brand_id">Marca:</label>
             <select name="brand_id" id="brand_id" class="reg-form-input">
               <option value="">Elegí una marca</option>
+              <% brands.forEach(brand => { %>
+               <option value = "<%= brand.id %>" <% if (locals.oldData && oldData.brand_id==brand.id) { %>
+               selected
+              <% } %>><%= brand.name %>
+              </option>
+              <% }) %> 
+            </select>
+            <% if (locals.errors && errors.brand_id) { %>
+            <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
+            <% } %>
+          </div>
+
+          <!-- <div class="reg-mb-15 reg-md-prod">
+            <label for="brand_id">Marca:</label>
+            <select name="brand_id" id="brand_id" class="reg-form-input">
+              <option value="">Elegí una marca</option>
               <option value="asus" <% if (locals.oldData && oldData.brand_id=="asus") { %>
                selected
               <% } %>>ASUS</option>
@@ -74,7 +90,7 @@
             <% if (locals.errors && errors.brand_id) { %>
             <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
             <% } %>
-          </div>
+          </div> -->
 
           <div class="reg-mb-15 reg-md-prod">
             <label for="category_id">Categoría:</label>

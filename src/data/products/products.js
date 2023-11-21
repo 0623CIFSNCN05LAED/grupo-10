@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const { Product } = require("../../database/models");
+const { ProductBrand } = require("../../database/models");
 const Sequelize = require("sequelize");
 
 module.exports = {
@@ -67,5 +68,8 @@ module.exports = {
     // const nonDeleteProducts = products.filter((product) => product.id != id);
     // this.saveProducts(nonDeleteProducts);
     return Product.destroy({ where: { id } });
+  },
+  getBrands: async function () {
+    return await ProductBrand.findAll();
   },
 };
