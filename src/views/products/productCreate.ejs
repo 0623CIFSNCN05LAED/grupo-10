@@ -67,48 +67,20 @@
             <% } %>
           </div>
 
-          <!-- <div class="reg-mb-15 reg-md-prod">
-            <label for="brand_id">Marca:</label>
-            <select name="brand_id" id="brand_id" class="reg-form-input">
-              <option value="">Elegí una marca</option>
-              <option value="asus" <% if (locals.oldData && oldData.brand_id=="asus") { %>
-               selected
-              <% } %>>ASUS</option>
-              <option value="lenovo" <% if (locals.oldData && oldData.brand_id=="lenovo") { %>
-               selected
-              <% } %>>Lenovo</option>
-              <option value="apple" <% if (locals.oldData && oldData.brand_id=="apple") { %>
-               selected
-              <% } %>>Apple</option>
-              <option value="corsair" <% if (locals.oldData && oldData.brand_id=="corsair") { %>
-               selected
-              <% } %>>Corsair</option>
-              <option value="razer" <% if (locals.oldData && oldData.brand_id=="razer") { %>
-               selected
-              <% } %>>Razer</option>
-            </select>
-            <% if (locals.errors && errors.brand_id) { %>
-            <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
-            <% } %>
-          </div> -->
-
           <div class="reg-mb-15 reg-md-prod">
             <label for="category_id">Categoría:</label>
             <select name="category_id" id="category_id" class="reg-form-input">
               <option value="">Elegí una categoría</option>
-              <option value="celulares" <% if (locals.oldData && oldData.category_id=="celulares") { %>
-               selected
-              <% } %>>Celulares</option>
-              <option value="pcs" <% if (locals.oldData && oldData.category_id=="pcs") { %>
-               selected
-              <% } %>>PCs</option>
-              <option value="accesorios" <% if (locals.oldData && oldData.category_id=="accesorios") { %>
-               selected
-              <% } %>>Accesorios</option>
-            </select>
-            <% if (locals.errors && errors.category_id) { %>
+                  <% categories.forEach(category => { %>
+              <option value="<%= category.id %>" <% if (locals.oldData && oldData.category_id==category.id) { %>
+                selected
+                 <% } %>><%= category.name %>
+              </option>
+              <% }) %>
+             </select> 
+             <% if (locals.errors && errors.category_id) { %>
             <div class="reg-text-danger"><%= errors.category_id.msg %></div>
-            <% } %>
+             <% } %>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">

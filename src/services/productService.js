@@ -96,5 +96,8 @@ const productService = {
   getAllBrands: () => {
     return db.products.getBrands();
   },
+  getAllCategories: () => {
+    return db.products.getCategories();
+  },
 };
 module.exports = productService;

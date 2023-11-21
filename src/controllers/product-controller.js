@@ -19,7 +19,8 @@ module.exports = {
   // VISTA FORMULARIO DE CREACION PRODUCTO
   productCreateForm: async (req, res) => {
     const brands = await productService.getAllBrands();
-    res.render("products/productCreate", { brands });
+    const categories = await productService.getAllCategories();
+    res.render("products/productCreate", { brands, categories });
   },
   //METODO DE CREACION DE PRODUCTOS
   createProduct: async (req, res) => {
