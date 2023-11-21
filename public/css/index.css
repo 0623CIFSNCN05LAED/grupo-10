@@ -101,7 +101,7 @@ aside {
   width: 100%;
   height: 45vh;
   overflow-x: scroll;
-
+  overflow: hidden;
   /* Vamos a añadir esto 👇 */
   scroll-snap-type: x mandatory;
 }
@@ -111,6 +111,25 @@ aside {
   width: 100%;
   /* Vamos a añadir esto 👇 */
   scroll-snap-align: center;
+  animation: slide 15s infinite alternate ease-in-out;
+}
+
+@keyframes slide {
+
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+
+  33.33% {
+    transform: translateX(-100%);
+    /* Desplazamiento a la segunda imagen */
+  }
+
+  66.66% {
+    transform: translateX(-200%);
+    /* Desplazamiento a la tercera imagen */
+  }
 }
 
 /*------IMG BANNER  ACCESORIOS----- */
