@@ -17,11 +17,13 @@ module.exports = {
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
-  productCreateForm: (req, res) => {
-    res.render("products/productCreate");
+  productCreateForm: async (req, res) => {
+    const brands = await productService.getAllBrands();
+    const categories = await productService.getAllCategories();
+    res.render("products/productCreate", { brands, categories });
   },
   //METODO DE CREACION DE PRODUCTOS
-  createProduct: (req, res) => {
+  createProduct: async (req, res) => {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
@@ -37,7 +39,9 @@ module.exports = {
   productEdit: async (req, res) => {
     const id = req.params.id;
     const product = await productService.getProduct(id);
-    res.render("products/productEdit", { product });
+    const brands = await productService.getAllBrands();
+    const categories = await productService.getAllCategories();
+    res.render("products/productEdit", { product, brands, categories });
   },
   // Update - Method to update
   productUpdate: (req, res) => {

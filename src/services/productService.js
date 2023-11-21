@@ -93,5 +93,11 @@ const productService = {
   deleteProduct: (id) => {
     db.products.delete(id);
   },
+  getAllBrands: () => {
+    return db.products.getBrands();
+  },
+  getAllCategories: () => {
+    return db.products.getCategories();
+  },
 };
 module.exports = productService;

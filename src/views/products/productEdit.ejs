@@ -50,28 +50,15 @@
           </div>  
 
           <div class="reg-mb-15 reg-md-prod">
-            <label for="brand_id">Marca:</label>
-            <select name="brand_id" id="brand_id" class="reg-form-input">
-              <option value="" <% if (product.brand_id=="") { %>
-                selected <% } %>>Elegí una marca
-              </option>
-              <option value="asus" <% if (product.brand_id=="asus") { %>
-                selected <% } %>>ASUS
-              </option>
-              <option value="lenovo" <% if (product.brand_id =="lenovo") { %>
-                selected <% } %>>Lenovo
-              </option>
-              <option value="apple" <% if (product.brand_id=="apple") { %>
-                selected <% } %>>Apple
-              </option>
-              <option value="corsair" <% if (product.brand_id=="corsair") { %>
-                selected <% } %>>Corsair
-              </option>
-              <option value="razer" <% if (product.brand_id=="razer") { %>
-                selected <% } %>>Razer
-              </option>
-            </select>
-            <% if (locals.errors && errors.brand_id) { %>
+              <label for="brand_id">Marca:</label>
+              <select name="brand_id" id="brand_id" class="reg-form-input">
+               <% brands.forEach(brand => { %>
+                <option value="<%= brand.id %>"  <% if (product.brand_id==brand.id) { %>
+               selected
+              <% } %>><%= brand.name %></option>
+               <% }) %>
+              </select>
+              <% if (locals.errors && errors.brand_id) { %>
             <div class="reg-text-danger"><%= errors.brand_id.msg %></div>
             <% } %>
           </div>
@@ -79,19 +66,13 @@
           <div class="reg-mb-15 reg-md-prod">
             <label for="category_id">Categoría:</label>
             <select name="category_id" id="category_id" class="reg-form-input">
-              <option value="" <% if (product.category_id=="") { %>
-               selected
-              <% } %>>Elegí una categoría</option>
-              <option value="celulares" <% if (product.category_id=="celulares") { %>
-               selected  <% } %>>Celulares</option>
-              <option value="pcs" <% if (product.category_id=="pcs") { %>
-               selected
-              <% } %>>PCs</option>
-              <option value="accesorios" <% if (product.category_id=="accesorios") { %>
-               selected
-              <% } %>>Accesorios</option>
-            </select>
-            <% if (locals.errors && errors.category_id) { %>
+              <% categories.forEach(category => { %>
+               <option value="<%= category.id %>" <% if (product.category_id==category.id) { %>
+               selected  <% } %>><%= category.name %>
+               </option>
+              <% }) %>
+              </select>
+               <% if (locals.errors && errors.category_id) { %>
             <div class="reg-text-danger"><%= errors.category_id.msg %></div>
             <% } %>
           </div>
