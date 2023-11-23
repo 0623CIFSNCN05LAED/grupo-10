@@ -1,4 +1,7 @@
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const allowedExtensions = [ 'gif'];
+
 const validations = [
     {
         field: "first_name",
@@ -17,19 +20,41 @@ const validations = [
     },
     {
         field: "password",
-        check: (input) => input.value.length >= 8,
-        message: "La contraseña debe tener al menos ocho caracteres",
+        check: (input) => isStrongPassword(input.value),
+        message: "La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula, una letra minúscula, un número y un carácter especial",
     },
+    
     {
         field: "password_repeat",
-        check: (input) => input.value.length >= 8,
-        message: "La contraseña repetida debe tener al menos ocho caracteres",
+        check: (input) => input.value.length >= 8 && input.value === document.getElementById("password").value,
+        message: "Las contraseñas deben coincidir y tener al menos ocho caracteres",
     },
+    
     // {
-    //     validacion de extencion
+    //     field: "avatar",
+    //     check: (input) => validateFileExtension(input),
+    //     message: "Solo se permiten archivos con extensiones: " + allowedExtensions.join(', '),
     // },
 ];
 
+function isStrongPassword(password) {
+    const regexUpperCase = /[A-Z]/;
+    const regexLowerCase = /[a-z]/;
+    const regexDigit = /\d/;
+    const regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+    const hasUpperCase = regexUpperCase.test(password);
+    const hasLowerCase = regexLowerCase.test(password);
+    const hasDigit = regexDigit.test(password);
+    const hasSpecialChar = regexSpecialChar.test(password);
+
+    return password.length >= 8 && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+}
+
+// function validateFileExtension(input) {
+//     const fileName = input.value.toLowerCase();
+//     const fileExtension = fileName.split('.').pop();
+//     return allowedExtensions.includes(fileExtension);
+// }
 
 validations.forEach((validation) => {
     const inputId = validation.field;
@@ -44,25 +69,28 @@ validations.forEach((validation) => {
     input.addEventListener("input", validate);
 });
 
-const form = document.getElementById('form');
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    // Aquí puedes agregar lógica adicional si es necesario antes de enviar el formulario
-});
 
 function inputValidation(validation, input, inputErrorMsg) {
     if (!input.value) {
-        inputErrorMsg.innerText = "El campo no debe estar vacío";
-        inputErrorMsg.classList.add("display");
+        if (inputErrorMsg) {
+            inputErrorMsg.innerText = "El campo no debe estar vacío";
+            inputErrorMsg.classList.add("display");
+        }
         return;
     }
 
     if (!validation.check(input)) {
-        inputErrorMsg.innerText = validation.message;
-        inputErrorMsg.classList.add("display");
+        if (inputErrorMsg) {
+            inputErrorMsg.innerText = validation.message;
+            inputErrorMsg.classList.add("display");
+        }
         return;
     }
 
-    inputErrorMsg.innerText = '';
-    inputErrorMsg.classList.remove('display');
+    if (inputErrorMsg) {
+        inputErrorMsg.innerText = "";
+        inputErrorMsg.classList.remove("display");
+    }
 }
+
+
