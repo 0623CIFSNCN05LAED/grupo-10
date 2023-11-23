@@ -1,6 +1,6 @@
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const allowedExtensions = [ 'gif'];
+const allExtensions = [ 'png','gif'];
 
 const validations = [
     {
@@ -30,11 +30,11 @@ const validations = [
         message: "Las contraseñas deben coincidir y tener al menos ocho caracteres",
     },
     
-    // {
-    //     field: "avatar",
-    //     check: (input) => validateFileExtension(input),
-    //     message: "Solo se permiten archivos con extensiones: " + allowedExtensions.join(', '),
-    // },
+    {
+        field: "avatar",
+        check: (input) => validateFileExtension(input),
+        message: "Solo se permiten archivos con extensiones: " + allExtensions.join(', '),
+    },
 ];
 
 function isStrongPassword(password) {
@@ -50,11 +50,17 @@ function isStrongPassword(password) {
     return password.length >= 8 && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
 }
 
-// function validateFileExtension(input) {
-//     const fileName = input.value.toLowerCase();
-//     const fileExtension = fileName.split('.').pop();
-//     return allowedExtensions.includes(fileExtension);
-// }
+function validateFileExtension(input) {
+    const fileName = input.value.toLowerCase();
+    const fileExtension = fileName.split('.').pop();
+    console.log(fileExtension);
+    // return allExtensions.includes(fileExtension)
+   if( allExtensions.includes(fileExtension)){
+    console.log('Esta estencion es permitida');
+   }else{
+    console.log('ESTA EXTENSIN NO ESTA PERMITIDA');
+   } 
+}
 
 validations.forEach((validation) => {
     const inputId = validation.field;
@@ -62,11 +68,33 @@ validations.forEach((validation) => {
     const inputErrorMsg = document.getElementById(inputId + "Error");
 
     function validate() {
+        // console.log("input.value", input.value);
         inputValidation(validation, input, inputErrorMsg);
     }
 
     input.addEventListener("blur", validate);
     input.addEventListener("input", validate);
+});
+
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const validationsResult = [];
+
+    validations.forEach((validation) => {
+        const inputId = validation.field;
+        const input = document.getElementById(inputId);
+        const inputErrorMsg = document.getElementById(inputId + "Error");
+        const result = inputValidation(validation, input, inputErrorMsg);
+        validationsResult.push(result);
+    });
+
+    if (validationsResult.every((val) => val == true)) {
+        form.submit();
+    }
 });
 
 
