@@ -1,6 +1,6 @@
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const allExtensions = [ 'png','gif'];
+const allExtensions = [ 'JPG', 'JPEG', 'PNG', 'GIF'];
 
 const validations = [
     {
@@ -36,31 +36,23 @@ const validations = [
         message: "Solo se permiten archivos con extensiones: " + allExtensions.join(', '),
     },
 ];
-
+//validacion de caracteres especiales e igualdad de contraseñas
 function isStrongPassword(password) {
-    const regexUpperCase = /[A-Z]/;
-    const regexLowerCase = /[a-z]/;
-    const regexDigit = /\d/;
-    const regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+    // Define expresiones regulares para diferentes requisitos
+    const regexUpperCase = /[A-Z]/; // Al menos una letra mayúscula
+    const regexLowerCase = /[a-z]/; // Al menos una letra minúscula
+    const regexDigit = /\d/; // Al menos un dígito
+    const regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/; // Al menos un carácter especial
+    //provar si cumple cada requisito
     const hasUpperCase = regexUpperCase.test(password);
     const hasLowerCase = regexLowerCase.test(password);
     const hasDigit = regexDigit.test(password);
     const hasSpecialChar = regexSpecialChar.test(password);
-
+    // Devuelve true si la contraseña es lo suficientemente fuerte
     return password.length >= 8 && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
 }
 
-function validateFileExtension(input) {
-    const fileName = input.value.toLowerCase();
-    const fileExtension = fileName.split('.').pop();
-    console.log(fileExtension);
-    // return allExtensions.includes(fileExtension)
-   if( allExtensions.includes(fileExtension)){
-    console.log('Esta estencion es permitida');
-   }else{
-    console.log('ESTA EXTENSIN NO ESTA PERMITIDA');
-   } 
-}
+
 
 validations.forEach((validation) => {
     const inputId = validation.field;
@@ -68,7 +60,6 @@ validations.forEach((validation) => {
     const inputErrorMsg = document.getElementById(inputId + "Error");
 
     function validate() {
-        // console.log("input.value", input.value);
         inputValidation(validation, input, inputErrorMsg);
     }
 
@@ -76,6 +67,14 @@ validations.forEach((validation) => {
     input.addEventListener("input", validate);
 });
 
+//Validacion del la extencion del avatar
+function validateFileExtension(input) {
+    const fileName = input.value.toUpperCase();
+//Extraer el nombre de la extencion | separa el enunciado cada que contenga un punto y luego extrae solo la extencion
+    const fileExtension = fileName.split('.').pop();
+//Verificar si la extencion esta incluida en el array de extenciones
+    return allExtensions.includes(fileExtension);
+};
 
 const form = document.getElementById("form");
 
@@ -94,7 +93,7 @@ form.addEventListener("submit", (event) => {
 
     if (validationsResult.every((val) => val == true)) {
         form.submit();
-    }
+    };
 });
 
 
@@ -103,22 +102,47 @@ function inputValidation(validation, input, inputErrorMsg) {
         if (inputErrorMsg) {
             inputErrorMsg.innerText = "El campo no debe estar vacío";
             inputErrorMsg.classList.add("display");
-        }
+        };
         return;
-    }
+    };
 
     if (!validation.check(input)) {
         if (inputErrorMsg) {
             inputErrorMsg.innerText = validation.message;
             inputErrorMsg.classList.add("display");
-        }
+        };
         return;
-    }
+    };
 
     if (inputErrorMsg) {
         inputErrorMsg.innerText = "";
         inputErrorMsg.classList.remove("display");
-    }
-}
+    };
+};
 
+// function inputValidation(validation, input, inputErrorMsg) {
+//   // Verificar si el campo está vacío y no es el campo de avatar
+//   if (!input.value && input.id !== 'avatar') {
+//     if (inputErrorMsg) {
+//       inputErrorMsg.innerText = "El campo no debe estar vacío";
+//       inputErrorMsg.classList.add("display");
+//     }
+//     return false;
+//   }
+
+//   if (!validation.check(input)) {
+//     if (inputErrorMsg) {
+//       inputErrorMsg.innerText = validation.message;
+//       inputErrorMsg.classList.add("display");
+//     }
+//     return false;
+//   }
+
+//   if (inputErrorMsg) {
+//     inputErrorMsg.innerText = "";
+//     inputErrorMsg.classList.remove("display");
+//   }
+
+//   return true;
+// }
 

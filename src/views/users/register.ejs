@@ -94,6 +94,7 @@
         <div class="reg-mb-15">
           <label for="avatar" class="reg-label">Avatar:</label>
           <input type="file" name="avatar" id="avatar" class="reg-form-input" />
+          <span class="errorMsg" id="avatarError"></span>
         </div>
        <div class="reg-mb-15 reg-flex">
           <% if (locals.errors && errors.avatar) { %>
