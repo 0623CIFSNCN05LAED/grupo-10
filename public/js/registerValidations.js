@@ -98,51 +98,28 @@ form.addEventListener("submit", (event) => {
 
 
 function inputValidation(validation, input, inputErrorMsg) {
-    if (!input.value) {
-        if (inputErrorMsg) {
-            inputErrorMsg.innerText = "El campo no debe estar vacío";
-            inputErrorMsg.classList.add("display");
-        };
-        return;
-    };
-
-    if (!validation.check(input)) {
-        if (inputErrorMsg) {
-            inputErrorMsg.innerText = validation.message;
-            inputErrorMsg.classList.add("display");
-        };
-        return;
-    };
-
+  // Verificar si el campo está vacío y no es el campo de avatar para que este no sea obligatorio para el usuario
+  if (!input.value && input.id !== 'avatar') {
     if (inputErrorMsg) {
-        inputErrorMsg.innerText = "";
-        inputErrorMsg.classList.remove("display");
-    };
-};
+      inputErrorMsg.innerText = "El campo no debe estar vacío";
+      inputErrorMsg.classList.add("display");
+    }
+    return false;
+  }
 
-// function inputValidation(validation, input, inputErrorMsg) {
-//   // Verificar si el campo está vacío y no es el campo de avatar
-//   if (!input.value && input.id !== 'avatar') {
-//     if (inputErrorMsg) {
-//       inputErrorMsg.innerText = "El campo no debe estar vacío";
-//       inputErrorMsg.classList.add("display");
-//     }
-//     return false;
-//   }
+  if (!validation.check(input)) {
+    if (inputErrorMsg) {
+      inputErrorMsg.innerText = validation.message;
+      inputErrorMsg.classList.add("display");
+    }
+    return false;
+  }
 
-//   if (!validation.check(input)) {
-//     if (inputErrorMsg) {
-//       inputErrorMsg.innerText = validation.message;
-//       inputErrorMsg.classList.add("display");
-//     }
-//     return false;
-//   }
+  if (inputErrorMsg) {
+    inputErrorMsg.innerText = "";
+    inputErrorMsg.classList.remove("display");
+  }
 
-//   if (inputErrorMsg) {
-//     inputErrorMsg.innerText = "";
-//     inputErrorMsg.classList.remove("display");
-//   }
-
-//   return true;
-// }
+  return true;
+}
 
