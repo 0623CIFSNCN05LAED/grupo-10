@@ -32,9 +32,10 @@ const validations = [
     
     {
         field: "avatar",
-        check: (input) => validateFileExtension(input),
+        check: (input) => input.files.length === 0 || validateFileExtension(input),
         message: "Solo se permiten archivos con extensiones: " + allExtensions.join(', '),
     },
+
 ];
 //validacion de caracteres especiales e igualdad de contraseñas
 function isStrongPassword(password) {
@@ -98,16 +99,14 @@ form.addEventListener("submit", (event) => {
 
 
 function inputValidation(validation, input, inputErrorMsg) {
-  // Verificar si el campo está vacío y no es el campo de avatar para que este no sea obligatorio para el usuario
-  if (!input.value && input.id !== 'avatar') {
-    if (inputErrorMsg) {
-      inputErrorMsg.innerText = "El campo no debe estar vacío";
-      inputErrorMsg.classList.add("display");
+    if (!input.value && input.id !== 'avatar') {
+        if (inputErrorMsg) {
+            inputErrorMsg.innerText = "El campo no debe estar vacío";
+            inputErrorMsg.classList.add("display");
+        }
+        return false;
     }
-    return false;
-  }
-
-  if (!validation.check(input)) {
+   if (!validation.check(input)) {
     if (inputErrorMsg) {
       inputErrorMsg.innerText = validation.message;
       inputErrorMsg.classList.add("display");
@@ -121,5 +120,5 @@ function inputValidation(validation, input, inputErrorMsg) {
   }
 
   return true;
-}
+};
 
