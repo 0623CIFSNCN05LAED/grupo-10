@@ -3,6 +3,8 @@
   <head>
     <%- include('../partials/head', {title: 'Edición de Producto'}) %>
     <link rel="stylesheet" href="/css/register.css" />
+    <script src="/js/updateValidations.js" defer></script>
+
   </head>
   <body>
     <%- include('../partials/header') %>
@@ -30,8 +32,10 @@
               class="reg-form-input"
             />
             <% if (locals.errors && errors.name) { %>
-            <div class="reg-text-danger"><%= errors.name.msg %></div>
+              <div class="reg-text-danger"><%= errors.name.msg %></div>
             <% } %>
+              <span class="errorMsg" id="nameError"></span>
+
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -47,6 +51,7 @@
             <% if (locals.errors && errors.price) { %>
             <div class="reg-text-danger"><%= errors.price.msg %></div>
             <% } %>
+            <span class="errorMsg" id="priceError"></span>
           </div>  
 
           <div class="reg-mb-15 reg-md-prod">
@@ -81,6 +86,7 @@
             <label>Descripción:</label>
             <textarea
               name="description"
+              id="description"
               maxlength="500"
               placeholder="describi el producto"
                 class="reg-form-input"
@@ -88,6 +94,7 @@
              <% if (locals.errors && errors.description) { %>
             <div class="reg-text-danger"><%= errors.description.msg %></div>
             <% } %>
+            <span class="errorMsg" id="descriptionError"></span>
           </div>
 
           <div class="reg-mb-15 reg-md-prod">
@@ -98,21 +105,10 @@
               id="image"
               class="reg-form-input"
             />
+            <span class="errorMsg" id="imageError"></span>
+
           </div>
 
-          <!-- <div class="reg-mb-15 reg-md-prod">
-           <label for="masBuscado">Producto mas buscado?:</label>
-            <select name="masBuscado" id="masBuscado" class="reg-form-input">
-              <option value="" <% if (product.masBuscado=="") { %>
-               selected
-              <% } %>>Producto mas buscado?:</option>
-              <option value="si" <% if (product.masBuscado=="si") { %>
-               selected  <% } %>>Si</option>
-              <option value="no" <% if (product.masBuscado=="no") { %>
-               selected
-              <% } %>>No</option>
-            </select>
-          </div> -->
           <hr class="reg-linea">
                                         
           <div class="reg-mb-15 reg flex reg-flex-center" >
