@@ -99,6 +99,13 @@ form.addEventListener("submit", (event) => {
 
 
 function inputValidation(validation, input, inputErrorMsg) {
+    if (!input.value && input.id !== 'avatar') {
+        if (inputErrorMsg) {
+            inputErrorMsg.innerText = "El campo no debe estar vacío";
+            inputErrorMsg.classList.add("display");
+        }
+        return false;
+    }
    if (!validation.check(input)) {
     if (inputErrorMsg) {
       inputErrorMsg.innerText = validation.message;
@@ -113,5 +120,5 @@ function inputValidation(validation, input, inputErrorMsg) {
   }
 
   return true;
-}
+};
 
