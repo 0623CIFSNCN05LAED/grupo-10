@@ -32,9 +32,10 @@ const validations = [
     
     {
         field: "avatar",
-        check: (input) => validateFileExtension(input),
+        check: (input) => input.files.length === 0 || validateFileExtension(input),
         message: "Solo se permiten archivos con extensiones: " + allExtensions.join(', '),
     },
+
 ];
 //validacion de caracteres especiales e igualdad de contraseñas
 function isStrongPassword(password) {
