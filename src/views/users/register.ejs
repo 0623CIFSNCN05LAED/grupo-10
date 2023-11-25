@@ -3,6 +3,8 @@
   <head>
     <%- include('../partials/head', {title: 'Registrate'}) %>
     <link rel="stylesheet" href="/css/register.css" />
+    <script src="/js/registerValidations.js" defer></script>
+   
   </head>
   <body>
     <%- include("../partials/header") %>
@@ -15,6 +17,7 @@
       <form
         action="/users/register"
         method="post"
+        id="form"
         enctype="multipart/form-data"
         class="reg-grow-70"
       >
@@ -24,44 +27,38 @@
         <div class="reg-mb-15">
           <label for="first_name" class="reg-label">Nombre:</label>
           <input
-            type="text"
-            name="first_name"
-            id="first_name"
-            placeholder="Ejemplo: Juan"
-            class="reg-form-input"
-            value="<%= locals.oldData? oldData.first_name : null %>"
-          />
-          <% if (locals.errors && errors.first_name) { %>
-          <div class="reg-text-danger"><%= errors.first_name.msg %></div>
-          <% } %>
+            type="text" name="first_name" id="first_name" placeholder="Ejemplo: Juan" class="reg-form-input"
+            value="<%= locals.oldData? oldData.first_name : null %>"/>
+            <% if (locals.errors && errors.first_name) { %>
+            <div class="reg-text-danger"><%= errors.first_name.msg %></div>
+            <% } %>
+            <span class="errorMsg" id="first_nameError"></span>
         </div>
         <div class="reg-mb-15">
           <label for="last_name" class="reg-label">Apellido:</label>
           <input
-            type="text"
-            name="last_name"
-            id="last_name"
-            placeholder="Ejemplo: Perez"
-            class="reg-form-input"
-            value="<%= locals.oldData? oldData.last_name : null %>"
-          />
-          <% if (locals.errors && errors.last_name) { %>
-          <div class="reg-text-danger"><%= errors.last_name.msg %></div>
-          <% } %>
+            type="text" name="last_name" id="last_name" placeholder="Ejemplo: Perez" class="reg-form-input"
+            value="<%= locals.oldData? oldData.last_name : null %>"/>
+            <% if (locals.errors && errors.last_name) { %>
+              <div class="reg-text-danger"><%= errors.last_name.msg %></div>
+            <% } %>
+            <span class="errorMsg" id="last_nameError"></span>
         </div>
         <div class="reg-mb-15">
           <label for="email" class="reg-label">Correo electrónico:</label>
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             placeholder="Ejemplo: mail@server.com"
+            autocomplete="username"
             class="reg-form-input"
             value="<%= locals.oldData? oldData.email : null %>"
           />
           <% if (locals.errors && errors.email) { %>
           <div class="reg-text-danger"><%= errors.email.msg %></div>
           <% } %>
+          <span class="errorMsg" id="emailError"></span>
         </div>
 
         <div class="reg-mb-15">
@@ -71,41 +68,45 @@
             name="password"
             id="password"
             placeholder="Ingresá tu contraseña"
+            autocomplete="new-password"
             class="reg-form-input"
           />
-          <% if (locals.errors && errors.password) { %>
-          <div class="reg-text-danger"><%= errors.password.msg %></div>
-          <% } %>
+            <% if (locals.errors && errors.password) { %>
+              <div class="reg-text-danger"><%= errors.password.msg %></div>
+            <% } %>
+            <span class="errorMsg" id="passwordError"></span>
         </div>
         <div class="reg-mb-15">
-          <label for="password_repeat" class="reg-label"
-            >Reingresá tu contraseña:</label
-          >
+          <label for="password_repeat" class="reg-label">Reingresá tu contraseña:</label>
           <input
             type="password"
             name="password_repeat"
             id="password_repeat"
             placeholder="Repetir contraseña"
+            autocomplete="new-password"
             class="reg-form-input"
           />
-          <% if (locals.errors && errors.password_repeat) { %>
-          <div class="reg-text-danger"><%= errors.password_repeat.msg %></div>
-          <% } %>
+             <% if (locals.errors && errors.password_repeat) { %>
+              <div class="reg-text-danger"><%= errors.password_repeat.msg %></div>
+            <% } %>
+            <span class="errorMsg" id="password_repeatError"></span>
         </div>
         <div class="reg-mb-15">
           <label for="avatar" class="reg-label">Avatar:</label>
           <input type="file" name="avatar" id="avatar" class="reg-form-input" />
+          <span class="errorMsg" id="avatarError"></span>
         </div>
-        <div class="reg-mb-15 reg-flex">
+       <div class="reg-mb-15 reg-flex">
           <% if (locals.errors && errors.avatar) { %>
           <div class="reg-text-danger"><%= errors.avatar.msg %></div>
           <% } %>
+        </div>
           <!-- Agregar enlace a archivo con política de privacidad y agregar validación checkbox que habilite boton enviar -->
           <input type="checkbox" name="privacy_policy" id="privacy_policy" />
           <label for="privacy_policy" class="reg-policy"
             >Hé leído y acepto la <a href="#">política de privacidad.</a></label
           >
-        </div>
+        
         <div class="reg-mb-15 reg-flex">
           <button type="submit" class="reg-button">Crear Cuenta</button>
         </div>
