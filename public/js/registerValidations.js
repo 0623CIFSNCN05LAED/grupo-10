@@ -113,5 +113,5 @@ function inputValidation(validation, input, inputErrorMsg) {
   }
 
   return true;
-}
+};
 
