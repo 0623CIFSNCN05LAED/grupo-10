@@ -43,14 +43,6 @@ class Products extends Component {
               ))}
         </div>
       </section>
-      //   <div>
-      //     <h2 className="mt-3">Productos</h2>
-      //     {this.state.products.length === 0
-      //       ? "Cargando..."
-      //       : this.state.products.map((product) => (
-      //           <div key={product.id} name={product.name} />
-      //         ))}
-      //   </div>
     );
   }
 }
