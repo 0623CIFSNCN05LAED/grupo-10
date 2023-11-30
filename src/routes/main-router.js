@@ -10,4 +10,7 @@ router.use("/products", productRouter);
 const userRouter = require("./user-router");
 router.use("/users", userRouter);
 
+const APIRouter = require("./api-router");
+router.use("/api", APIRouter);
+
 module.exports = router;
