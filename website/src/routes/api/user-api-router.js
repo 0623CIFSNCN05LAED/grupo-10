@@ -4,10 +4,11 @@ const router = Router();
 const path = require("path");
 
 // ************ Controller Require ************
-const APIController = require("../controllers/api-controller");
+const APIController = require("../../controllers/api/users-API-controller");
 
 //Rutas
-//Listado de todos los generos
-router.get("/", APIController.ApiProducts);
+//Listado de todos los usuarios
+router.get("/users/:id", APIController.APiUserDetail);
+router.get("/users", APIController.ApiUsers);
 
 module.exports = router;
