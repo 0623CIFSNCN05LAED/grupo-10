@@ -10,7 +10,7 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:4001/api")
+    fetch("http://localhost:4001/api/products")
       .then((response) => {
         return response.json();
       })
