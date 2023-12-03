@@ -27,7 +27,7 @@ module.exports = {
         name,
         description,
         others: [{ brand: brand_id }, { category: category_id }],
-        detail: req.originalUrl + "/" + id,
+        detail: req.headers.host + req.originalUrl + "/" + id,
       })
     );
 
@@ -36,7 +36,7 @@ module.exports = {
         status: 200,
         count: products.length,
         countByCategory: countProductsBycategory(products),
-        url: req.originalUrl,
+        url: req.headers.host + req.originalUrl,
       },
       data: productsToApi,
     };
@@ -45,11 +45,11 @@ module.exports = {
 
   ApiProductDetail: async (req, res) => {
     const id = req.params.id;
-    const product = await productService.getProduct(id);
+    let product = await productService.getProduct(id);
     let respuesta = {
       meta: {
         status: 200,
-        url: req.originalUrl,
+        url: req.headers.host + req.originalUrl + "/" + id,
       },
       data: product,
     };
