@@ -4,7 +4,7 @@ const router = Router();
 const path = require("path");
 
 // ************ Controller Require ************
-const APIController = require("../../controllers/api/users-API-controller");
+const APIController = require("../../controllers/api/api-users-controller");
 
 //Rutas
 //Listado de todos los usuarios

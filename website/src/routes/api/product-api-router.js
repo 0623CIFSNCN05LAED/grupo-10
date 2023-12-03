@@ -4,7 +4,7 @@ const router = Router();
 const path = require("path");
 
 // ************ Controller Require ************
-const APIController = require("../../controllers/api/products-API-controller");
+const APIController = require("../../controllers/api/api-products-controller");
 
 //Rutas
 //Listado de todos los generos
