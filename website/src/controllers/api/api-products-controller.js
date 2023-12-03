@@ -1,4 +1,5 @@
 const productService = require("../../services/productService");
+const path = require("path");
 
 module.exports = {
   ApiProducts: async (req, res) => {
@@ -45,13 +46,34 @@ module.exports = {
 
   ApiProductDetail: async (req, res) => {
     const id = req.params.id;
-    let product = await productService.getProduct(id);
+    const product = await productService.getProduct(id);
+    const imagesPath = path.resolve(
+      __dirname,
+      "../../../public/images/products"
+    );
+    const imageUrl = imagesPath + "\\" + product.image;
+    console.log(imageUrl);
+    const productToApi = {
+      id: product,
+      id,
+      name: product.name,
+      price: product.price,
+      description: product.description,
+      image: product.image,
+      brand_id: product.brand_id,
+      category_id: product.category_id,
+      others: [
+        { brand: product.productBrand.name },
+        { category: product.productCategory.name },
+      ],
+      urlImage: imageUrl.replace(/\\/g, "/"),
+    };
     let respuesta = {
       meta: {
         status: 200,
-        url: req.headers.host + req.originalUrl + "/" + id,
+        url: req.headers.host + req.originalUrl,
       },
-      data: product,
+      data: productToApi,
     };
     res.json(respuesta);
   },
