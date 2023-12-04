@@ -79,3 +79,22 @@
 
 ## Dejar de hacer
 -**Olvidarnos de las tareas del compañero:** No esperar al ultimo día para hacernos cargo de las tareas asignadas a otro compañero y que no llegaron a completarse.
+
+# Retro Sprint 6
+## Comenzar a hacer
+Mejorar el front-end
+## Hacer mas
+-planificar con tiempo y con deadlines 
+
+## Continuar Haciendo 
+-**Motivarnos:** continuar comunicandose mas
+-**Reunirnos los sabados/Weekly:** 1 pm colombia / 3 pm Argentina
+-**Mini reunion intrasemanal** Reunirnos los miercoles luego de clase.
+-**Comitear mas seguido y pushear** Apenas tenes algo echo comitear y pushear 	
+-**comunicacion** Comunicar cuando no podes hacer algo o no sabes o si tenes algun problema 
+
+## Hacer menos
+No bajar el ritmo sobre el final
+
+## Dejar de hacer
+-**Procrastinar:** 
