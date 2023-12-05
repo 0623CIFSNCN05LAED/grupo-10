@@ -98,3 +98,20 @@ No bajar el ritmo sobre el final
 
 ## Dejar de hacer
 -**Procrastinar:** 
+
+# Retro Sprint 7
+## Comenzar a hacer
+no bajar el ritmo, comunicarnos mas y mantenernos unidos
+## Hacer mas
+-planificar con tiempo y con deadlines
+## Continuar Haciendo
+-**Motivarnos:**  apoyarnos unos a otros 
+-**Reunirnos los sabados/Weekly:** 1 pm colombia / 3 pm Argentina -Mini reunion intrasemanal Reunirnos los miercoles luego de clase. 
+-**Comitear mas seguido y pushear** Apenas tenes algo echo comitear y pushear 
+-**Comunicacion** Comunicar cuando no podes hacer algo o no sabes o si tenes algun problema
+
+## Hacer menos
+-**Comunicar:** Comunicar cuando no podamos conectarnos a las reuniones y no dejar el aviso al final.
+
+Dejar de hacer
+-**Procrastinar:** Empezar antes nuestra actividades, para tener mayor tiempo para contextualizarlo.
