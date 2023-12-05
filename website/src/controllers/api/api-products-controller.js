@@ -3,10 +3,6 @@ const path = require("path");
 
 module.exports = {
   ApiProducts: async (req, res) => {
-    //const categoriesinBD = await productService.getAllCategories();
-    //const categoriesArray = Object.values(categoriesinBD);
-    //const categories = categoriesArray.map((objeto) => objeto.dataValues.id);
-
     const prodsByCategory = {};
 
     const products = await productService.getAllProducts();
