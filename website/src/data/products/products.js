@@ -74,4 +74,13 @@ module.exports = {
   getCategories: async function () {
     return await ProductCategory.findAll();
   },
+  getProductsByCategory: async function (category) {
+    const productsByCategory = await Product.findAll({
+      where: {
+        category_id: category,
+      },
+      include: ["productBrand", "productCategory"],
+    });
+    return productsByCategory;
+  },
 };
