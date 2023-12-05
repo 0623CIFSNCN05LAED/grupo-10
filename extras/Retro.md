@@ -102,6 +102,8 @@
 
 
 
+
+
 # Retro Sprint 7
 ## Comenzar a hacer
 - no bajar el ritmo, comunicarnos mas y mantenernos unidos 
