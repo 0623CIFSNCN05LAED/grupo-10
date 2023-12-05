@@ -5,6 +5,7 @@ const methodOverride = require("method-override"); // para usar los metodos PUT 
 const session = require("express-session");
 const user_log_middleware = require("./middlewares/user_log");
 const cookies = require("cookie-parser");
+const cors = require("cors");
 
 // ************ express() ************
 const app = express();
@@ -25,6 +26,14 @@ app.use(
 app.use(cookies());
 
 app.use(user_log_middleware);
+
+app.use(
+  cors(
+    (corsOptions = {
+      origin: "*",
+    })
+  )
+);
 
 // ************ Route System require and use() ************
 const mainRoute = require("./routes/main-router");
