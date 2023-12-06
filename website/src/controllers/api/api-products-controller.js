@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = {
   ApiProducts: async (req, res) => {
-    const prodsByCategory = {};
+    
     const perPage = 4; // O el valor que desees
     const page = req.query.page || 1; // Obtén el número de página de la solicitud
 
@@ -17,6 +17,7 @@ module.exports = {
 
 
     function countProductsByCategory(products) {
+      const prodsByCategory = {};
       products.forEach((product) => {
         const category = product.category_id;
         if (!prodsByCategory[category]) {
@@ -60,7 +61,7 @@ module.exports = {
 
   ApiProductDetail: async (req, res) => {
     const id = req.params.id;
-    const product = await productService.getAllProducts(id);
+    const product = await productService.getProductById(id);
     const imagesPath = path.resolve(
       __dirname,
       "../../../public/images/products"

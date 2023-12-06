@@ -37,6 +37,7 @@ const productService = {
     return db.products.getProducts(offset, limit);
   },
 
+
   getCountTotalProducts: ()=>{
     return db.products.getCountTotalProducts();
   },
@@ -106,5 +107,8 @@ const productService = {
   getAllProductsByCategory: (category) => {
     return db.products.getProductsByCategory(category);
   },
+  getProductById: (id)=> {
+    return db.products.findById(id);
+  }
 };
 module.exports = productService;

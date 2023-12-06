@@ -12,7 +12,7 @@ module.exports = {
     const products = await Product.findAll({
       include: ["productBrand", "productCategory"],
       offset,
-      limit,
+      limit: 4,
     });
 
     return products;
