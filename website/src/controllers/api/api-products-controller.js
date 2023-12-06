@@ -4,11 +4,11 @@ const path = require("path");
 module.exports = {
   ApiProducts: async (req, res) => {
     
-    const perPage = 4;
+    const perPage = 10;
     const page = req.query.page || 1; // Obtén el número de página de la solicitud
     const totalProductsCount = await productService.getCountTotalProducts();
     const offset = (page - 1) * perPage; // Calcula el valor de offset
-    const products = await productService.getPorudctsLimit(offset, perPage);
+    const products = await productService.getProductsLimit(offset, perPage);
     // Calcular la cantidad total de páginas
     const totalPages = Math.ceil(totalProductsCount / perPage);
 

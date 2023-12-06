@@ -35,8 +35,8 @@ const productService = {
   getAllProducts: () => {
     return db.products.getProducts();
   },
-  getPorudctsLimit: (offset, limit) => {
-    return db.products.getPorudctsLimit(offset, limit);
+  getProductsLimit: (offset, limit) => {
+    return db.products.getProductsLimit(offset, limit);
   },
   
   getCountTotalProducts: ()=>{

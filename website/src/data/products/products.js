@@ -15,7 +15,7 @@ module.exports = {
       include: ["productBrand", "productCategory"],
     });
   },
-  getPorudctsLimit: async (offset, limit) => {
+  getProductsLimit: async (offset, limit) => {
     const products = await Product.findAll({
       include: ["productBrand", "productCategory"],
       offset,
