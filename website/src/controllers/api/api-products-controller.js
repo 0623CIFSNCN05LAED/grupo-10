@@ -4,9 +4,19 @@ const path = require("path");
 module.exports = {
   ApiProducts: async (req, res) => {
     const prodsByCategory = {};
+    const perPage = 4; // O el valor que desees
+    const page = req.query.page || 1; // Obtén el número de página de la solicitud
 
-    const products = await productService.getAllProducts();
-    function countProductsBycategory(products) {
+    const offset = (page - 1) * perPage; // Calcula el valor de offset
+    const products = await productService.getAllProducts(offset, perPage);
+
+    const totalProductsCount = await productService.getCountTotalProducts();
+
+    // Calcular la cantidad total de páginas
+    const totalPages = Math.ceil(totalProductsCount / perPage);
+
+
+    function countProductsByCategory(products) {
       products.forEach((product) => {
         const category = product.category_id;
         if (!prodsByCategory[category]) {
@@ -32,17 +42,25 @@ module.exports = {
       meta: {
         status: 200,
         count: products.length,
-        countByCategory: countProductsBycategory(products),
+        countByCategory: countProductsByCategory(products),
         url: req.headers.host + req.originalUrl,
       },
       data: productsToApi,
     };
+    respuesta.meta.pagination = respuesta.meta.pagination || {};
+    if (page < totalPages) {
+      respuesta.meta.pagination.next = req.headers.host + req.baseUrl + `?page=${parseInt(page) + 1}&perPage=${perPage}`;
+    }
+
+    if (page > 1) {
+      respuesta.meta.pagination.previous = req.headers.host + req.baseUrl + `?page=${parseInt(page) - 1}&perPage=${perPage}`;
+    }
     res.json(respuesta);
   },
 
   ApiProductDetail: async (req, res) => {
     const id = req.params.id;
-    const product = await productService.getProduct(id);
+    const product = await productService.getAllProducts(id);
     const imagesPath = path.resolve(
       __dirname,
       "../../../public/images/products"
