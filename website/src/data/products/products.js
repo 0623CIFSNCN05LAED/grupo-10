@@ -8,16 +8,22 @@ const { ProductCategory } = require("../../database/models");
 const Sequelize = require("sequelize");
 
 module.exports = {
-  getProducts: async (offset, limit) => {
+  getProducts: async function () {
+    //const productsFilePath = path.join(__dirname, "./productsDataBase.json");
+    //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+    return await Product.findAll({
+      include: ["productBrand", "productCategory"],
+    });
+  },
+  getPorudctsLimit: async (offset, limit) => {
     const products = await Product.findAll({
       include: ["productBrand", "productCategory"],
       offset,
-      limit: 4,
+      limit,
     });
 
     return products;
   },
-
   getCountTotalProducts: async () => {
     const count = await Product.count();
     return count;

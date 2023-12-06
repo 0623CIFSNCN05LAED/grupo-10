@@ -32,12 +32,13 @@ const productService = {
   // },
 
   //--------- TRABAJANDO CON LA BASE DE DATOS---------------
-
-  getAllProducts: (offset, limit) => {
-    return db.products.getProducts(offset, limit);
+  getAllProducts: () => {
+    return db.products.getProducts();
   },
-
-
+  getPorudctsLimit: (offset, limit) => {
+    return db.products.getPorudctsLimit(offset, limit);
+  },
+  
   getCountTotalProducts: ()=>{
     return db.products.getCountTotalProducts();
   },

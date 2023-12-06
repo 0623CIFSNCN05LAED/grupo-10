@@ -4,14 +4,11 @@ const path = require("path");
 module.exports = {
   ApiProducts: async (req, res) => {
     
-    const perPage = 4; // O el valor que desees
+    const perPage = 4;
     const page = req.query.page || 1; // Obtén el número de página de la solicitud
-
-    const offset = (page - 1) * perPage; // Calcula el valor de offset
-    const products = await productService.getAllProducts(offset, perPage);
-
     const totalProductsCount = await productService.getCountTotalProducts();
-
+    const offset = (page - 1) * perPage; // Calcula el valor de offset
+    const products = await productService.getPorudctsLimit(offset, perPage);
     // Calcular la cantidad total de páginas
     const totalPages = Math.ceil(totalProductsCount / perPage);
 
@@ -35,14 +32,14 @@ module.exports = {
         name,
         description,
         others: [{ brand: brand_id }, { category: category_id }],
-        detail: req.headers.host + req.originalUrl + "/" + id,
+        detail: req.headers.host + "/api/products/" + id,
       })
     );
 
     let respuesta = {
       meta: {
         status: 200,
-        count: products.length,
+        count: totalProductsCount,
         countByCategory: countProductsByCategory(products),
         url: req.headers.host + req.originalUrl,
       },
@@ -50,13 +47,15 @@ module.exports = {
     };
     respuesta.meta.pagination = respuesta.meta.pagination || {};
     if (page < totalPages) {
-      respuesta.meta.pagination.next = req.headers.host + req.baseUrl + `?page=${parseInt(page) + 1}&perPage=${perPage}`;
+      respuesta.meta.pagination.next = req.headers.host + req.baseUrl + `/products?page=${parseInt(page) + 1}`;
     }
 
     if (page > 1) {
-      respuesta.meta.pagination.previous = req.headers.host + req.baseUrl + `?page=${parseInt(page) - 1}&perPage=${perPage}`;
+      respuesta.meta.pagination.previous = req.headers.host + req.baseUrl + `/products?page=${parseInt(page) - 1}`;
     }
     res.json(respuesta);
+
+
   },
 
   ApiProductDetail: async (req, res) => {
