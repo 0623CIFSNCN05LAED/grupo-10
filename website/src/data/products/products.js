@@ -15,6 +15,19 @@ module.exports = {
       include: ["productBrand", "productCategory"],
     });
   },
+  getProductsLimit: async (offset, limit) => {
+    const products = await Product.findAll({
+      include: ["productBrand", "productCategory"],
+      offset,
+      limit,
+    });
+
+    return products;
+  },
+  getCountTotalProducts: async () => {
+    const count = await Product.count();
+    return count;
+  },
   getProductsByQuery: async function (query) {
     const productsByQuery = await Product.findAll({
       where: {
