@@ -15,7 +15,7 @@ class Products extends Component {
         return response.json();
       })
       .then((json) => {
-        const products = json.data;
+        const products = json.products;
         console.log("products", products);
         this.setState({
           products: products,
