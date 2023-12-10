@@ -1,11 +1,11 @@
 import "./App.css";
-import Products from "./components/products/Products";
+import Dashboard from "./components/Dashboard";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-      <Products />
+      <Dashboard />
     </BrowserRouter>
   );
 }
