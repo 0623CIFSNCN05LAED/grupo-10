@@ -4,6 +4,7 @@
     <%- include('../partials/head', {title: 'Ingresá'}) %>
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="/css/register.css" />
+    <script src="/js/loginValidations.js" defer></script>
   </head>
   <body>
     <%- include("../partials/header") %>
@@ -16,13 +17,14 @@
           class="log-w-100px log-lg-alig-center log-lg-w-300"
         />
       </div>
-      <form action="/users/login" method="post" class="log-grow-70">
+      <form action="/users/login" id="form" method="post" class="log-grow-70">
+
         <div class="log-mb-15">
           <span class="log-span log-w-600">Bienvenido a HorizonX</span>
         </div>
 
         <div class="log-mb-15">
-          <label for="user_name"></label>
+          <label for="user_name">Correo electrónico</label>
           <input
             type="text"
             name="user_name"
@@ -34,6 +36,7 @@
            <% if (locals.errors && errors.user_name) { %>
             <div class="reg-text-danger"><%= errors.user_name.msg %>
            <% } %> 
+           <span class="errorMsg" id="user_nameError"></span>
         </div>
 
         <div class="log-mb-15">
@@ -43,11 +46,12 @@
             name="password"
             id="password"
             placeholder="Contraseña"
-            class="log-form-input"
+            class="reg-form-input"
           />
           <% if (locals.errors && errors.password) { %>
           <div class="reg-text-danger"><%= errors.password.msg %></div>
           <% } %>
+          <span class="errorMsg" id="passwordError"></span>
         </div>
 
         <span class="log-span2 log-f-12"

@@ -14,7 +14,16 @@ body {
         width: 25%;
         margin: 5px auto;
         border-radius: 5%;
+      
     }
+
+.errorMsg{
+  display: none;
+  color: red;
+}
+.display{
+  display: block;
+}
     
     .log-form-main {
         padding:20px 15px;
