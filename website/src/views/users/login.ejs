@@ -4,7 +4,7 @@
     <%- include('../partials/head', {title: 'Ingresá'}) %>
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="/css/register.css" />
-    <script src="/js/loginValidations.js"></script>
+    <script src="/js/loginValidations.js" defer></script>
   </head>
   <body>
     <%- include("../partials/header") %>
@@ -17,7 +17,7 @@
           class="log-w-100px log-lg-alig-center log-lg-w-300"
         />
       </div>
-      <form action="/users/login" id="form" method="post" enctype="multipart/form-data" class="log-grow-70">
+      <form action="/users/login" id="form" method="post" class="log-grow-70">
 
         <div class="log-mb-15">
           <span class="log-span log-w-600">Bienvenido a HorizonX</span>
