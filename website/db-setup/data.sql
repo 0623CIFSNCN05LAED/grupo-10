@@ -61,16 +61,16 @@ INSERT INTO `users_category` (id, name) values
 
 INSERT INTO `users` (id, first_name, last_name, email, password, avatar, category_id) 
 values
-(UUID(), 'Juan', 'Pérez', 'juan.perez@email.com', 'Jp123456', 'cachavacha.jpg', 'admin'),
-(UUID(), 'María', 'González', 'maria.gonzalez@email.com', 'Mg123456', 'mafalda.jpg', 'admin'),
-(UUID(), 'Carlos', 'Hernández', 'carlos.hernandez@email.com', 'Ch123456', 'users_default.png', 'user'),
-(UUID(), 'Lucía', 'Rodríguez', 'lucia.rodriguez@email.com', 'Lr123456', 'oaky.jpg', 'user'),
-(UUID(), 'Pedro', 'García', 'pedro.garcia@email.com', 'Pg123456', 'manA.jpg', 'user'),
-(UUID(), 'Isabel', 'Fernández', 'isabel.fernandez@email.com', 'If123456', 'neurus.jpg', 'user'),
-(UUID(), 'Alejandro', 'Torres', 'alejandro.torres@email.com', 'At123456', 'anteojito.jpg', 'user'),
-(UUID(), 'Carmen', 'Ortiz', 'carmen.ortiz@email.com', 'Co123456', 'clemente.jpg', 'user'),
-(UUID(), 'Fernando', 'Ramos', 'fernando.ramos@email.com', 'Fr123456', 'larguirucho.jpg', 'user'),
-(UUID(), 'Ana', 'Ruiz', 'ana.ruiz@email.com', 'Ar123456', 'peggy.jpg', 'user'),
+(UUID(), 'Juan', 'Pérez', 'juan.perez@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'cachavacha.jpg', 'admin'),
+(UUID(), 'María', 'González', 'maria.gonzalez@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'mafalda.jpg', 'admin'),
+(UUID(), 'Carlos', 'Hernández', 'carlos.hernandez@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'users_default.png', 'user'),
+(UUID(), 'Lucía', 'Rodríguez', 'lucia.rodriguez@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'oaky.jpg', 'user'),
+(UUID(), 'Pedro', 'García', 'pedro.garcia@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'manA.jpg', 'user'),
+(UUID(), 'Isabel', 'Fernández', 'isabel.fernandez@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'neurus.jpg', 'user'),
+(UUID(), 'Alejandro', 'Torres', 'alejandro.torres@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'anteojito.jpg', 'user'),
+(UUID(), 'Carmen', 'Ortiz', 'carmen.ortiz@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'clemente.jpg', 'user'),
+(UUID(), 'Fernando', 'Ramos', 'fernando.ramos@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'larguirucho.jpg', 'user'),
+(UUID(), 'Ana', 'Ruiz', 'ana.ruiz@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'peggy.jpg', 'user'),
 (UUID(), 'Admin', 'Administrador', 'admin@admin.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'neurus.jpg', 'admin'),
 ('a6db4710-8581-4879-9714-72ad57fb57a9', 'estiven', 'yepes', 'estiven@mail.com', '$2a$10$PuIcanIA/fQyEiIkAQNBu.kAba.9WjqFTlmCH5PKt91raqP8dCvTe', 'users_default.png', 'user'),
 ('69efcb50-28d6-4218-970b-0b920797a8e1', 'Pablo', 'Gomez', 'pablo@mail.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'users_default.png', 'user')
