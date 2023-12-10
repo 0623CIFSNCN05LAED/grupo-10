@@ -8,6 +8,7 @@ export default function ContentWrap() {
         <Route path="/" exact>
           <Products />
         </Route>
+        <Route path="/statistics"></Route>
         <Route path="*">
           <p>404 - página no encontrada</p>
         </Route>

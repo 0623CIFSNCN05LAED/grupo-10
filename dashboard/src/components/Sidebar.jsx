@@ -8,7 +8,7 @@ export default function Sidebar() {
 
   return (
     <nav>
-      <section className="decover">
+      <section className="dicover">
         <h3>Opciones</h3>
         <ul>
           <li>
@@ -17,8 +17,14 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
+            <Link to="/statistics">
+              <i className="bi bi-graph-up-arrow" style={iconStyle}></i>-
+              Estadísticas
+            </Link>
+          </li>
+          <li>
             <Link to="/products">
-              <i className="bi bi-film" style={iconStyle}></i>- Productos
+              <i className="bi bi-laptop" style={iconStyle}></i>- Productos
             </Link>
           </li>
         </ul>
