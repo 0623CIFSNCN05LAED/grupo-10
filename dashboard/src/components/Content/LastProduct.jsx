@@ -1,33 +1,52 @@
 import { useEffect, useState } from "react";
 
 export default function LastProduct() {
-  const [products, setProducts] = useState([]);
+  const [lastProduct, setLastProduct] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:4001/api/products");
+      const response = await fetch("http://localhost:4001/api/lastProduct");
       const result = await response.json();
-      setProducts(result.products);
+      setLastProduct(result.data);
     };
     fetchData();
   }, []);
+  console.log("product ", lastProduct);
 
-  const [productsMeta, setProductsMeta] = useState([]);
+  return (
+    <div className="container mt-4">
+      <h2>Último Producto Creado</h2>
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:4001/api/products");
-      const result = await response.json();
-      setProductsMeta(result.meta);
-    };
-    fetchData();
-  }, []);
+      {lastProduct && (
+        <div className="card">
+          <img
+            src={lastProduct.urlImage}
+            className="card-img-top"
+            alt={`imagen de ${lastProduct.name}`}
+          />
 
-  const countProducts = productsMeta.count;
-  console.log("countProd: ", countProducts);
-  const lastProductIndex = countProducts - 1;
-  console.log(lastProductIndex);
-  console.log(products);
-  // const lastProductUrl = products[9].detail;
-  // console.log(lastProductUrl);
+          <div className="card-body">
+            <h5 className="card-title">{lastProduct.name}</h5>
+            <p className="card-text">{lastProduct.description}</p>
+
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">
+                <strong>Precio:</strong> ${lastProduct.price}
+              </li>
+              <li className="list-group-item">
+                <strong>Marca:</strong> {lastProduct.others[0].brand}
+              </li>
+              <li className="list-group-item">
+                <strong>Categoría:</strong> {lastProduct.others[1].category}
+              </li>
+            </ul>
+          </div>
+
+          <div className="card-footer">
+            <small className="text-muted">ID: {lastProduct.id}</small>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
