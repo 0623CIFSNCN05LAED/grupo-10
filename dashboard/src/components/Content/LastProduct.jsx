@@ -28,6 +28,6 @@ export default function LastProduct() {
   const lastProductIndex = countProducts - 1;
   console.log(lastProductIndex);
   console.log(products);
-  const lastProductUrl = products[9].detail;
-  console.log(lastProductUrl);
+  // const lastProductUrl = products[9].detail;
+  // console.log(lastProductUrl);
 }
