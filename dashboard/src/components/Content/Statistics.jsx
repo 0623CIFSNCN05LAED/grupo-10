@@ -21,7 +21,19 @@ export default function Statistics() {
     }
     return 0;
   };
-  console.log("categories: ", countCategories);
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:4001/api/users");
+      const result = await response.json();
+      setUsers(result);
+    };
+    fetchData();
+  }, []);
+
+  const countUsers = users.count;
 
   const myStats = [
     {
@@ -41,7 +53,7 @@ export default function Statistics() {
     {
       id: 3,
       title: "Total de Usuarios",
-      value: "0 hardcodeado",
+      value: countUsers,
       color: "green",
       icon: "bi bi-people-fill",
     },
