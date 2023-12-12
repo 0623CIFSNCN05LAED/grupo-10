@@ -108,18 +108,32 @@ module.exports = {
   },
   ApiLastProduct: async (req, res) => {
     const allProducts = await productService.getAllProducts();
-    // determinar el length
     const totalProductsCount = await productService.getCountTotalProducts();
-    console.log("total de prod ", totalProductsCount);
-
-    // traer el ultimo producto = length-1
     const lastProductIndex = totalProductsCount - 1;
     const lastProduct = allProducts[lastProductIndex];
-    console.log(lastProduct);
-    //construir el objeto a enviar
-    // enviar
+    const imagesPath = path.resolve(
+      __dirname,
+      "../../../public/images/products"
+    );
+    const imageUrl = imagesPath + "\\" + lastProduct.image;
+
+    const productToApi = {
+      id: lastProduct.id,
+      name: lastProduct.name,
+      price: lastProduct.price,
+      description: lastProduct.description,
+      image: lastProduct.image,
+      brand_id: lastProduct.brand_id,
+      category_id: lastProduct.category_id,
+      others: [
+        { brand: lastProduct.productBrand.name },
+        { category: lastProduct.productCategory.name },
+      ],
+      urlImage: imageUrl.replace(/\\/g, "/"),
+    };
+
     let respuesta = {
-      data: lastProduct,
+      data: productToApi,
     };
     res.json(respuesta);
   },
