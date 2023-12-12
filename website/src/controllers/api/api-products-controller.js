@@ -111,11 +111,11 @@ module.exports = {
     const totalProductsCount = await productService.getCountTotalProducts();
     const lastProductIndex = totalProductsCount - 1;
     const lastProduct = allProducts[lastProductIndex];
-    const imagesPath = path.resolve(
-      __dirname,
-      "../../../public/images/products"
-    );
-    const imageUrl = imagesPath + "\\" + lastProduct.image;
+    // const imagesPath = path.resolve(
+    //   __dirname,
+    //   "../../../public/images/products"
+    // );
+    // const imageUrl = imagesPath + "\\" + lastProduct.image;
 
     const productToApi = {
       id: lastProduct.id,
@@ -129,7 +129,7 @@ module.exports = {
         { brand: lastProduct.productBrand.name },
         { category: lastProduct.productCategory.name },
       ],
-      urlImage: imageUrl.replace(/\\/g, "/"),
+      urlImage: `http://localhost:4001/images/products/${lastProduct.image}`,
     };
 
     let respuesta = {
