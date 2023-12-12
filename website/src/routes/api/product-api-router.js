@@ -10,5 +10,6 @@ const APIController = require("../../controllers/api/api-products-controller");
 //Listado de todos los generos
 router.get("/products/:id", APIController.ApiProductDetail);
 router.get("/products", APIController.ApiProducts);
+router.get("/lastProduct", APIController.ApiLastProduct);
 
 module.exports = router;

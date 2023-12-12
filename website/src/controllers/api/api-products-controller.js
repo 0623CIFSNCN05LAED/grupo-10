@@ -106,4 +106,21 @@ module.exports = {
         .json({ error: "Error al obtener los detalles del producto" });
     }
   },
+  ApiLastProduct: async (req, res) => {
+    const allProducts = await productService.getAllProducts();
+    // determinar el length
+    const totalProductsCount = await productService.getCountTotalProducts();
+    console.log("total de prod ", totalProductsCount);
+
+    // traer el ultimo producto = length-1
+    const lastProductIndex = totalProductsCount - 1;
+    const lastProduct = allProducts[lastProductIndex];
+    console.log(lastProduct);
+    //construir el objeto a enviar
+    // enviar
+    let respuesta = {
+      data: lastProduct,
+    };
+    res.json(respuesta);
+  },
 };
