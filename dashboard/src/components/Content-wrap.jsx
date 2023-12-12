@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import Products from "./products/Products";
 import Statistics from "./Content/Statistics";
+import LastProduct from "./Content/LastProduct";
 
 export default function ContentWrap() {
   return (
@@ -11,6 +12,9 @@ export default function ContentWrap() {
         </Route>
         <Route path="/statistics">
           <Statistics />
+        </Route>
+        <Route path="/lastProduct">
+          <LastProduct />
         </Route>
         <Route path="*">
           <p>404 - página no encontrada</p>

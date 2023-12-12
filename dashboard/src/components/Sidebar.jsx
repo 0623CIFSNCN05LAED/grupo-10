@@ -27,6 +27,11 @@ export default function Sidebar() {
               <i className="bi bi-laptop" style={iconStyle}></i>- Productos
             </Link>
           </li>
+          <li>
+            <Link to="lastProduct">
+              <i className="bi bi-star" style={iconStyle}></i>- Último Producto
+            </Link>
+          </li>
         </ul>
       </section>
     </nav>
