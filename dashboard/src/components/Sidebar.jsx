@@ -32,6 +32,12 @@ export default function Sidebar() {
               <i className="bi bi-star" style={iconStyle}></i>- Último Producto
             </Link>
           </li>
+          <li>
+            <Link to="lastUser">
+              <i className="bi bi-person-check" style={iconStyle}></i>- Último
+              Usuario
+            </Link>
+          </li>
         </ul>
       </section>
     </nav>

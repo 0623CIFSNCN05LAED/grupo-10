@@ -23,10 +23,11 @@ export default function LastProduct() {
             src={lastProduct.urlImage}
             className="card-img-top"
             alt={`imagen de ${lastProduct.name}`}
+            style={{ width: "400px", height: "auto" }}
           />
 
           <div className="card-body">
-            <h5 className="card-title">{lastProduct.name}</h5>
+            <h4 className="card-title">{lastProduct.name}</h4>
             <p className="card-text">{lastProduct.description}</p>
 
             <ul className="list-group list-group-flush">
