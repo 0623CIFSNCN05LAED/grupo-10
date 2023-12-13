@@ -72,7 +72,8 @@ values
 (UUID(), 'Fernando', 'Ramos', 'fernando.ramos@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'larguirucho.jpg', 'user'),
 (UUID(), 'Ana', 'Ruiz', 'ana.ruiz@email.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'peggy.jpg', 'user'),
 (UUID(), 'Admin', 'Administrador', 'admin@admin.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'neurus.jpg', 'admin'),
-('a6db4710-8581-4879-9714-72ad57fb57a9', 'estiven', 'yepes', 'estiven@mail.com', '$2a$10$PuIcanIA/fQyEiIkAQNBu.kAba.9WjqFTlmCH5PKt91raqP8dCvTe', 'users_default.png', 'user'),
-('69efcb50-28d6-4218-970b-0b920797a8e1', 'Pablo', 'Gomez', 'pablo@mail.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'users_default.png', 'user')
+('a6db4710-8581-4879-9714-72ad57fb57a9', 'Estiven', 'Yepes', 'estiven@mail.com', '$2a$10$PuIcanIA/fQyEiIkAQNBu.kAba.9WjqFTlmCH5PKt91raqP8dCvTe', 'pucho.jpg', 'user'),
+('69efcb50-28d6-4218-970b-0b920797a8e1', 'Pablo', 'Gomez', 'pablo@mail.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'orko.png', 'user')
 ;
+
 

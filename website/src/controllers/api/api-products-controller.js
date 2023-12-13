@@ -1,5 +1,4 @@
 const productService = require("../../services/productService");
-const path = require("path");
 
 module.exports = {
   ApiProducts: async (req, res) => {
@@ -71,11 +70,9 @@ module.exports = {
     try {
       const id = req.params.id;
       const product = await productService.getProductById(id);
-      const imagesPath = path.resolve(
-        __dirname,
-        "../../../public/images/products"
-      );
-      const imageUrl = imagesPath + "\\" + product.image;
+      const imagesPath = "http://localhost:4001/images/products/";
+      console.log(imagesPath);
+      const imageUrl = `${imagesPath}${product.image}`;
       console.log(imageUrl);
       const productToApi = {
         id: product,
@@ -90,7 +87,7 @@ module.exports = {
           { brand: product.productBrand.name },
           { category: product.productCategory.name },
         ],
-        urlImage: imageUrl.replace(/\\/g, "/"),
+        urlImage: imageUrl,
       };
       let respuesta = {
         meta: {
@@ -105,5 +102,33 @@ module.exports = {
         .status(500)
         .json({ error: "Error al obtener los detalles del producto" });
     }
+  },
+  ApiLastProduct: async (req, res) => {
+    const allProducts = await productService.getAllProducts();
+    const totalProductsCount = await productService.getCountTotalProducts();
+    const lastProductIndex = totalProductsCount - 1;
+    const lastProduct = allProducts[lastProductIndex];
+    const imagesPath = "http://localhost:4001/images/products/";
+    const imageUrl = `${imagesPath}${lastProduct.image}`;
+
+    const productToApi = {
+      id: lastProduct.id,
+      name: lastProduct.name,
+      price: lastProduct.price,
+      description: lastProduct.description,
+      image: lastProduct.image,
+      brand_id: lastProduct.brand_id,
+      category_id: lastProduct.category_id,
+      others: [
+        { brand: lastProduct.productBrand.name },
+        { category: lastProduct.productCategory.name },
+      ],
+      urlImage: imageUrl,
+    };
+
+    let respuesta = {
+      data: productToApi,
+    };
+    res.json(respuesta);
   },
 };

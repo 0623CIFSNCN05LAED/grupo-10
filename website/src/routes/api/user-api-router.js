@@ -10,5 +10,6 @@ const APIController = require("../../controllers/api/api-users-controller");
 //Listado de todos los usuarios
 router.get("/users/:id", APIController.APiUserDetail);
 router.get("/users", APIController.ApiUsers);
+router.get("/lastUser", APIController.ApiLastUser);
 
 module.exports = router;

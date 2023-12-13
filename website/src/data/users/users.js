@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const { User } = require("../../database/models");
+const { User, sequelize } = require("../../database/models");
 //const Sequelize = require("sequelize");
 
 module.exports = {
@@ -12,10 +12,7 @@ module.exports = {
     });
     return allUsers;
   },
-  // saveUsers: function (users) {
-  //   const usersFilePath = path.join(__dirname, "./usersDataBase.json");
-  //   fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-  // },
+
   create: async function (user) {
     console.log(`Creating user ${user.first_name} ${user.last_name}`);
     //const users = this.getUsers();
@@ -24,8 +21,6 @@ module.exports = {
       ...user,
     };
     return await User.create(newUser);
-    //users.push(newUser);
-    //this.saveUsers(users);
   },
   findById: async function (id) {
     const user = await User.findByPk(id, { include: ["users_category"] });
@@ -45,14 +40,6 @@ module.exports = {
   },
   update: function (id, user) {
     console.log(`Actualizando usuario ${user.first_name}`);
-    // cargar todos los usuarios
-    //const users = this.getUsers();
-    // buscar un usuario por id
-    //const userToEdit = users.find((usuario) => usuario.id == id);
-    // pisar las propiedades
-    //Object.assign(userToEditToEdit, user);
-    // guardar el usuario editado
-    //this.saveUsers(users);
 
     return User.update(
       {
@@ -65,9 +52,18 @@ module.exports = {
   },
   delete: function (id) {
     console.log(`Deleting user with id ${id}`);
-    // const users = this.getUsers();
-    // const nonDeleteUsers = users.filter((usuario) => usuario.id != id);
-    // this.saveUsers(nonDeleteUsers);
+
     return User.destroy({ where: { id } });
+  },
+  lastUser: async function () {
+    const lastUserId = await User.findOne({
+      attributes: [[sequelize.fn("max", sequelize.col("id")), "ultimo_uuid"]],
+    });
+    const lastUser = await Usuario.findOne({
+      where: {
+        id: lastUserId.get("ultimo_uuid"),
+      },
+    });
+    return lastUser;
   },
 };
