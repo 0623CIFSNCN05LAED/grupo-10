@@ -12,7 +12,18 @@ module.exports = {
     });
     return allUsers;
   },
-
+  getUserLimit: async function(offset, limit){
+    const users = await User.findAll({
+      include: ["users_category"],
+      offset,
+      limit,
+    });
+    return users
+  },
+  getCountTotalUser: async function(){
+    const count = User.count()
+    return count
+  },
   create: async function (user) {
     console.log(`Creating user ${user.first_name} ${user.last_name}`);
     //const users = this.getUsers();
