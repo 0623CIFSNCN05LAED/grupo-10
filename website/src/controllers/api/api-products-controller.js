@@ -7,6 +7,7 @@ module.exports = {
       const page = req.query.page || 1; // Obtén el número de página de la solicitud
       const totalProductsCount = await productService.getCountTotalProducts();
       const offset = (page - 1) * perPage; // Calcula el valor de offset
+      const totalProducts = await productService.getAllProducts();
       const allProducts = await productService.getProductsLimit(
         offset,
         perPage
@@ -41,7 +42,7 @@ module.exports = {
         meta: {
           status: 200,
           count: totalProductsCount,
-          countByCategory: countProductsByCategory(allProducts),
+          countByCategory: countProductsByCategory(totalProducts),
           url: req.headers.host + req.originalUrl,
         },
         products: productsToApi,

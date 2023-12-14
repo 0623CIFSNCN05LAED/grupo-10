@@ -43,6 +43,7 @@ module.exports = {
     }
   },
   ApiLastUser: async (req, res) => {
+    // const lastUser = await userService.searchLastUser();
     const users = await userService.getUsers();
     const usersCount = users.length;
     const lastUserIndex = usersCount - 1;

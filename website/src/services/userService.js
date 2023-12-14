@@ -26,6 +26,10 @@ const userService = {
   deleteUser: (id) => {
     db.users.delete(id);
   },
+  // searchLastUser: async () => {
+  //   const lastUser = await db.users.lastUser();
+  //   return lastUser;
+  // },
 };
 
 module.exports = userService;
