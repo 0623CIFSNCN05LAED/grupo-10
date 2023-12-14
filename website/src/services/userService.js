@@ -5,6 +5,13 @@ const userService = {
     const users = await db.users.getUsers();
     return users;
   },
+  getUserLimit: async(offset, limit)=>{
+    const user= await db.users.getUserLimit(offset, limit)
+    return user
+  },
+  getCountTotalUsers: ()=>{
+    return db.users.getCountTotalUser();
+  },
   getUser: async (id) => {
     const user = await db.users.findById(id);
     return user;
