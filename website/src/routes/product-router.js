@@ -17,6 +17,7 @@ router.get("/", productController.products);
 router.get("/search", productController.search);
 
 //PRODUCTOS POR MARCA
+
 router.get("/lenovo/", productController.lenovo);
 router.get("/apple/", productController.apple);
 router.get("/asus/", productController.asus);
@@ -24,9 +25,10 @@ router.get("/corsair/", productController.corsair);
 router.get("/razer/", productController.razer);
 
 //PRODUCTO POR CATEGORIA
-router.get("/pcs/", productController.productsCategoryPcs);
-router.get("/celulares/", productController.productsCategoryCelulares);
-router.get("/accesorios/", productController.productsCategoryAccesosrios);
+router.get("/category/:id/", productController.productsByCategory);
+//router.get("/pcs/", productController.productsCategoryPcs);
+// router.get("/celulares/", productController.productsCategoryCelulares);
+// router.get("/accesorios/", productController.productsCategoryAccesosrios);
 //CARRITO DE PRODUCTO
 router.get("/cart/", userGuard, productController.productCart);
 

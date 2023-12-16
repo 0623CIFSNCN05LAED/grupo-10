@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("../partials/head", {title: 'Los mejores productos'}) %>
+    <link rel="stylesheet" href="/css/styles-carrito.css" />
+    <link rel="stylesheet" href="/css/styles-p-d.css" />
+
+  </head>
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+     <!-- Header -->
+    
+    <section>
+        <article>
+            <H3 class="marca">LO ULTIMO EN TECNOLOGIA, TODO PARA TU CONFORT</H3>
+            <div class="tarjetas flex">
+                      
+                <% productsByCategory.forEach(product => { %>
+                    <%- include("../partials/product-card",{product}) %>   
+                <% }); %>
+        </article>
+    </section>
+      <!-- footer -->
+    <footer class="foot"><%- include("../partials/footer") %></footer>
+      <!-- footer -->
+</body>
+</html>

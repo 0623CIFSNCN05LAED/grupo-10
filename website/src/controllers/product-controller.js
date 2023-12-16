@@ -99,11 +99,19 @@ module.exports = {
       res.render("products/razer", { products });
     });
   },
-  productsCategoryPcs: (req, res) => {
-    productService.pcsCategory().then((products) => {
-      res.render("products/pcs", { products });
-    });
+  productsByCategory: async (req, res) => {
+    const category_id = req.params.id;
+    console.log("category_id :" + category_id);
+    const productsByCategory = await productService.getAllProductsByCategory(
+      category_id
+    );
+    res.render("products/category", { productsByCategory });
   },
+  // productsCategoryPcs: (req, res) => {
+  //   productService.pcsCategory().then((products) => {
+  //     res.render("products/pcs", { products });
+  //   });
+  // },
   productsCategoryCelulares: (req, res) => {
     productService.celularesCategory().then((products) => {
       res.render("products/celulares", { products });
