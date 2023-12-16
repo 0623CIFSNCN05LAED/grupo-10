@@ -4,6 +4,7 @@ import Statistics from "./Content/Statistics";
 import LastProduct from "./Content/LastProduct";
 import LastUser from "./Content/LastUser";
 import Categories from "./Content/Categories";
+import OneProduct from "./Content/OneProduct";
 
 export default function ContentWrap() {
   return (
@@ -21,8 +22,11 @@ export default function ContentWrap() {
         <Route path="/categories">
           <Categories />
         </Route>
-        <Route path="/products">
+        <Route path="/products" exact>
           <Products />
+        </Route>
+        <Route path="/products/:productId" exact>
+          <OneProduct />
         </Route>
         <Route path="*">
           <p>404 - página no encontrada</p>

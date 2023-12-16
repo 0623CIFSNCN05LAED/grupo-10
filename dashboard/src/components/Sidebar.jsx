@@ -24,12 +24,12 @@ export default function Sidebar() {
           </li>
 
           <li>
-            <Link to="lastProduct">
+            <Link to="/lastProduct">
               <i className="bi bi-star" style={iconStyle}></i>- Último Producto
             </Link>
           </li>
           <li>
-            <Link to="lastUser">
+            <Link to="/lastUser">
               <i className="bi bi-person-check" style={iconStyle}></i>- Último
               Usuario
             </Link>

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProductItem from "./ProductItem";
+import OneProduct from "../Content/OneProduct";
 
 function Products() {
   const [allProducts, setAllProducts] = useState([]);
   const [page, setPage] = useState(1);
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +17,10 @@ function Products() {
 
     fetchData();
   }, []);
+
+  const handleProductClick = (productId) => {
+    setSelectedProductId(productId);
+  };
 
   const cargarMenos = async () => {
     page === 1 ? page : setPage(page - 1);
@@ -50,7 +57,14 @@ function Products() {
         {allProducts.length === 0
           ? "Cargando..."
           : allProducts.map((product) => (
-              <ProductItem key={product.id} name={product.name} />
+              <Link
+                key={product.id}
+                to={`/products/${product.id}`}
+                onClick={() => handleProductClick(product.id)}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <ProductItem key={product.id} name={product.name} />
+              </Link>
             ))}
       </div>
       <hr></hr>
@@ -67,6 +81,7 @@ function Products() {
           Siguiente Página
         </button>
       </div>
+      {selectedProductId && <OneProduct productId={selectedProductId} />}
     </section>
   );
 }
