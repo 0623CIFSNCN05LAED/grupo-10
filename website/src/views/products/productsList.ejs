@@ -3,6 +3,8 @@
   <head>
     <%- include("../partials/head", {title: 'All Products'}) %>
     <link rel="stylesheet" href="/css/styles-carrito.css" />
+    <link rel="stylesheet" href="/css/styles-p-d.css" />
+
   </head>
 <body>
     <!-- Header -->
@@ -20,6 +22,17 @@
                     <%- include("../partials/product-card",{product}) %>   
                 <% }); %>
         </article>
+        <div <% if (!user_admin) { %>
+          class="display-none" <% } %>>
+          <hr />
+          <div style="display: flex; justify-content: space-around">
+            <% if (products) { %>
+            
+            <a href="/products/create" class="product-actions">
+            <button class="edit-product">Crear Producto</button></a>
+             <% } %>
+          </div>
+        </div>
     </section>
       <!-- footer -->
     <footer class="foot"><%- include("../partials/footer") %></footer>

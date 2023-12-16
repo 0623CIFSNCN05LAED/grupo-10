@@ -40,6 +40,11 @@
             <a href="/products/edit/<%= product.id %>" class="product-actions"
               ><button class="edit-product">Editar Producto</button></a
             >
+
+            <a href="/products/create" class="product-actions"
+              ><button class="edit-product">Crear Producto</button></a
+            >
+
             <form
               action="/products/<%= product.id %>?_method=delete"
               method="POST"

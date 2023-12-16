@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const { User, sequelize } = require("../../database/models");
-//const Sequelize = require("sequelize");
 
 module.exports = {
   // Obtener todos los usuarios
