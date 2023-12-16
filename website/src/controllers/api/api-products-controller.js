@@ -28,6 +28,19 @@ module.exports = {
         return prodsByCategory;
       }
 
+      function countProductsByBrand(allProducts) {
+        const prodsByBrand = {};
+        allProducts.forEach((product) => {
+          const brand = product.brand_id;
+          if (!prodsByBrand[brand]) {
+            prodsByBrand[brand] = 1;
+          } else {
+            prodsByBrand[brand] += 1;
+          }
+        });
+        return prodsByBrand;
+      }
+
       const productsToApi = allProducts.map(
         ({ id, name, description, brand_id, category_id }) => ({
           id,
@@ -43,6 +56,7 @@ module.exports = {
           status: 200,
           count: totalProductsCount,
           countByCategory: countProductsByCategory(totalProducts),
+          countByBrand: countProductsByBrand(totalProducts),
           url: req.headers.host + req.originalUrl,
         },
         products: productsToApi,
