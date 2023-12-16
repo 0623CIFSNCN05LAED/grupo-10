@@ -16,46 +16,6 @@ const productService = {
   searchProducts: (query) => {
     return db.products.getProductsByQuery(query);
   },
-  getAppleProducts: () => {
-    return Product.findAll({
-      where: { brand_id: "apple" },
-    });
-  },
-  getCorsairProducts: () => {
-    return Product.findAll({
-      where: { brand_id: "corsair" },
-    });
-  },
-  getRazerProducts: () => {
-    return Product.findAll({
-      where: { brand_id: "razer" },
-    });
-  },
-  getLenovoProducts: () => {
-    return Product.findAll({
-      where: { brand_id: "lenovo" },
-    });
-  },
-  getAsusProducts: () => {
-    return Product.findAll({
-      where: { brand_id: "lenovo" },
-    });
-  },
-  pcsCategory: () => {
-    return Product.findAll({
-      where: { category_id: "pcs" },
-    });
-  },
-  celularesCategory: () => {
-    return Product.findAll({
-      where: { category_id: "celulares" },
-    });
-  },
-  accesoriosCategory: () => {
-    return Product.findAll({
-      where: { category_id: "accesorios" },
-    });
-  },
   getProduct: async (id) => {
     const product = await db.products.findById(id);
     console.log("pase por getProduct");
@@ -72,6 +32,9 @@ const productService = {
   },
   getAllBrands: () => {
     return db.products.getBrands();
+  },
+  getAllProductsByBrand: (brand) => {
+    return db.products.getProductsByBrand(brand);
   },
   getAllCategories: () => {
     return db.products.getCategories();

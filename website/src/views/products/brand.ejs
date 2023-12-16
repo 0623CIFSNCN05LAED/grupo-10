@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include("../partials/head", {title: 'All Products'}) %>
+    <%- include("../partials/head", {title: 'Los mejores productos'}) %>
     <link rel="stylesheet" href="/css/styles-carrito.css" />
+    <link rel="stylesheet" href="/css/styles-p-d.css" />
+
   </head>
 <body>
     <!-- Header -->
@@ -11,10 +13,10 @@
     
     <section>
         <article>
-            <H3 class="marca">TODO PARA TU CELULAR</H3>
+            <H3 class="marca">LO ULTIMO EN TECNOLOGIA, TODO PARA TU CONFORT</H3>
             <div class="tarjetas flex">
                       
-                <% products.forEach(product => { %>
+                <% productsByBrand.forEach(product => { %>
                     <%- include("../partials/product-card",{product}) %>   
                 <% }); %>
         </article>
