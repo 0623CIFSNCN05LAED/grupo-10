@@ -3,6 +3,7 @@ const { Router } = require("express");
 const router = Router();
 const path = require("path");
 const userGuard = require("../middlewares/user-guard");
+const userAdmin = require("../middlewares/user_admin");
 const validationsProduct = require("../validations/product-validations");
 const validateFormProductCreate = require("../middlewares/validate-form-productCreate");
 const validateFormProductEdit = require("../middlewares/validate-form-product-edit");
@@ -30,7 +31,12 @@ router.get("/accesorios/", productController.productsCategoryAccesosrios);
 router.get("/cart/", userGuard, productController.productCart);
 
 //CREACION
-router.get("/create/", userGuard, productController.productCreateForm);
+router.get(
+  "/create/",
+  userGuard,
+  userAdmin,
+  productController.productCreateForm
+);
 router.post(
   "/",
   upload.single("image"),
@@ -43,7 +49,7 @@ router.post(
 router.get("/:id/", productController.productDetail);
 
 //EDICION DE PRODUCTO
-router.get("/edit/:id/", userGuard, productController.productEdit);
+router.get("/edit/:id/", userGuard, userAdmin, productController.productEdit);
 router.put(
   "/:id/",
   upload.single("image"),
@@ -53,6 +59,6 @@ router.put(
 );
 
 //ELIMINAR UN PRODUCTO
-router.delete("/:id", productController.destroy);
+router.delete("/:id", userGuard, userAdmin, productController.destroy);
 
 module.exports = router;

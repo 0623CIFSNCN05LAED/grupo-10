@@ -4,6 +4,7 @@ const path = require("path");
 const methodOverride = require("method-override"); // para usar los metodos PUT y DELETE
 const session = require("express-session");
 const user_log_middleware = require("./middlewares/user_log");
+//const user_admin_middleware = require("./middlewares/user_admin");
 const cookies = require("cookie-parser");
 const cors = require("cors");
 
@@ -26,6 +27,7 @@ app.use(
 app.use(cookies());
 
 app.use(user_log_middleware);
+//app.use(user_admin_middleware);
 
 app.use(
   cors(

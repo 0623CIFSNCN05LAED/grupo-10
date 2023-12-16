@@ -12,17 +12,17 @@ module.exports = {
     });
     return allUsers;
   },
-  getUserLimit: async function(offset, limit){
+  getUserLimit: async function (offset, limit) {
     const users = await User.findAll({
       include: ["users_category"],
       offset,
       limit,
     });
-    return users
+    return users;
   },
-  getCountTotalUser: async function(){
-    const count = User.count()
-    return count
+  getCountTotalUser: async function () {
+    const count = User.count();
+    return count;
   },
   create: async function (user) {
     console.log(`Creating user ${user.first_name} ${user.last_name}`);
@@ -66,15 +66,11 @@ module.exports = {
 
     return User.destroy({ where: { id } });
   },
-  // lastUser: async function () {
-  //   const lastUserId = await User.findOne({
-  //     attributes: [[sequelize.fn("max", sequelize.col("id")), "ultimo_uuid"]],
-  //   });
-  //   const lastUser = await User.findOne({
-  //     where: {
-  //       id: lastUserId.get("ultimo_uuid"),
-  //     },
-  //   });
-  //   return lastUser;
-  // },
+  userAdmin: async (id) => {
+    const user = await User.findByPk(id, { include: ["users_category"] });
+    const category = user.category_id;
+    const isAdmin = category === "admin";
+    console.log("usuario " + user.email, "rol " + category);
+    return isAdmin;
+  },
 };
