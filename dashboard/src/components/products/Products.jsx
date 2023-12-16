@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProductItem from "./ProductItem";
+import OneProduct from "../Content/OneProduct";
 
 function Products() {
   const [allProducts, setAllProducts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,6 +17,31 @@ function Products() {
 
     fetchData();
   }, []);
+
+  const handleProductClick = (productId) => {
+    setSelectedProductId(productId);
+  };
+
+  const cargarMenos = async () => {
+    page === 1 ? page : setPage(page - 1);
+    console.log("pagina anterior " + page);
+    const response = await fetch(
+      `http://localhost:4001/api/products?page=${page}`
+    );
+    const result = await response.json();
+    setAllProducts(result.products);
+  };
+
+  const cargarMas = async () => {
+    setPage(page + 1);
+    console.log("pagina siguiente " + page);
+
+    const response = await fetch(
+      `http://localhost:4001/api/products?page=${page}`
+    );
+    const result = await response.json();
+    setAllProducts(result.products);
+  };
 
   return (
     <section className="content">
@@ -28,9 +57,31 @@ function Products() {
         {allProducts.length === 0
           ? "Cargando..."
           : allProducts.map((product) => (
-              <ProductItem key={product.id} name={product.name} />
+              <Link
+                key={product.id}
+                to={`/products/${product.id}`}
+                onClick={() => handleProductClick(product.id)}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <ProductItem key={product.id} name={product.name} />
+              </Link>
             ))}
       </div>
+      <hr></hr>
+      <div className="d-flex justify-content-between">
+        <button
+          onClick={cargarMenos}
+          type="button"
+          className="btn btn-primary mr-2"
+        >
+          Página Anterior
+        </button>
+
+        <button onClick={cargarMas} type="button" className="btn btn-primary">
+          Siguiente Página
+        </button>
+      </div>
+      {selectedProductId && <OneProduct productId={selectedProductId} />}
     </section>
   );
 }

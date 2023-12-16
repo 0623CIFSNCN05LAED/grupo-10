@@ -22,13 +22,20 @@ export default function Statistics() {
     return 0;
   };
 
+  const countBrands = () => {
+    if (products && products.countByBrand) {
+      const brands = Object.values(products.countByBrand);
+      return brands.length;
+    }
+  };
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("http://localhost:4001/api/users");
       const result = await response.json();
-      setUsers(result);
+      setUsers(result.meta);
     };
     fetchData();
   }, []);
@@ -52,6 +59,13 @@ export default function Statistics() {
     },
     {
       id: 3,
+      title: "Marcas de Productos",
+      value: countBrands(),
+      color: "orange",
+      icon: "bi bi-award",
+    },
+    {
+      id: 4,
       title: "Total de Usuarios",
       value: countUsers,
       color: "green",

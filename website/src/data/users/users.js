@@ -66,15 +66,15 @@ module.exports = {
 
     return User.destroy({ where: { id } });
   },
-  lastUser: async function () {
-    const lastUserId = await User.findOne({
-      attributes: [[sequelize.fn("max", sequelize.col("id")), "ultimo_uuid"]],
-    });
-    const lastUser = await Usuario.findOne({
-      where: {
-        id: lastUserId.get("ultimo_uuid"),
-      },
-    });
-    return lastUser;
-  },
+  // lastUser: async function () {
+  //   const lastUserId = await User.findOne({
+  //     attributes: [[sequelize.fn("max", sequelize.col("id")), "ultimo_uuid"]],
+  //   });
+  //   const lastUser = await User.findOne({
+  //     where: {
+  //       id: lastUserId.get("ultimo_uuid"),
+  //     },
+  //   });
+  //   return lastUser;
+  // },
 };

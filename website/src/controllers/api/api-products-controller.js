@@ -7,6 +7,7 @@ module.exports = {
       const page = req.query.page || 1; // Obtén el número de página de la solicitud
       const totalProductsCount = await productService.getCountTotalProducts();
       const offset = (page - 1) * perPage; // Calcula el valor de offset
+      const totalProducts = await productService.getAllProducts();
       const allProducts = await productService.getProductsLimit(
         offset,
         perPage
@@ -27,6 +28,19 @@ module.exports = {
         return prodsByCategory;
       }
 
+      function countProductsByBrand(allProducts) {
+        const prodsByBrand = {};
+        allProducts.forEach((product) => {
+          const brand = product.brand_id;
+          if (!prodsByBrand[brand]) {
+            prodsByBrand[brand] = 1;
+          } else {
+            prodsByBrand[brand] += 1;
+          }
+        });
+        return prodsByBrand;
+      }
+
       const productsToApi = allProducts.map(
         ({ id, name, description, brand_id, category_id }) => ({
           id,
@@ -41,7 +55,8 @@ module.exports = {
         meta: {
           status: 200,
           count: totalProductsCount,
-          countByCategory: countProductsByCategory(allProducts),
+          countByCategory: countProductsByCategory(totalProducts),
+          countByBrand: countProductsByBrand(totalProducts),
           url: req.headers.host + req.originalUrl,
         },
         products: productsToApi,
