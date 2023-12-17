@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <%- include("partials/head", {title: 'Inicio'}) %>
+    <link rel="stylesheet" href="/css/styles-p-d.css" />
   </head>
 
   <body>
@@ -63,7 +64,10 @@
     <section>
       <h3 class="titular-2">Lo mas buscado</h3>
       <div class="tarjetas flex">
-        <div class="tarjeta-producto flex">
+        <% mostVisitedProducts.forEach(product => { %> <%-
+        include("./partials/product-card",{product}) %> <% }); %>
+
+        <!-- <div class="tarjeta-producto flex">
           <div class="img-tarjeta">
             <img
               src="/images/best-macbooks-to-buy-2-1683051709961.jpg"
@@ -104,7 +108,7 @@
             Características de Harman JBL Tune 510BT JBLT510BT
           </p>
           <h3>$80.000</h3>
-        </div>
+        </div> -->
       </div>
     </section>
     <script src="/src/barra.js"></script>

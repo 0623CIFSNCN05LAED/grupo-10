@@ -44,7 +44,7 @@ const productService = {
   getProductById: (id) => {
     return db.products.findById(id);
   },
-  getAllVisitedProducts: () => {
+  getVisitedProducts: () => {
     return db.products.getMostVisitedProducts();
   },
   getOneVisitedProducts: (id) => {

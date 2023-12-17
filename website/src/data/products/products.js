@@ -101,7 +101,18 @@ module.exports = {
     return productsByCategory;
   },
   getMostVisitedProducts: async function () {
-    return await MostVisitedProducts.findAll();
+    const mostVisitedProducts = await MostVisitedProducts.findAll({
+      order: [["visits", "DESC"]],
+      limit: 4,
+    });
+    const mostVisitedProductIds = mostVisitedProducts.map(
+      (product) => product.product_id
+    );
+    const mostVisitedProductsData = await Product.findAll({
+      where: { id: mostVisitedProductIds },
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
+    });
+    return mostVisitedProductsData;
   },
   getVisitedProductsById: async function (id) {
     const visitedProduct = await MostVisitedProducts.findByPk(id);
