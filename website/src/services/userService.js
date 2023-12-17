@@ -5,11 +5,11 @@ const userService = {
     const users = await db.users.getUsers();
     return users;
   },
-  getUserLimit: async(offset, limit)=>{
-    const user= await db.users.getUserLimit(offset, limit)
-    return user
+  getUserLimit: async (offset, limit) => {
+    const user = await db.users.getUserLimit(offset, limit);
+    return user;
   },
-  getCountTotalUsers: ()=>{
+  getCountTotalUsers: () => {
     return db.users.getCountTotalUser();
   },
   getUser: async (id) => {
@@ -33,10 +33,10 @@ const userService = {
   deleteUser: (id) => {
     db.users.delete(id);
   },
-  // searchLastUser: async () => {
-  //   const lastUser = await db.users.lastUser();
-  //   return lastUser;
-  // },
+  userAdmin: async (id) => {
+    const isAdmin = await db.users.userAdmin(id);
+    return isAdmin;
+  },
 };
 
 module.exports = userService;

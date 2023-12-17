@@ -74,46 +74,24 @@ module.exports = {
       res.render("products/productsList", { products });
     });
   },
-  lenovo: (req, res) => {
-    productService.getLenovoProducts().then((products) => {
-      res.render("products/lenovo", { products });
-    });
+  productsByBrand: async (req, res) => {
+    const brand_id = req.params.id;
+    console.log("brand_id :" + brand_id);
+    const productsByBrand = await productService.getAllProductsByBrand(
+      brand_id
+    );
+    res.render("products/brand", { productsByBrand });
   },
-  apple: (req, res) => {
-    productService.getAppleProducts().then((products) => {
-      res.render("products/apple", { products });
-    });
+
+  productsByCategory: async (req, res) => {
+    const category_id = req.params.id;
+    console.log("category_id :" + category_id);
+    const productsByCategory = await productService.getAllProductsByCategory(
+      category_id
+    );
+    res.render("products/category", { productsByCategory });
   },
-  corsair: (req, res) => {
-    productService.getCorsairProducts().then((products) => {
-      res.render("products/corsair", { products });
-    });
-  },
-  asus: (req, res) => {
-    productService.getAsusProducts().then((products) => {
-      res.render("products/asus", { products });
-    });
-  },
-  razer: (req, res) => {
-    productService.getRazerProducts().then((products) => {
-      res.render("products/razer", { products });
-    });
-  },
-  productsCategoryPcs: (req, res) => {
-    productService.pcsCategory().then((products) => {
-      res.render("products/pcs", { products });
-    });
-  },
-  productsCategoryCelulares: (req, res) => {
-    productService.celularesCategory().then((products) => {
-      res.render("products/celulares", { products });
-    });
-  },
-  productsCategoryAccesosrios: (req, res) => {
-    productService.accesoriosCategory().then((products) => {
-      res.render("products/accesorios", { products });
-    });
-  },
+
   search: async (req, res) => {
     const query = req.query.keywords;
     const productsByKeyword = await productService.searchProducts(query);

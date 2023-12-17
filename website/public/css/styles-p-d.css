@@ -104,6 +104,13 @@ nav ul li a:hover {
   /* Azul oscuro */
 }
 
+.descripcion-tarjeta h2 {
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #0a74da;
+  /* Azul oscuro */
+}
+
 .product p.price {
   font-size: 1.1em;
   color: #ffd700;
@@ -111,9 +118,22 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
+p.price {
+  font-size: 1 em;
+  /*color: #ffd700;*/
+  /* Amarillo */
+  margin-bottom: 15px;
+}
+
 .product p.description {
   color: #b0b0b0;
   margin-bottom: 15px;
+}
+
+p.description {
+  font-size: 0.9em;
+  color: #b0b0b0;
+  margin-bottom: 10px;
 }
 
 .product-actions {

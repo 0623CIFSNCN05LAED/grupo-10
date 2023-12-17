@@ -9,8 +9,6 @@ const Sequelize = require("sequelize");
 
 module.exports = {
   getProducts: async function () {
-    //const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    //const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     return await Product.findAll({
       include: ["productBrand", "productCategory"],
     });
@@ -39,23 +37,17 @@ module.exports = {
     });
     return productsByQuery;
   },
-  // saveProducts: function (products) {
-  //   const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-  //   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-  // },
+
   create: async function (product) {
     console.log(`Creating product ${product.name}`);
-    //const products = this.getProducts();
     const newProduct = {
       id: uuidv4(),
       ...product,
     };
-    // products.push(newProduct);
-    // this.saveProducts(products);
+
     return await Product.create(newProduct);
   },
   findById: async function (id) {
-    //const product = this.getProducts().find((producto) => producto.id == id);
     const product = await Product.findByPk(id, {
       include: ["productBrand", "productCategory"],
     });
@@ -84,6 +76,17 @@ module.exports = {
   getBrands: async function () {
     return await ProductBrand.findAll();
   },
+
+  getProductsByBrand: async function (brand) {
+    const productsByBrand = await Product.findAll({
+      where: {
+        brand_id: brand,
+      },
+      include: ["productBrand", "productCategory"],
+    });
+    return productsByBrand;
+  },
+
   getCategories: async function () {
     return await ProductCategory.findAll();
   },
