@@ -4,19 +4,16 @@ module.exports = {
   ApiUsers: async (req, res) => {
     try {
       const perPage = 5;
-      const page = req.query.page || 1; 
-      const totalUserCount = await userService.getCountTotalUsers()
-      const offset = (page - 1) * perPage; 
-      const allUsers = await userService.getUserLimit(
-        offset,
-        perPage
-      );
-    
+      const page = req.query.page || 1;
+      const totalUserCount = await userService.getCountTotalUsers();
+      const offset = (page - 1) * perPage;
+      const allUsers = await userService.getUserLimit(offset, perPage);
+
       const totalPages = Math.ceil(totalUserCount / perPage);
-      
+
       const response = {
         meta: {
-          count:  totalUserCount,
+          count: totalUserCount,
           status: 200,
         },
         users: allUsers.map((user) => ({
@@ -24,24 +21,19 @@ module.exports = {
           name: user.first_name + " " + user.last_name,
           email: user.email,
           detail: req.headers.host + `/api/users/${user.id}`,
-        }))
-      }
+        })),
+      };
       response.meta.pagination = response.meta.pagination || {};
       if (page < totalPages) {
         response.meta.pagination.next =
-          req.headers.host +
-          req.baseUrl +
-          `/users?page=${parseInt(page) + 1}`;
+          req.headers.host + req.baseUrl + `/users?page=${parseInt(page) + 1}`;
       }
 
       if (page > 1) {
         response.meta.pagination.previous =
-          req.headers.host +
-          req.baseUrl +
-          `/users?page=${parseInt(page) - 1}`;
+          req.headers.host + req.baseUrl + `/users?page=${parseInt(page) - 1}`;
       }
-      
-      
+
       res.json(response);
     } catch (error) {
       res.status(500).json({ error: "Error al obtener los usuarios" });
@@ -72,7 +64,6 @@ module.exports = {
     }
   },
   ApiLastUser: async (req, res) => {
-    // const lastUser = await userService.searchLastUser();
     const users = await userService.getUsers();
     const usersCount = users.length;
     const lastUserIndex = usersCount - 1;

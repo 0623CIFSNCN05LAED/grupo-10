@@ -4,7 +4,6 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   // Obtener todos los usuarios
-  // DEFINIR VISTA DE TODOS LOS USUARIOS Y CORREGIR RENDER
   users: (req, res) => {
     const allUsers = userService.getUsers;
     res.render("users/VISTA-TODOS-LOS-USUARIOS", {

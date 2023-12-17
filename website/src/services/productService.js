@@ -2,7 +2,6 @@ const db = require("../data/db");
 const { Product } = require("../database/models");
 
 const productService = {
-  //--------- TRABAJANDO CON LA BASE DE DATOS---------------
   getAllProducts: () => {
     return db.products.getProducts();
   },
