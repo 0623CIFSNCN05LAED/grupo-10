@@ -26,6 +26,11 @@ module.exports = (sequelize, DataTypes) => {
       as: "productCategory",
       foreignKey: "category_id",
     });
+
+    Model.hasOne(models.MostVisitedProducts, {
+      as: "mostVisitedProducts",
+      foreignKey: "product_id",
+    });
   };
 
   return Model;

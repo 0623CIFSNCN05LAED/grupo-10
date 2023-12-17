@@ -10,7 +10,7 @@ const Sequelize = require("sequelize");
 module.exports = {
   getProducts: async function () {
     return await Product.findAll({
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
   },
   getProductsLimit: async (offset, limit) => {
