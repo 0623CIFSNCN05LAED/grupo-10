@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/userProfileView.css" />
     <link rel="stylesheet" href="/css/register.css" />
     <link rel="stylesheet" href="/css/styles-p-d.css" />
+    <script src="/js/deleteButton.js" defer></script>
   </head>
   <body>
     <%- include("../partials/header") %>
@@ -55,6 +56,7 @@
           action="/users/<%= user.id %>?_method=delete"
           method="POST"
           class="product-actions"
+          id="deleteForm"
         >
           <button type="submit" class="delete-product">
             Eliminar mi cuenta

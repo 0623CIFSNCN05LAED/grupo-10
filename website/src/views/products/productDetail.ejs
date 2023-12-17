@@ -3,6 +3,7 @@
   <head>
     <%- include('../partials/head', {title: 'Detalle de Producto'}) %>
     <link rel="stylesheet" href="/css/styles-p-d.css" />
+    <script src="/js/deleteButton.js" defer></script>
   </head>
 
   <body>
@@ -49,6 +50,7 @@
               action="/products/<%= product.id %>?_method=delete"
               method="POST"
               class="product-actions"
+              id="deleteForm"
             >
               <button type="submit" class="delete-product">
                 Eliminar Producto

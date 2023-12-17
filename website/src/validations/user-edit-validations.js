@@ -1,6 +1,5 @@
 const { body } = require("express-validator");
 const path = require("path");
-//const users = require("../data/users/users");
 const userService = require("../services/userService");
 
 module.exports = [
