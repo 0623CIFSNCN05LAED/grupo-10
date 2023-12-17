@@ -13,7 +13,12 @@ module.exports = {
     console.log("id recibido ", req.params.id);
     const product = await productService.getProduct(id);
     console.log(product);
-    res.render("products/productDetail", { product });
+    if (product) {
+      const updateVisit = await productService.updateVisit(product.id);
+      res.render("products/productDetail", { product });
+    } else {
+      res.status(404).send("Producto no encontrado");
+    }
   },
 
   // VISTA FORMULARIO DE CREACION PRODUCTO
