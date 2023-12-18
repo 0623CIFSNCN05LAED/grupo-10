@@ -23,21 +23,22 @@ function Products() {
   };
 
   const cargarMenos = async () => {
-    page === 1 ? page : setPage(page - 1);
-    console.log("pagina anterior " + page);
+    const nextPage = page === 1 ? page : page - 1;
+    setPage(nextPage);
+
     const response = await fetch(
-      `http://localhost:4001/api/products?page=${page}`
+      `http://localhost:4001/api/products?page=${nextPage}`
     );
     const result = await response.json();
     setAllProducts(result.products);
   };
 
   const cargarMas = async () => {
-    setPage(page + 1);
-    console.log("pagina siguiente " + page);
+    const nextPage = page + 1;
+    setPage(nextPage);
 
     const response = await fetch(
-      `http://localhost:4001/api/products?page=${page}`
+      `http://localhost:4001/api/products?page=${nextPage}`
     );
     const result = await response.json();
     setAllProducts(result.products);
