@@ -4,18 +4,19 @@ const { v4: uuidv4 } = require("uuid");
 const { Product } = require("../../database/models");
 const { ProductBrand } = require("../../database/models");
 const { ProductCategory } = require("../../database/models");
+const { MostVisitedProducts } = require("../../database/models");
 
 const Sequelize = require("sequelize");
 
 module.exports = {
   getProducts: async function () {
     return await Product.findAll({
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
   },
   getProductsLimit: async (offset, limit) => {
     const products = await Product.findAll({
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
       offset,
       limit,
     });
@@ -33,7 +34,7 @@ module.exports = {
           [Sequelize.Op.like]: "%" + query + "%",
         },
       },
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
     return productsByQuery;
   },
@@ -49,7 +50,7 @@ module.exports = {
   },
   findById: async function (id) {
     const product = await Product.findByPk(id, {
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
     console.log("pase por findById");
     return product;
@@ -82,7 +83,7 @@ module.exports = {
       where: {
         brand_id: brand,
       },
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
     return productsByBrand;
   },
@@ -95,8 +96,46 @@ module.exports = {
       where: {
         category_id: category,
       },
-      include: ["productBrand", "productCategory"],
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
     return productsByCategory;
+  },
+  getMostVisitedProducts: async function () {
+    const mostVisitedProducts = await MostVisitedProducts.findAll({
+      order: [["visits", "DESC"]],
+      limit: 4,
+    });
+    const mostVisitedProductIds = mostVisitedProducts.map(
+      (product) => product.product_id
+    );
+    const mostVisitedProductsData = await Product.findAll({
+      where: { id: mostVisitedProductIds },
+      include: ["productBrand", "productCategory", "mostVisitedProducts"],
+    });
+    return mostVisitedProductsData;
+  },
+  getVisitedProductsById: async function (id) {
+    const visitedProduct = await MostVisitedProducts.findByPk(id);
+    return visitedProduct;
+  },
+  findAndUpdateVisit: async function (id) {
+    try {
+      const visitedProduct = await MostVisitedProducts.findOne({
+        where: { product_id: id },
+      });
+
+      if (visitedProduct) {
+        visitedProduct.visits += 1;
+        await visitedProduct.save();
+      } else {
+        await MostVisitedProducts.create({
+          id: uuidv4(),
+          visits: 1,
+          product_id: id,
+        });
+      }
+    } catch (error) {
+      console.error("Error en findAndUpdateVisit: ", error);
+    }
   },
 };

@@ -44,5 +44,14 @@ const productService = {
   getProductById: (id) => {
     return db.products.findById(id);
   },
+  getVisitedProducts: () => {
+    return db.products.getMostVisitedProducts();
+  },
+  getOneVisitedProducts: (id) => {
+    return db.products.getVisitedProductsById(id);
+  },
+  updateVisit: (id) => {
+    return db.products.findAndUpdateVisit(id);
+  },
 };
 module.exports = productService;
