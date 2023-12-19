@@ -86,9 +86,7 @@ module.exports = {
       const id = req.params.id;
       const product = await productService.getProductById(id);
       const imagesPath = "http://localhost:4001/images/products/";
-      console.log(imagesPath);
       const imageUrl = `${imagesPath}${product.image}`;
-      console.log(imageUrl);
       const productToApi = {
         id: product,
         id,

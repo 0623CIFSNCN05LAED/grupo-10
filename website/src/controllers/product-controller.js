@@ -9,10 +9,7 @@ module.exports = {
   //Detalle de un producto
   productDetail: async (req, res) => {
     const id = req.params.id;
-    console.log(id);
-    console.log("id recibido ", req.params.id);
     const product = await productService.getProduct(id);
-    console.log(product);
     if (product) {
       const updateVisit = await productService.updateVisit(product.id);
       res.render("products/productDetail", { product });
@@ -81,7 +78,6 @@ module.exports = {
   },
   productsByBrand: async (req, res) => {
     const brand_id = req.params.id;
-    console.log("brand_id :" + brand_id);
     const productsByBrand = await productService.getAllProductsByBrand(
       brand_id
     );
@@ -90,7 +86,6 @@ module.exports = {
 
   productsByCategory: async (req, res) => {
     const category_id = req.params.id;
-    console.log("category_id :" + category_id);
     const productsByCategory = await productService.getAllProductsByCategory(
       category_id
     );

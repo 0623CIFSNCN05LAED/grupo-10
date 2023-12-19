@@ -26,8 +26,7 @@ module.exports = {
   //Método de proceso de login
 
   loginProcess: async (req, res) => {
-    console.log("entre a logInProcess");
-    const data = req.body;
+   const data = req.body;
     req.session.userData = data;
     const email = data.user_name;
     const user = await userService.userByEmail(email);

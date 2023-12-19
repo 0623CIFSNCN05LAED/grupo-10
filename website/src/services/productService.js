@@ -17,7 +17,6 @@ const productService = {
   },
   getProduct: async (id) => {
     const product = await db.products.findById(id);
-    console.log("pase por getProduct");
     return product;
   },
   productCreating: (product) => {

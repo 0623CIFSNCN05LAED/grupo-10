@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
   const id = req.params.id;
 
   if (resultValidation.errors.length > 0) {
-    console.log(resultValidation);
     return res.render("users/edit", {
       errors: resultValidation.mapped(),
       oldData: req.body,
