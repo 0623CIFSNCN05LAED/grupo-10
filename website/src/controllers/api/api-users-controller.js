@@ -48,7 +48,6 @@ module.exports = {
       }
       const imagesPath = "http://localhost:4001/images/users/";
       const imageUrl = `${imagesPath}${user.avatar}`;
-      console.log(imageUrl);
 
       const response = {
         id: user.id,

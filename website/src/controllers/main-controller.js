@@ -4,7 +4,6 @@ const productService = require("../services/productService");
 module.exports = {
   home: async (req, res) => {
     const mostVisitedProducts = await productService.getVisitedProducts();
-    console.log(mostVisitedProducts);
     const perPage = 4;
     const offset = 1;
     const defaultProducts = await productService.getProductsLimit(

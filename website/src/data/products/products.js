@@ -52,7 +52,6 @@ module.exports = {
     const product = await Product.findByPk(id, {
       include: ["productBrand", "productCategory", "mostVisitedProducts"],
     });
-    console.log("pase por findById");
     return product;
   },
   update: function (id, product) {
@@ -70,8 +69,9 @@ module.exports = {
       { where: { id } }
     );
   },
-  delete: function (id) {
+  delete:  async function (id) {
     console.log(`Deleting product with id ${id}`);
+    await MostVisitedProducts.destroy({where: {product_id: id}})
     return Product.destroy({ where: { id } });
   },
   getBrands: async function () {
