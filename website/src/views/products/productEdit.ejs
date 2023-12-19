@@ -4,6 +4,7 @@
     <%- include('../partials/head', {title: 'Edición de Producto'}) %>
     <link rel="stylesheet" href="/css/register.css" />
     <script src="/js/updateValidations.js" defer></script>
+    <script src="/js/editButton.js" defer></script>
 
   </head>
   <body>
@@ -20,6 +21,7 @@
           action="/products/<%= product.id %>?_method=put"
           method="post" enctype="multipart/form-data"
           class="reg-grow-70 reg-md-flex"
+          id="editForm"
         >
           <div class="reg-mb-15 reg-md-prod">
             <label for="name">Nombre:</label>
