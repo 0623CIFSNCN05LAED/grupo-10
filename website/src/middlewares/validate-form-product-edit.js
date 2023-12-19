@@ -2,8 +2,9 @@ const { validationResult } = require("express-validator");
 const productService = require("../services/productService");
 
 module.exports = async (req, res, next) => {
-  const brands = await productService.getAllBrands();
-  const categories = await productService.getAllCategories();
+  const brandsPromise =  productService.getAllBrands();
+  const categoriesPromise =  productService.getAllCategories();
+  const [brands, categories] = await Promise.all([brandsPromise, categoriesPromise]);
   const resultValidation = validationResult(req);
   const id = req.params.id;
   const product = await productService.getProduct(id);
