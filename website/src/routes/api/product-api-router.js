@@ -7,9 +7,8 @@ const path = require("path");
 const APIController = require("../../controllers/api/api-products-controller");
 
 //Rutas
-//Listado de todos los generos
-router.get("/products/:id", APIController.ApiProductDetail);
-router.get("/products", APIController.ApiProducts);
-router.get("/lastProduct", APIController.ApiLastProduct);
+router.get("/last", APIController.ApiLastProduct);
+router.get("/:id", APIController.ApiProductDetail);
+router.get("/", APIController.ApiProducts);
 
 module.exports = router;
