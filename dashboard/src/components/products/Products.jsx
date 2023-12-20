@@ -10,39 +10,29 @@ function Products() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:4001/api/products");
+      const response = await fetch(`http://localhost:4001/api/products?page=${page}`);
       const result = await response.json();
       setAllProducts(result.products);
     };
 
     fetchData();
-  }, []);
+  }, [page]); 
 
   const handleProductClick = (productId) => {
     setSelectedProductId(productId);
   };
 
-  const cargarMenos = async () => {
-    const nextPage = page === 1 ? page : page - 1;
-    setPage(nextPage);
-
-    const response = await fetch(
-      `http://localhost:4001/api/products?page=${nextPage}`
-    );
-    const result = await response.json();
-    setAllProducts(result.products);
+  const handlePagination = async (newPage) => {
+    setPage(newPage);
   };
-
-  const cargarMas = async () => {
-    const nextPage = page + 1;
-    setPage(nextPage);
-
-    const response = await fetch(
-      `http://localhost:4001/api/products?page=${nextPage}`
-    );
-    const result = await response.json();
-    setAllProducts(result.products);
-  };
+  const proxima = async ()=>{
+    const proximaPagina = page +1;
+    handlePagination(proximaPagina)
+  }
+  const previa = async ()=>{
+    const paginaPrevia = page === 1 ? page : page -1
+    handlePagination(paginaPrevia)
+  }
 
   return (
     <section className="content">
@@ -71,14 +61,14 @@ function Products() {
       <hr></hr>
       <div className="d-flex justify-content-between">
         <button
-          onClick={cargarMenos}
+          onClick={previa}
           type="button"
           className="btn btn-primary mr-2"
         >
           Página Anterior
         </button>
 
-        <button onClick={cargarMas} type="button" className="btn btn-primary">
+        <button onClick={proxima} type="button" className="btn btn-primary">
           Siguiente Página
         </button>
       </div>
