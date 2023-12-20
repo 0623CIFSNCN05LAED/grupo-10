@@ -8,8 +8,8 @@ const APIController = require("../../controllers/api/api-users-controller");
 
 //Rutas
 //Listado de todos los usuarios
-router.get("/users/:id", APIController.APiUserDetail);
-router.get("/users", APIController.ApiUsers);
-router.get("/lastUser", APIController.ApiLastUser);
+router.get("/last", APIController.ApiLastUser);
+router.get("/:id", APIController.APiUserDetail);
+router.get("/", APIController.ApiUsers);
 
 module.exports = router;
