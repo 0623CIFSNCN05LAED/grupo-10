@@ -5,7 +5,7 @@ export default function LastProduct() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:4001/api/lastProduct");
+      const response = await fetch("http://localhost:4001/api/products/last");
       const result = await response.json();
       setLastProduct(result.data);
     };

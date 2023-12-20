@@ -5,7 +5,7 @@ export default function LastUser() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:4001/api/lastUser");
+      const response = await fetch("http://localhost:4001/api/users/last");
       const result = await response.json();
       setLastUser(result.lastUser);
     };
