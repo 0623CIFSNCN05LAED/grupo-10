@@ -63,10 +63,10 @@ module.exports = {
     }
   },
   ApiLastUser: async (req, res) => {
-    const users = await userService.getUsers();
-    const usersCount = users.length;
-    const lastUserIndex = usersCount - 1;
-    const lastUser = users[lastUserIndex];
+    // const users = await userService.getUsers();
+    // const usersCount = users.length;
+    // const lastUserIndex = usersCount - 1;
+    const lastUser = await userService.findLastUserCreated();
     const imagesPath = "http://localhost:4001/images/users/";
     const imageUrl = `${imagesPath}${lastUser.avatar}`;
     const userToApi = {

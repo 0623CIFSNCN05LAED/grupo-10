@@ -37,6 +37,9 @@ const userService = {
     const isAdmin = await db.users.userAdmin(id);
     return isAdmin;
   },
+  findLastUserCreated: async () => {
+    return db.users.getLastUserCreated();
+  },
 };
 
 module.exports = userService;
