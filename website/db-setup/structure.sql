@@ -141,6 +141,7 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL COMMENT 'contrasena del usuario',
   `avatar` varchar(255) NOT NULL COMMENT 'avatar del usuario',
   `category_id` varchar(36) NOT NULL COMMENT 'FK',
+  `created_at` timestamp not null default now(),	
   PRIMARY KEY (`id`),
   KEY `users_FK` (`category_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`category_id`) REFERENCES `users_category` (`id`)
