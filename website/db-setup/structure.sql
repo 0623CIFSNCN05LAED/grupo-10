@@ -62,6 +62,7 @@ CREATE TABLE `products` (
   `description` varchar(75) COMMENT 'descripcion del producto',
   `category_id` varchar(36) NOT NULL,
   `image` varchar(255),
+  `created_at` timestamp not null default now(),
   PRIMARY KEY (`id`),
   KEY `products_FK` (`brand_id`),
   KEY `products_FK_1` (`category_id`),

@@ -76,4 +76,3 @@ values
 ('69efcb50-28d6-4218-970b-0b920797a8e1', 'Pablo', 'Gomez', 'pablo@mail.com', '$2a$10$3brLMYkhw9H.TTUzERa5C.au.FPRxYrpXK6CQv6bORSFtJ7HOBJZ6', 'orko.png', 'user')
 ;
 
-
