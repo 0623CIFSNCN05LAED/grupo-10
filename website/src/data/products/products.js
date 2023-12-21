@@ -69,9 +69,9 @@ module.exports = {
       { where: { id } }
     );
   },
-  delete:  async function (id) {
+  delete: async function (id) {
     console.log(`Deleting product with id ${id}`);
-    await MostVisitedProducts.destroy({where: {product_id: id}})
+    await MostVisitedProducts.destroy({ where: { product_id: id } });
     return Product.destroy({ where: { id } });
   },
   getBrands: async function () {
@@ -136,6 +136,19 @@ module.exports = {
       }
     } catch (error) {
       console.error("Error en findAndUpdateVisit: ", error);
+    }
+  },
+  getLastProductCreated: async function () {
+    try {
+      const lastProductCreated = await Product.findOne({
+        order: [["created_at", "DESC"]],
+        limit: 1,
+        include: ["productBrand", "productCategory", "mostVisitedProducts"],
+      });
+      return lastProductCreated;
+    } catch (error) {
+      console.error("Error al obtener el último producto:", error);
+      throw error;
     }
   },
 };

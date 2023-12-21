@@ -9,10 +9,13 @@ module.exports = (sequelize, DataTypes) => {
       password: DataTypes.STRING,
       avatar: DataTypes.STRING,
       category_id: DataTypes.STRING,
+      created_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
     },
     {
       tableName: "users",
-      timestamps: false,
+      timestamps: true,
+      underscored: true,
+      updatedAt: false,
     }
   );
 

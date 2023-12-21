@@ -52,5 +52,8 @@ const productService = {
   updateVisit: (id) => {
     return db.products.findAndUpdateVisit(id);
   },
+  findLastProductCreated: () => {
+    return db.products.getLastProductCreated();
+  },
 };
 module.exports = productService;

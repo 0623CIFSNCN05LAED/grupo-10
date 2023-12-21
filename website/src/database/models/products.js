@@ -9,10 +9,13 @@ module.exports = (sequelize, DataTypes) => {
       image: DataTypes.STRING,
       brand_id: DataTypes.STRING,
       category_id: DataTypes.STRING,
+      created_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
     },
     {
       tableName: "products",
-      timestamps: false,
+      timestamps: true,
+      underscored: true,
+      updatedAt: false,
     }
   );
 

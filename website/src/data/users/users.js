@@ -72,4 +72,12 @@ module.exports = {
     console.log("usuario " + user.email, "rol " + category);
     return isAdmin;
   },
+  getLastUserCreated: async function () {
+    const lastUserCreated = await User.findOne({
+      order: [["created_at", "DESC"]],
+      limit: 1,
+      include: ["users_category"],
+    });
+    return lastUserCreated;
+  },
 };
