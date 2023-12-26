@@ -11,16 +11,21 @@
     <%- include("../partials/header") %>
      <!-- Header -->
     
-     <!-- todos los productos -->
-     <!-- marca lenovo -->
+     
     <section>
         <article>
-            <H3 style="text-align: center; margin-top: 10px;">TU BÚSQUEDA</H3>
+            <H3 style="text-align: center; margin-top: 10px;">TU BÚSQUEDA: <%= query %></H3>
             <div class="tarjetas flex">
                       
-                <% products.forEach(product => { %>
-                    <%- include("../partials/product-card",{product}) %>   
-                <% }); %>
+                <% if (products.length > 0) { %>
+                <div class="tarjetas flex">
+                    <% products.forEach(product => { %>
+                        <%- include("../partials/product-card",{product}) %>   
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p style="text-align: center; margin-top: 20px;">No se encontraron resultados para tu búsqueda.</p>
+            <% } %>
         </article>
     </section>
       <!-- footer -->

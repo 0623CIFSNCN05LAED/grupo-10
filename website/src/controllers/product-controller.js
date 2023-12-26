@@ -3,7 +3,6 @@ const productService = require("../services/productService");
 module.exports = {
   productCart: async (req, res) => {
     products = await productService.getProductsLimit(1, 3);
-    console.log("products cart :" + products);
     res.render("products/productCart", { products });
   },
   //Detalle de un producto
@@ -46,7 +45,7 @@ module.exports = {
     res.render("products/productEdit", { product, brands, categories });
   },
   // Update - Method to update
-  productUpdate: (req, res) => {
+  productUpdate: async (req, res) => {
     const product = {
       name: req.body.name,
       price: Number(req.body.price),
@@ -57,7 +56,7 @@ module.exports = {
     const id = req.params.id;
     const image = req.file
       ? req.file.filename
-      : productService.getProduct(id).image;
+      : await productService.getProduct(id).image;
     product.image = image;
     productService.updateProduct(id, product);
     res.redirect("/products");
@@ -95,10 +94,6 @@ module.exports = {
   search: async (req, res) => {
     const query = req.query.keywords;
     const productsByKeyword = await productService.searchProducts(query);
-    if (productsByKeyword.length > 0) {
-      res.render("products/search", { products: productsByKeyword });
-    } else {
-      res.redirect("/");
-    }
+    res.render("products/search", { products: productsByKeyword, query });
   },
 };
