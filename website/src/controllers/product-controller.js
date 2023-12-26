@@ -70,10 +70,25 @@ module.exports = {
   },
   //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
-  products: (req, res) => {
-    productService.getAllProducts().then((products) => {
-      res.render("products/productsList", { products });
-    });
+  products: async (req, res) => {
+    const PAGE_SIZE = 6;
+    const page = parseInt(req.query.page) || 1;
+
+    try {
+      const offset = (page - 1) * PAGE_SIZE;
+      const products = await productService.getProductsLimit(offset, PAGE_SIZE);
+      const totalProductsCount = await productService.getCountTotalProducts();
+      const totalPages = Math.ceil(totalProductsCount / PAGE_SIZE);
+
+      res.render("products/productsList", {
+        products,
+        currentPage: page,
+        totalPages,
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error al obtener los productos.");
+    }
   },
   productsByBrand: async (req, res) => {
     const brand_id = req.params.id;
