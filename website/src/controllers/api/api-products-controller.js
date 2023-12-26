@@ -64,16 +64,12 @@ module.exports = {
       respuesta.meta.pagination = respuesta.meta.pagination || {};
       if (page < totalPages) {
         respuesta.meta.pagination.next =
-          req.headers.host +
-          req.baseUrl +
-          `/products?page=${parseInt(page) + 1}`;
+          req.headers.host + req.baseUrl + `?page=${parseInt(page) + 1}`;
       }
 
       if (page > 1) {
         respuesta.meta.pagination.previous =
-          req.headers.host +
-          req.baseUrl +
-          `/products?page=${parseInt(page) - 1}`;
+          req.headers.host + req.baseUrl + `?page=${parseInt(page) - 1}`;
       }
       res.json(respuesta);
     } catch (error) {
