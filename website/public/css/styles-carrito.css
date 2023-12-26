@@ -34,7 +34,7 @@ main {
 
 .producto img {
   width: 100px;
-  height: 60px;
+  height: auto;
 }
 
 .agregar {
@@ -60,6 +60,27 @@ main {
   border: 1px solid #ccc;
   margin-bottom: 5px;
   padding: 5px;
+}
+
+.productos-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.productos-lista li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  /*background-color: #fff; /* Fondo blanco para cada elemento de lista */
+}
+
+.productos-lista li img {
+  max-width: 80px;
+  margin-right: 10px;
+}
+
+.productos-lista .cantidad {
+  width: 40px;
 }
 
 /* Estilos para pantallas más grandes */

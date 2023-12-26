@@ -2,7 +2,7 @@ const productService = require("../services/productService");
 
 module.exports = {
   productCart: async (req, res) => {
-    products = await productService.getProductsLimit(0, 4);
+    products = await productService.getProductsLimit(1, 3);
     console.log("products cart :" + products);
     res.render("products/productCart", { products });
   },
