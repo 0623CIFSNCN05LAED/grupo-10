@@ -64,16 +64,12 @@ module.exports = {
       respuesta.meta.pagination = respuesta.meta.pagination || {};
       if (page < totalPages) {
         respuesta.meta.pagination.next =
-          req.headers.host +
-          req.baseUrl +
-          `/products?page=${parseInt(page) + 1}`;
+          req.headers.host + req.baseUrl + `?page=${parseInt(page) + 1}`;
       }
 
       if (page > 1) {
         respuesta.meta.pagination.previous =
-          req.headers.host +
-          req.baseUrl +
-          `/products?page=${parseInt(page) - 1}`;
+          req.headers.host + req.baseUrl + `?page=${parseInt(page) - 1}`;
       }
       res.json(respuesta);
     } catch (error) {
@@ -117,9 +113,6 @@ module.exports = {
     }
   },
   ApiLastProduct: async (req, res) => {
-    // const allProducts = await productService.getAllProducts();
-    // const totalProductsCount = await productService.getCountTotalProducts();
-    // const lastProductIndex = totalProductsCount - 1;
     const lastProduct = await productService.findLastProductCreated();
     const imagesPath = "http://localhost:4001/images/products/";
     const imageUrl = `${imagesPath}${lastProduct.image}`;

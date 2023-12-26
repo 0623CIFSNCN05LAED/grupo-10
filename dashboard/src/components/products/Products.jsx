@@ -7,16 +7,20 @@ function Products() {
   const [allProducts, setAllProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const [paginationInfo, setPaginationInfo] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:4001/api/products?page=${page}`);
+      const response = await fetch(
+        `http://localhost:4001/api/products?page=${page}`
+      );
       const result = await response.json();
       setAllProducts(result.products);
+      setPaginationInfo(result.meta.pagination);
     };
 
     fetchData();
-  }, [page]); 
+  }, [page]);
 
   const handleProductClick = (productId) => {
     setSelectedProductId(productId);
@@ -25,14 +29,14 @@ function Products() {
   const handlePagination = async (newPage) => {
     setPage(newPage);
   };
-  const proxima = async ()=>{
-    const proximaPagina = page +1;
-    handlePagination(proximaPagina)
-  }
-  const previa = async ()=>{
-    const paginaPrevia = page === 1 ? page : page -1
-    handlePagination(paginaPrevia)
-  }
+  const proxima = async () => {
+    const proximaPagina = page + 1;
+    handlePagination(proximaPagina);
+  };
+  const previa = async () => {
+    const paginaPrevia = page === 1 ? page : page - 1;
+    handlePagination(paginaPrevia);
+  };
 
   return (
     <section className="content">
@@ -64,11 +68,17 @@ function Products() {
           onClick={previa}
           type="button"
           className="btn btn-primary mr-2"
+          disabled={page === 1}
         >
           Página Anterior
         </button>
 
-        <button onClick={proxima} type="button" className="btn btn-primary">
+        <button
+          onClick={proxima}
+          type="button"
+          className="btn btn-primary"
+          disabled={allProducts.length === 0 || !paginationInfo.next}
+        >
           Siguiente Página
         </button>
       </div>

@@ -3,34 +3,44 @@
   <head>
     <%- include("../partials/head", {title: 'Carrito de Compras'}) %>
     <link rel="stylesheet" href="/css/styles-carrito.css" />
+    <link rel="stylesheet" href="/css/styles-p-d.css" />
+    <script src="/js/totalCart.js" defer></script>
   </head>
   <body>
     <%- include("../partials/header") %>
     <main>
-      <section class="productos">
-        <div class="producto">
-          <img src="producto1.jpg" alt="Producto 1" />
-          <h2>Producto 1</h2>
-          <p>Precio: $1.000</p>
-          <button class="agregar">Agregar al carrito</button>
-        </div>
-        <div class="producto">
-          <img src="producto2.jpg" alt="Producto 2" />
-          <h2>Producto 2</h2>
-          <p>Precio: $1.500</p>
-          <button class="agregar">Agregar al carrito</button>
-        </div>
-        <!-- Agrega más componentes o productos aca  -->
-      </section>
-      <section class="carrito">
-        <h2>Carrito de Compras</h2>
-        <ul class="lista-carrito">
-          <!-- Los productos seleccionados se mostrarán aquí -->
-        </ul>
-        <p>Total: $<span id="total">0.00</span></p>
-      </section>
+      <h1>Carrito de Compras</h1>
+      <form id="carritoForm" action="/" method="">
+        <section class="productos">
+          <ul class="productos-lista">
+
+          <% products.forEach(product => { %>
+          <li class="producto" data-id="<%= product.id %>">
+            <img
+              src="/images/products/<%= product.image %>"
+              alt="imagen de <%= product.name %>"
+            />
+            <h3><%= product.name %></h3>
+            <p>Precio: $<%= product.price %></p>
+            <p>
+              Cantidad:
+              <input
+                type="number"
+                class="cantidad"
+                value="1"
+                min="0"
+                step="1"
+              />
+            </p>
+          </li>
+          <% }) %>
+        </section>
+        <section class="carrito">
+          <p>Total: $<span id="total">0.00</span></p>
+        </section>
+        <button type="submit" class="buy-now">Comprar</button>
+      </form>
     </main>
-    <script src="script.js"></script>
     <footer class="foot"><%- include("../partials/footer") %></footer>
   </body>
 </html>
