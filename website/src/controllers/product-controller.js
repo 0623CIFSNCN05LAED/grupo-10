@@ -1,17 +1,17 @@
-const path = require("path");
 const productService = require("../services/productService");
-const { log } = require("console");
 
 module.exports = {
-  productCart: (req, res) => {
-    res.render("products/productCart");
+  productCart: async (req, res) => {
+    products = await productService.getProductsLimit(0, 4);
+    console.log("products cart :" + products);
+    res.render("products/productCart", { products });
   },
   //Detalle de un producto
   productDetail: async (req, res) => {
     const id = req.params.id;
     const product = await productService.getProduct(id);
     if (product) {
-      const updateVisit = await productService.updateVisit(product.id);
+      await productService.updateVisit(product.id);
       res.render("products/productDetail", { product });
     } else {
       res.status(404).send("Producto no encontrado");

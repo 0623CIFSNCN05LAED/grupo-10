@@ -8,19 +8,18 @@
     <%- include("../partials/header") %>
     <main>
       <section class="productos">
+        <% products.forEach(product => { %>
         <div class="producto">
-          <img src="producto1.jpg" alt="Producto 1" />
-          <h2>Producto 1</h2>
-          <p>Precio: $1.000</p>
+          <img
+            src="/images/products/<%= product.image %>"
+            alt="imagen de <%= product.name %>"
+          />
+          <h3><%= product.name %></h3>
+          <p>Precio: $<%= product.price %></p>
+          <p>Cantidad:</p>
           <button class="agregar">Agregar al carrito</button>
         </div>
-        <div class="producto">
-          <img src="producto2.jpg" alt="Producto 2" />
-          <h2>Producto 2</h2>
-          <p>Precio: $1.500</p>
-          <button class="agregar">Agregar al carrito</button>
-        </div>
-        <!-- Agrega más componentes o productos aca  -->
+        <% }) %>
       </section>
       <section class="carrito">
         <h2>Carrito de Compras</h2>
