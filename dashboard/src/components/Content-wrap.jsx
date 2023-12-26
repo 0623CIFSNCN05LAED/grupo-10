@@ -5,11 +5,15 @@ import LastProduct from "./Content/LastProduct";
 import LastUser from "./Content/LastUser";
 import Categories from "./Content/Categories";
 import OneProduct from "./Content/OneProduct";
+import Home from "./Content/Home";
 
 export default function ContentWrap() {
   return (
     <main className="content-wrap" style={{ maxHeight: "calc(100vh - 6rem)" }}>
       <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
         <Route path="/statistics">
           <Statistics />
         </Route>
