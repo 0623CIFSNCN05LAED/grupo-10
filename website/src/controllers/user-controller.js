@@ -26,7 +26,7 @@ module.exports = {
   //Método de proceso de login
 
   loginProcess: async (req, res) => {
-   const data = req.body;
+    const data = req.body;
     req.session.userData = data;
     const email = data.user_name;
     const user = await userService.userByEmail(email);
@@ -73,7 +73,7 @@ module.exports = {
   },
 
   // Método de edición de usuario
-  userUpdate: (req, res) => {
+  userUpdate: async (req, res) => {
     const id = req.params.id;
     const user = {
       first_name: req.body.first_name,
@@ -81,7 +81,7 @@ module.exports = {
     };
     const avatar = req.file
       ? req.file.filename
-      : userService.getUser(id).avatar;
+      : await userService.getUser(id).avatar;
     user.avatar = avatar;
     userService.updateUser(id, user);
     res.redirect("/users/" + id);

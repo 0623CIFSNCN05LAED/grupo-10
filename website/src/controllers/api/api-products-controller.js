@@ -117,9 +117,6 @@ module.exports = {
     }
   },
   ApiLastProduct: async (req, res) => {
-    // const allProducts = await productService.getAllProducts();
-    // const totalProductsCount = await productService.getCountTotalProducts();
-    // const lastProductIndex = totalProductsCount - 1;
     const lastProduct = await productService.findLastProductCreated();
     const imagesPath = "http://localhost:4001/images/products/";
     const imageUrl = `${imagesPath}${lastProduct.image}`;
