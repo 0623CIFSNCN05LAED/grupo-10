@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import Products from "./products/Products";
 import Statistics from "./Content/Statistics";
 import LastProduct from "./Content/LastProduct";
+import MostVisited from "./Content/MostVisited";
 import LastUser from "./Content/LastUser";
 import Categories from "./Content/Categories";
 import OneProduct from "./Content/OneProduct";
@@ -19,6 +20,9 @@ export default function ContentWrap() {
         </Route>
         <Route path="/lastProduct">
           <LastProduct />
+        </Route>
+        <Route path="/mostVisited">
+          <MostVisited />
         </Route>
         <Route path="/lastUser">
           <LastUser />
