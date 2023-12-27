@@ -68,7 +68,6 @@ module.exports = {
     productService.deleteProduct(id);
     res.redirect("/products");
   },
-  //--------- TRABAJANDO CON LA BASE DE DATOS---------------
 
   products: async (req, res) => {
     const PAGE_SIZE = 6;
