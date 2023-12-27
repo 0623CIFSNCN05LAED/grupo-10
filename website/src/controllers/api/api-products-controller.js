@@ -137,4 +137,39 @@ module.exports = {
     };
     res.json(respuesta);
   },
+  ApiMostVisited: async (req, res) => {
+    const mostVisitedProducts = await productService.getVisitedProducts();
+    let mostVisitedProduct = mostVisitedProducts[0];
+    const perPage = 1;
+    const offset = 0;
+    const defaultProducts = await productService.getProductsLimit(
+      offset,
+      perPage
+    );
+    let defaultProduct = defaultProducts[0];
+    mostVisitedProduct.length == 0 ? (mostVisitedProduct = defaultProduct) : "";
+
+    const imagesPath = "http://localhost:4001/images/products/";
+    const imageUrl = `${imagesPath}${mostVisitedProduct.image}`;
+
+    const productToApi = {
+      id: mostVisitedProduct.id,
+      name: mostVisitedProduct.name,
+      price: mostVisitedProduct.price,
+      description: mostVisitedProduct.description,
+      image: mostVisitedProduct.image,
+      brand_id: mostVisitedProduct.brand_id,
+      category_id: mostVisitedProduct.category_id,
+      others: [
+        { brand: mostVisitedProduct.productBrand.name },
+        { category: mostVisitedProduct.productCategory.name },
+      ],
+      urlImage: imageUrl,
+    };
+
+    let respuesta = {
+      data: productToApi,
+    };
+    res.json(respuesta);
+  },
 };
