@@ -23,7 +23,7 @@ export default function LastProduct() {
             src={lastProduct.urlImage}
             className="card-img-top"
             alt={`imagen de ${lastProduct.name}`}
-            style={{ width: "400px", height: "auto" }}
+            style={{ width: "250px", height: "auto" }}
           />
 
           <div className="card-body">

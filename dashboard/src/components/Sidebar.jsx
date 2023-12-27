@@ -22,12 +22,19 @@ export default function Sidebar() {
               Estadísticas
             </Link>
           </li>
+          <li>
+            <Link to="/mostVisited">
+              <i className="bi bi-award" style={iconStyle}></i>- Producto más
+              visitado
+            </Link>
+          </li>
 
           <li>
             <Link to="/lastProduct">
               <i className="bi bi-star" style={iconStyle}></i>- Último Producto
             </Link>
           </li>
+
           <li>
             <Link to="/lastUser">
               <i className="bi bi-person-check" style={iconStyle}></i>- Último
