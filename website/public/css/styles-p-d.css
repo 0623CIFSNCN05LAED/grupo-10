@@ -89,6 +89,7 @@ nav ul li a:hover {
 
 .product-image img {
   max-width: 100%;
+  width: 250px;
   height: auto;
   border-radius: 5px;
 }
