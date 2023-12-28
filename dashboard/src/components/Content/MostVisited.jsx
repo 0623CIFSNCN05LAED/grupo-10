@@ -14,6 +14,12 @@ export default function MostVisited() {
     fetchData();
   }, []);
   console.log("product ", mostVisited);
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("es-ES", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  };
 
   return (
     <div className="container mt-4">
@@ -34,7 +40,7 @@ export default function MostVisited() {
 
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <strong>Precio:</strong> ${mostVisited.price}
+                <strong>Precio:</strong> ${formatNumber(mostVisited.price)}
               </li>
               <li className="list-group-item">
                 <strong>Marca:</strong> {mostVisited.others[0].brand}

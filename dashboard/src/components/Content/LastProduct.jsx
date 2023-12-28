@@ -12,6 +12,12 @@ export default function LastProduct() {
     fetchData();
   }, []);
   console.log("product ", lastProduct);
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("es-ES", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  };
 
   return (
     <div className="container mt-4">
@@ -32,7 +38,7 @@ export default function LastProduct() {
 
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <strong>Precio:</strong> ${lastProduct.price}
+                <strong>Precio:</strong> ${formatNumber(lastProduct.price)}
               </li>
               <li className="list-group-item">
                 <strong>Marca:</strong> {lastProduct.others[0].brand}
