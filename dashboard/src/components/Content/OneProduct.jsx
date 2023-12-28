@@ -16,6 +16,13 @@ export default function OneProduct() {
     fetchData();
   }, [productId]);
 
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("es-ES", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  };
+
   return (
     <div className="container mt-4">
       <h2>Detalle del Producto</h2>
@@ -34,7 +41,7 @@ export default function OneProduct() {
 
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <strong>Precio:</strong> ${product.price}
+                <strong>Precio:</strong> ${formatNumber(product.price)}
               </li>
               <li className="list-group-item">
                 <strong>Marca:</strong> {product.others[0].brand}
