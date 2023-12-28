@@ -11,11 +11,6 @@ export default function Sidebar() {
       <section className="dicover">
         <h3>Opciones</h3>
         <ul>
-          {/* <li>
-            <Link to="/search">
-              <i className="bi bi-search" style={iconStyle}></i>- Buscar
-            </Link>
-          </li> */}
           <li>
             <Link to="/statistics">
               <i className="bi bi-graph-up-arrow" style={iconStyle}></i>-
