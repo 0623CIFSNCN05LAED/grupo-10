@@ -108,7 +108,21 @@ module.exports = {
     );
     const mostVisitedProductsData = await Product.findAll({
       where: { id: mostVisitedProductIds },
-      include: ["productBrand", "productCategory", "mostVisitedProducts"],
+      include: [
+        "productBrand",
+        "productCategory",
+        {
+          model: MostVisitedProducts,
+          as: "mostVisitedProducts",
+        },
+      ],
+      order: [
+        [
+          { model: MostVisitedProducts, as: "mostVisitedProducts" },
+          "visits",
+          "DESC",
+        ],
+      ],
     });
     return mostVisitedProductsData;
   },

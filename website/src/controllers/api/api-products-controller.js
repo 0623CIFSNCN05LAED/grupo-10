@@ -147,7 +147,9 @@ module.exports = {
       perPage
     );
     let defaultProduct = defaultProducts[0];
-    mostVisitedProduct.length == 0 ? (mostVisitedProduct = defaultProduct) : "";
+    mostVisitedProducts.length == 0
+      ? (mostVisitedProduct = defaultProduct)
+      : "";
 
     const imagesPath = "http://localhost:4001/images/products/";
     const imageUrl = `${imagesPath}${mostVisitedProduct.image}`;
