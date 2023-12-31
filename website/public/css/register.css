@@ -101,6 +101,12 @@ body {
   margin: auto;
 }
 
+.reg-button-disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
 input:invalid:hover {
   border: #ffd700 solid 2px;
 }

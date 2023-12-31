@@ -3,8 +3,17 @@ window.onload = function () {
   const crearCuentaButton = document.getElementById("crear-cuenta-btn");
 
   crearCuentaButton.disabled = !checkbox.checked;
+  toggleButtonStyle();
 
   checkbox.addEventListener("change", function () {
     crearCuentaButton.disabled = !checkbox.checked;
+    toggleButtonStyle();
   });
+  function toggleButtonStyle() {
+    if (crearCuentaButton.disabled) {
+      crearCuentaButton.classList.add("reg-button-disabled");
+    } else {
+      crearCuentaButton.classList.remove("reg-button-disabled");
+    }
+  }
 };
