@@ -273,6 +273,15 @@ a {
   cursor: pointer;
 }
 
+.notFound {
+  color: #333;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 1.645em;
+  padding: 0 15px;
+  line-height: 1;
+}
+
 /* ------------------------------ */
 
 @media (min-width: 1220px) {

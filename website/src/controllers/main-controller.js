@@ -15,4 +15,7 @@ module.exports = {
 
     return res.render("index", { mostVisitedProducts });
   },
+  notFound: (req, res) => {
+    res.status(404).render("404");
+  },
 };
